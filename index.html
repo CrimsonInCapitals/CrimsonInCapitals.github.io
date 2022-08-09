@@ -88,11 +88,11 @@
     document.getElementById('data').innerHTML = 'Loading...';
     FB.api('/me/accounts', function(response){//makes call to api
         document.getElementById('data').innerHTML = 'Your Page Is: ';
-        for(var page in response.data){//goes through every object in data
-            $(document).ready(function(){
-              $('#pagesList').append('<option value="'+response.data[page].id+'">'+response.data[page].name+'</option>');
-            })
-        }
+        $(document).ready(function(){
+          for(var page in response.data){//goes through every object in data
+                $('#pagesList').append('<option value="'+response.data[page].id+'">'+response.data[page].name+'</option>');
+          }
+        });
     });
   }
 
