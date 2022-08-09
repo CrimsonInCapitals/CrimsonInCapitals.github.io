@@ -98,7 +98,7 @@
     console.log('doc ready');
 
 
-    $('#pagelist').change(function fetchfrompage(){
+    $('#pageupdata').click(function fetchfrompage(){
       console.log('event detected');
       FB.api('/me?access_toke='+$('#selectedId option : selected').val(), function(response){
         $('#data').html(response.id);
@@ -129,9 +129,11 @@
         onlogin="checkLoginState();">
     </fb:login-button>
 </div>
+<label for="pages">Your Facebook Pages</label>
 <select name="pages" id="pagesList">
-
+  <option value="">Select Page</option>
 </select>
+<button id="pageupdata">Load Data</button>
 
 <div id="status">
 </div>
