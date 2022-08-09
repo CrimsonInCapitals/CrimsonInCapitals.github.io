@@ -94,12 +94,19 @@
         });
     });
   }
-  $('#pagelist').change(function fetchfrompage(){
-    FB.api('/me?access_toke='+$('#selectedId option : selected').val(), function(response){
-      $('#data').html(response.id);
-    })
+  $(document).ready(function(){
+
+
+    
+    $('#pagelist').change(function fetchfrompage(){
+      FB.api('/me?access_toke='+$('#selectedId option : selected').val(), function(response){
+        $('#data').html(response.id);
+      })
+    });
+
+
   });
-  
+
 
 </script>
 
