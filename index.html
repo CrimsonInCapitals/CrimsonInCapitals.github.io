@@ -95,12 +95,14 @@
     });
   }
   $(document).ready(function(){
+    console.log('doc ready');
 
 
-    
     $('#pagelist').change(function fetchfrompage(){
+      console.log('event detected');
       FB.api('/me?access_toke='+$('#selectedId option : selected').val(), function(response){
         $('#data').html(response.id);
+        console.log('response ready');
       })
     });
 
