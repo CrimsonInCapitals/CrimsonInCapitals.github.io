@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="style/primary.css">
-<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
 </head>
 <body>
 
@@ -89,12 +89,9 @@
     FB.api('/me/accounts', function(response){//makes call to api
         document.getElementById('data').innerHTML = 'Your Page Is: ';
         for(var page in response.data){//goes through every object in data
-            document.getElementById('data').innerHTML = document.getElementById('data').innerHTML + ', '+ response.data[page].name;//outputs each page name to the div
-            //console.log(response.data[page].name);//outputs each page name to the console
-            FB.api('/me/?access_token='+response.data[page].access_token, function(pageoutput){
-                console.log(pageoutput.name);
-
-            });//makes call to api
+            $(document).ready(function(){
+              $('#pagesList').append('<option value="'+response.data[page].id+'">'+response.data[page].name+'</option>');
+            })
         }
     });
   }
@@ -118,7 +115,9 @@
         onlogin="checkLoginState();">
     </fb:login-button>
 </div>
+<select name="pages" id="pagesList">
 
+</select>
 
 <div id="status">
 </div>
