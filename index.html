@@ -100,7 +100,7 @@
 
     $('#pageupdata').click(function fetchfrompage(){
       console.log('event detected');
-      FB.api('/me?access_toke='+$('#selectedId option : selected').val(), function(response){
+      FB.api('/me?access_toke='+$('#pages option : selected').val(), function(response){
         $('#data').html(response.id);
         console.log('response ready');
       })
