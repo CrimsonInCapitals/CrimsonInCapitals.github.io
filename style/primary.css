@@ -5,4 +5,17 @@ section{
     margin-left: auto;
     margin-right: auto;
     background-color: red;
+    font-family: 'Jost', sans-serif;
+}
+h1{
+    font-size: 70px;
+    font-weight: 500;
+}
+h2{
+    font-size: 55px;
+    font-weight: 500;
+}
+p{
+    font-size: 30px;
+    font-weight: 300;
 }
