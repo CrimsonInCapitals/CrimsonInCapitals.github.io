@@ -1,6 +1,8 @@
 body{
     background-color: #0B0B0B;
     margin: 0;
+    font-family: 'Jost', sans-serif;
+    color: #D7CFC8;
 }
 header{
     height: 50px;
@@ -38,6 +40,9 @@ header menu a{
     font-weight: 700;
     color: #D7CFC8;
     text-decoration: none;
+}
+a{
+    color: #D7CFC8;
 }
 header menu a:hover{
     color: #C00800;
@@ -98,4 +103,17 @@ section.profile div{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+footer a{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+footer a img{
+    height: 20px;
+}
+footer h2{
+    margin-bottom: 20px;
 }
