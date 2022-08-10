@@ -27,14 +27,20 @@ header menu{
     align-content: flex-end;
     align-items: center;
     justify-content: flex-end;
+    margin: 0;
+    margin-right: 10px;
 }
-header menu button{
+header menu a{
     border: none;
     background-color: transparent;
     font-family: 'Jost', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #D7CFC8;
+    text-decoration: none;
+}
+header menu a:hover{
+    color: #C00800;
 }
 section{
     min-width: 50%;
@@ -44,7 +50,10 @@ section{
     margin-right: auto;
     font-family: 'Jost', sans-serif;
     color: #D7CFC8;
-    margin-top: 20%;
+    margin-top: 100px;
+}
+section:first-of-type{
+    margin-top: 30%;
 }
 h1{
     font-size: 70px;
@@ -78,7 +87,7 @@ section.profile{
     display: flex;
     flex-direction: row;
     align-content: space-between;
-    gap: 20px;
+    gap: 40px;
 }
 
 section.profile img{
