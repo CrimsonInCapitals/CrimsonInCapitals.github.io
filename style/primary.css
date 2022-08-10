@@ -1,21 +1,47 @@
+body{
+    background-color: #0B0B0B;
+}
 section{
     min-width: 50%;
     max-width: 90%;
-    width: 1080px;
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
-    background-color: red;
     font-family: 'Jost', sans-serif;
+    color: #D7CFC8;
+    margin-top: 20%;
 }
 h1{
     font-size: 70px;
     font-weight: 500;
+    margin: 0;
 }
 h2{
     font-size: 55px;
     font-weight: 500;
+    margin: 0;
+}
+h3{
+    font-size: 40px;
+    font-weight: 300;
+    margin: 0;
 }
 p{
     font-size: 30px;
     font-weight: 300;
+    margin: 0;
+}
+section.poster img{
+    width: 100%;
+}
+section.profile{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    gap: 20px;
+}
+
+section.profile img{
+    border-radius: 50%;
+    width: 100%;
 }
