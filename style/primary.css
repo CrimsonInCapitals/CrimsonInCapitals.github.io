@@ -117,3 +117,6 @@ footer a img{
 footer h2{
     margin-bottom: 20px;
 }
+a.underlined{
+    text-decoration: underline;
+}
