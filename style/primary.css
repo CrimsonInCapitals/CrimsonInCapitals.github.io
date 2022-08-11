@@ -11,15 +11,18 @@ header{
     flex-direction: row;
     align-content: space-between;
     background-color: #0B0B0B;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
 }
-header img{
+img.logo{
     width: 40px;
     height: 40px;
+    position: sticky;
+    top: 10px;
+    margin-top: 20%;
 }
 header menu{
     width: fit-content;
@@ -57,8 +60,11 @@ section{
     color: #D7CFC8;
     margin-top: 100px;
 }
-section:first-of-type{
-    margin-top: 30%;
+body section:first-of-type{
+    margin-top: -70px
+}
+footer section:first-of-type{
+    margin-top: 20px;
 }
 h1{
     font-size: 70px;
@@ -119,4 +125,56 @@ footer h2{
 }
 a.underlined{
     text-decoration: underline;
+}
+footer a img:last-of-type{
+    display: none;
+}
+footer a:hover img:last-of-type{
+    display: block;
+}
+footer a:hover img:first-of-type{
+    display: none;
+}
+section#casestudies{
+    display: flex;
+    flex-wrap: wrap;
+}
+.onebyone{
+    width: 50%;
+}
+.onebytwo{
+    width: 100%;
+}
+.twobytwo{
+    width: 100%;
+}
+.pointfive{
+    width: 25%;
+}
+section#casestudies a img{
+    width: 100%;
+}
+section#casestudies p{
+    text-decoration: none;
+    margin-bottom: -40px;
+    z-index: 2;
+    margin-left: 10px;
+    /* display: none;*/
+}
+section div.onebyone{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+section#casestudies div.onebyone p{
+    margin-left: 0;
+    font-size: 18px;
+}
+.alighnright{
+    align-items: flex-end;
+}
+section#casestudies div.alighnright p{
+    text-align: right;
 }
