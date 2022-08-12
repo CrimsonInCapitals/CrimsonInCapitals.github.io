@@ -63,6 +63,9 @@ section{
 body section:first-of-type{
     margin-top: -70px
 }
+footer{
+    margin-top: 200px;
+}
 footer section:first-of-type{
     margin-top: 20px;
 }
@@ -141,15 +144,23 @@ section#casestudies{
 }
 .onebyone{
     width: 50%;
+    padding-top: 100%;
+    margin-top: -100%;
 }
 .onebytwo{
     width: 100%;
+    padding-top: 100%;
+    margin-top: -100%;
 }
 .twobytwo{
     width: 100%;
+    padding-top: 100%;
+    margin-top: -100%;
 }
 .pointfive{
     width: 25%;
+    padding-top: 100%;
+    margin-top: -100%;
 }
 section#casestudies a img{
     width: 100%;
@@ -177,4 +188,16 @@ section#casestudies div.onebyone p{
 }
 section#casestudies div.alighnright p{
     text-align: right;
+}
+
+/* section#casestudies a:hover p{
+    display: block;
+}
+section#casestudies a:hover img{
+    display: none;
+} */
+section#casestudies a p{
+    display: none;
+    position: absolute;
+    margin: 20px;
 }
