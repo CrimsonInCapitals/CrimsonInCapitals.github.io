@@ -329,12 +329,12 @@ section#casestudies a p{
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     header menu.widescreen{
         display: none;
     }
 }
-@media (min-width: 600px) {
+@media (min-width: 1000px) {
     header label {
         display: none;
     }
