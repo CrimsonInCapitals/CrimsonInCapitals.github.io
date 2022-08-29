@@ -10,7 +10,8 @@ header{
     display: flex;
     flex-direction: row;
     align-content: space-between;
-    background-color: #0B0B0B;
+    background-color: rgba(11, 11, 11, 0.8);
+    backdrop-filter: saturate(200%) blur(40px);
     justify-content: flex-end;
     position: fixed;
     top: 0;
@@ -21,10 +22,12 @@ img.logo{
     width: 40px;
     height: 40px;
     position: sticky;
-    top: 10px;
+    top: 15px;
     margin-top: 20%;
+    margin-left: 10px;
 }
-header menu{
+
+header menu.widescreen{
     width: fit-content;
     display: flex;
     flex-direction: row;
@@ -35,7 +38,7 @@ header menu{
     margin: 0;
     margin-right: 10px;
 }
-header menu a{
+header menu.widescreen a{
     border: none;
     background-color: transparent;
     font-family: 'Jost', sans-serif;
@@ -44,6 +47,129 @@ header menu a{
     color: #D7CFC8;
     text-decoration: none;
 }
+label .button{
+    display: flex;
+    flex-direction: column;
+    gap: 4.444px;
+    justify-content: center;
+}
+div.line{
+    width: 22.222px;
+    height: 4.444px;
+    background-color: #D7CFC8;
+}
+header label{
+    display: flex;
+}
+input.burger:checked + label menu{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    left: 0;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    font-size: 40px;
+    padding: 40px 0;
+    margin-top: 60px;
+    background-color: rgba(11, 11, 11, 0.8);
+    backdrop-filter: blur(40px);
+}
+input.burger + label menu{
+    display: none;
+}
+menu.burger a{
+    font-family: 'Jost', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #D7CFC8;
+    text-decoration: none;
+}
+menu.burger a.underlined{
+    text-decoration: underline;
+}
+input.burger:checked + label .line.top{
+    transform: rotateZ(-45deg);
+    margin-bottom: -4.444px;
+    animation-name: menutopline;
+    animation-duration: 1s;
+}
+input.burger:checked + label .line.bottom{
+    margin-top: -4.444px;
+    transform: rotateZ(45deg);
+    animation-name: menubottomline;
+    animation-duration: 1s;
+}
+input.burger:visited + label .line.top{
+    transform: rotateZ(-45deg);
+    margin-bottom: -4.444px;
+    animation-name: menutoplineundo;
+    animation-duration: 1s;
+}
+input.burger:visited + label .line.bottom{
+    margin-top: -4.444px;
+    transform: rotateZ(45deg);
+    animation-name: menubottomlineundo;
+    animation-duration: 1s;
+}
+@keyframes menubottomline {
+    from{
+        margin-top: 0;
+        transform: rotateZ(0deg);
+    }
+    to{
+        margin-top: -4.444px;
+        transform: rotateZ(45deg);
+    }
+}
+@keyframes menutopline {
+    from{
+        margin-top: 0;
+        transform: rotateZ(0deg);
+    }
+    to{
+        margin-bottom: -4.444px;
+        transform: rotateZ(-45deg);
+    }
+}
+@keyframes menubottomlineundo {
+    to{
+        margin-top: 0;
+        transform: rotateZ(0deg);
+    }
+    from{
+        margin-top: -4.444px;
+        transform: rotateZ(45deg);
+    }
+}
+@keyframes menutoplineundo {
+    to{
+        margin-top: 0;
+        transform: rotateZ(0deg);
+    }
+    from{
+        margin-bottom: -4.444px;
+        transform: rotateZ(-45deg);
+    }
+}
+input.burger:checked .button{
+    gap: 0;
+}
+input.burger:hover + label{
+    cursor: pointer;
+}
+input.burger{
+    display: none;
+}
+/* line.top{
+    transform: translateY(-10px) scaleX(.88235);
+}
+line.bottom{
+    transform: translateY(-10px) scaleX(.88235);
+} */
+
 a{
     color: #D7CFC8;
 }
@@ -196,4 +322,17 @@ section#casestudies a p{
     display: none;
     position: absolute;
     margin: 20px;
+}
+
+
+
+@media (max-width: 600px) {
+    header menu.widescreen{
+        display: none;
+    }
+}
+@media (min-width: 600px) {
+    header label {
+        display: none;
+    }
 }
