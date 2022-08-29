@@ -90,6 +90,9 @@ menu.burger a{
 menu.burger a.underlined{
     text-decoration: underline;
 }
+menu.widescreen a.underlined{
+    text-decoration: underline;
+}
 input.burger:checked + label .line.top{
     transform: rotateZ(-45deg);
     margin-bottom: -4.444px;
