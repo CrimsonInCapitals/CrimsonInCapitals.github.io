@@ -1,0 +1,22 @@
+a{
+    font-family: 'Jost';
+    font-weight: 400;
+    display: flex;
+    gap: 1rem;
+    text-decoration: none;
+    align-items: center;
+    font-size: 1.2rem;
+}
+a img{
+    width: 1.4rem;
+}
+
+a:hover img.one{
+    display: none;
+}
+a:hover img.two{
+    display: inline;
+}
+a img.two{
+    display: none;
+}
