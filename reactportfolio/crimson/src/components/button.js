@@ -3,9 +3,10 @@ import '../styling/button.css'
 // import { Children, useEffect, useState } from 'react';
 import React, { useEffect, useState } from 'react';
 import { dark,light,crimson } from '../colors';
+import { useThemeContext } from '../context/theme';
 
-const Button = ({icon='default',url='/',use='link',children,target='_blank',darkmode=true})=> {
-    console.log('dark more:'+darkmode)
+const Button = ({icon='default',url='/',use='link',children,target='_blank'})=> {
+    const darkmode = useThemeContext()
     const [iconsrc,setIconsrc]=useState(require('../icons/'+icon+'.svg'))
     const [iconbsrc,setIconbsrc]=useState(require('../icons/'+icon+'colour.svg'))
     const [styling,setStyling]=useState()
@@ -25,7 +26,7 @@ const Button = ({icon='default',url='/',use='link',children,target='_blank',dark
         <>
         {use === 'link'&&
         <Link to={url} style={styling}>
-            <img src={'./icon/'+icon+'.svg'}/>
+            {/* <img src={'./icon/'+icon+'.svg'}/> */}
             {children}
         </Link>
         }

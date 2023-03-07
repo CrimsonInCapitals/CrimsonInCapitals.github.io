@@ -7,18 +7,27 @@ import CaseStudies from './pages/casestudies';
 import About from './pages/about';
 import Contact from './pages/contact';
 import Footer from './components/footer';
+import { useThemeContext } from './context/theme';
+import { dark, light } from './colors';
+import Button from './components/button';
 
 const App = ()=> {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const theme = useThemeContext()
+  const [mainstyle,setMainstyle]=useState()
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDarkMode(mediaQuery.matches);
-    console.log('query:'+mediaQuery.matches)
-    const handler = event => setIsDarkMode(event.matches);
-    mediaQuery.addEventListener('change', handler);
-    return () => mediaQuery.removeEventListener('change', handler);
-  }, [isDarkMode]);
+  useEffect(()=>{
+    if(theme){
+      setMainstyle({
+        backgroundColor: dark,
+        color: light
+      })
+    }else{
+      setMainstyle({
+        backgroundColor: light,
+        color: dark
+      })
+    }
+  },[theme])
   class Page {
     constructor(name='',url='/',component=<Home/>){
       this.name = name
@@ -34,18 +43,17 @@ const App = ()=> {
 ]
   return (
     <>
-      <header>
-
+      <header style={mainstyle}>
         <nav>
-          {pages.map(({name,url,component})=>(<Link key={url} to={url}> {name} </Link>))}
+          {pages.map(({name,url,component})=>(<Button use='link' key={url} url={url}> {name} </Button>))}
         </nav>
       </header>
-      <main>
+      <main style={mainstyle}>
         <Routes>
           {pages.map(({name,url,component})=>(<Route key={url} path={url} element={component}/>))}
         </Routes>
       </main>
-      <Footer darkmode={isDarkMode}/>
+      <Footer/>
     </>
     );
 }
