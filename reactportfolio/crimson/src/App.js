@@ -10,8 +10,10 @@ import Footer from './components/footer';
 import { useThemeContext } from './context/theme';
 import { dark, light } from './colors';
 import Button from './components/button';
+import { useInternalContext } from './context/links';
 
 const App = ()=> {
+  const isrank =(variable)=> {if(variable.rank === 1){return true}else{return false}}
   const theme = useThemeContext()
   const [mainstyle,setMainstyle]=useState()
 
@@ -28,24 +30,12 @@ const App = ()=> {
       })
     }
   },[theme])
-  class Page {
-    constructor(name='',url='/',component=<Home/>){
-      this.name = name
-      this.url = url
-      this.component = component
-    }
-  }
-  const pages = [
-    new Page('Home','/',<Home/>),
-    new Page('Contact','/contact',<Contact/>),
-    new Page('About','/about',<About/>),
-    new Page('Case Studies','/casestudies',<CaseStudies/>)
-]
+  const pages = useInternalContext()
   return (
     <>
       <header style={mainstyle}>
         <nav>
-          {pages.map(({name,url,component})=>(<Button use='link' key={url} url={url}> {name} </Button>))}
+          {pages.filter(isrank).map(({name,url,component})=>(<Button use='link' key={url} url={url}> {name} </Button>))}
         </nav>
       </header>
       <main style={mainstyle}>
