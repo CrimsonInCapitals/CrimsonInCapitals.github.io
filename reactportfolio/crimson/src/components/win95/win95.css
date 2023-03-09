@@ -17,10 +17,24 @@ section.board div{
 section.board{
     padding: 10px;
     box-shadow: inset -5px -5px white, inset 5px 5px gray,inset -10px -10px white,inset 10px 10px gray;
-
+    background-color: black;
 }
 main.game{
     padding: 30px;
     box-shadow: inset 5px 5px white, inset -5px -5px gray,inset 10px 10px white,inset -10px -10px gray;
     height: fit-content;
+}
+button.cell{
+    width: 75px;
+    height: 75px;
+    box-shadow:inset -5px -5px black,inset -10px -10px gray, inset 5px 5px white;
+    border: none;
+    border-radius: 0;
+}
+div.cell{
+        width: 75px;
+        height: 75px;
+        border-bottom: dashed 5px black;
+        border-right: dashed 5px black;
+        background-color: lightgray;
 }

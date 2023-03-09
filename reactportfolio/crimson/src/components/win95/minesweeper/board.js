@@ -1,5 +1,5 @@
 // import './App.css';
-import { Children, useEffect, useState } from 'react';
+import { Children, useEffect, useReducer, useState } from 'react';
 import React from 'react';
 // import { useAppContext } from '../context/app';
 
@@ -8,16 +8,25 @@ const creategameboard = (x=9,y=9)=>{
     for(let i = 0;i<x;i++){
         var row = []
         for(let j =0;j<y;j++){
-            row.push(0)
+            row.push('#')
         }
         board.push(row)
     }
     return board
 }
-const populategameboard = (mines=10,board,click)=>{
-    const checkagacent = [{x:-1,y:-1},{x:0,y:-1},{x:1,y:-1},{x:-1,y:0},{x:1,y:0},{x:-1,y:+1},{x:0,y:+1},{x:1,y:+1}]
 
-    for(let i = 0; i<mines;i++){
+
+
+
+const populategameboard = (mines=10,click,game)=>{
+    const checkagacent = [{x:-1,y:-1},{x:0,y:-1},{x:1,y:-1},{x:-1,y:0},{x:1,y:0},{x:-1,y:+1},{x:0,y:+1},{x:1,y:+1}]
+    let board = creategameboard(game.playerboard.length,game.playerboard[0].length)
+    board.forEach((row,x) => {
+        row.forEach((cell,y) => {
+            board[x][y] = 0
+        })
+    })
+    for(let i = 0; i<mines;i++){ //adds the bombs
         let randomx = Math.floor(Math.random() * (board.length));
         let randomy = Math.floor(Math.random() * (board[0].length));
         if(board[randomx][randomy] === 0 ||( randomx === click.x && randomy === click.y)){
@@ -25,7 +34,7 @@ const populategameboard = (mines=10,board,click)=>{
         }
         else{i=i-1}
     }
-    board.forEach((row,x) => {
+    board.forEach((row,x) => { // adds the numbers near the bombs
         row.forEach((cell,y) => {
             if(cell === 'b'){
                 checkagacent.forEach((check)=>{
@@ -42,43 +51,54 @@ const populategameboard = (mines=10,board,click)=>{
     return board;
 }
 
-class gameclass{
-    constructor(properties ={y:9,x:9,m:10},position = {x:1,y:1}){
-        this.playerboard = creategameboard(properties.x,properties.y)
-        this.gameboard = populategameboard(properties.m,creategameboard(properties.x,properties.y),position)
-        this.creategameboard  = ''
-    }
-}
-const checkCell = (x,y,board)=>{
-    console.log(board[x][y])
-}
 
-const Button = ({x,y,board, children})=>{
+
+
+const Button = ({x,y,setBoard,game,children,setGame})=>{
+    const checkCell = ()=>{
+        if(!game.gameboard){
+            let position = {x: x,y:y}
+            setGame(...game,gameboard= ()=>populategameboard(game.mines,position,game))
+        }
+        setGame({...game,game.playerboard[x][y]: game.gameboard[x][y]})
+        // setBoard(game.playerboard)
+        console.log(game)
+    }
     return(
-        <button type='button' className='cell' onClick={()=>checkCell(x,y,board)}>
-            {children}at location {x} by {y}
+
+        <button type='button' className='cell' onClick={checkCell}>
+            {children}
         </button>
     )
 }
 
 const Board = ()=> {
-    const [game,setGame] = useState(new gameclass())
+    class gameclass{
+        constructor(properties ={y:9,x:9,m:10},position = {x:1,y:1}){
+            this.playerboard = creategameboard(properties.x,properties.y)
+            this.mines = properties.m
+            this.width = properties.x
+            this.hight = properties.y
+        }
+    }
+    const setupGame=(game,action)=>{
+
+        return {
+            ...game,
+            playerboard: game.playerboard
+        }
+    }
+    const [game,dispatchGame] = useReducer(setupGame,new gameclass())
+    const [board,setBoard] = useState(game.playerboard)
     useEffect(()=>{
-        setGame(new gameclass())
-    },[])
-    useEffect(()=>{
-        // game.playerboard.map(row=>{
-        //     row.map(cell=>{console.log(cell)})
-        // })
+        console.log(board)
     },[game])
-    // console.log(game)
     return (
        <section className='board'>
-            {game.playerboard.map((row,rowindex)=>(
-                <div>
+            {board.map((row,rowindex)=>(
+                <div key={rowindex}>
                 {row.map((cell,colindex)=>(
-                    <Button x={rowindex} y={colindex} board={game.gameboard}>{cell}</Button>
-                    // console.log(cell)
+                    <Button key={rowindex+colindex} x={rowindex} y={colindex} game={game}setGame={setGame} setBoard={setBoard}>{cell}</Button>
                 ))}
                 </div>
             ))}
