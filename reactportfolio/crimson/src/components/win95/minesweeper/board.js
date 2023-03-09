@@ -17,16 +17,16 @@ const creategameboard = (x=9,y=9)=>{
 
 
 
+const checkagacent = [{x:-1,y:-1},{x:0,y:-1},{x:1,y:-1},{x:-1,y:0},{x:1,y:0},{x:-1,y:+1},{x:0,y:+1},{x:1,y:+1}]
 
 const populategameboard = (mines=10,click,game)=>{
-    const checkagacent = [{x:-1,y:-1},{x:0,y:-1},{x:1,y:-1},{x:-1,y:0},{x:1,y:0},{x:-1,y:+1},{x:0,y:+1},{x:1,y:+1}]
     let board = creategameboard(game.playerboard.length,game.playerboard[0].length)
     board.forEach((row,x) => {
         row.forEach((cell,y) => {
             board[x][y] = 0
         })
     })
-    for(let i = 0; i<mines;i++){ //adds the bombs
+    for(let i = 0; i<game.mines;i++){ //adds the bombs
         let randomx = Math.floor(Math.random() * (board.length));
         let randomy = Math.floor(Math.random() * (board[0].length));
         if(board[randomx][randomy] === 0 ||( randomx === click.x && randomy === click.y)){
@@ -54,21 +54,15 @@ const populategameboard = (mines=10,click,game)=>{
 
 
 
-const Button = ({x,y,setBoard,game,children,setGame})=>{
-    const checkCell = ()=>{
-        if(!game.gameboard){
-            let position = {x: x,y:y}
-            setGame(...game,gameboard= ()=>populategameboard(game.mines,position,game))
-        }
-        setGame({...game,game.playerboard[x][y]: game.gameboard[x][y]})
-        // setBoard(game.playerboard)
-        console.log(game)
-    }
+const Button = ({x,y,setBoard,dispatchGame,children})=>{
     return(
-
-        <button type='button' className='cell' onClick={checkCell}>
-            {children}
+        children === '#'?
+        <button type='button' className='cell' onClick={()=>dispatchGame({type:'click',x:x,y:y})}>
         </button>
+        :
+        <div type='button' className='cell'>
+            {children}
+        </div>
     )
 }
 
@@ -81,12 +75,28 @@ const Board = ()=> {
             this.hight = properties.y
         }
     }
-    const setupGame=(game,action)=>{
+    const setupGame=(game,action={type: 'run',x:1,y:1})=>{
+        if(action.type = 'click'){
+            if(!game.gameboard){
+                let click = {x:action.x,y:action.y}
+                let gameboard = populategameboard(game.mines,click,game)
+                game = {...game, gameboard:gameboard}
+            }
+            game.playerboard[action.x][action.y] = game.gameboard[action.x][action.y]
+            if(game.gameboard[action.x][action.y] === 0){
 
-        return {
-            ...game,
-            playerboard: game.playerboard
+
+                
+            }else if(game.gameboard[action.x][action.y] === 'b'){
+
+
+
+            }
+            return {
+                ...game,
+            }
         }
+        return game
     }
     const [game,dispatchGame] = useReducer(setupGame,new gameclass())
     const [board,setBoard] = useState(game.playerboard)
@@ -98,7 +108,7 @@ const Board = ()=> {
             {board.map((row,rowindex)=>(
                 <div key={rowindex}>
                 {row.map((cell,colindex)=>(
-                    <Button key={rowindex+colindex} x={rowindex} y={colindex} game={game}setGame={setGame} setBoard={setBoard}>{cell}</Button>
+                    <Button key={rowindex+colindex} x={rowindex} y={colindex} dispatchGame={dispatchGame}>{cell}</Button>
                 ))}
                 </div>
             ))}

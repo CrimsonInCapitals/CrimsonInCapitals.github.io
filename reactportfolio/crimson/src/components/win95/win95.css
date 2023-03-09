@@ -37,4 +37,6 @@ div.cell{
         border-bottom: dashed 5px black;
         border-right: dashed 5px black;
         background-color: lightgray;
+        box-sizing: border-box;
+        color: black;
 }

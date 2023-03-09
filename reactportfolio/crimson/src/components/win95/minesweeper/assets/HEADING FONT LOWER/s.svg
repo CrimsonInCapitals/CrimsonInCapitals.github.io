@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 12 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-106.981,-299.947)">
+        <g id="Artboard20" transform="matrix(1.20467,0,0,1.50659,-23.1237,-161.919)">
+            <rect x="108" y="306.564" width="9.961" height="11.947" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="108" y="306.564" width="9.961" height="11.947"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(0.830103,0,0,0.66375,19.1951,107.474)">
+                    <path d="M116.981,313.947L114.981,313.947L114.981,311.947L112.981,311.947L112.981,309.947L110.981,309.947L110.981,307.947L112.981,307.947L112.981,309.947L116.981,309.947L116.981,307.947L114.981,307.947L114.981,305.947L108.981,305.947L108.981,307.947L106.981,307.947L106.981,309.947L108.981,309.947L108.981,311.947L110.981,311.947L110.981,313.947L106.981,313.947L106.981,315.947L108.981,315.947L108.981,317.947L114.981,317.947L114.981,315.947L116.981,315.947L116.981,313.947ZM112.981,313.947L110.981,313.947L110.981,315.947L112.981,315.947L112.981,313.947Z"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
