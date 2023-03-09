@@ -1,0 +1,26 @@
+article{
+    background-color: lightgray;
+    padding: 10px;
+    width: fit-content;
+    box-shadow: inset 5px 5px white, inset -5px -5px gray;
+    position: fixed;
+}
+header{
+    padding: 10px;
+    font-size: 40px;
+    background-color: blue;
+    color: white;
+}
+section.board div{
+    display: flex;
+}
+section.board{
+    padding: 10px;
+    box-shadow: inset -5px -5px white, inset 5px 5px gray,inset -10px -10px white,inset 10px 10px gray;
+
+}
+main.game{
+    padding: 30px;
+    box-shadow: inset 5px 5px white, inset -5px -5px gray,inset 10px 10px white,inset -10px -10px gray;
+    height: fit-content;
+}

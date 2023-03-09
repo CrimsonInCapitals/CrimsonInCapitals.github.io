@@ -21,7 +21,8 @@ const Button = ({icon='default',url='/',use='link',children,target='_blank'})=> 
         setIconsrc(require('../icons/'+icon+'.svg'))
     }else{
         setStyling({
-            color: hover? crimson: dark
+            color: hover? crimson: dark,
+            textDecoration: location.pathname == url && 'underline'
         })
         setIconsrc(require('../icons/'+icon+'lightmode.svg'))
     }},[darkmode,hover,location])

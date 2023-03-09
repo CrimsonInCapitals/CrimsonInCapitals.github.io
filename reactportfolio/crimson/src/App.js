@@ -11,6 +11,7 @@ import { useThemeContext } from './context/theme';
 import { dark, light } from './colors';
 import Button from './components/button';
 import { useInternalContext } from './context/links';
+import Experiment from './pages/experimental';
 
 const App = ()=> {
   const isrank =(variable)=> {if(variable.rank === 1){return true}else{return false}}
@@ -41,6 +42,7 @@ const App = ()=> {
       <main style={mainstyle}>
         <Routes>
           {pages.map(({name,url,component})=>(<Route key={url} path={url} element={component}/>))}
+          <Route path='/exp' element={<Experiment/>}/>
         </Routes>
       </main>
       <Footer/>
