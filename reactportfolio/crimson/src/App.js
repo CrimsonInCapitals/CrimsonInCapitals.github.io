@@ -1,11 +1,7 @@
 import './App.css';
-import {Link,Routes,Route} from 'react-router-dom'
+import {Routes,Route} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import React from 'react';
-import Home from './pages/home';
-import CaseStudies from './pages/casestudies';
-import About from './pages/about';
-import Contact from './pages/contact';
 import Footer from './components/footer';
 import { useThemeContext } from './context/theme';
 import { dark, light } from './colors';

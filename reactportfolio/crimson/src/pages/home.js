@@ -1,5 +1,4 @@
 // import './App.css';
-import {Link,Routes,Route} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { useThemeContext } from '../context/theme';
@@ -10,7 +9,7 @@ const Home = ()=> {
     const[shadow,setShadow] = useState()
     useEffect(()=>{
         setShadow({
-            boxShadow: theme? '0 0 20px 10px black':  '0 0 20px 10px #fff5ed'
+            boxShadow: theme? '0 0 20px 4px black':  '0 0 20px 4px #fff5ed'
         })
     },[theme])
     if(theme){

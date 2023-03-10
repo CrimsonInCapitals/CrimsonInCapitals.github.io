@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect, useReducer, useState} from "react";
+import {createContext, useContext} from "react";
 import Minesweeper from "../minesweeper/game";
 const AppContext = createContext(undefined);
 

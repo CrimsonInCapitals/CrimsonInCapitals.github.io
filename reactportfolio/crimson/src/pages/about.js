@@ -1,6 +1,6 @@
 // import './App.css';
-import {Link,Routes,Route} from 'react-router-dom'
-import { useEffect, useState } from 'react';
+// import {Link,Routes,Route} from 'react-router-dom'
+// import { useEffect, useState } from 'react';
 import React from 'react';
 
 const About = ()=> {
@@ -27,8 +27,8 @@ const About = ()=> {
         <p>Both of my parents have a love of photography, which is how they met. I remember going through the boxes of negatives my Mum has and seeing the years preserved. My Mum also loves design, in her case, that's interior design. Conversations with her sparked my interest in this field.</p>
     </section>
     <section>
-        <h2>My Perspective On UX</h2>
-        <p>UX is usually a concept discussed in a digital landscape but the principles stem from the real world. Software may have left skeuomorphism in the past but what's on the screen isn't so different from IRL. Your news feed is a street, each webpage is a room and your profile is the clothes you put on. The way things are designed impacts how we go to interact with them. Everyone’s pushed a pull door in their life but it's not your fault: it's the designer's. We shouldn't settle for poor design when it can be so much better.
+        <h2>My Perspective On Ux</h2>
+        <p>Ux is usually a concept discussed in a digital landscape but the principles stem from the real world. Software may have left skeuomorphism in the past but what's on the screen isn't so different from IRL. Your news feed is a street, each webpage is a room and your profile is the clothes you put on. The way things are designed impacts how we go to interact with them. Everyone’s pushed a pull door in their life but it's not your fault: it's the designer's. We shouldn't settle for poor design when it can be so much better.
             </p>
     </section>
     <section>

@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect, useReducer, useState} from "react";
+import {createContext, useContext} from "react";
 import Home from "../pages/home";
 import About from "../pages/about";
 import CaseStudies from "../pages/casestudies";
@@ -16,7 +16,7 @@ export const SocialProvider = ({ children }) => {
         }
     }
     const Socials = [
-        new Social('Instagram','@crimson.svg','https://www.instagram.com/crimson.svg/','instagram'),
+        new Social('Instagram','xcrimson.svg','https://www.instagram.com/crimson.svg/','instagram'),
         new Social('Facebook','Crimson in capitals art','https://www.facebook.com/Crimsonincapitals','facebook'),
         new Social('LinkedIn','Harrison (Adam) Cole','https://www.linkedin.com/in/harrison-cole-crimson-in-capitals/','linkedin'),
         new Social('Displate','Displate','https://displate.com/crimsonincapitals1?art=5f0d09c08e6b6','displate')

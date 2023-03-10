@@ -9,23 +9,23 @@ const Button = ({icon='default',url='/',use='link',children,target='_blank'})=> 
     const location = useLocation()
     const darkmode = useThemeContext()
     const [iconsrc,setIconsrc]=useState(require('../icons/'+icon+'.svg'))
-    const [iconbsrc,setIconbsrc]=useState(require('../icons/'+icon+'colour.svg'))
+    const [iconbsrc]=useState(require('../icons/'+icon+'colour.svg'))
     const [styling,setStyling]=useState()
     const [hover,setHover]=useState(false)
     useEffect(()=>{
     if(darkmode){
         setStyling({
             color: hover ? crimson:light,
-            textDecoration: location.pathname == url && 'underline'
+            textDecoration: location.pathname === url && 'underline'
         })
         setIconsrc(require('../icons/'+icon+'.svg'))
     }else{
         setStyling({
             color: hover? crimson: dark,
-            textDecoration: location.pathname == url && 'underline'
+            textDecoration: location.pathname === url && 'underline'
         })
         setIconsrc(require('../icons/'+icon+'lightmode.svg'))
-    }},[darkmode,hover,location])
+    }},[darkmode,hover,location,icon,url])
     return (
         <>
         {use === 'link'&&
