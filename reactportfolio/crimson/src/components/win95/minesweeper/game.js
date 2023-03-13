@@ -23,7 +23,7 @@ const creategameboard = (game)=>{
 
 const checkagacent = [{x:-1,y:-1},{x:0,y:-1},{x:1,y:-1},{x:-1,y:0},{x:1,y:0},{x:-1,y:+1},{x:0,y:+1},{x:1,y:+1}]
 
-const populategameboard = (mines=10,click,game)=>{
+const populategameboard = (click,game)=>{
     let board = creategameboard(game)
     board.forEach((row,x) => {
         row.forEach((cell,y) => {
@@ -88,55 +88,92 @@ const Minesweeper = ()=> {
         }
     }
     const setupGame=(game,action={type: 'run',x:1,y:1})=>{
-        if(action.type==='timer'){
-
-            game.count = action.count+1
-        }
-        if(action.type === 'click'){
-            if(game.state !== 'play' && game.state !== 'ready'){return{...game}}
-            if(action.is === 'f'){return{...game}}
-            if(!game.gameboard){
-                let click = {x:action.x,y:action.y}
-                let gameboard = populategameboard(game.mines,click,game)
-                game = {...game, gameboard:gameboard,state:'play'}
-                console.log(game)
-                setInplay(true)
-
-            }
-            game.playerboard[action.x][action.y] = game.gameboard[action.x][action.y]
-            if(game.gameboard[action.x][action.y] === 0){
-                game = zerofunction(action.x,action.y,game)
-            }else if(game.gameboard[action.x][action.y] === 'b'){
-                setInplay(false)
-                game.gameboard.forEach((row,x) => { // adds the numbers near the bombs
-                    row.forEach((cell,y) => {
-                        if(cell === 'b'){
-                           game.playerboard[x][y] = 'b'
-                        }
-                    })
-                });
-                game.playerboard[action.x][action.y] = 'x'
-                return {
-                    ...game,
-                    state: 'over'
-                }
-            }
-        }
-        if(action.type === 'rightclick'){
-            if(action.is === '#'){
-                game.playerboard[action.x][action.y] = 'f'
-                game.flags = game.flags+1
-            }
-            if(action.is === 'f'){
-                game.playerboard[action.x][action.y] = 'g'
-                game.flags = game.flags - 1
-            }
-            if(action.is === 'g'){
-                game.playerboard[action.x][action.y] = '#'
-            }
-        }
+        console.log(action)
         if(action.type === 'new'){
             return new gameclass()
+        }
+        if(game.state === 'over' || game.state === 'win'){
+            if(action.type !== 'new'){
+                return{...game}
+            }
+        }
+        if(action.type === 'mousedown'){
+            game.x = action.x
+            game.y = action.y
+            game.state = 'suspense'
+        }else if( action.type === 'mouseup'){
+            if(game.x === action.x && action.y === game.y ){//mouse up on same button as mouse down
+                game.state = 'play'
+                switch(action.button){
+                    case 0://left click
+                        if(game.state !== 'play' && game.state !== 'ready'){return{...game}}
+                        if(action.is === 'f'){return{...game}}
+                        if(!game.gameboard){
+                            let click = {x:action.x,y:action.y}
+                            let gameboard = populategameboard(click,game)
+                            game = {...game, gameboard:gameboard,state:'play'}
+                            setInplay(true)
+                        }
+                        game.playerboard[action.x][action.y] = game.gameboard[action.x][action.y]
+                        if(game.gameboard[action.x][action.y] === 0){
+                            game = zerofunction(action.x,action.y,game)
+                        }else if(game.gameboard[action.x][action.y] === 'b'){//game over
+                            setInplay(false)
+                            game.gameboard.forEach((row,x) => { //loops through gameboard to reviel each bomb location
+                                row.forEach((cell,y) => {
+                                    if(game.playerboard[x][y]==='f'){game.playerboard[x][y]='x'
+                                    }
+                                    if(cell === 'b'){
+                                    game.playerboard[x][y] = 'b'
+                                    }
+                                })
+                            });
+                            game.playerboard[action.x][action.y] = 'e'
+                            return {
+                                ...game,
+                                state: 'over'
+                            }
+                        }
+                        let total =(game.width+1) * (game.hight+1)
+                        console.log(total)
+                        game.playerboard.forEach((row) => { //loops through gameboard to reviel each bomb location
+                            row.forEach((cell) => {
+                                if(cell !== '#' && cell !== 'f'){
+                                    total = total-1
+                                }
+                            })
+                        })
+                        console.log(total - game.mines)
+                        if(total - game.mines === 0){///game won
+                            game.state = 'win'
+                        }
+                    break;
+                    case 2://right click
+                        console.log('right clcik',)
+                        if(action.is === '#'){
+                            game.playerboard[action.x][action.y] = 'f'
+                            game.flags = game.flags+1
+                        }
+                        if(action.is === 'f'){
+                            game.playerboard[action.x][action.y] = 'g'
+                            game.flags = game.flags - 1
+                        }
+                        if(action.is === 'g'){
+                            game.playerboard[action.x][action.y] = '#'
+                        }
+                    break;
+                    default:
+                        return{...game}
+                }
+                // validclick()
+            }
+            game.x = ''
+            game.y = ''
+        return{...game}
+        }
+        if(action.type==='timer'){
+            game.timer = action.timer+1
+            return{...game}
         }
         return {
             ...game
@@ -145,17 +182,18 @@ const Minesweeper = ()=> {
     const [game,dispatchGame] = useReducer(setupGame,new gameclass({x:8,y:8,m:10}))
 
     useEffect(()=>{
-        if(inplay){
-            setTimeout(()=>setcount(count+1),1000)
+        if(game.state === 'play' || game.state === 'suspense'){
+            setTimeout(()=>dispatchGame({type: 'timer',timer: game.timer}),1000)
         }
-    },[count,inplay])
+    },[inplay,game.timer])
     return (
        <>
        <main className='game'>
         <section className='controls'>
-        <Timer count={count}/>
-        <Button dispatchGame={dispatchGame} type='action'>{game.state}</Button>
         <Timer count={game.mines-game.flags}/>
+        <Button dispatchGame={dispatchGame} type='action'>{game.state}</Button>
+        <Timer count={game.timer}/>
+
         </section>
 
         <Board game={game} dispatchGame={dispatchGame}/>

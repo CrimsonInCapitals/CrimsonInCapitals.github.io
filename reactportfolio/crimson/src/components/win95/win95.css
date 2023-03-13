@@ -37,6 +37,7 @@ button{
 .board button{
     width: 30px;
     height: 30px;
+    padding: 0;
 }
 div.cell{
         width: 30px;
@@ -48,7 +49,7 @@ div.cell{
         color: black;
 }
 .game .controls .counter{
-    background-color: red;
+    background-color: black;
     height: fit-content;
     display: flex;
     gap: 2px;
@@ -64,5 +65,4 @@ div.cell{
 }
 .counter img{
     height: 42px;
-    color: red;
 }

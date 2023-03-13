@@ -6,6 +6,7 @@ import React from 'react';
 
 
 const Timer = ({count})=>{
+    if(count<0){count=0}
     const [displaynum,setDisplaynum] = useState(count.toString().split(''))
     useEffect(()=>{
         let number = count.toString().split('').reverse()
