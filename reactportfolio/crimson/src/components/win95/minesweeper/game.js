@@ -8,7 +8,6 @@ import Timer from './timer';
 import Button from './button';
 
 
-
 const creategameboard = (game)=>{
     let board = []
     for(let i = 0;i<=game.width;i++){
@@ -57,8 +56,7 @@ const populategameboard = (click,game)=>{
 
 
 
-const Minesweeper = ()=> {
-    const [count,setcount] =useState(0)
+const Minesweeper = ({mode={width:8,hight:8,mines:10}})=> {
     var [inplay,setInplay] = useState(false)
     const zerofunction = (cx,cy,game) =>{
         checkagacent.forEach((check) => {
@@ -74,7 +72,7 @@ const Minesweeper = ()=> {
         return game
     }
     class gameclass{
-        constructor(properties ={y:9,x:9,m:10},position = {x:1,y:1}){
+        constructor(properties ={y:8,x:8,m:10},position = {x:1,y:1}){
             this.playerboard = creategameboard({width: properties.x-1,hight:properties.y-1})
             this.mines = properties.m
             this.width = properties.x-1
@@ -87,64 +85,48 @@ const Minesweeper = ()=> {
             }
         }
     }
-    const setupGame=(game,action={type: 'run',x:1,y:1})=>{
+    const setupGame=(game,action={type: 'new'})=>{
         console.log(action)
-        if(action.type === 'new'){
-            return new gameclass()
-        }
-        if(game.state === 'over' || game.state === 'win'){
-            if(action.type !== 'new'){
-                return{...game}
+        if(action.type === 'new'){return new gameclass()}//creates a new game
+        if(game.state === 'over' || game.state === 'win'){return{...game}}//prevents action if game has ended
+        if(action.type==='timer'){return{...game,timer: action.timer+1}}// increases the timer
+        if(action.type === 'mousedown'){//itiates a click event
+            if(action.is === 'f' && action.button === 0){return{...game}}//if cell is flaged don't do click
+            return{
+                ...game,
+                x:action.x,
+                y:action.y,
+                state: 'suspense'
             }
-        }
-        if(action.type === 'mousedown'){
-            game.x = action.x
-            game.y = action.y
-            game.state = 'suspense'
-        }else if( action.type === 'mouseup'){
-            if(game.x === action.x && action.y === game.y ){//mouse up on same button as mouse down
-                game.state = 'play'
+        }else if( action.type === 'mouseup'){//follows through a click event
+            game.state = 'play'
+            if(game.x === action.x && action.y === game.y ){//mouse up on same button as mouse down check
                 switch(action.button){
                     case 0://left click
-                        if(game.state !== 'play' && game.state !== 'ready'){return{...game}}
-                        if(action.is === 'f'){return{...game}}
-                        if(!game.gameboard){
+                        if(!game.gameboard){// if gameboard doesnt exist it creates one
                             let click = {x:action.x,y:action.y}
                             let gameboard = populategameboard(click,game)
-                            game = {...game, gameboard:gameboard,state:'play'}
+                            game = {...game, gameboard:gameboard}
                             setInplay(true)
                         }
-                        game.playerboard[action.x][action.y] = game.gameboard[action.x][action.y]
-                        if(game.gameboard[action.x][action.y] === 0){
+                        game.playerboard[action.x][action.y] = game.gameboard[action.x][action.y]//reviels the tile
+                        if(game.gameboard[action.x][action.y] === 0){// if zero reviel suroundings
                             game = zerofunction(action.x,action.y,game)
-                        }else if(game.gameboard[action.x][action.y] === 'b'){//game over
+                        }else if(game.gameboard[action.x][action.y] === 'b'){//mine clicked/game over
                             setInplay(false)
-                            game.gameboard.forEach((row,x) => { //loops through gameboard to reviel each bomb location
-                                row.forEach((cell,y) => {
-                                    if(game.playerboard[x][y]==='f'){game.playerboard[x][y]='x'
-                                    }
-                                    if(cell === 'b'){
-                                    game.playerboard[x][y] = 'b'
-                                    }
-                                })
-                            });
+                            game.gameboard.forEach((row,x) => {row.forEach((cell,y) => {//loops through gameboard to reviel each bomb location
+                                if(game.playerboard[x][y]==='f'){game.playerboard[x][y]='x'}//if cell was flaged sets it to incorrectly flaged
+                                if(cell === 'b'){game.playerboard[x][y] = 'b'}// if it contained a bpmb
+                            })});
                             game.playerboard[action.x][action.y] = 'e'
-                            return {
-                                ...game,
-                                state: 'over'
-                            }
+                            game.state = 'over'
+                            return{...game}
                         }
-                        let total =(game.width+1) * (game.hight+1)
-                        console.log(total)
-                        game.playerboard.forEach((row) => { //loops through gameboard to reviel each bomb location
-                            row.forEach((cell) => {
-                                if(cell !== '#' && cell !== 'f'){
-                                    total = total-1
-                                }
-                            })
-                        })
-                        console.log(total - game.mines)
-                        if(total - game.mines === 0){///game won
+                        let total =((game.width+1) * (game.hight+1))-game.mines//total is number of cells that must be revield to win
+                        game.playerboard.forEach((row) => {row.forEach((cell) => { //loops through player board to total the number of revield cells
+                            if(cell !== '#' && cell !== 'f'){total = total-1}//mines each unrevield cell, after this total in number of unrevield cells
+                        })})
+                        if(total === 0){///game won
                             game.state = 'win'
                         }
                     break;
@@ -162,25 +144,14 @@ const Minesweeper = ()=> {
                             game.playerboard[action.x][action.y] = '#'
                         }
                     break;
-                    default:
-                        return{...game}
                 }
-                // validclick()
             }
             game.x = ''
             game.y = ''
-        return{...game}
         }
-        if(action.type==='timer'){
-            game.timer = action.timer+1
-            return{...game}
-        }
-        return {
-            ...game
-        }
+        return {...game}
     }
-    const [game,dispatchGame] = useReducer(setupGame,new gameclass({x:8,y:8,m:10}))
-
+    const [game,dispatchGame] = useReducer(setupGame,new gameclass({x:mode.width,y:mode.hight,m:mode.mines}))
     useEffect(()=>{
         if(game.state === 'play' || game.state === 'suspense'){
             setTimeout(()=>dispatchGame({type: 'timer',timer: game.timer}),1000)

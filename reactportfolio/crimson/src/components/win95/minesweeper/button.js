@@ -19,7 +19,7 @@ const Button = ({x,y,dispatchGame,type,children})=>{
             onClick={(e)=>dispatchGame({type:'new',e:e,x:x,y:y,is:children})}
             onContextMenu={(e)=>{e.preventDefault(); dispatchGame({type:'rightclick',x:x,y:y,is:children})}}
         >
-            {children}
+            <img src={require('./assets/state/'+children+'.svg')} alt={children}/>
         </button>:
         (children === '#'|| children === 'f'|| children==='g')?
         <button

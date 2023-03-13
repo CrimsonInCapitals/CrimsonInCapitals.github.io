@@ -9,16 +9,12 @@ import Button from './button';
 
 
 const Board = ({game,dispatchGame})=> {
- 
-    // useEffect(()=>{
-    //     console.log(game)
-    // },[game])
     return (
        <section className='board'>
             {game.playerboard.map((row,rowindex)=>(
                 <div key={rowindex}>
                 {row.map((cell,colindex)=>(
-                    <Button key={rowindex+colindex} type='cell' x={rowindex} y={colindex} dispatchGame={dispatchGame}>{cell}</Button>
+                    <Button key={rowindex+','+colindex} type='cell' x={rowindex} y={colindex} dispatchGame={dispatchGame}>{cell}</Button>
                 ))}
                 </div>
             ))}

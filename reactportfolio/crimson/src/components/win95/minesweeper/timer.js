@@ -23,7 +23,7 @@ const Timer = ({count})=>{
     return (
         <div className='counter'>
             {displaynum.map((digit,index)=>(
-                    <img src={require('./assets/digitalclock/'+digit+'.svg')} alt={'digital clock style number:'+digit}/>
+                    <img key={digit+','+index} src={require('./assets/digitalclock/'+digit+'.svg')} alt={'digital clock style number:'+digit}/>
             ))}
         </div>
         );

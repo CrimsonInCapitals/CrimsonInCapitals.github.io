@@ -8,6 +8,7 @@ import { dark, light } from './colors';
 import Button from './components/button';
 import { useInternalContext } from './context/links';
 import Experiment from './pages/experimental';
+import { AppProvider } from './components/win95/context/app';
 
 const App = ()=> {
   const isrank =(variable)=> {if(variable.rank === 1){return true}else{return false}}

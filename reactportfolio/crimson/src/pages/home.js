@@ -2,7 +2,8 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { useThemeContext } from '../context/theme';
-import Window from '../components/win95/window';
+import { useAppContext } from '../components/win95/context/app';
+import DesktopButton from '../components/win95/desktopbutton';
 import { AppProvider } from '../components/win95/context/app';
 const Home = ()=> {
     const theme = useThemeContext()
@@ -17,7 +18,10 @@ const Home = ()=> {
     }
     return (
         <main className='home'>
-            <AppProvider><Window app='minesweeper'/></AppProvider>
+                  <AppProvider>
+                    <DesktopButton appname='Minesweeper'/>
+                  </AppProvider>
+
             <section>
                 <h1>Hi There</h1>
                 <p>Two forces will always be at odds, the efficent, and the asthetic. As people we exist on this sliding scale. The best design for the most people exists at the mean. As a designer I crave the asthetic, as a Developer I want the efficent, this intersection of the oposition is where I create.</p>

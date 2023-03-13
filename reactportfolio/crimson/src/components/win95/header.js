@@ -8,6 +8,9 @@ const Header = ({children})=> {
     return (
         <header>
             {children}
+            <menu>
+                <button><img src={require('./icons/close.svg')} alt='close'/></button>
+            </menu>
         </header>
     );
 }

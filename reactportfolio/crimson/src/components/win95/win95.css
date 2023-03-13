@@ -29,15 +29,23 @@ main.game{
     flex-direction: column;
     gap: 8px;
 }
-button{
+.game button{
     box-shadow:inset -2px -2px black,inset -4px -4px gray, inset 2px 2px white;
     border: none;
     border-radius: 0;
+    width: fit-content;
+    padding: 0;
+}
+.controls button{
+    width: 54px;
+    height: 54px;
+}
+.button img{
+    height: 100%;
 }
 .board button{
     width: 30px;
     height: 30px;
-    padding: 0;
 }
 div.cell{
         width: 30px;
@@ -58,11 +66,23 @@ div.cell{
 }
 .game .controls{
     box-shadow: inset -2px -2px white, inset 2px 2px gray;
-    padding: 8px;
+    padding: 8px 10px;
     display: flex;
     gap: 8px;
     justify-content: space-between;
+    align-items: center;
 }
 .counter img{
     height: 42px;
+}
+.desktopbutton{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: unset;
+    border: 0;
+}
+.desktopbutton img{
+    height: 50px;
 }
