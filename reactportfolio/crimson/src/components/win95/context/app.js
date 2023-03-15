@@ -6,19 +6,23 @@ const AppContext = createContext(undefined);
 export const AppProvider = ({ children }) => {
     const defaultimg = 'minesweeper'
     class app{
-        constructor(name,component,menu=[],open = false,icon = defaultimg){
+        constructor(name,component,menu=[],open = false,icon = defaultimg,header=['minimise','maximise','close']){
             this.name = name
             // this.icon = require('../icon/'+name+'.svg')
             this.menu = menu
             this.component = component
             this.open = open
             this.icon = icon
+            this.header = header
         }
     }
     const open=(apps,action)=>{
         apps.forEach(app => {
             if(app.name === action.app){
                 switch(action.do){
+                    case 'minimise':
+                        app.open=false
+                        break
                     case 'open':
                         app.open =true
                         break;
@@ -38,7 +42,7 @@ export const AppProvider = ({ children }) => {
             ]},
             {display: 'Help',Content:[
                 {display: 'Rules', action: ''}
-            ]}],false,'minesweeper'),
+            ]}],false,'minesweeper',['minimise','close']),
         new app('Snake',<Minesweeper/>)
         ])
     const isOpen=app=>{
@@ -46,7 +50,7 @@ export const AppProvider = ({ children }) => {
     }
     return (
         <AppContext.Provider value={[apps,displatchApps]}>
-            {apps.filter(isOpen).map((app)=>(<Window key={app.name}app={app}/>))}
+            {apps.filter(isOpen).map((app,index)=>(<Window index={index} key={app.name}app={app}/>))}
             {children}
         </AppContext.Provider>
     );

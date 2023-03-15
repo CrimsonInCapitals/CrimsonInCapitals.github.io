@@ -86,11 +86,14 @@ const Minesweeper = ({mode={width:8,hight:8,mines:10}})=> {
         }
     }
     const setupGame=(game,action={type: 'new'})=>{
-        console.log(action)
         if(action.type === 'new'){return new gameclass()}//creates a new game
+
         if(game.state === 'over' || game.state === 'win'){return{...game}}//prevents action if game has ended
+
         if(action.type==='timer'){return{...game,timer: action.timer+1}}// increases the timer
+
         if(action.type === 'mousedown'){//itiates a click event
+
             if(action.is === 'f' && action.button === 0){return{...game}}//if cell is flaged don't do click
             return{
                 ...game,
@@ -162,7 +165,7 @@ const Minesweeper = ({mode={width:8,hight:8,mines:10}})=> {
        <main className='game'>
         <section className='controls'>
         <Timer count={game.mines-game.flags}/>
-        <Button dispatchGame={dispatchGame} type='action'>{game.state}</Button>
+        <Button key={game.state} dispatchGame={dispatchGame} type='action'>{game.state}</Button>
         <Timer count={game.timer}/>
 
         </section>

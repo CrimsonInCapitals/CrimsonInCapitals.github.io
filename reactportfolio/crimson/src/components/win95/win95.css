@@ -10,6 +10,42 @@ header{
     font-size: 16px;
     background-color: blue;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img{
+    height: 30px;
+}
+header >menu>button>img{
+    height: 20px;
+    padding: 4px 6px;
+}
+header>menu button:last-child{
+    margin-left: 4px;
+}
+header h1{
+    margin: 0;
+    font-size: 18px;
+}
+header>div{
+    display: flex;
+    gap: 4px;
+}
+header>menu{
+    margin: 0;
+    padding: 0;
+}
+article>menu{
+    display: flex;
+    gap: 6px;
+    color: black;
+    margin: 0;
+    padding: 2px;
+}
+p{margin: 0;}
+article>menu>p::first-letter{
+    text-decoration: underline;
 }
 section.board div{
     display: flex;
@@ -29,13 +65,14 @@ main.game{
     flex-direction: column;
     gap: 8px;
 }
-.game button{
+.window button{
     box-shadow:inset -2px -2px black,inset -4px -4px gray, inset 2px 2px white;
     border: none;
     border-radius: 0;
     width: fit-content;
     padding: 0;
 }
+
 .controls button{
     width: 54px;
     height: 54px;
