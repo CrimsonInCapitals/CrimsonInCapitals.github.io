@@ -62,7 +62,7 @@ const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
     if(!cookies.get('minesweeper')){
         cookies.set('minesweeper', mode, { path: '/' });
     }else{
-        // mode = cookies.get('minesweeper')
+        mode = cookies.get('minesweeper')
     }
 // console.log(cookies.get('myCat')); // Pacman
     var [inplay,setInplay] = useState(false)
