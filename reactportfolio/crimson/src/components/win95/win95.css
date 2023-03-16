@@ -111,6 +111,7 @@ div.cell{
 }
 .counter img{
     height: 42px;
+    width: 22px;
 }
 .desktopbutton{
     display: flex;

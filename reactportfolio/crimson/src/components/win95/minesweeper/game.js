@@ -6,6 +6,7 @@ import React from 'react';
 import Board from './board';
 import Timer from './timer';
 import Button from './button';
+import Cookies from 'universal-cookie';
 
 
 const creategameboard = (game)=>{
@@ -56,7 +57,14 @@ const populategameboard = (click,game)=>{
 
 
 
-const Minesweeper = ({mode={width:8,hight:8,mines:10}})=> {
+const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
+    const cookies = new Cookies();
+    if(!cookies.get('minesweeper')){
+        cookies.set('minesweeper', mode, { path: '/' });
+    }else{
+        // mode = cookies.get('minesweeper')
+    }
+// console.log(cookies.get('myCat')); // Pacman
     var [inplay,setInplay] = useState(false)
     const zerofunction = (cx,cy,game) =>{
         checkagacent.forEach((check) => {
@@ -72,7 +80,7 @@ const Minesweeper = ({mode={width:8,hight:8,mines:10}})=> {
         return game
     }
     class gameclass{
-        constructor(properties ={y:8,x:8,m:10},position = {x:1,y:1}){
+        constructor(properties ={y:mode.hight,x:mode.width,m:mode.mines},position = {x:1,y:1}){
             this.playerboard = creategameboard({width: properties.x-1,hight:properties.y-1})
             this.mines = properties.m
             this.width = properties.x-1

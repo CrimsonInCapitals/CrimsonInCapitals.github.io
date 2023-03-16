@@ -1,41 +1,23 @@
 // import './App.css';
 // import { useEffect, useState } from 'react';
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useReducer, useState,useRef, useLayoutEffect } from 'react';
 import './win95.css'
 
 import Header from './header';
 import HeaderMenu from './headermenu.js';
 import Draggable from 'react-draggable';
 
-const openpositions = [{x:0,y:0},{x:1,y:1}]
-
+let deskWidth = window.innerWidth
+let deskHight = window.innerHeight
+const openpositions = [{x:deskWidth/2-200,y:deskHight/2-200},{x:deskWidth/2-160,y:deskHight/2-160},{x:deskWidth/2-1200,y:deskHight/2-120},{x:deskWidth/2-80,y:deskHight/2-80}]
 
 
 const Window = ({app,index})=> {
-    const positiondefault = {
-        transform: 'translate('+openpositions[index].x+'px, '+openpositions[index].y+'px)'
-    }
-    const move = (position,action)=>{
-        if(action.take === 'start'){
-            setInMotion(true)
-            
-        }else if(action.take === 'stop'){setInMotion(false)}
-        else{
-            console.log(action.e)
-        }
-    }
-    const [inMotion,setInMotion] = useState(false)
-    const [position,dispatchPosition] = useReducer(move,positiondefault)
-    useEffect(()=>{
-        while(inMotion){
-            
-        }
 
-    },[setInMotion])
     return (
-        <Draggable handle=".handle">
-            <article className='window'>
-                    <Header app={app} dispatchPosition={dispatchPosition}/>
+        <Draggable handle=".handle" id={'window'+index} defaultPosition={{x: openpositions[index].x, y: openpositions[index].y}}>
+            <article className='window' >
+                    <Header app={app}/>
                     <HeaderMenu app={app}/>
                         {app.component}
 
