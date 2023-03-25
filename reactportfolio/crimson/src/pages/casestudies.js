@@ -5,9 +5,15 @@ import React from 'react';
 
 const CaseStudies = ()=> {
     return (
-    <section>
-        <h1>CaseStudies page</h1>
-    </section>
+        <>
+        <section>
+            <h1>CaseStudies page</h1>
+        </section>
+        <article>
+            <img/>
+            <h2></h2>
+        </article>
+        </>
     );
 }
 

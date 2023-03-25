@@ -81,6 +81,18 @@ const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
     }
     class gameclass{
         constructor(properties ={y:mode.hight,x:mode.width,m:mode.mines},position = {x:1,y:1}){
+            // var cookies = new Cookies();
+            // if(cookies.get('game',{path:'./minesweeper'})){
+                // let game = cookies.get('game',{path: './minesweeper'})
+                // this.playerboard = game.playerboard
+                // this.mines = game.mines
+                // this.width = game.width
+                // this.hight = game.hight
+                // this.position = game.position
+                // this.state = game.state
+                // this.timer = game.timer
+                // this.flags = game.flags
+            // }else{
             this.playerboard = creategameboard({width: properties.x-1,hight:properties.y-1})
             this.mines = properties.m
             this.width = properties.x-1
@@ -90,12 +102,19 @@ const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
             this.timer = 0
             this.flags = 0
             this.new = ()=>{
+            // }
             }
         }
     }
     const setupGame=(game,action={type: 'new'})=>{
-        if(action.type === 'new'){return new gameclass()}//creates a new game
-
+        let cookies = new Cookies()
+        // cookies.set('game',{path: './minesweeper'})
+        if(action.type === 'new'){
+            game = new gameclass()
+            cookies.set('game',game,{path:'./minesweeper'})
+            return game
+        }//creates a new game
+        cookies.set('game',game,{path:'./minesweeper'})
         if(game.state === 'over' || game.state === 'win'){return{...game}}//prevents action if game has ended
 
         if(action.type==='timer'){return{...game,timer: action.timer+1}}// increases the timer
@@ -168,6 +187,7 @@ const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
             setTimeout(()=>dispatchGame({type: 'timer',timer: game.timer}),1000)
         }
     },[inplay,game.timer])
+    // console.log(cookies.get('game',{path: './minesweeper'}))
     return (
        <>
        <main className='game'>
