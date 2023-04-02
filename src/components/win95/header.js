@@ -6,9 +6,8 @@ import { useAppContext } from './context/app';
 const Header = ({app,dispatchPosition})=> {
     const [apps,dispatchApps] = useAppContext()
     return (
-        <header className='handle'
-        >
-            <div>
+        <header>
+            <div className='handle'>
                 <img src={require('./context/icons/'+app.icon+'.svg')} alt={app.icon}/>
                 <h1>{app.name}</h1>
             </div>
