@@ -38,13 +38,13 @@ header>div{
     display: flex;
     gap: 4px;
     align-items: center;
-    background-color: rebeccapurple;
     width: fill;
 }
 header>menu{
     margin: 0;
     padding: 0;
     width: fit-content;
+    display: flex;
 }
 article>menu{
     display: flex;
