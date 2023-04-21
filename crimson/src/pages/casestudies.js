@@ -12,8 +12,8 @@ const CaseStudies = ()=> {
             <h1>CaseStudies page</h1>
         </section>
         <Carasol>
-            <CarasolItem></CarasolItem>
-            <CarasolItem></CarasolItem>
+            <CarasolItem Header='item 1'></CarasolItem>
+            <CarasolItem Header='item 2'></CarasolItem>
             <CarasolItem></CarasolItem>
         </Carasol>
         </>

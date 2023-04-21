@@ -12,6 +12,7 @@
     max-width: 100%;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    transition: ease-in-out 10s;
 }
 article{
     all: unset;
