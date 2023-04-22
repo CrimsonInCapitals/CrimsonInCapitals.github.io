@@ -5,14 +5,20 @@
     overflow: hidden;
     background-color: gray;
 }
-.progress{
+.progress0{
     background-color: blue;
     height: 100%;
     min-width: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.progress100{
+    background-color: blue;
+    height: 100%;
     max-width: 100%;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    transition: ease-in-out 10s;
+    transition: ease-in-out 5s;
 }
 article{
     all: unset;
