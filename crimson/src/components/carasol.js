@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import CarasolItem from './carasolItem';
+import CarasolCard from './carasolItem';
+import Scroller from './Scroller';
 
 
 
-const Carasol = ({children})=> {
+const Carasol = ({items})=> {
 
     const [value,setValue]=useState(0)
     const [displayItem,setdisplayItem] = useState(0)
 
     const newslide = ()=>{
-        children.length-1 > displayItem? setdisplayItem(displayItem+1):setdisplayItem(0)
+        items.length-1 > displayItem? setdisplayItem(displayItem+1):setdisplayItem(0)
     }
 
     const handlechange = ()=>{
@@ -19,8 +22,8 @@ const Carasol = ({children})=> {
 
 return(
     <section className='carasol'>
-        {children[displayItem]}
-        {children.map((child,index)=>(index=0? child: {...child,className: 'current'}))}
+        <CarasolItem Header={items[displayItem].Header}/>
+        
     </section>
     );
 }

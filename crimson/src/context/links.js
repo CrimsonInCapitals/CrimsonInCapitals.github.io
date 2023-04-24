@@ -1,7 +1,7 @@
 import {createContext, useContext} from "react";
 import Home from "../pages/home";
 import About from "../pages/about";
-import CaseStudies from "../pages/casestudies";
+// import CaseStudies from "../pages/casestudies";
 import Contact from "../pages/contact";
 
 const SocialContext = createContext(undefined);
@@ -45,8 +45,7 @@ export const InternalProvider = ({ children }) => {
       const pages = [
         new Page('Home','/',<Home/>,1),
         new Page('Contact','/contact',<Contact/>,1),
-        new Page('About','/about',<About/>,1),
-        new Page('Case Studies','/casestudies',<CaseStudies/>,1)
+        new Page('About','/about',<About/>,1)
     ]
     return (
         <InternalContext.Provider value={pages}>
