@@ -23,3 +23,41 @@
 article{
     all: unset;
 }
+#cardDeck{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    height: fit-content;
+    gap: 10px;
+}
+.card{
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 1;
+    position: relative;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.cardheader{
+    margin: 0;
+    top: 15px;
+    left: 15px;
+    position: absolute;
+}
+.smallCard{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.mediumCard{
+    grid-column: span 2;
+    grid-row: span 2;
+
+}
+.largeCard{
+    grid-column: span 3;
+    grid-row: span 3;
+
+}

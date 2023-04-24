@@ -1,8 +1,9 @@
 import {createContext, useContext} from "react";
 import Home from "../pages/home";
 import About from "../pages/about";
-// import CaseStudies from "../pages/casestudies";
+import CaseStudies from "../pages/casestudies";
 import Contact from "../pages/contact";
+import AmazingGrace from "../pages/caseStudies/AmazingGrace";
 
 const SocialContext = createContext(undefined);
 
@@ -45,7 +46,20 @@ export const InternalProvider = ({ children }) => {
       const pages = [
         new Page('Home','/',<Home/>,1),
         new Page('Contact','/contact',<Contact/>,1),
-        new Page('About','/about',<About/>,1)
+        new Page('About','/about',<About/>,1),
+        new Page('Case Studies','/casestudies',<CaseStudies/>,1),
+        new Page('Case Study: Amazing Grace','/casestudies/amazinggrace',<AmazingGrace/>,2),
+        new Page('Case Study: Ask Italian','/casestudies/askitalian',<AmazingGrace/>,2),
+        new Page('Case Study: Aspinal of London','/casestudies/aspinaloflondon',<AmazingGrace/>,2),
+        new Page('Case Study: Bobbin & Em','/casestudies/bobbin&em',<AmazingGrace/>,2),
+        new Page('Case Study: Cudoni','/casestudies/cudoni',<AmazingGrace/>,2),
+        new Page('Case Study: Eden Gardens','/casestudies/edengardens',<AmazingGrace/>,2),
+        new Page('Case Study: Icon Design','/casestudies/icondesign',<AmazingGrace/>,2),
+        new Page('Case Study: Minecraft Displates','/casestudies/minecraaftdisplates',<AmazingGrace/>,2),
+        new Page('Case Study: The Dog Room','/casestudies/thedogroom',<AmazingGrace/>,2),
+        new Page('Case Study: Vector Illustration','/casestudies/vectorillustration',<AmazingGrace/>,2),
+
+
     ]
     return (
         <InternalContext.Provider value={pages}>
