@@ -85,6 +85,9 @@ article{
     height: fit-content;
     min-height: 1rem;
 }
+div.exwideCard p{
+    position: relative;
+}
 .card p{
     position: absolute;
     font-size: 2rem;

@@ -15,6 +15,7 @@ const TheDogRoom = ()=> {
                 <CaseCard size='medium' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Primary Brand Mark'/>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Alternative Brand Mark'/>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Alternative Brand Mark'/>
+                <CaseText size='exwide'>The Primary brand mark as well as the vriations where deisnged in acordance with the brief broved by the business owner</CaseText>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Primary Colour'/>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Secondary Colour: Light'/>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Secondary Colour: Dark'/>
