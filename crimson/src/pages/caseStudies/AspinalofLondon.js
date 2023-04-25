@@ -6,27 +6,31 @@ const AspinalofLondon = ()=> {
     return (
         <main className='home'>
             <section>
-                <h1>The Dog Room</h1>
-                <p>The dog room is an independed dog grooming business that opened in May 2022.</p>
+                <h1>Aspinal of London </h1>
+                <p></p>
             </section>
             <section id='cardDeck'>
-                <CaseCard size='medium' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Primary Brand Mark'/>
+                <CaseCard size='medium' Image={require('../../sources/caseStudies/AspinalOfLondon/font.jpg')} Header='#23231C - Secondary Colour: Medium'/>
+                <CaseText size='small'>In order to have to have to word House match Aspinal I had to design the letters, as custom lettering had been used in the original Aspinal of London logo.</CaseText>
+                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Primary Brand Mark'/>
+                <CaseText size='small'>We explored multiple variations of both designs settling on a Black and gold Sceme for House of Aspinal, with the lions head on the crest.</CaseText>
+                <CaseCard size='medium' Image={require('../../sources/caseStudies/AspinalOfLondon/houseofaspinalvariations.jpg')} Header='#F1F1C4 - Secondary Colour: Light'/>
+                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Primary Brand Mark'/>
+
+                <CaseCard size='medium' Image={require('../../sources/caseStudies/AspinalOfLondon/aspinaloflondonvariations.jpg')} Header='#EF9400 - Primary Colour'/>
+
+                <CaseText size='small'>While Aspinal of london would keep it's original look while still switching to the simplified crest design.</CaseText>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/logoonwhite.jpg')} Header='Alternative Brand Mark'/>
-                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/dogondark.jpg')} Header='Alternative Brand Mark'/>
-                <CaseText size='exwide'>The Primary brand mark as well as the variations where deisnged in acordance with the brief broved by the business owner.</CaseText>
-                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/ef9400.jpg')} Header='#EF9400 - Primary Colour'/>
-                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/f1f1c4.jpg')} Header='#F1F1C4 - Secondary Colour: Light'/>
-                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/23231c.jpg')} Header='#23231C - Secondary Colour: Medium'/>
-                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/090907.jpg')} Header='#090907 - Secondary Colour: Dark'/>
-                <CaseText size='wide'>The primary palete is soft and complimentry while remaining eye catching. The other primary colours were selected to be inkeeping with the look of the brand while also be bringt and atention grabbing.</CaseText>
+                
+                <CaseText size='exwide'>we explored several alternative options, including buttons and designs with the originsal crest and without any crest, brofre altimatly agreeing on the options above.</CaseText>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/064f0a.jpg')} Header='#064F0A- Other Brand Colour: Green'/>
-                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/ff0d0d.jpg')} Header='#FF0D0D - Other Brand Colour: Red'/>
-                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/081d65.jpg')} Header='#081D65 - Other Brand Colour: Blue'/>
-                <CaseText size='exwide'/>
-                <CaseCard size='medium' Image={require('../../sources/caseStudies/theDogRoom/postexample1.jpg')} Header='Post to help potential customers locate the business'/>
-                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/postexample2.jpg')} Header='Post to announce that the business was now open'/>
-                <CaseText size='small'>I also created a handful of social media templates to allow the businnes owner to share updates and information in a profecinal maannor</CaseText>
-            </section>
+                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/064f0a.jpg')} Header='#064F0A- Other Brand Colour: Green'/>
+                <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/064f0a.jpg')} Header='#064F0A- Other Brand Colour: Green'/>
+
+                <CaseCard size='large' Image={require('../../sources/caseStudies/AspinalOfLondon/default.jpg')}/>
+                <CaseText size='exwide'>The final think I did was design the A letter mark for use as an umbrella that both companies could exist under. While plans where delayed due to the pandemic we should start to see the business develope in the coming years.</CaseText>
+
+                </section>
         </main>
     );
 }
