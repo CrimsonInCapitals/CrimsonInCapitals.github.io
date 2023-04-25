@@ -4,6 +4,15 @@ import About from "../pages/about";
 import CaseStudies from "../pages/casestudies";
 import Contact from "../pages/contact";
 import AmazingGrace from "../pages/caseStudies/AmazingGrace";
+import AskItalian from "../pages/caseStudies/AskItalian";
+import AspinalofLondon from "../pages/caseStudies/AspinalofLondon";
+import BobbinEm from "../pages/caseStudies/Bobbin&Em";
+import Cudoni from "../pages/caseStudies/Cudoni";
+import EdenGardens from "../pages/caseStudies/EdenGardens";
+import Icons from "../pages/caseStudies/Icons";
+import MinecraftDisplate from "../pages/caseStudies/MinecraftDisplate";
+import TheDogRoom from "../pages/caseStudies/TheDogRoom";
+import VectorIllustration from "../pages/caseStudies/VectorIllustration";
 
 const SocialContext = createContext(undefined);
 
@@ -49,15 +58,15 @@ export const InternalProvider = ({ children }) => {
         new Page('About','/about',<About/>,1),
         new Page('Case Studies','/casestudies',<CaseStudies/>,1),
         new Page('Case Study: Amazing Grace','/casestudies/amazinggrace',<AmazingGrace/>,2),
-        new Page('Case Study: Ask Italian','/casestudies/askitalian',<AmazingGrace/>,2),
-        new Page('Case Study: Aspinal of London','/casestudies/aspinaloflondon',<AmazingGrace/>,2),
-        new Page('Case Study: Bobbin & Em','/casestudies/bobbin&em',<AmazingGrace/>,2),
-        new Page('Case Study: Cudoni','/casestudies/cudoni',<AmazingGrace/>,2),
-        new Page('Case Study: Eden Gardens','/casestudies/edengardens',<AmazingGrace/>,2),
-        new Page('Case Study: Icon Design','/casestudies/icondesign',<AmazingGrace/>,2),
-        new Page('Case Study: Minecraft Displates','/casestudies/minecraaftdisplates',<AmazingGrace/>,2),
-        new Page('Case Study: The Dog Room','/casestudies/thedogroom',<AmazingGrace/>,2),
-        new Page('Case Study: Vector Illustration','/casestudies/vectorillustration',<AmazingGrace/>,2),
+        new Page('Case Study: Ask Italian','/casestudies/askitalian',<AskItalian/>,2),
+        new Page('Case Study: Aspinal of London','/casestudies/aspinaloflondon',<AspinalofLondon/>,2),
+        new Page('Case Study: Bobbin & Em','/casestudies/bobbin&em',<BobbinEm/>,2),
+        new Page('Case Study: Cudoni','/casestudies/cudoni',<Cudoni/>,2),
+        new Page('Case Study: Eden Gardens','/casestudies/edengardens',<EdenGardens/>,2),
+        new Page('Case Study: Icon Design','/casestudies/icondesign',<Icons/>,2),
+        new Page('Case Study: Minecraft Displates','/casestudies/minecraaftdisplates',<MinecraftDisplate/>,2),
+        new Page('Case Study: The Dog Room','/casestudies/thedogroom',<TheDogRoom/>,2),
+        new Page('Case Study: Vector Illustration','/casestudies/vectorillustration',<VectorIllustration/>,2),
 
 
     ]

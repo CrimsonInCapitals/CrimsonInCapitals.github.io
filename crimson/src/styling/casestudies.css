@@ -46,6 +46,8 @@ article{
     top: 15px;
     left: 15px;
     position: absolute;
+    color: #d7cfc8;
+    font-size: 1.1rem;
 }
 .smallCard{
     grid-column: span 1;
