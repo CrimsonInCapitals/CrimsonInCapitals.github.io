@@ -7,7 +7,8 @@ import Carasol from '../components/carasol'
 import CarasolItem from '../components/carasolItem'
 import Scroller from '../components/Scroller';
 import CarasolCard from '../components/carasolCard';
-import CaseCard from '../components/casecard';
+import { CaseCard } from '../components/casecard';
+
 const CaseStudies = ()=> {
 
     return (

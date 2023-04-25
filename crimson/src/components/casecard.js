@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const CaseCard = ({Header='Default',Image=require('../sources/default.png'),size='small',To})=> {
+export const CaseCard = ({Header='Default',Image=require('../sources/default.png'),size='small',To})=> {
 return(
     To ?
     <Link className={size+'Card card'} to={To}>
@@ -15,4 +15,11 @@ return(
 </article>
     )
 }
-export default CaseCard
+
+export const CaseText = ({Header='Default',Image=require('../sources/default.png'),size='small',To,children})=> {
+return(
+    <div className={size+'Card card'}>
+        {children &&  <p>{children}</p>}
+    </div>
+    )
+}
