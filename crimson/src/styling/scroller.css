@@ -13,7 +13,7 @@
 .scroller article{
     width: 20vw;
     height: 15vw;
-    background-color: aqua;
+    /* background-color: aqua; */
     overflow: hidden;
 }
 .scroller article img{

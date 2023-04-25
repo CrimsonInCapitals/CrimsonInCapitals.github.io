@@ -3,7 +3,7 @@
     src: url(headingpix.ttf);
 }
 
-article{
+article.window{
     background-color: lightgray;
     padding: 4px;
     width: fit-content;

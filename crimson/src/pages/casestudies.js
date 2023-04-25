@@ -17,16 +17,16 @@ const CaseStudies = ()=> {
                 <p></p>
             </section>
             <section id='cardDeck'>
-                <CaseCard size='small' Header='Bobbin & Em'  To='/casestudies/bobbin&em'/>
-                <CaseCard size='medium' Header='The Dog Room' To='/casestudies/thedogroom'/>
-                <CaseCard size='small' Header='Amazing Grace' To='/casestudies/amazinggrace'/>
-                <CaseCard size='medium' Header='Ask Italian' To='/casestudies/askitalian'/>
-                <CaseCard size='small' Header='Icons' To='/casestudies/icondesign'/>
-                <CaseCard size='small' Header='Vecotor Illustration' To='/casestudies/vectorillustration'/>
-                <CaseCard size='large' Header='Aspinal of London' To='/casestudies/aspinaloflondon'/>
-                <CaseCard size='medium' Header='Minecraft Posters' To='/casestudies/minecraaftdisplates'/>
-                <CaseCard size='small' Header='Cudoni' To='/casestudies/cudoni'/>
-                <CaseCard size='small' Header='Eden Gardens' To='/casestudies/edengardens'/>
+                <CaseCard size='small' Header='Bobbin & Em'  To='/casestudies/bobbin&em' Image={require('../sources/caseStudies/bobboin&Em/default.jpg')}/>
+                <CaseCard size='medium' Header='The Dog Room' To='/casestudies/thedogroom' Image={require('../sources/default.png')}/>
+                <CaseCard size='small' Header='Amazing Grace' To='/casestudies/amazinggrace' Image={require('../sources/caseStudies/amazingGrace/default.jpg')}/>
+                <CaseCard size='medium' Header='Ask Italian' To='/casestudies/askitalian' Image={require('../sources/default.png')}/>
+                <CaseCard size='small' Header='Icons' To='/casestudies/icondesign' Image={require('../sources/default.png')}/>
+                <CaseCard size='small' Header='Vecotor Illustration' To='/casestudies/vectorillustration' Image={require('../sources/default.png')}/>
+                <CaseCard size='large' Header='Aspinal of London' To='/casestudies/aspinaloflondon' Image={require('../sources/default.png')}/>
+                <CaseCard size='medium' Header='Minecraft Posters' To='/casestudies/minecraaftdisplates' Image={require('../sources/default.png')}/>
+                <CaseCard size='small' Header='Cudoni' To='/casestudies/cudoni' Image={require('../sources/default.png')}/>
+                <CaseCard size='small' Header='Eden Gardens' To='/casestudies/edengardens' Image={require('../sources/default.png')}/>
             </section>
             
         </main>
