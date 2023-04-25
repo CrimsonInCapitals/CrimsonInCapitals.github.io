@@ -18,9 +18,6 @@ const Home = ()=> {
     }
     return (
         <main className='home'>
-                  <AppProvider>
-                    <DesktopButton appname='Minesweeper'/>
-                  </AppProvider>
 
             <section>
                 <h1>Hi There</h1>

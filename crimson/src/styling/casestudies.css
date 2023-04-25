@@ -35,6 +35,7 @@ article{
     border-radius: 15px;
     aspect-ratio: 1;
     position: relative;
+
 }
 .card img{
     width: 100%;
@@ -46,8 +47,17 @@ article{
     top: 15px;
     left: 15px;
     position: absolute;
-    color: #d7cfc8;
+    color: #d7cfc800;
     font-size: 1.1rem;
+}
+.card:hover .cardheader{
+    color: #d7cfc8;
+}
+.card:hover{
+    background-color: black;
+}
+.card:hover img{
+    opacity: 50%;
 }
 .smallCard{
     grid-column: span 1;

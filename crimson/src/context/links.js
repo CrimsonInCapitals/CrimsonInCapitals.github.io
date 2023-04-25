@@ -8,11 +8,11 @@ import AskItalian from "../pages/caseStudies/AskItalian";
 import AspinalofLondon from "../pages/caseStudies/AspinalofLondon";
 import BobbinEm from "../pages/caseStudies/Bobbin&Em";
 import Cudoni from "../pages/caseStudies/Cudoni";
-import EdenGardens from "../pages/caseStudies/EdenGardens";
 import Icons from "../pages/caseStudies/Icons";
 import MinecraftDisplate from "../pages/caseStudies/MinecraftDisplate";
 import TheDogRoom from "../pages/caseStudies/TheDogRoom";
 import VectorIllustration from "../pages/caseStudies/VectorIllustration";
+import Minesweeperpage from "../pages/caseStudies/Minesweeper";
 
 const SocialContext = createContext(undefined);
 
@@ -62,7 +62,7 @@ export const InternalProvider = ({ children }) => {
         new Page('Case Study: Aspinal of London','/casestudies/aspinaloflondon',<AspinalofLondon/>,2),
         new Page('Case Study: Bobbin & Em','/casestudies/bobbin&em',<BobbinEm/>,2),
         new Page('Case Study: Cudoni','/casestudies/cudoni',<Cudoni/>,2),
-        new Page('Case Study: Eden Gardens','/casestudies/edengardens',<EdenGardens/>,2),
+        new Page('Minesweeper','/casestudies/minesweeper',<Minesweeperpage/>,2),
         new Page('Case Study: Icon Design','/casestudies/icondesign',<Icons/>,2),
         new Page('Case Study: Minecraft Displates','/casestudies/minecraaftdisplates',<MinecraftDisplate/>,2),
         new Page('Case Study: The Dog Room','/casestudies/thedogroom',<TheDogRoom/>,2),
