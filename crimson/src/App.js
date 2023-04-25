@@ -34,7 +34,7 @@ const App = ()=> {
       <header style={mainstyle}>
         <nav>
           {pages.filter(isrank).map(({name,url,component})=>(<Button use='link' key={url} url={url}> {name} </Button>))}
-          <a href='../casestudy'>Case Studies</a>
+          <a href='../resume.pdf'>Résumé</a>
         </nav>
       </header>
       <main style={mainstyle}>
