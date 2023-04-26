@@ -9,10 +9,10 @@ const BobbinEm = ()=> {
                 <h1>Bobbin & EM</h1>
             </section>
             <section id='cardDeck'>
-                <CaseCard size='medium'/>
+                <CaseCard size='medium' Image={require('../../sources/caseStudies/bobboin&Em/instructioncard.jpg')}/>
                 <CaseText>I worked with the Emily to create a unique word mark that was apropriote for the business and it's sales channels.</CaseText>
-                <CaseCard/>
-                <CaseCard size='large'/>
+                <CaseCard Image={require('../../sources/caseStudies/bobboin&Em/default.jpg')}/>
+                <CaseCard size='large' Image={require('../../sources/caseStudies/bobboin&Em/facemask.jpg')}/>
 
             </section>
         </main>

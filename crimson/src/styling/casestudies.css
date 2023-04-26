@@ -40,7 +40,7 @@ article{
 .card img{
     width: 100%;
     height: 100%;
-    position: absolute;
+    /* position: absolute; */
 }
 .cardheader{
     margin: 0;
@@ -88,6 +88,14 @@ div.card:hover{
     height: fit-content;
     min-height: 1rem;
 }
+.tallmediumCard{
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: unset;
+    height: fit-content;
+}
+.ta
+
 div.exwideCard p{
     position: relative;
 }
@@ -95,4 +103,16 @@ div.exwideCard p{
     position: absolute;
     font-size: 1.5rem;
     padding: 5%;
+}
+.cardwithaside{
+    grid-column: span 3;
+    grid-row: span 1;
+    height: fit-content;
+    display: flex;
+    gap: 15px;
+    aspect-ratio: unset;
+}
+img.withaside{
+    width: 60%;
+    border-radius: 8px;
 }
