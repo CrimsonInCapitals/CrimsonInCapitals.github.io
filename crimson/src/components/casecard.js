@@ -16,19 +16,23 @@ return(
     )
 }
 
-export const CaseText = ({Header='Default',Image=require('../sources/default.png'),size='small',To,children})=> {
+export const CaseText = ({Header,Image=require('../sources/default.png'),size='small',To,children})=> {
 return(
     <div className={size+'Card card'}>
+        {Header && <h1>{Header}</h1>}
         {children &&  <p>{children}</p>}
     </div>
     )
 }
 
-export const CaseWithAside = ({Header='Default',Image=require('../sources/default.png'),size='small',To,children})=> {
+export const CaseWithAside = ({Header='Default',Image=require('../sources/default.png'),size='small',To,children,Right=true})=> {
     return(
         <article className={size+'Card card cardwithaside'}>
+            {!Right&& children &&  <p>{children}</p>}
+
             <img src={Image} alt={Header} className='withaside'/>
-            {children &&  <p>{children}</p>}
+
+            {Right&& children &&  <p>{children}</p>}
         </article>
         )
     }

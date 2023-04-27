@@ -26,7 +26,7 @@ article{
 #cardDeck{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto auto auto;
+    /* grid-template-rows: auto auto auto auto auto; */
     height: fit-content;
     gap: 10px;
 }
@@ -71,6 +71,9 @@ div.card:hover{
     grid-row: span 2;
 
 }
+.solomediumCard{
+    grid-column: span 2;
+}
 .largeCard{
     grid-column: span 3;
     grid-row: span 3;
@@ -94,15 +97,16 @@ div.card:hover{
     aspect-ratio: unset;
     height: fit-content;
 }
-.ta
 
-div.exwideCard p{
-    position: relative;
-}
+
 .card p{
     position: absolute;
     font-size: 1.5rem;
-    padding: 5%;
+    margin: 5%;
+}
+.card h1{
+    margin: 5%;
+    margin-bottom: -3%;
 }
 .cardwithaside{
     grid-column: span 3;
@@ -112,7 +116,22 @@ div.exwideCard p{
     gap: 15px;
     aspect-ratio: unset;
 }
+.cardwithaside:hover{
+    background-color: unset;
+}
+.cardwithaside:hover img{
+    opacity: 100;
+}
+article.cardwithaside p{
+    position: relative;
+    max-width: 30%;
+}
 img.withaside{
     width: 60%;
     border-radius: 8px;
+    position: relative;
 }
+div.exwideCard p{
+    position: relative;
+}
+

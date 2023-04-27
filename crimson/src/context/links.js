@@ -26,7 +26,7 @@ export const SocialProvider = ({ children }) => {
         }
     }
     const Socials = [
-        new Social('Instagram','xcrimson.svg','https://www.instagram.com/crimson.svg/','instagram'),
+        new Social('Instagram','crimson.svg','https://www.instagram.com/crimson.svg/','instagram'),
         new Social('Facebook','Crimson in capitals art','https://www.facebook.com/Crimsonincapitals','facebook'),
         new Social('LinkedIn','Harrison (Adam) Cole','https://www.linkedin.com/in/harrison-cole-crimson-in-capitals/','linkedin'),
         new Social('Displate','Displate','https://displate.com/crimsonincapitals1?art=5f0d09c08e6b6','displate')

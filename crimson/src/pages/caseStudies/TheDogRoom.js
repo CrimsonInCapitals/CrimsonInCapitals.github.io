@@ -7,15 +7,12 @@ const TheDogRoom = ()=> {
 
     return (
         <main className='home'>
-            <section>
-                <h1>The Dog Room</h1>
-                <p>The dog room is an independed dog grooming business that opened in May 2022.</p>
-            </section>
             <section id='cardDeck'>
+                <CaseText size='exwide' Header='The Dog Room'>The dog room is an independed dog grooming business that opened in May 2022.</CaseText>
                 <CaseCard size='medium' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Primary Brand Mark'/>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/logoonwhite.jpg')} Header='Alternative Brand Mark'/>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/dogondark.jpg')} Header='Alternative Brand Mark'/>
-                <CaseText size='exwide'>The Primary brand mark as well as the variations where deisnged in acordance with the brief broved by the business owner.</CaseText>
+                <CaseText size='exwide'>The Primary brand mark as well as the variations where deisnged in acordance with the brief broved by the business owner. The brief outlined that the words 'dog' and room' must connect to make the word 'groom', but only to the observent. the brief also outlined the use of black white and yellow and the primary colours. I softened the colours inline with the friendly word mark and included the silohet of the owners dog in the G and r, to further link the words.</CaseText>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/ef9400.jpg')} Header='#EF9400 - Primary Colour'/>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/f1f1c4.jpg')} Header='#F1F1C4 - Secondary Colour: Light'/>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/23231c.jpg')} Header='#23231C - Secondary Colour: Medium'/>

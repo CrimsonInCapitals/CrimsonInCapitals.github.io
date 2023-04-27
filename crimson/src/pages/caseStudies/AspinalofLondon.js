@@ -5,11 +5,10 @@ const AspinalofLondon = ()=> {
 
     return (
         <main className='home'>
-            <section>
-                <h1>Aspinal of London </h1>
-                <p></p>
-            </section>
+    
             <section id='cardDeck'>
+            <CaseText size='exwide'Header='Aspinal London'>Working closely with the key stakeholder I aided in his exploration of future business oportunities. This required explanding on their current deep library of brand symbols. 'House of Aspinal' is a sister business thay wanted to create.</CaseText>
+
                 <CaseCard size='medium' Image={require('../../sources/caseStudies/AspinalOfLondon/font.jpg')} Header='This is the full charicter setl. Note that the brand uses small caps instead of lowercase.'/>
                 <CaseText size='small'>In order to have to have to word House match Aspinal I had to design the letters, as custom lettering had been used in the original Aspinal of London logo.</CaseText>
                 <CaseCard size='small' Image={require('../../sources/caseStudies/AspinalOfLondon/houseofaspinal.jpg')} Header='Examplem of font in context'/>

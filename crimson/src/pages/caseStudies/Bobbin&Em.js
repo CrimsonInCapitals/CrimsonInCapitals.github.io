@@ -5,10 +5,9 @@ const BobbinEm = ()=> {
 
     return (
         <main className='home'>
-            <section>
-                <h1>Bobbin & EM</h1>
-            </section>
             <section id='cardDeck'>
+                <CaseText size='exwide'Header='Bobbin & Em'>a small sole oprator Emily, who was at university doing fashion, had started making and selling facemasks on sicila media and in small botiques in her local area.</CaseText>
+
                 <CaseCard size='medium' Image={require('../../sources/caseStudies/bobboin&Em/instructioncard.jpg')}/>
                 <CaseText>I worked with the Emily to create a unique word mark that was apropriote for the business and it's sales channels.</CaseText>
                 <CaseCard Image={require('../../sources/caseStudies/bobboin&Em/default.jpg')}/>
