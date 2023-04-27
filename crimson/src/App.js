@@ -14,7 +14,11 @@ const App = ()=> {
   const isrank =(variable)=> {if(variable.rank === 1){return true}else{return false}}
   const theme = useThemeContext()
   const [mainstyle,setMainstyle]=useState()
-
+  const [menu,setMenu] =useState({})
+  const showmenu =()=>{
+    menu.display && menu.display == 'inherit'? setMenu({}):setMenu({display:'inherit'})
+    
+  }
   useEffect(()=>{
     if(theme){
       setMainstyle({
@@ -32,10 +36,11 @@ const App = ()=> {
   return (
     <>
       <header style={mainstyle}>
-        <nav>
-          {pages.filter(isrank).map(({name,url,component})=>(<Button use='link' key={url} url={url}> {name} </Button>))}
-          <a href='../resume.pdf'>Résumé</a>
+        <nav className='full' style={{...menu, ...mainstyle}}>
+          {pages.filter(isrank).map(({name,url,component})=>(<Button onClick={showmenu} use='link' key={url} url={url}> {name} </Button>))}
+          <a href='../resume.pdf' target='_blank'>Résumé</a>
         </nav>
+        <Button onClick={showmenu} icon='default'className='menu' use='button'></Button>
       </header>
       <main style={mainstyle}>
         <Routes>

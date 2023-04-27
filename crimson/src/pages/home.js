@@ -30,9 +30,9 @@ const Home = ()=> {
                 <img  style={shadow} className='profilehero' src={require('../sources/images/harrisonadamcole.jpg')} alt='portrait of Harrison Adam Cole'/>
                 <div>
                     <h2>
-                        I'm Harrison
+                        I'm Harrison Adam Cole
                     </h2>
-                    <p>This reprecents the combination of my two personas, my to passions. When I create it's to express a goal, my goal here is making you familour with the sort of person I am.</p>
+                    <p>My main goal is personal growth, through learning and applying myself to everything I do. I find a balance between aesthetic and efficient frameworks to produce a result that maximises both without detracting from either. As a designer I have a drive to achieve perfection and create beautiful things. As a developer I strive for efficient well-planned systems. My ability to find compromise in these missions allows me to understand perspectives and find a path that works to fulfil both. I thrive when working with people with clear goals that I can help achieve. </p>
                 </div>
             </section>
     </main>

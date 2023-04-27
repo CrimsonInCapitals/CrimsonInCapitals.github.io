@@ -48,6 +48,29 @@ a img{
 main.home > section{
   padding: 3rem 20%;
 }
+button.menu{
+  all: unset;
+  margin-left:1rem;
+}
+@media (max-width: 800px) {
+  main.home > section{
+    padding: 3rem 15px;
+  }
+  button.menu{
+    display: inline;
+    z-index: 100;
+  }
+  nav.full{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    display: none;
+  }
+}
 main.home > section img.poster{
   width: 100%;
 }
@@ -59,6 +82,7 @@ img.profilehero{
 section.row{
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 p{
   font-family: 'jost';
