@@ -6,7 +6,7 @@ const Cudoni = ()=> {
     return (
         <main className='home'>
             <section id='cardDeck'>
-            <CaseText size='exwide'Header='Cudoni'>Before they shut down, I worked for Cudoni in the photography department, this is a sample of the pictures I took During my time there.</CaseText>
+            <CaseText size='exwide'Header='Cudoni'>Before they shut down, I worked for Cudoni in the photography department. This is a sample of the pictures I took during my time there.</CaseText>
 
                 <CaseText size='exwide'>Gucci leather cross-body Bag in black</CaseText>
                 <CaseCard Header='Item Photograph: One'Image={require('../../sources/caseStudies/Cudoni/faakik/1.jpg')}/>
@@ -25,11 +25,11 @@ const Cudoni = ()=> {
                 <CaseCard Header='Item Photograph: One'Image={require('../../sources/caseStudies/Cudoni/wga1u9/1.jpg')}/>
                 <CaseCard Header='Item Photograph: Two'Image={require('../../sources/caseStudies/Cudoni/wga1u9/2.jpg')}/>
                 <CaseCard Header='Item Photograph: Three'Image={require('../../sources/caseStudies/Cudoni/wga1u9/3.jpg')}/>
-                <CaseText size='exwide'>Chanel gold fo pearl kneckless with garnets</CaseText>
+                <CaseText size='exwide'>Chanel gold foe pearl necklace with garnets</CaseText>
                 <CaseCard Header='Item Photograph: One'Image={require('../../sources/caseStudies/Cudoni/pof75f/1.jpg')}/>
                 <CaseCard Header='Item Photograph: Two'Image={require('../../sources/caseStudies/Cudoni/pof75f/2.jpg')}/>
                 <CaseCard Header='Item Photograph: Three'Image={require('../../sources/caseStudies/Cudoni/pof75f/3.jpg')}/>
-                <CaseText size='exwide'>Chanel Dimond monogram earings</CaseText>
+                <CaseText size='exwide'>Chanel Diamond monogram earrings</CaseText>
                 <CaseCard Header='Item Photograph: One'Image={require('../../sources/caseStudies/Cudoni/lkrhu3/1.jpg')}/>
                 <CaseCard Header='Item Photograph: Two'Image={require('../../sources/caseStudies/Cudoni/lkrhu3/2.jpg')}/>
                 <CaseCard Header='Item Photograph: Three'Image={require('../../sources/caseStudies/Cudoni/lkrhu3/3.jpg')}/>

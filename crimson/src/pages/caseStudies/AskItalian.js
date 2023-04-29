@@ -6,7 +6,7 @@ const AskItalian = ()=> {
     return (
         <main className='home'>
             <section id='cardDeck'>
-            <CaseText size='exwide'Header='Ask Italian'>My key focus was creating content in line with the companies 'Primo' branding. Ask Italians 'primo' style has a few key building blocks. The first is colour, a combination of bright and muted tones. The second is tone of speaking, ask Italian is a friend. That personal bond is something they construct communications around. The third is art direction designed to reflect its Italian authenticity. The content I created were designed with this in mind.</CaseText>
+            <CaseText size='exwide'Header='Ask Italian'>My key focus was creating content in line with the company’s 'Primo' branding. Ask Italian’s 'Primo' style has a few key building blocks. The first is colour - a combination of bright and muted colours. The second is tone - Ask Italian is a friend, a safe place, a shelter. The third is art direction, which is designed to reflect its Italian authenticity. The content I created was designed with this in mind.</CaseText>
                 <CaseText CaseText size='exwide'>Examples of posts created to announce 'Ask Perks':</CaseText>
                 <CaseCard Header='December Ask Perk' Image={require('../../sources/caseStudies/askItalian/perkdecember.jpg')}/>
                 <CaseCard Header='Febuary Ask Perk' Image={require('../../sources/caseStudies/askItalian/perkfebury.jpg')}/>
