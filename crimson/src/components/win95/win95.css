@@ -38,7 +38,7 @@ header>div{
     display: flex;
     gap: 4px;
     align-items: center;
-    width: fill;
+    width: stretch;
 }
 header>menu{
     margin: 0;

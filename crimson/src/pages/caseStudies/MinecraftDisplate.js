@@ -1,5 +1,5 @@
 import React from 'react';
-import { CaseCard, CaseText, CaseWithAside } from '../../components/casecard';
+import { CaseText, CaseWithAside } from '../../components/casecard';
 
 const MinecraftDisplate = ()=> {
 

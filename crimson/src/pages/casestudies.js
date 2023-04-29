@@ -3,10 +3,7 @@
 // import { useEffect, useState } from 'react';
 import '../styling/casestudies.css'
 import React from 'react';
-import Carasol from '../components/carasol'
-import CarasolItem from '../components/carasolItem'
-import Scroller from '../components/Scroller';
-import CarasolCard from '../components/carasolCard';
+
 import { CaseCard, CaseText } from '../components/casecard';
 
 const CaseStudies = ()=> {

@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { CaseCard, CaseText } from '../../components/casecard';
 
 const VectorIllustration = ()=> {
 
     return (
         <main className='home'>
-
             <section id='cardDeck'>
                 <CaseText size='exwide'Header='Vector Illustration'>Made using a tablet & pen these illustrations are an axample of some of the Portraits I have drawn.</CaseText>
                 <CaseCard Header='Ana de Armas'size='large' Image={require('../../sources/caseStudies/Portaits/anadearmas.jpg')}/>
@@ -20,7 +18,7 @@ const VectorIllustration = ()=> {
                 <CaseText size='small'>Similar to the above but with the adition of the colours in the face and hands and using the pen instead of the pencil tool.</CaseText>
                 <CaseCard Header='Close up'size='small' Image={require('../../sources/caseStudies/Portaits/default.jpg')}/>
                 <CaseCard Header='Maisie Peters'size='medium' Image={require('../../sources/caseStudies/Portaits/mp.jpg')}/>
-                <CaseCard size='small' Image={require('../../sources/caseStudies/Portaits/mpcloseup.jpg')}/>
+                <CaseCard size='small' Header='Close up'Image={require('../../sources/caseStudies/Portaits/mpcloseup.jpg')}/>
                 <CaseText size='small'>This is made by using large broad strokes and then going back with smaller lines to add detail.</CaseText>
 
 

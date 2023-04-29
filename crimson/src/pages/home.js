@@ -2,9 +2,7 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { useThemeContext } from '../context/theme';
-import { useAppContext } from '../components/win95/context/app';
-import DesktopButton from '../components/win95/desktopbutton';
-import { AppProvider } from '../components/win95/context/app';
+
 const Home = ()=> {
     const theme = useThemeContext()
     const[shadow,setShadow] = useState()
