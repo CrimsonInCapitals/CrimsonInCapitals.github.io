@@ -134,4 +134,10 @@ img.withaside{
 div.exwideCard p{
     position: relative;
 }
+@media (max-width: 800px) {
+    .card p{
 
+        font-size: 1rem;
+
+    }
+}
