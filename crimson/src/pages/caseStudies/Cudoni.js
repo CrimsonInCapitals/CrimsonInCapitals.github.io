@@ -6,7 +6,7 @@ const Cudoni = ()=> {
     return (
         <main className='home'>
             <section id='cardDeck'>
-            <CaseText size='exwide'Header='Cudoni'>Beofre they shut down I worked for Cudoni in the photography dipartment, this is a sample of some of the pictures I took During my time there.</CaseText>
+            <CaseText size='exwide'Header='Cudoni'>Before they shut down, I worked for Cudoni in the photography department, this is a sample of the pictures I took During my time there.</CaseText>
 
                 <CaseText size='exwide'>Gucci leather cross-body Bag in black</CaseText>
                 <CaseCard Header='Item Photograph: One'Image={require('../../sources/caseStudies/Cudoni/faakik/1.jpg')}/>
