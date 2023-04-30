@@ -70,6 +70,9 @@ button.menu{
     top: 0;
     display: none;
   }
+  footer{
+    flex-direction: column;
+  }
 }
 main.home > section img.poster{
   width: 100%;
