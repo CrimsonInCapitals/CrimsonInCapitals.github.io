@@ -22,7 +22,7 @@ nav{
 }
 nav a{
   text-decoration: none;
-  font-family: 'jost';
+  font-family: 'jost',sans-serif;
   font-weight: 700;
 }
 #root>main{
@@ -92,7 +92,7 @@ section.row{
   align-items: center;
 }
 p{
-  font-family: 'jost';
+  font-family: 'jost',sans-serif;
   font-weight: 400;
   font-size: 1.2rem;
 }
