@@ -13,6 +13,7 @@ import MinecraftDisplate from "../pages/caseStudies/MinecraftDisplate";
 import TheDogRoom from "../pages/caseStudies/TheDogRoom";
 import VectorIllustration from "../pages/caseStudies/VectorIllustration";
 import Minesweeperpage from "../pages/caseStudies/Minesweeper";
+import { Analytics } from "../pages/analytics";
 
 const SocialContext = createContext(undefined);
 
@@ -67,6 +68,7 @@ export const InternalProvider = ({ children }) => {
         new Page('Case Study: Minecraft Displates','/casestudies/minecraaftdisplates',<MinecraftDisplate/>,2),
         new Page('Case Study: The Dog Room','/casestudies/thedogroom',<TheDogRoom/>,2),
         new Page('Case Study: Vector Illustration','/casestudies/vectorillustration',<VectorIllustration/>,2),
+        new Page('Social Analytics','/analytics',<Analytics/>,1)
 
 
     ]
