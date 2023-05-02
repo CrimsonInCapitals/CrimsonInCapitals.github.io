@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import { useThemeContext } from '../context/theme';
 
-const Home = ()=> {
+export const Home = ()=> {
     const theme = useThemeContext()
     const[shadow,setShadow] = useState()
     useEffect(()=>{
@@ -37,4 +37,3 @@ const Home = ()=> {
     );
 }
 
-export default Home;

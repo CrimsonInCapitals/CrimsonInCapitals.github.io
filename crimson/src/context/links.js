@@ -1,5 +1,5 @@
 import {createContext, useContext} from "react";
-import Home from "../pages/home";
+import {Home} from "../pages/home";
 import About from "../pages/about";
 import CaseStudies from "../pages/casestudies";
 import Contact from "../pages/contact";
