@@ -8,7 +8,7 @@ import { LoginSocialFacebook } from 'reactjs-social-login';
 export const Analytics = ()=> {
 
     const callFacebook = (state,action)=>{
-        //return window.FB.getLoginStatus(function(response){console.log(response)})
+        return window.FB.getLoginStatus(function(response){console.log(response)})
         return ({...state,type: state.type+1})
     }
     const [facebookInfo,dispatchFacebookinfo]=useReducer(callFacebook,{type:0})
@@ -31,8 +31,8 @@ export const Analytics = ()=> {
                 <p>place holder</p>
                 <p>...</p>
                 <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="true"></div>
-                <button onClick={()=>dispatchFacebookinfo({type: 3})}></button>
-            </section>
+                <button onClick={()=>dispatchFacebookinfo({type: 'response'})}></button>
+                <button onClick={()=>window.FB.login()}>click me</button>            </section>
         </main>
     );
 }

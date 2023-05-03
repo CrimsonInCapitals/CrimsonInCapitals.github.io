@@ -68,7 +68,7 @@ export const InternalProvider = ({ children }) => {
         new Page('Case Study: Minecraft Displates','/casestudies/minecraaftdisplates',<MinecraftDisplate/>,2),
         new Page('Case Study: The Dog Room','/casestudies/thedogroom',<TheDogRoom/>,2),
         new Page('Case Study: Vector Illustration','/casestudies/vectorillustration',<VectorIllustration/>,2),
-        new Page('Social Analytics','/analytics',<Analytics/>,1)
+        new Page('Social Analytics','/analytics',<Analytics/>,3)
 
 
     ]
