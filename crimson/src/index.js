@@ -6,10 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './context/theme';
 import { InternalProvider, SocialProvider } from './context/links';
+import { CookiesProvider } from './context/cookies';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <CookiesProvider>
     <ThemeProvider>
       <BrowserRouter>
         <SocialProvider>
@@ -19,6 +21,7 @@ root.render(
         </SocialProvider>
       </BrowserRouter>
     </ThemeProvider>
+    </CookiesProvider>
   </React.StrictMode>
 );
 
