@@ -6,11 +6,11 @@ const DesktopButton = ({appname})=>{
     const [app,setApp] = useState({name: 'Default',icon: 'minesweeper'})
     useEffect(()=>{
         apps.forEach(testapp => {
-            if(testapp.name == appname){
+            if(testapp.name === appname){
                 setApp(testapp)
             }
         });
-    },[])
+    },[apps,appname])
     return(
         <button className="desktopbutton"
         onClick={()=>displatchApps({app: app.name,do: 'open'})}

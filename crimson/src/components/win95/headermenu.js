@@ -1,10 +1,10 @@
 
-import React, { Children } from 'react';
-import { useAppContext } from './context/app';
+import React from 'react';
+// import { useAppContext } from './context/app';
 const HeaderMenu = ({app})=> {
-    const addmenu = (item)=>{
-        console.log(item)
-    }
+    // const addmenu = (item)=>{
+        // console.log(item)
+    // }
     return (
         <menu>
             {app.menu.map((item)=>(

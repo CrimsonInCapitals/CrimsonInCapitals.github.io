@@ -28,7 +28,9 @@ export const AppProvider = ({ children }) => {
                         break;
                     case 'close':
                         app.open = false
-                }
+                        break;
+                    default: app.open = false
+                    }
                 return
             }
         });

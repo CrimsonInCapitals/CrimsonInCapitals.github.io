@@ -1,6 +1,6 @@
 // import './App.css';
 // import {Link,Routes,Route} from 'react-router-dom'
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useReducer} from 'react';
 import React from 'react';
 // import { useAppContext } from '../context/app';
 import Board from './board';
@@ -64,8 +64,6 @@ const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
     }else{
         mode = cookies.get('minesweeper')
     }
-// console.log(cookies.get('myCat')); // Pacman
-    var [inplay,setInplay] = useState(false)
     const zerofunction = (cx,cy,game) =>{
         checkagacent.forEach((check) => {
             let x = cx+check.x
@@ -137,13 +135,11 @@ const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
                             let click = {x:action.x,y:action.y}
                             let gameboard = populategameboard(click,game)
                             game = {...game, gameboard:gameboard}
-                            setInplay(true)
                         }
                         game.playerboard[action.x][action.y] = game.gameboard[action.x][action.y]//reviels the tile
                         if(game.gameboard[action.x][action.y] === 0){// if zero reviel suroundings
                             game = zerofunction(action.x,action.y,game)
                         }else if(game.gameboard[action.x][action.y] === 'b'){//mine clicked/game over
-                            setInplay(false)
                             game.gameboard.forEach((row,x) => {row.forEach((cell,y) => {//loops through gameboard to reviel each bomb location
                                 if(game.playerboard[x][y]==='f'){game.playerboard[x][y]='x'}//if cell was flaged sets it to incorrectly flaged
                                 if(cell === 'b'){game.playerboard[x][y] = 'b'}// if it contained a bpmb
@@ -174,6 +170,7 @@ const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
                             game.playerboard[action.x][action.y] = '#'
                         }
                     break;
+                    default: break;
                 }
             }
             game.x = ''
@@ -186,7 +183,7 @@ const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
         if(game.state === 'play' || game.state === 'suspense'){
             setTimeout(()=>dispatchGame({type: 'timer',timer: game.timer}),1000)
         }
-    },[inplay,game.timer])
+    },[game.timer,game.state])
     // console.log(cookies.get('game',{path: './minesweeper'}))
     return (
        <>

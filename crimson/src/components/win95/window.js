@@ -1,6 +1,6 @@
 // import './App.css';
 // import { useEffect, useState } from 'react';
-import React, { useEffect, useReducer, useState,useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import './win95.css'
 
 import Header from './header';

@@ -28,10 +28,10 @@ const Footer = ()=> {
     <footer style={styling}>
         <section>
             <h2>Internal Links</h2>
-            {Internals.map(({name,url,component,rank})=>(rank ==1 && <Button use='link' key={url} url={url}> {name} </Button>))}
+            {Internals.map(({name,url,component,rank})=>(rank ===1 && <Button use='link' key={url} url={url}> {name} </Button>))}
             <details>
                 <summary>More</summary>
-            {Internals.map(({name,url,component,rank})=>(rank !==1 && <Button use='link' key={url} url={url}> {name} </Button>))}
+            {Internals.map(({name,url,component,rank})=>(rank ===2 && <Button use='link' key={url} url={url}> {name} </Button>))}
 
             </details>
         </section>
