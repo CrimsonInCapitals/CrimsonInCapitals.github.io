@@ -107,3 +107,18 @@ p.contact a{
   padding: 10%;
   box-sizing: border-box;
 }
+section.cookieRequest{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  gap: 2vh;
+  padding: 2vh;
+  box-sizing: border-box;
+  align-items: center;
+  flex-wrap: wrap;
+}
+section.cookieRequest button{
+  padding: 10px 30px;
+  border-radius: 1vh;
+  border-style: none;
+}
