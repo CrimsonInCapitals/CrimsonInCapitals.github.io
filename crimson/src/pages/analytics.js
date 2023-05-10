@@ -5,6 +5,7 @@ import { useThemeContext } from '../context/theme';
 import { useCookiesContext } from '../context/cookies';
 import { LineChart } from 'react-graphs-svg'
 import LineGraph from 'react-line-graph'
+import { text } from 'react-graphs-svg/dist/helpers';
 //import { LoginSocialFacebook } from 'reactjs-social-login';
 //import facebook
 export const Analytics = ()=> {
@@ -27,19 +28,66 @@ export const Analytics = ()=> {
     const [facebook,disbatchFacebook] = useReducer(updateFacebook,{status:'unset'})
     const [currentPage,setCurrentPage]=useState(false)
     const formdefault = {
-        page: 'select page',
+        page: {id:0},
+        pages: [],
         period_days: 7,
-        until: new Date(),
-        since: new Date().setDate(new Date().getDate() - 7),
+        period_options:[{value:7,text: 'One week'},{value:31,text: 'One month'},{value:93, text:'Three monthd'}],
+        until: new Date().toISOString(),
+        since: new Date(Date.now()-7*86400000).toISOString(),
         setPeriod: function(period){
             this.period_days= period
-            this.until = new Date()
-            this.since = this.until.setDate(this.until.getDate()-this.period_days)
+            this.until = new Date().toISOString()
+            this.since = new Date(Date.now()-period*86400000).toISOString()
         },
-        token: '',
-        metric:''
+        setPage: function(pageId){
+            for(let i in this.pages){
+                if(pageId===this.pages[i].id)this.page=this.pages[i]
+            }
+        },
+        setPages: function(pages){this.pages = pages},
+        metric:'',
+        metrics:[{selected:false,metric: 'page_engaged_users',text:'engagment'},{selected:false,metric:'page_impressions',text:'impressions'}],
+        setMetric:function(addMetric){
+            let string = ''
+            let valid = false
+            for(let metric in this.metrics){
+                // console.log(metric)
+                if(this.metrics[metric].metric === addMetric){
+                    this.metrics[metric].selected = !this.metrics[metric].selected
+                    valid = true
+                }
+                if(this.metrics[metric].selected){
+                    string=string+','+this.metrics[metric].metric
+                }
+            }
+            this.metric=string
+            console.log('end of function:')
+            console.log(this)
+        }
+
     }
-    const [pageForm,disbatchPageForm]=useReducer(formcontroller,{})
+    const formcontroller=(object,action)=>{
+        if(!action.value || !action.actor)return object
+        switch(action.actor){
+            case 'metric':
+                object.setMetric(action.value)
+                // return object
+                break
+            case 'page':
+                object.setPage(action.value)
+                // return object
+                break
+            case 'pages':
+                object.setPages(action.value)
+                break
+            case 'period':
+                object.setPeriod(action.value)
+                break
+                // return object
+        }
+        return {...object}
+    }
+    const [pageForm,disbatchPageForm]=useReducer(formcontroller,formdefault)
     const [pageDate,setPageDate]=useState(false)
     const [cookies,disbatchCookies] = useCookiesContext()
     const getUser=()=>{
@@ -51,6 +99,7 @@ export const Analytics = ()=> {
     const getPages=()=>{
         FB.api('/me/accounts','GET',{},function(response){
             disbatchFacebook({pages:true,response})
+            disbatchPageForm({actor:'pages',value:response.data})
         })
     }
     const rashionalise=(dataincoming)=>{
@@ -848,21 +897,18 @@ export const Analytics = ()=> {
         console.log(rashionalise(object.data[0]))
         setPageDate(rashionalise(object.data[0]))
     }
-    const getPageEngagmemt=(period='month',range='year')=>{
-        let until = new Date().toISOString().split('T')[0]
-        let since = until.split('-')[0]+'-'+until.split('-')[1]+'-'+until.split('-')[2]
-        for(let i=0;i<facebook.pages.length;i++){
-            // console.log(facebook.pages[i])
-            if(facebook.pages[i].id === currentPage){
-                var page = {id: currentPage,token: facebook.pages[i].access_token}
-            }
-        }
-        if(!page)return 'page not found'
-        FB.api('/'+currentPage+'/insights','GET',
-            {"metric":"page_engaged_users,page_impressions",since,until,"period":period,"access_token":page.token},
+    const getPageEngagmemt=(Data)=>{
+        let id = Data.page.id
+        let access_token = Data.page.access_token
+        let since = Data.since
+        let until = Data.until
+        let metric = Data.metric
+        let period = 'month'
+        FB.api('/'+id+'/insights','GET',
+            {metric,since,until,period,access_token},
             function(response) {
                 console.log(response)
-                console.log(rashionalise(response.data[0]))
+                // console.log(rashionalise(response.data[0]))
             }
         );
 
@@ -874,28 +920,33 @@ export const Analytics = ()=> {
         if(!facebook.pages)getPages()
     }
     },[facebook])
-    useEffect(()=>{console.log(pageDate)},[pageDate.axis])
+    useEffect(()=>{console.log('updated pagedata');console.log(pageDate)},[pageDate.axis])
+    useEffect(()=>{console.log(pageForm)},[pageForm])
     return (
         <main className='analytics'>
             <section>
                 <h1>Welcome {facebook.user && facebook.user.first_name}</h1>
                 {/* {facebook.status === 'connected'&& <button onClick={getPages}>get page list</button>} */}
-                {facebook.pages &&
-                <>
+                {pageForm.pages &&
+                <form onSubmit={e=>{e.preventDefault(); getPageEngagmemt(pageForm)}}>
                 <label>Select page:
-                <select value={currentPage} onChange={(e)=>{setCurrentPage(e.target.value); getPageEngagmemt()}}>
-                    {facebook.pages.map((page)=><option key={page.id}value={page.id}>{page.name}</option>)}
+                <select value={pageForm.page.id} onChange={e=>{disbatchPageForm({actor:'page',value: e.target.value})}}>
+                    <option value='default'>Select a page</option>
+                    {pageForm.pages.map((page,index)=><option key={page.id}value={page.id}>{page.name}</option>)}
                 </select>
                 </label>
-                <label>Time range
-                    <select>
-                        <option value={7}>one week</option>
-                        <option value={31}>one month</option>
-                        <option value={93}>three months</option>
+                <label>Time range:
+                    <select value={pageForm.period_days} onChange={e=>disbatchPageForm({actor: 'period',value:e.target.value})}>
+                        {pageForm.period_options.map((option)=>(<option key={option.value} value={option.value}>{option.text}</option>))}
                     </select>
                 </label>
-
-                </>
+                <div>
+                    <label>Data points:
+                        {pageForm.metrics.map((metric)=>(<label>{metric.text}<input key={metric.metric} type='checkbox' onChange={e=>{console.log(e.target.checked === false); disbatchPageForm({actor: 'metric',value: metric.metric,state: e.target.checked});}} value={metric.metric} checked={metric.selected}/></label>))}
+                    </label>
+                </div>
+                <button type='submit'>make call</button>
+                </form>
                 }
             </section>
             <section>
