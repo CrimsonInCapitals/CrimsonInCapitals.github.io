@@ -1,3 +1,12 @@
 main.analytics button{
     padding: 10px 40px;
 }
+.facebooklogin{
+    /* padding: 10px 40px; */
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: #1877f2;
+    border: none;
+    border-radius: 20px;
+}
