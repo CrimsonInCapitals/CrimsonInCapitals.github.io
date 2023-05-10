@@ -11,6 +11,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.5",
+    "react-graphs-svg": "^0.1.0-alpha-6",
+    "react-line-graph": "^1.0.6",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
     "react-social-login-buttons": "^3.6.1",
