@@ -12,6 +12,7 @@ export const CookiesProvider = ({ children }) => {
         permit: false,
         request: false,
         set: function(action='get',[location='/',path='',data='']){
+            location='crimsonincapitals'+location
             if(!this.permit && action !=='get')return 'disabled'
             let cookie =  new Cookies()
             switch(action){

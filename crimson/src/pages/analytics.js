@@ -54,7 +54,7 @@ export const Analytics = ()=> {
             }
         },
         setPages: function(pages){this.pages = pages},
-        metrics:[{selected:false,metric: 'page_engaged_users',text:'engagment'},{selected:false,metric:'page_impressions',text:'impressions'},{selected:false,metric:'page_impressions_by_country_unique',text:'impressions by country'},new metric(true,'page_views_total','Total page views')],
+        metrics:[{selected:true,metric: 'page_engaged_users',text:'engagment'},{selected:true,metric:'page_impressions',text:'impressions'},{selected:true,metric:'page_impressions_by_country_unique',text:'impressions by country'},new metric(true,'page_views_total','Total page views')],
         setMetric:function(addMetric){
             let string = ''
             let valid = false
@@ -104,6 +104,7 @@ export const Analytics = ()=> {
         FB.api('/me/accounts','GET',{},function(response){
             disbatchFacebook({pages:true,response})
             disbatchPageForm({actor:'pages',value:response.data})
+            disbatchPageForm({actor:'metric',value:'metric'})
         })
     }
     const rashionalise=(dataincoming)=>{
@@ -147,7 +148,7 @@ export const Analytics = ()=> {
     }
     },[facebook])
     // useEffect(()=>{console.log('updated pagedata');console.log(pageDate)},[pageDate.axis])
-    // useEffect(()=>{console.log(pageForm)},[pageForm])
+    useEffect(()=>{console.log(pageForm)},[pageForm])
     return (
         <main className='analytics home'>
             <section>
@@ -161,6 +162,8 @@ export const Analytics = ()=> {
                     {pageForm.pages.map((page,index)=><option key={page.id}value={page.id}>{page.name}</option>)}
                 </select>
                 </label>
+                <details>
+                    <summary>Other options</summary>
                 <label>Time range:
                     <select value={pageForm.period_days} onChange={e=>disbatchPageForm({actor: 'period',value:e.target.value})}>
                         {pageForm.period_options.map((option)=>(<option key={option.value} value={option.value}>{option.text}</option>))}
@@ -171,6 +174,7 @@ export const Analytics = ()=> {
                         {pageForm.metrics.map((metric)=>(<label>{metric.text}<input key={metric.metric} type='checkbox' onChange={e=>{console.log(e.target.checked === false); disbatchPageForm({actor: 'metric',value: metric.metric,state: e.target.checked});}} value={metric.metric} checked={metric.selected}/></label>))}
                     </label>
                 </div>
+                </details>
                 <button type='submit'>make call</button>
                 </form>
                 }
