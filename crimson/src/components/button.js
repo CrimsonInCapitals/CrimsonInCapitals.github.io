@@ -13,7 +13,7 @@ const Button = ({icon='default',url='/',use='link',children,target='_blank',clas
     const [styling,setStyling]=useState()
     const [hover,setHover]=useState(false)
     useEffect(()=>{
-    if(darkmode){
+    if(darkmode.dark){
         setStyling({
             color: hover ? crimson:light,
             textDecoration: location.pathname === url && 'underline'

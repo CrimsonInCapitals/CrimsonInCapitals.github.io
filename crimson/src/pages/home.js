@@ -8,7 +8,7 @@ export const Home = ()=> {
     const[shadow,setShadow] = useState()
     useEffect(()=>{
         setShadow({
-            boxShadow: theme? '0 0 20px 4px black':  '0 0 20px 4px #fff5ed'
+            boxShadow: theme.Shadow
         })
     },[theme])
     if(theme){

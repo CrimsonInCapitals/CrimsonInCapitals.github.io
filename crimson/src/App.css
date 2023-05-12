@@ -30,10 +30,15 @@ nav a{
   box-sizing: border-box;
   padding-top: 3rem;
 }
-footer{
-  padding: 3rem 20%;
+footer nav{
   display: flex;
   flex-direction: row;
+  gap: 3rem;
+}
+footer{
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 20%;
   gap: 3rem;
 }
 footer section{
@@ -71,7 +76,7 @@ button.menu{
     left: 0;
     display: none;
   }
-  footer{
+  footer nav{
     flex-direction: column;
   }
   section.row{

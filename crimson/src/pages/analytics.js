@@ -8,6 +8,7 @@ import LineGraph from 'react-line-graph'
 import { text } from 'react-graphs-svg/dist/helpers';
 import Cookies from 'universal-cookie';
 import TunnelGraph from '../components/tunnel';
+import { Card } from '../components/analyticsCard';
 //import { LoginSocialFacebook } from 'reactjs-social-login';
 //import facebook
 class metric{
@@ -113,7 +114,7 @@ export const Analytics = ()=> {
         })
     }
     const getPages=()=>{
-        FB.api('/me/accounts','GET',{access_token:facebook.accessToken},function(response){
+        window.FB.api('/me/accounts','GET',{access_token:facebook.accessToken},function(response){
             disbatchFacebook({pages:true,response})
             disbatchPageForm({actor:'pages',value:response.data})
             disbatchPageForm({actor:'metric',value:'metric'})
@@ -162,7 +163,7 @@ export const Analytics = ()=> {
     },[facebook])
     useEffect(()=>{console.log(pageForm)},[pageForm])
     return (
-        <main className='analytics home'>
+        <main className='analytics home' id='analytics'>
             <section>
                 <h1>Welcome {facebook.user && facebook.user.first_name}</h1>
                 {pageForm.pages &&
@@ -191,10 +192,10 @@ export const Analytics = ()=> {
                 }
             </section>
             {pageDate &&
-                <section>
+                <Card>
                     <article>
                         <aside>
-
+                            <h2>Conversion Tunnel</h2>
                         </aside>
                         <section>
                             <TunnelGraph data={
@@ -213,7 +214,7 @@ export const Analytics = ()=> {
                             </details>
                         </article>
                     ))}
-                </section>
+                </Card>
             }
             {facebook.status !== 'connected' &&
             <section>

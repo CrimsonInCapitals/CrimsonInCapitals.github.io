@@ -38,3 +38,26 @@ div.Tunnel{
     border-radius: 5px;
     min-width: 80px;
 }
+#analytics section.card{
+    all: unset;
+    background-color: white;
+    margin: 0 20%;
+    min-width: 60%;
+    max-width: 95%;
+    width: 60%;
+    display: block;
+    border-radius: 0.5vw;
+}
+#analytics section.card article{
+    display: flex;
+    gap: 1vw;
+    justify-content: space-between;
+    padding: 4vw;
+    border-top: 2px lightgrey solid;
+}
+#analytics section.card article:first-child{
+    border-top: none;
+}
+#analytics section.card article section{
+    width: 40%;
+}

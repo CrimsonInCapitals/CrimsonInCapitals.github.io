@@ -19,17 +19,11 @@ const App = ()=> {
     
   }
   useEffect(()=>{
-    if(theme){
-      setMainstyle({
-        backgroundColor: dark,
-        color: light
-      })
-    }else{
-      setMainstyle({
-        backgroundColor: light,
-        color: dark
-      })
-    }
+    setMainstyle({
+      backgroundColor: theme.Background,
+      color: theme.Text
+    })
+    console.log(theme.Text)
   },[theme])
   const pages = useInternalContext()
   return (

@@ -11,21 +11,16 @@ const Footer = ()=> {
     const theme = useThemeContext()
     const [styling,setStyle]=useState()
     useEffect(()=>{
-    if(theme){
-        setStyle({
-        backgroundColor: dark,
-        color: light
+    setStyle({
+        backgroundColor: theme.Background,
+        color: theme.Text
     })
-    }else{
-        setStyle({
-            backgroundColor: light,
-            color: dark
-        })
-    }},[theme])
+},[theme])
     const Socials = useSocialContext()
     const Internals = useInternalContext()
     return (
     <footer style={styling}>
+        <nav>
         <section>
             <h2>Internal Links</h2>
             {Internals.map(({name,url,component,rank})=>(rank ===1 && <Button use='link' key={url} url={url}> {name} </Button>))}
@@ -39,6 +34,8 @@ const Footer = ()=> {
         <h2>Social Links</h2>
         {Socials.map(({name,handle,link,icon})=>(<Button key={handle} use='a'icon={icon}url={link}>{name}: {handle}</Button>))}
         </section>
+        </nav>
+        <p>Crimson in capitals - Harrison Adam Cole</p>
         {/* <button type='button' onClick={()=>setUserTheme(!userTheme)}>Change theme</button> */}
     </footer>
     );
