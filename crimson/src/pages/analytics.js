@@ -6,6 +6,8 @@ import { useCookiesContext } from '../context/cookies';
 import { LineChart } from 'react-graphs-svg'
 import LineGraph from 'react-line-graph'
 import { text } from 'react-graphs-svg/dist/helpers';
+import Cookies from 'universal-cookie';
+import TunnelGraph from '../components/tunnel';
 //import { LoginSocialFacebook } from 'reactjs-social-login';
 //import facebook
 class metric{
@@ -15,27 +17,32 @@ class metric{
         this.text = text?text:metric
     }
 }
+const facebookIcon = 'facebook.svg'
+const source = '../icons/colour/'
 
 export const Analytics = ()=> {
+    const [cookies,disbatchCookies] = useCookiesContext()
+
     const FB = window.FB
     const updateFacebook = (state,action)=>{
         // console.log(action)
-        if(action.login) return {...state,status: action.response.status}
+        if(action.cookie)return cookies.set('get',['facebook','/',''])
+        if(action.login) return {...state,status: action.response.status,accessToken:action.response.authResponse.accessToken}
         if(action.pages) return {...state,pages:action.response.data}
         // if(action.test) return {...state, test: true}
         if(action.user)return{...state,user:action.response}
-        // console.log(state)
+        console.log(state)
         return state
     }
+    const facebookdefault = {status:"unset",...cookies.set('get',['Facebook','/',''])}
     const facebookLogin =()=>{
                 window.FB.login(function(response){
+                    console.log(response)
                     disbatchFacebook({response,login:true})
                 },
                 {scope: 'email, manage_fundraisers,read_insights,publish_video,catalog_management,pages_manage_cta,pages_manage_instant_articles,pages_show_list,read_page_mailboxes,ads_management,ads_read,business_management,pages_messaging,pages_messaging_subscriptions,instagram_basic,instagram_manage_comments,instagram_manage_insights,instagram_content_publish,leads_retrieval,whatsapp_business_management,instagram_manage_messages,page_events,pages_read_engagement,pages_manage_metadata,pages_read_user_content,pages_manage_ads,pages_manage_posts,pages_manage_engagement,whatsapp_business_messaging'})
             }
-    const [facebook,disbatchFacebook] = useReducer(updateFacebook,{status:'unset'})
-    const [currentPage,setCurrentPage]=useState(false)
-    
+    const [facebook,disbatchFacebook] = useReducer(updateFacebook,facebookdefault)
     const formdefault = {
         page: {id:0},
         period_days: 7,
@@ -54,7 +61,12 @@ export const Analytics = ()=> {
             }
         },
         setPages: function(pages){this.pages = pages},
-        metrics:[{selected:true,metric: 'page_engaged_users',text:'engagment'},{selected:true,metric:'page_impressions',text:'impressions'},{selected:true,metric:'page_impressions_by_country_unique',text:'impressions by country'},new metric(true,'page_views_total','Total page views')],
+        metrics:[
+            new metric(true,'page_engaged_users','engagment'),
+            new metric(true,'page_impressions','impressions'),
+            new metric(true,'page_impressions_by_country_unique','impressions by country'),
+            new metric(true,'page_views_total','Total page views')
+        ],
         setMetric:function(addMetric){
             let string = ''
             let valid = false
@@ -93,15 +105,15 @@ export const Analytics = ()=> {
     }
     const [pageForm,disbatchPageForm]=useReducer(formcontroller,formdefault)
     const [pageDate,setPageDate]=useState(false)
-    const [cookies,disbatchCookies] = useCookiesContext()
     const getUser=()=>{
-        window.FB.api('/me','GET',{'fields':'id,first_name,last_name,email'},
+        window.FB.api('/me','GET',{'fields':'id,first_name,last_name,email',access_token: facebook.accessToken},
         function(response){
+            // console.log(response)
             disbatchFacebook({user:true,response})
         })
     }
     const getPages=()=>{
-        FB.api('/me/accounts','GET',{},function(response){
+        FB.api('/me/accounts','GET',{access_token:facebook.accessToken},function(response){
             disbatchFacebook({pages:true,response})
             disbatchPageForm({actor:'pages',value:response.data})
             disbatchPageForm({actor:'metric',value:'metric'})
@@ -130,30 +142,29 @@ export const Analytics = ()=> {
         let since = Data.since
         let until = Data.until
         let metric = Data.metric
-        let period = 'week'
+        let period = 'day'
         FB.api('/me/insights','GET',
             {metric,since,until,period,access_token},
             function(response) {
                 console.log(response)
-                // console.log(rashionalise(response.data[0]))
+                setPageDate(response)
             }
         );
 
     }
     useEffect(()=>{
         // console.log(facebook)
+        if(cookies.permit){cookies.set('get',['facebook','/',''])?disbatchFacebook({cookie:true}):cookies.set('addition',['Facebook','/',facebook])}
         if(facebook.status ==='connected'){
         if(!facebook.user)getUser()
-        if(!facebook.pages)getPages()
+        if(!facebook.pages||!pageForm.pages)getPages()
     }
     },[facebook])
-    // useEffect(()=>{console.log('updated pagedata');console.log(pageDate)},[pageDate.axis])
     useEffect(()=>{console.log(pageForm)},[pageForm])
     return (
         <main className='analytics home'>
             <section>
                 <h1>Welcome {facebook.user && facebook.user.first_name}</h1>
-                {/* {facebook.status === 'connected'&& <button onClick={getPages}>get page list</button>} */}
                 {pageForm.pages &&
                 <form onSubmit={e=>{e.preventDefault(); getPageEngagmemt(pageForm)}}>
                 <label>Select page:
@@ -182,14 +193,32 @@ export const Analytics = ()=> {
             {pageDate &&
                 <section>
                     <article>
-                        <h2>{pageDate.data[1].description}</h2>
-                        {pageDate.data.map((datapoint)=>(<p key={datapoint[0].value}>{datapoint[0].text+': '+ datapoint[1]}</p>))}
+                        <aside>
+
+                        </aside>
+                        <section>
+                            <TunnelGraph data={
+                                [{value:5,text:'impressions'},
+                                    [{value:4,text:'engagment'},
+                                        [{value:1,text:'clicks'}]]]
+                            }/>
+                        </section>
                     </article>
+                    {pageDate.data.map((Point)=>(
+                        <article>
+                            <h2>{Point.title}</h2>
+                            <details>
+                                <summary>Description</summary>
+                                <p>{Point.description}</p>
+                            </details>
+                        </article>
+                    ))}
                 </section>
             }
             {facebook.status !== 'connected' &&
             <section>
-                <button className='facebooklogin' onClick={facebookLogin}>Log in With Facebook</button>
+                <h2>Connect Platforms:</h2>
+                <button className='login' onClick={facebookLogin}><img src={require('../icons/colour/'+facebookIcon)}/><p>Login</p></button>
             </section>
             }
                 {!cookies.request &&

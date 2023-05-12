@@ -12,7 +12,7 @@ export const CookiesProvider = ({ children }) => {
         permit: false,
         request: false,
         set: function(action='get',[location='/',path='',data='']){
-            location='crimsonincapitals'+location
+            // location='crimsonincapitals'+location
             if(!this.permit && action !=='get')return 'disabled'
             let cookie =  new Cookies()
             switch(action){
@@ -20,7 +20,7 @@ export const CookiesProvider = ({ children }) => {
                     cookie.set(location,data,{path:path})
                     return 'set'
                 case 'addition':
-                    data = cookie.get(location,{path:path}) + data
+                    data = {...cookie.get(location,{path:path}), ...data}
                     cookie.set(location,data,{path:path})
                     return 'added'
                 case 'remove':
@@ -29,6 +29,10 @@ export const CookiesProvider = ({ children }) => {
                 default:
                     return cookie.get(location)
             }
+        },
+        get:function(location,path='/'){
+            let cookie = new Cookies()
+            return cookie.get(location,path)
         }
     }
     const [cookies,disbatchCookies]=useReducer(acceptcookies,defaultstate)

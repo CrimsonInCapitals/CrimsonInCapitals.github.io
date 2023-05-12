@@ -1,12 +1,40 @@
 main.analytics button{
     padding: 10px 40px;
 }
-.facebooklogin{
-    /* padding: 10px 40px; */
-    height: 40px;
+main button.login{
+    padding: 10px;
     font-size: 20px;
-    color: white;
-    background-color: #1877f2;
     border: none;
-    border-radius: 20px;
+    border-radius: 40px;
+}
+.login img{
+    width: 40px;
+}
+.login p{
+    padding-right: 10px;
+}
+div.TunnelParent{
+    aspect-ratio: 1;
+}
+div.Tunnel{
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgba(24, 118, 242, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.Tunnel .tip{
+    position: absolute;
+    display: none;
+}
+.Tunnel:hover>.tip{
+    display: block;
+    background-color: white;
+    z-index: 10;
+    padding: 10px 20px;
+    color: #000;
+    border-radius: 5px;
+    min-width: 80px;
 }

@@ -8,8 +8,8 @@ import { useThemeContext } from '../context/theme';
 const Button = ({icon='default',url='/',use='link',children,target='_blank',className,onClick})=> {
     const location = useLocation()
     const darkmode = useThemeContext()
-    const [iconsrc,setIconsrc]=useState(require('../icons/'+icon+'.svg'))
-    const [iconbsrc]=useState(require('../icons/'+icon+'colour.svg'))
+    const [iconsrc,setIconsrc]=useState(require('../icons/light/'+icon+'.svg'))
+    const [iconbsrc]=useState(require('../icons/colour/'+icon+'.svg'))
     const [styling,setStyling]=useState()
     const [hover,setHover]=useState(false)
     useEffect(()=>{
@@ -18,13 +18,13 @@ const Button = ({icon='default',url='/',use='link',children,target='_blank',clas
             color: hover ? crimson:light,
             textDecoration: location.pathname === url && 'underline'
         })
-        setIconsrc(require('../icons/'+icon+'.svg'))
+        setIconsrc(require('../icons/light/'+icon+'.svg'))
     }else{
         setStyling({
             color: hover? crimson: dark,
             textDecoration: location.pathname === url && 'underline'
         })
-        setIconsrc(require('../icons/'+icon+'lightmode.svg'))
+        setIconsrc(require('../icons/dark/'+icon+'.svg'))
     }},[darkmode,hover,location,icon,url])
     return (
         <>
