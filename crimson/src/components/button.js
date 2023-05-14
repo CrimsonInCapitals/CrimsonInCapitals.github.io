@@ -7,25 +7,18 @@ import { useThemeContext } from '../context/theme';
 
 const Button = ({icon='default',url='/',use='link',children,target='_blank',className,onClick})=> {
     const location = useLocation()
-    const darkmode = useThemeContext()
-    const [iconsrc,setIconsrc]=useState(require('../icons/light/'+icon+'.svg'))
+    const theme = useThemeContext()
+    const [iconsrc,setIconsrc]=useState(require('../icons/'+theme.IconSource+icon+'.svg'))
     const [iconbsrc]=useState(require('../icons/colour/'+icon+'.svg'))
     const [styling,setStyling]=useState()
     const [hover,setHover]=useState(false)
     useEffect(()=>{
-    if(darkmode.dark){
         setStyling({
-            color: hover ? crimson:light,
+            color: hover ? crimson:theme.TextStyle.CardParagraph.color,
             textDecoration: location.pathname === url && 'underline'
         })
-        setIconsrc(require('../icons/light/'+icon+'.svg'))
-    }else{
-        setStyling({
-            color: hover? crimson: dark,
-            textDecoration: location.pathname === url && 'underline'
-        })
-        setIconsrc(require('../icons/dark/'+icon+'.svg'))
-    }},[darkmode,hover,location,icon,url])
+        setIconsrc(require('../icons/'+theme.IconSource+icon+'.svg'))
+    },[theme,hover,location,icon,url])
     return (
         <>
         {use === 'link'&&

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { H2, P } from './StyledComponents';
 export const CaseCard = ({Header='Default',Image=require('../sources/default.png'),size='small',To})=> {
 return(
     To ?
@@ -19,8 +20,8 @@ return(
 export const CaseText = ({Header,Image=require('../sources/default.png'),size='small',To,children})=> {
 return(
     <div className={size+'Card card'}>
-        {Header && <h1>{Header}</h1>}
-        {children &&  <p>{children}</p>}
+        {Header && <H2>{Header}</H2>}
+        {children &&  <P>{children}</P>}
     </div>
     )
 }
@@ -28,11 +29,11 @@ return(
 export const CaseWithAside = ({Header='Default',Image=require('../sources/default.png'),size='small',To,children,Right=true})=> {
     return(
         <article className={size+'Card card cardwithaside'}>
-            {!Right&& children &&  <p>{children}</p>}
+            {!Right&& children &&  <P>{children}</P>}
 
             <img src={Image} alt={Header} className='withaside'/>
 
-            {Right&& children &&  <p>{children}</p>}
+            {Right&& children &&  <P>{children}</P>}
         </article>
         )
     }

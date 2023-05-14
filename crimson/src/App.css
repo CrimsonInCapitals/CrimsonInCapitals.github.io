@@ -28,11 +28,14 @@ nav a{
 #root>main{
   min-height: 100vh;
   box-sizing: border-box;
+  height: fit-content;
   padding-top: 3rem;
+  padding-bottom: 20px;
 }
 footer nav{
   display: flex;
   flex-direction: row;
+  align-items: baseline;
   gap: 3rem;
 }
 footer{

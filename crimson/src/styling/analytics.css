@@ -47,17 +47,20 @@ div.Tunnel{
     width: 60%;
     display: block;
     border-radius: 0.5vw;
+    /* border: solid 2px; */
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
-#analytics section.card article{
+#analytics .card>.sub{
     display: flex;
     gap: 1vw;
     justify-content: space-between;
     padding: 4vw;
-    border-top: 2px lightgrey solid;
 }
-#analytics section.card article:first-child{
-    border-top: none;
-}
-#analytics section.card article section{
+#analytics .card .sub section{
     width: 40%;
+}
+.card .Ribbon{
+    padding: 10px 4vw;
 }

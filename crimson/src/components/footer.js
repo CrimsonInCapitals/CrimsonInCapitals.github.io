@@ -4,16 +4,16 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import Button from './button';
 import { useThemeContext } from '../context/theme';
-import { dark, light } from '../colors';
 import { useInternalContext, useSocialContext } from '../context/links';
+import { Ap, H2, P } from './StyledComponents';
 
 const Footer = ()=> {
     const theme = useThemeContext()
     const [styling,setStyle]=useState()
     useEffect(()=>{
     setStyle({
-        backgroundColor: theme.Background,
-        color: theme.Text
+        backgroundColor: theme.Card.Background,
+        borderTop: theme.Card.Accent+' 2px solid'
     })
 },[theme])
     const Socials = useSocialContext()
@@ -22,20 +22,20 @@ const Footer = ()=> {
     <footer style={styling}>
         <nav>
         <section>
-            <h2>Internal Links</h2>
+            <H2 style={theme.TextStyle.CardHeading}>Internal Links</H2>
             {Internals.map(({name,url,component,rank})=>(rank ===1 && <Button use='link' key={url} url={url}> {name} </Button>))}
-            <details>
+            <details style={theme.TextStyle.Aside}>
                 <summary>More</summary>
             {Internals.map(({name,url,component,rank})=>(rank ===2 && <Button use='link' key={url} url={url}> {name} </Button>))}
 
             </details>
         </section>
         <section>
-        <h2>Social Links</h2>
+        <H2>Social Links</H2>
         {Socials.map(({name,handle,link,icon})=>(<Button key={handle} use='a'icon={icon}url={link}>{name}: {handle}</Button>))}
         </section>
         </nav>
-        <p>Crimson in capitals - Harrison Adam Cole</p>
+        <Ap>Crimson in capitals - Harrison Adam Cole</Ap>
         {/* <button type='button' onClick={()=>setUserTheme(!userTheme)}>Change theme</button> */}
     </footer>
     );

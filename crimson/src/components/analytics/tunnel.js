@@ -6,7 +6,6 @@ const Tunnel = ({data})=>{
         width: data[0].percent+'%'
     }
     if(data[1]){data[1][0].percent = (data[1][0].value/data[0].value)*100}
-    console.log(data)
     return(
         <div style={style} className='Tunnel' onFocus={()=>console.log(data[0].text)}>
             <span className='tip'>{data[0].text}: {data[0].value}</span>
