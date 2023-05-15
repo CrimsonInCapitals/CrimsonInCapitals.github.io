@@ -10,7 +10,7 @@ article.window{
     box-shadow: inset 2px 2px white, inset -2px -2px gray;
     position: fixed;
 }
-header{
+.window header{
     padding: 4px;
     font-size: 16px;
     background-color: blue;
@@ -18,35 +18,35 @@ header{
     display: flex;
     align-items: center;
 }
-header img{
+.window header img{
     height: 30px;
 }
-header >menu>button>img{
+.window header >menu>button>img{
     height: 20px;
     padding: 4px 6px;
 }
-header>menu button:last-child{
+.window header>menu button:last-child{
     margin-left: 4px;
 }
-header h1{
+.window header h1{
     margin: 0;
     font-size: 18px;
     font-family: 'headingpix';
     letter-spacing: 1px;
 }
-header>div{
+.window header>div{
     display: flex;
     gap: 4px;
     align-items: center;
     width: stretch;
 }
-header>menu{
+.window header>menu{
     margin: 0;
     padding: 0;
     width: fit-content;
     display: flex;
 }
-article>menu{
+article.window>menu{
     display: flex;
     gap: 6px;
     color: black;
@@ -55,38 +55,38 @@ article>menu{
     font-family: 'headerpix';
     font-size: 18px;
 }
-article>menu p{
+article.window>menu p{
     font-family: 'headingpix';
     letter-spacing: 2px;
     font-size: 18px;
     padding: 6px;
 }
 p{margin: 0;}
-article>menu>p::after{
+article.window>menu>p::after{
     content: '';
     display: block;
     padding-top: 2px;
     width: 14px;
     border-bottom: solid 4px black;
 }
-article>menu>p:hover::after{
+article.window>menu>p:hover::after{
     border-bottom: solid 4px white;
 }
-article>menu>p:hover{
+article.window>menu>p:hover{
     background-color: blue;
     color: white;
 }
-section.board div{
+.window section.board div{
     display: flex;
     flex-direction: column;
 }
-section.board{
+.window section.board{
     padding: 4px;
     box-shadow: inset -2px -2px white, inset 2px 2px gray,inset -4px -4px white,inset 4px 4px gray;
     background-color: black;
     display: flex;
 }
-main.game{
+.window main.game{
     padding: 12px;
     box-shadow: inset 2px 2px white, inset -2px -2px gray,inset 4px 4px white,inset -4px -4px gray;
     height: fit-content;

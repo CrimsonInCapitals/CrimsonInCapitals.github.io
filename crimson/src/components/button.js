@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { dark,light,crimson } from '../colors';
 import { useThemeContext } from '../context/theme';
 
-const Button = ({icon='default',url='/',use='link',children,target='_blank',className,onClick})=> {
+const Button = ({icon='default',url='/',use='link',children,target,className,onClick})=> {
     const location = useLocation()
     const theme = useThemeContext()
     const [iconsrc,setIconsrc]=useState(require('../icons/'+theme.IconSource+icon+'.svg'))
@@ -32,7 +32,7 @@ const Button = ({icon='default',url='/',use='link',children,target='_blank',clas
         </Link>
         }
         {use === 'a'&&
-        <a target={target}
+        <a target={target? target:'_blank'}
         className={className}
 
             href={url}

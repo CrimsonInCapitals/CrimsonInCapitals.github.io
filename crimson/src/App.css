@@ -3,11 +3,10 @@ body{
 }
 #root > header{
   width: 100%;
-  padding: 1rem;
+  padding: 0 20%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   backdrop-filter: saturate(200%) blur(40px);
-  justify-content: flex-end;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +23,30 @@ nav a{
   text-decoration: none;
   font-family: 'jost',sans-serif;
   font-weight: 700;
+  padding-top: 1rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  /* padding-bottom: 0.5rem; */
 }
+nav a h1{
+  font-size: 1.2rem;
+}
+nav a .buttonline{
+  padding-top: 2px;
+  /* background-color: #C00800; */
+  width: 100%;
+
+}
+
+nav a:hover .buttonline{
+  background-color: #C00800;
+}
+
+
+
 #root>main{
   min-height: 100vh;
   box-sizing: border-box;
@@ -118,6 +140,8 @@ p.contact a{
 section.cookieRequest{
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   gap: 2vh;
   padding: 2vh;

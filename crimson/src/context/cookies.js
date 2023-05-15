@@ -11,28 +11,32 @@ export const CookiesProvider = ({ children }) => {
     const defaultstate = {
         permit: false,
         request: false,
-        set: function(action='get',[location='/',path='',data='']){
+        set:function(action='get',[location='misc',path='/',data='']){
             // location='crimsonincapitals'+location
             if(!this.permit && action !=='get')return 'disabled'
             let cookie =  new Cookies()
             switch(action){
                 case 'set':
-                    cookie.set(location,data,{path:path})
+                    cookie.set(location,data,{path})
                     return 'set'
                 case 'addition':
-                    data = {...cookie.get(location,{path:path}), ...data}
-                    cookie.set(location,data,{path:path})
+                    data = {...cookie.get(location,{path}), ...data}
+                    cookie.set(location,data,{path})
                     return 'added'
                 case 'remove':
-                    cookie.remove(location,{path:path})
+                    cookie.remove(location,{path})
                     return 'removed'
                 default:
-                    return cookie.get(location)
+                    return cookie.get(location,{path})
             }
         },
-        get:function(location,path='/'){
+        get:function(location='misc',path='/'){
             let cookie = new Cookies()
-            return cookie.get(location,path)
+            return cookie.get(location,{path})
+        },
+        remove:function(location='misc',path='/'){
+            let cookie = new Cookies()
+            return cookie.remove(location,{path})
         }
     }
     const [cookies,disbatchCookies]=useReducer(acceptcookies,defaultstate)

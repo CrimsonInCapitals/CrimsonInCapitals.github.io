@@ -1,10 +1,11 @@
 // import './App.css';
 // import {Link,Routes,Route} from 'react-router-dom'
 // import { useEffect, useState } from 'react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { H1, H2, P } from '../components/StyledComponents';
 
 const About = ()=> {
+    useEffect(()=>{document.title = 'Crimson in Capitals - About'},[])
     return (
     <main className='home'>
  <section>

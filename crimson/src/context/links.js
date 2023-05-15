@@ -47,9 +47,9 @@ const InternalContext = createContext(undefined);
 
 export const InternalProvider = ({ children }) => {
     class Page {
-        constructor(name='',url='/',component=<Home/>, rank = 2){
+        constructor(name='',to='/',component=<Home/>, rank = 2){
           this.name = name
-          this.url = url
+          this.to = to
           this.component = component
           this.rank = rank
         }

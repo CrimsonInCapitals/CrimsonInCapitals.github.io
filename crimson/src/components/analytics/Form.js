@@ -1,4 +1,4 @@
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 
 export const RequestForm=({pages,submit})=>{
     class metric{
@@ -9,7 +9,7 @@ export const RequestForm=({pages,submit})=>{
         }
     }
 const formdefault = {
-    page: {id:0},
+    page: pages[0],
     pages: pages,
     period_days: 7,
     period_options:[{value:7,text: 'One week'},{value:31,text: 'One month'},{value:93, text:'Three monthd'}],
@@ -46,8 +46,6 @@ const formdefault = {
             }
         }
         this.metric=string
-        console.log('end of function:')
-        console.log(this)
     }
 
 }
@@ -70,9 +68,9 @@ const formcontroller=(object,action)=>{
     return {...object}
 }
 const [pageForm,disbatchPageForm]=useReducer(formcontroller,formdefault)
-
+useEffect(()=>{disbatchPageForm({actor:'metric',value:'first'})},[])
 return(
-    <form onSubmit={e=>{e.preventDefault(); submit(pageForm)}}>
+    <form onSubmit={e=>{e.preventDefault();submit(pageForm)}}>
          <label>Select page:
                 <select value={pageForm.page.id} onChange={e=>{disbatchPageForm({actor:'page',value: e.target.value})}}>
                     <option value='default'>Select a page</option>
@@ -88,7 +86,7 @@ return(
                 </label>
                 <div>
                     <label>Data points:
-                        {pageForm.metrics.map((metric)=>(<label>{metric.text}<input key={metric.metric} type='checkbox' onChange={e=>{console.log(e.target.checked === false); disbatchPageForm({actor: 'metric',value: metric.metric,state: e.target.checked});}} value={metric.metric} checked={metric.selected}/></label>))}
+                        {pageForm.metrics.map((metric)=>(<label>{metric.text}<input key={metric.metric} type='checkbox' onChange={e=>{disbatchPageForm({actor: 'metric',value: metric.metric,state: e.target.checked});}} value={metric.metric} checked={metric.selected}/></label>))}
                     </label>
                 </div>
                 </details>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useThemeContext } from '../../context/theme';
+import { CH1 } from '../StyledComponents';
 
 export const Card = ({children,heading='Default'})=> {
     const theme = useThemeContext()
@@ -10,7 +11,7 @@ export const Card = ({children,heading='Default'})=> {
     },[theme])
 return(
         <section style={cardStyle} className='card'>
-            <Ribbon><h2 style={theme.TextStyle.CardHeading}>{heading}</h2></Ribbon>
+            <Ribbon><CH1 style={theme.TextStyle.CardHeading}>{heading}</CH1></Ribbon>
             {children}
         </section>
     )
@@ -18,8 +19,8 @@ return(
 
 export const Section = ({children})=> {
     const theme = useThemeContext()
-    const [subStyle,setSubStyle]=useState({borderTop: theme.Card.Accent+' 2px solid'})
-    useEffect(()=>{setSubStyle({borderTop: theme.Accent+' 2px solid'})},[theme])
+    const [subStyle,setSubStyle]=useState({borderTop: theme.Card.Accent+' 1px solid'})
+    useEffect(()=>{setSubStyle({borderTop: theme.Accent+' 1px solid'})},[theme])
 return(
     <div style={subStyle} className='sub'>
         {children}

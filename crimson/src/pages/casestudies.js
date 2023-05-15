@@ -2,12 +2,12 @@
 // import {Link,Routes,Route} from 'react-router-dom'
 // import { useEffect, useState } from 'react';
 import '../styling/casestudies.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { CaseCard, CaseText } from '../components/casecard';
 
 const CaseStudies = ()=> {
-
+    useEffect(()=>{document.title = 'Crimson in Capitals - Case Studies'},[])
     return (
         <main className='home'>
             <section id='cardDeck'>

@@ -1,8 +1,9 @@
 // import './App.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { H1, P } from '../components/StyledComponents';
 
 const Contact = ()=> {
+    useEffect(()=>{document.title = 'Crimson in Capitals - Contact'},[])
     return (
     <main className='home'>
         <section>

@@ -12,8 +12,8 @@ const Footer = ()=> {
     const [styling,setStyle]=useState()
     useEffect(()=>{
     setStyle({
-        backgroundColor: theme.Card.Background,
-        borderTop: theme.Card.Accent+' 2px solid'
+        backgroundColor: theme.Background,
+        // borderTop: theme.Card.Accent+' 2px solid'
     })
 },[theme])
     const Socials = useSocialContext()
@@ -23,7 +23,7 @@ const Footer = ()=> {
         <nav>
         <section>
             <H2 style={theme.TextStyle.CardHeading}>Internal Links</H2>
-            {Internals.map(({name,url,component,rank})=>(rank ===1 && <Button use='link' key={url} url={url}> {name} </Button>))}
+            {Internals.map(({name,to,component,rank})=>(rank ===1 && <Button use='link' key={to} url={to}> {name} </Button>))}
             <details style={theme.TextStyle.Aside}>
                 <summary>More</summary>
             {Internals.map(({name,url,component,rank})=>(rank ===2 && <Button use='link' key={url} url={url}> {name} </Button>))}
