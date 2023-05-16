@@ -83,7 +83,7 @@ export const FacebookProvider =({children})=>{
             facebook.getUser(facebookCookie.accessToken)
             return
         }
-        facebook.getLoginStatus()
+        facebook.checkLogin()
        
     },[facebook.status,facebook.accessToken])
     return(
