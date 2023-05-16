@@ -7,11 +7,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './context/theme';
 import { InternalProvider, SocialProvider } from './context/links';
 import { CookiesProvider } from './context/cookies';
+import { FacebookProvider } from './context/facebook';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
     <CookiesProvider>
+      <FacebookProvider>
     <ThemeProvider>
       <BrowserRouter>
         <SocialProvider>
@@ -21,6 +23,7 @@ root.render(
         </SocialProvider>
       </BrowserRouter>
     </ThemeProvider>
+    </FacebookProvider>
     </CookiesProvider>
   // </React.StrictMode>
 );

@@ -1,7 +1,7 @@
 .progressBar{
     height: 10px;
     width: 50%;
-    border-radius: 15px;
+    border-radius: 0.5vw;
     overflow: hidden;
     background-color: gray;
 }
@@ -9,15 +9,15 @@
     background-color: blue;
     height: 100%;
     min-width: 10px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
 }
 .progress100{
     background-color: blue;
     height: 100%;
     max-width: 100%;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
     transition: ease-in-out 5s;
 }
 article{
@@ -32,7 +32,7 @@ article{
 }
 .card{
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0.5vw;
     aspect-ratio: 1;
     position: relative;
 
@@ -128,7 +128,7 @@ article.cardwithaside p{
 }
 img.withaside{
     width: 60%;
-    border-radius: 8px;
+    border-radius: 0.5vw;
     position: relative;
 }
 div.exwideCard p{

@@ -1,18 +1,16 @@
 import './App.css';
-import {Routes,Route, Link, useLocation} from 'react-router-dom'
+import {Routes,Route} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import React from 'react';
 import Footer from './components/footer';
 import { useThemeContext } from './context/theme';
-import { dark, light } from './colors';
 import Button from './components/button';
 import { useInternalContext } from './context/links';
 import Experiment from './pages/experimental';
-import { CH1 } from './components/StyledComponents';
+import { HL } from './components/StyledComponents';
 
 const App = ()=> {
-  const location=useLocation()
-  const isrank =(variable)=> {if(variable.rank === 1){return true}else{return false}}
+  const isrankone =(variable)=> {if(variable.rank === 1){return true}else{return false}}
   const theme = useThemeContext()
   const [mainstyle,setMainstyle]=useState({
     backgroundColor: theme.Background,
@@ -39,11 +37,9 @@ const App = ()=> {
     <>
       <header style={menuStyle}>
         <nav className='full' style={{...menu}}>
-          {pages.filter(isrank).map(({name,to,component})=>(
-          <Link onClick={showmenu} key={to} to={to}>
-             <CH1>{name}</CH1>
-             <div  className={'buttonline'} style={{backgroundColor: location.pathname===to?theme.Card.Accent:''}}/>
-             </Link>))}
+          {pages.filter(isrankone).map(({name,to,component})=>(
+          <HL onClick={showmenu} key={to} to={to} name={name}/>
+          ))}
           <a href='../resume.pdf' style={theme.TextStyle.CardHeading}target='_blank'>Résumé</a>
         </nav>
         <Button onClick={showmenu} icon='default'className='menu' use='button'></Button>

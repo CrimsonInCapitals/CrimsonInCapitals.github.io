@@ -19,30 +19,39 @@ nav{
   align-items: center;
   gap: 1rem;
 }
-nav a{
+header nav a.default{
   text-decoration: none;
   font-family: 'jost',sans-serif;
   font-weight: 700;
-  padding-top: 1rem;
   width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 0.5rem;
-  /* padding-bottom: 0.5rem; */
+  gap: 0rem;
 }
 nav a h1{
   font-size: 1.2rem;
 }
 nav a .buttonline{
   padding-top: 2px;
-  /* background-color: #C00800; */
   width: 100%;
+  margin-top: -2px;
 
 }
-
+header button img{
+  margin: 10px;
+  height: 2rem;
+  aspect-ratio: 1;
+}
+header button.menu{
+  aspect-ratio: 1;
+  margin: 0;
+}
 nav a:hover .buttonline{
   background-color: #C00800;
+}
+header nav{
+  gap: 1.8rem;
 }
 
 
@@ -86,12 +95,15 @@ button.menu{
   main.home > section{
     padding: 3rem 15px;
   }
+  #root header{
+    justify-content: flex-end;
+    padding: 0;
+  }
   button.menu{
     display: inline;
     z-index: 100;
   }
   nav.full{
-    position: absolute;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
@@ -100,6 +112,8 @@ button.menu{
     top: 0;
     left: 0;
     display: none;
+    padding-left: 2rem;
+    margin-left: 20px;
   }
   footer nav{
     flex-direction: column;
@@ -110,6 +124,7 @@ button.menu{
 }
 main.home > section img.poster{
   width: 100%;
+  border-radius: 0.5vw;
 }
 img.profilehero{
   width: 30%;

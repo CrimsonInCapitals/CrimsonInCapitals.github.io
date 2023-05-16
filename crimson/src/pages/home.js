@@ -20,8 +20,10 @@ export const Home = ()=> {
         <main className='home'>
 
             <section>
-                <H1>Hi There</H1>
-                <P>Two forces will always be at odds, the efficent, and the asthetic. As people we exist on this sliding scale. The best design for the most people exists at the mean. As a designer I crave the asthetic, as a Developer I want the efficent, this intersection of the oposition is where I create.</P>
+                <H1>Welcome</H1>
+                <P>
+                This site was created to share my perspective on design. Good design is about combining principles of aesthetics and principles of user experience. As everything we create is created to be experienced, the context in which it will be experienced is vital to consider when we design. Good user experience and good design are not the same thing. The former is only a portion of the latter - aesthetics is the other part. Creating visual cues, selecting colours and fonts and borders and background, that is all driven by aesthetics. When I design, I do so with both in mind.
+                </P>
             </section>
             <section>
                 <img style={shadow} className='poster' src={require('../sources/images/poster1.jpg')} alt='a breakdown of the scalling and construction of the 2021 red hat logo'/>

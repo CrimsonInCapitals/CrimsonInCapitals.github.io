@@ -26,7 +26,7 @@ const Footer = ()=> {
             {Internals.map(({name,to,component,rank})=>(rank ===1 && <Button use='link' key={to} url={to}> {name} </Button>))}
             <details style={theme.TextStyle.Aside}>
                 <summary>More</summary>
-            {Internals.map(({name,url,component,rank})=>(rank ===2 && <Button use='link' key={url} url={url}> {name} </Button>))}
+            {Internals.map(({name,to,component,rank})=>(rank ===2 && <Button use='link' key={to} url={to}> {name} </Button>))}
 
             </details>
         </section>
