@@ -41,6 +41,7 @@ export const FacebookProvider =({children})=>{
             })
         },
         checkLogin:function(){
+            if(!window.FB)return
             window.FB.getLoginStatus(function(response){//is a user logged in?
                 switch(response.status){
                     case 'connected':
