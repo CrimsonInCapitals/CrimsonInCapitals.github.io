@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes,Route} from 'react-router-dom'
+import {Routes,Route, useLocation} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import React from 'react';
 import Footer from './components/footer';
@@ -33,6 +33,10 @@ const App = ()=> {
     })
   },[theme])
   const pages = useInternalContext()
+  const location = useLocation()
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[location.pathname])
   return (
     <>
       <header style={menuStyle}>
@@ -44,12 +48,16 @@ const App = ()=> {
         </nav>
         <Button onClick={showmenu} icon='default'className='menu' use='button'></Button>
       </header>
+
+
       <main style={mainstyle}>
         <Routes>
           {pages.map(({name,to,component})=>(<Route key={to} path={to} element={component}/>))}
           <Route path='/exp' element={<Experiment/>}/>
         </Routes>
       </main>
+
+
       <Footer/>
     </>
     );

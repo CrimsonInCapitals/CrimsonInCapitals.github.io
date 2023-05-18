@@ -43,6 +43,7 @@ export const FacebookProvider =({children})=>{
         checkLogin:function(){
             if(!window.FB)return
             window.FB.getLoginStatus(function(response){//is a user logged in?
+                console.log(response)
                 switch(response.status){
                     case 'connected':
                         break;
@@ -86,7 +87,7 @@ export const FacebookProvider =({children})=>{
         }
         facebook.checkLogin()
        
-    },[facebook.status,facebook.accessToken])
+    },[facebook.status,facebook.accessToken,window.FB])
     return(
         <facebookContext.Provider value={[facebook,disbatchFacebook]}>
             {children}
