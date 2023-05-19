@@ -25,8 +25,8 @@ article{
 }
 #cardDeck{
     display: grid;
-    grid-template-columns: auto auto auto;
-    /* grid-template-rows: auto auto auto auto auto; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
     height: fit-content;
     gap: 1vw;
 }
@@ -35,6 +35,8 @@ article{
     border-radius: 0.5vw;
     aspect-ratio: 1;
     position: relative;
+    box-sizing: border-box;
+    z-index: 5;
 
 }
 .card img{
@@ -44,14 +46,15 @@ article{
 }
 .cardheader{
     margin: 0;
-    top: 15px;
-    left: 15px;
+    top: 1vw;
+    left: 1vw;
     position: absolute;
     color: #d7cfc800;
     font-size: 1.1rem;
+    display: none;
 }
 .card:hover .cardheader{
-    color: #d7cfc8;
+    display: block;
 }
 .card:hover{
     background-color: black;
@@ -60,7 +63,7 @@ div.card:hover{
     background-color: unset;
 }
 .card:hover img{
-    opacity: 50%;
+    opacity: 20%;
 }
 .smallCard{
     grid-column: span 1;
