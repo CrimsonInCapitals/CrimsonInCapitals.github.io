@@ -7,7 +7,9 @@ import { useThemeContext } from './context/theme';
 import Button from './components/button';
 import { useInternalContext } from './context/links';
 import Experiment from './pages/experimental';
-import { HL } from './components/StyledComponents';
+import { H1, HL } from './components/StyledComponents';
+import { Home } from './pages/home';
+import { FourZeroFour } from './pages/404';
 
 const App = ()=> {
   const isrankone =(variable)=> {if(variable.rank === 1){return true}else{return false}}
@@ -20,8 +22,11 @@ const App = ()=> {
     borderBottom: theme.Card.Accent+' 1px solid'
   })
   const [menu,setMenu] =useState({})
+  const [title,setTitle]=useState({})
   const showmenu =()=>{
     menu.display && menu.display === 'inherit'? setMenu({}):setMenu({display:'inherit'})
+    title.display && title.display === 'none'? setTitle({}):setTitle({display:'none'})
+
   }
   useEffect(()=>{
     setMenuStyle({
@@ -39,13 +44,18 @@ const App = ()=> {
   },[location.pathname])
   return (
     <>
-      <header style={menuStyle}>
+      <header style={menuStyle} onClick={showmenu}>
         <nav className='full' style={{...menu}}>
           {pages.filter(isrankone).map(({name,to,component})=>(
           <HL onClick={showmenu} key={to} to={to} name={name}/>
           ))}
           <a href='../resume.pdf' style={theme.TextStyle.CardHeading}target='_blank'>Résumé</a>
         </nav>
+        <section className='pagename' style={title}>
+        <Routes>
+          {pages.map(({name,to})=>(<Route path={to} key={to} element={<H1>{name}</H1>}/>))}
+        </Routes>
+        </section>
         <Button onClick={showmenu} icon='default'className='menu' use='button'></Button>
       </header>
 
@@ -53,7 +63,7 @@ const App = ()=> {
       <main style={mainstyle}>
         <Routes>
           {pages.map(({name,to,component})=>(<Route key={to} path={to} element={component}/>))}
-          <Route path='/exp' element={<Experiment/>}/>
+          <Route path='*' element={<FourZeroFour/>}/>
         </Routes>
       </main>
 

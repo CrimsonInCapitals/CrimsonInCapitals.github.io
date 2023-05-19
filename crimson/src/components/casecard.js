@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { H2, P } from './StyledComponents';
+import { H1, H2, P } from './StyledComponents';
 export const CaseCard = ({Header='Default',Image=require('../sources/default.png'),size='small',To})=> {
 return(
     To ?
@@ -20,7 +20,7 @@ return(
 export const CaseText = ({Header,Image=require('../sources/default.png'),size='small',To,children})=> {
 return(
     <div className={size+'Card card'}>
-        {Header && <H2>{Header}</H2>}
+        {Header && <H1>{Header}</H1>}
         {children &&  <P>{children}</P>}
     </div>
     )

@@ -32,6 +32,9 @@ header nav a.default{
 nav a h1{
   font-size: 1.2rem;
 }
+header .pagename{
+  display: none;
+}
 nav a .buttonline{
   padding-top: 2px;
   width: 100%;
@@ -93,11 +96,14 @@ button.menu{
 }
 @media (max-width: 800px) {
   main.home > section{
-    padding: 3rem 15px;
+    padding: 3rem 2vw;
+  }
+  header .pagename{
+    display: block;
   }
   #root header{
-    justify-content: flex-end;
-    padding: 0;
+    padding: 0 2vw;
+    padding-left: 5vw;
   }
   button.menu{
     display: inline;
