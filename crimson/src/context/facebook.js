@@ -34,7 +34,7 @@ export const FacebookProvider =({children})=>{
                     else disbatchFacebook({task:'adduser',response})
                 })
         },
-        getPages:function(access_token=facebook.access_token){
+        getPages: function (access_token=facebook.access_token){
             window.FB.api('/me/accounts','GET',{access_token},function(response){
                 if(response.error)disbatchFacebook({task:'error'})
                 else disbatchFacebook({task:'addpages',response})
@@ -43,9 +43,10 @@ export const FacebookProvider =({children})=>{
         checkLogin:function(){
             if(!window.FB)return
             window.FB.getLoginStatus(function(response){//is a user logged in?
-                console.log(response)
                 switch(response.status){
                     case 'connected':
+                        disbatchFacebook({task: 'login',response})
+                        //this.getUser()
                         break;
                     case 'not_authorized':
                         break;
@@ -64,7 +65,6 @@ export const FacebookProvider =({children})=>{
             },
             {scope: 'email, manage_fundraisers,read_insights,publish_video,catalog_management,pages_manage_cta,pages_manage_instant_articles,pages_show_list,read_page_mailboxes,ads_management,ads_read,business_management,pages_messaging,pages_messaging_subscriptions,instagram_basic,instagram_manage_comments,instagram_manage_insights,instagram_content_publish,leads_retrieval,whatsapp_business_management,instagram_manage_messages,page_events,pages_read_engagement,pages_manage_metadata,pages_read_user_content,pages_manage_ads,pages_manage_posts,pages_manage_engagement,whatsapp_business_messaging'})
         },
-        
         ...cookies.get('Facebook')
     }
 
@@ -76,16 +76,16 @@ export const FacebookProvider =({children})=>{
 
     },[facebook])
     useEffect(()=>{
+        let facebookCookie = cookies.get('Facebook','/')
         if(facebook.status === 'connected'){
             if(!facebook.pages)facebook.getPages()
             if(!facebook.user)facebook.getUser()
         }
-        let facebookCookie = cookies.get('Facebook','/')
-        if(facebookCookie && facebookCookie.accessToken && facebook.status === 'unset'){
+        else if(facebookCookie && facebookCookie.accessToken && facebook.status === 'unset'){
             facebook.getUser(facebookCookie.accessToken)
             return
         }
-        facebook.checkLogin()
+        else {facebook.checkLogin()}
        
     },[facebook.status,facebook.accessToken,window.FB])
     return(
