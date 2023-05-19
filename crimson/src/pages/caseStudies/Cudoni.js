@@ -4,7 +4,7 @@ import { CaseCard, CaseText } from '../../components/casecard';
 const Cudoni = ()=> {
 
     return (
-        <main className='home'>
+        <>
             <section id='cardDeck'>
             <CaseText size='exwide'Header='Cudoni'>Before they shut down, I worked for Cudoni in the photography department. This is a sample of the pictures I took during my time there.</CaseText>
 
@@ -40,7 +40,7 @@ const Cudoni = ()=> {
 
                 
             </section>
-        </main>
+        </>
     );
 }
 

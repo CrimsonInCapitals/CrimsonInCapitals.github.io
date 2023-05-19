@@ -38,7 +38,7 @@ div.Tunnel{
     border-radius: 5px;
     min-width: 80px;
 }
-#analytics section.card{
+main section.card{
     all: unset;
     background-color: white;
     margin: 0 20%;
@@ -52,13 +52,13 @@ div.Tunnel{
     overflow: hidden;
     margin-bottom: 20px;
 }
-#analytics .card>.sub{
+main .card>.sub{
     display: flex;
     gap: 1vw;
     justify-content: space-between;
     padding: 4vw;
 }
-#analytics .card .sub section{
+main .card .sub section{
     width: 40%;
 }
 .card .Ribbon{

@@ -9,7 +9,7 @@ import { CaseCard, CaseText } from '../components/casecard';
 const CaseStudies = ()=> {
     useEffect(()=>{document.title = 'Crimson in Capitals - Case Studies'},[])
     return (
-        <main className='home'>
+        <>
             <section id='cardDeck'>
                 <CaseText size='exwide' back={false} Header='Case Studies'>Since 2019, I have had the great privilege of working with some fantastic people and businesses to create personal and meaningful content for a variety of mediums. I have collated several projects I have worked on for your exploration.</CaseText>
                 <CaseCard size='small' Header='Bobbin & Em (Freelance)'  To='/casestudies/bobbin&em' Image={require('../sources/caseStudies/bobboin&Em/default.jpg')}/>
@@ -23,7 +23,7 @@ const CaseStudies = ()=> {
                 <CaseCard size='small' Header='Cudoni (Employee)' To='/casestudies/cudoni' Image={require('../sources/caseStudies/Cudoni/default.jpg')}/>
                 <CaseCard size='small' Header='Minesweeper (What?)' To='/casestudies/minesweeper' Image={require('../sources/caseStudies/minesweeper/default.jpg')}/>
             </section>
-        </main>
+        </>
     );
 }
 

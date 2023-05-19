@@ -4,7 +4,7 @@ import { CaseCard, CaseText } from '../../components/casecard';
 const Icons = ()=> {
 
     return (
-        <main className='home'>
+        <>
             <section id='cardDeck'>
                 <CaseText Header='Icon Design'size='exwide'>Using the minimum level of complexity to communicate maximum meaning is the primary purpose of an icon. They will not always be accompanied by text, so being able to understand the meaning of an icon is important. Out of context icons, such as the ones below, can be hard to identify but in the context of the menu, they make sense.</CaseText>
 
@@ -19,7 +19,7 @@ const Icons = ()=> {
 
             
             </section>
-        </main>
+        </>
     );
 }
 

@@ -4,11 +4,11 @@ import { useCookiesContext } from "./cookies";
 const facebookContext = createContext(undefined)
 
 export const FacebookProvider =({children})=>{
-    const [cookies,disbatchCookies] = useCookiesContext()
+    const cookies = useCookiesContext()
     const updateFacebook = (state,action)=>{
         switch(action.task){
             case 'login':
-                return{
+            return{
                     ...state,
                     status: action.response.status,
                     access_token: action.response.authResponse.accessToken
@@ -23,6 +23,7 @@ export const FacebookProvider =({children})=>{
             case 'error':
                 return{status: 'error'}
             default: return{...state}
+            return{...state}
         }
     }
     const facebookdefault = {
@@ -74,7 +75,7 @@ export const FacebookProvider =({children})=>{
         if(facebook.satus === 'error')cookies.remove('Facebook')
 
 
-    },[facebook])
+    },[facebook,cookies])
     useEffect(()=>{
         let facebookCookie = cookies.get('Facebook','/')
         if(facebook.status === 'connected'){
@@ -86,10 +87,10 @@ export const FacebookProvider =({children})=>{
             return
         }
         else {facebook.checkLogin()}
-       
     },[facebook.status,facebook.accessToken,window.FB])
+
     return(
-        <facebookContext.Provider value={[facebook,disbatchFacebook]}>
+        <facebookContext.Provider value={facebook}>
             {children}
         </facebookContext.Provider>
     )

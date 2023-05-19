@@ -10,10 +10,10 @@ export const CookiesProvider = ({ children }) => {
     }
     const defaultstate = {
         permit: false,
-        request: false,
+        request: true,
         set:function(action='get',[location='misc',path='/',data='']){
             // location='crimsonincapitals'+location
-            if(!this.permit && action !=='get')return 'disabled'
+            if(!this.permit)return false
             let cookie =  new Cookies()
             switch(action){
                 case 'set':
@@ -31,21 +31,32 @@ export const CookiesProvider = ({ children }) => {
             }
         },
         get:function(location='misc',path='/'){
+            if(!this.permit)return false
             let cookie = new Cookies()
             return cookie.get(location,{path})
         },
         remove:function(location='misc',path='/'){
+            if(!this.permit)return false
             let cookie = new Cookies()
             return cookie.remove(location,{path})
+        },
+        check: function(){
+            let cookie = new Cookies()
+            return cookie.get('cookies',{path:'/'})
+        },
+        accept: function(accept,request=true){
+            disbatchCookies({accept,request})
         }
+
+
     }
     const [cookies,disbatchCookies]=useReducer(acceptcookies,defaultstate)
     useEffect(()=>{
-        cookies.set('get',['cookies','/',true]) && disbatchCookies({accept: true,request:true})
+        cookies.check() ? disbatchCookies({accept: true,request:true}):cookies.accept(false,false)
         cookies.set('set',['cookies','/',true])
     },[cookies.permit])
     return (
-        <CookiesContext.Provider value={[cookies,disbatchCookies]}>
+        <CookiesContext.Provider value={cookies}>
             {children}
         </CookiesContext.Provider>
     );

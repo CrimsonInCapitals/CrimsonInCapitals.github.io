@@ -4,7 +4,7 @@ import { CaseCard, CaseText } from '../../components/casecard';
 const AmazingGrace = ()=> {
 
     return (
-        <main className='home'>
+        <>
             <section id='cardDeck'>
                 <CaseText size='exwide'Header='Amazing Grace'>By researching the brand and analysing its aesthetic, I was able to design this set of icons for use on social media and on their website.</CaseText>
                 <CaseCard Image={require('../../sources/caseStudies/amazingGrace/pallet.jpg')}/>
@@ -17,7 +17,7 @@ const AmazingGrace = ()=> {
                 <CaseText >These icons I designed for the measurements page.</CaseText>
                 <CaseCard Image={require('../../sources/caseStudies/amazingGrace/bust.jpg')}/>
             </section>
-        </main>
+        </>
     );
 }
 

@@ -17,8 +17,7 @@ export const Home = ()=> {
 
     }
     return (
-        <main className='home'>
-
+        <>
             <section>
                 <H1>Welcome</H1>
                 <P>
@@ -37,7 +36,7 @@ export const Home = ()=> {
                     <P>My main goal is personal growth, through learning and applying myself to everything I do. I find a balance between aesthetic and efficient frameworks to produce a result that maximises both without detracting from either. As a designer I have a drive to achieve perfection and create beautiful things. As a developer I strive for efficient well-planned systems. My ability to find compromise in these missions allows me to understand perspectives and find a path that works to fulfil both. I thrive when working with people with clear goals that I can help achieve. </P>
                 </div>
             </section>
-    </main>
+    </>
     );
 }
 

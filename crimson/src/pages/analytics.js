@@ -15,8 +15,7 @@ import { useFacebookContext } from '../context/facebook';
 
 
 export const Analytics = ()=> {
-    const [cookies,disbatchCookies] = useCookiesContext()
-    const [facebook,disbatchFacebook]=useFacebookContext()
+    const facebook=useFacebookContext()
     const callInsights=(Data,f)=>{
         if(!Data)return
         let access_token = Data.page.access_token
@@ -43,12 +42,12 @@ export const Analytics = ()=> {
     const pageDate = true
 
     return (
-        <main className='analytics home' id='analytics'>
+        <>
             <section>
                 <H1>Welcome {facebook.user && facebook.user.first_name}</H1>
                 {facebook.pages && <RequestForm pages={facebook.pages} submit={(formData)=>callInsights(formData,console.log)}/>}
             </section>
-            {facebook.status !== 'connected' && <Login f={disbatchFacebook}/>}
+            {facebook.status !== 'connected' && <Login/>}
 
             {pageDate &&
                 <Card>
@@ -76,6 +75,6 @@ export const Analytics = ()=> {
                 </Card>
             }
               <CookieBar/>
-        </main>
+        </>
     );
 }

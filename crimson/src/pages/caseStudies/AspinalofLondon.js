@@ -4,7 +4,7 @@ import { CaseCard,CaseText } from '../../components/casecard';
 const AspinalofLondon = ()=> {
 
     return (
-        <main className='home'>
+        <>
     
             <section id='cardDeck'>
             <CaseText size='exwide'Header='Aspinal London'>Working closely with the key stakeholder, I was involved in the exploration of future business opportunities. This required expanding on their current deep library of brand symbols. 'House of Aspinal' is a sister business they wanted to create.</CaseText>
@@ -30,7 +30,7 @@ const AspinalofLondon = ()=> {
                 <CaseText size='exwide'>My final task was to design the A letter mark for use as an umbrella that both companies could exist under. While plans were delayed by the pandemic, we should start to see the business developed in the coming years.</CaseText>
 
                 </section>
-        </main>
+        </>
     );
 }
 

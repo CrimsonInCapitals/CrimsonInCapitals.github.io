@@ -4,7 +4,7 @@ import { CaseCard, CaseText } from '../../components/casecard';
 const VectorIllustration = ()=> {
 
     return (
-        <main className='home'>
+        <>
             <section id='cardDeck'>
                 <CaseText size='exwide'Header='Vector Illustration'>Made using a tablet and pen, these illustrations are an example of some of the portraits I have drawn.</CaseText>
                 <CaseCard Header='Ana de Armas'size='large' Image={require('../../sources/caseStudies/Portaits/anadearmas.jpg')}/>
@@ -23,7 +23,7 @@ const VectorIllustration = ()=> {
 
 
             </section>
-        </main>
+        </>
     );
 }
 

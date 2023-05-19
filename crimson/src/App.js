@@ -60,7 +60,7 @@ const App = ()=> {
       </header>
 
 
-      <main style={mainstyle}>
+      <main style={mainstyle} className='home'>
         <Routes>
           {pages.map(({name,to,component})=>(<Route key={to} path={to} element={component}/>))}
           <Route path='*' element={<FourZeroFour/>}/>

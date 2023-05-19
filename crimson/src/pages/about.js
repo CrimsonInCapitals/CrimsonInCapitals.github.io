@@ -7,7 +7,7 @@ import { H1, H2, P } from '../components/StyledComponents';
 const About = ()=> {
     useEffect(()=>{document.title = 'Crimson in Capitals - About'},[])
     return (
-    <main className='home'>
+    <>
  <section>
         <H1>About Me</H1>
         <P>I'm a designer that combines my understanding of front-end web development, vector graphics, and photography to create visually cohesive brand assets and online media.</P>
@@ -37,7 +37,7 @@ const About = ()=> {
         <H2>Overall</H2>
         <P>My story is unique but only as unique as any other. My experience and perspective are my own but I still draw a similar conclusion. Skills are an investment of time; this is how I've chosen to invest mine. To view things in less ambiguous terms, read my <a href="./resume.pdf" target="_blank">résumé</a>.</P>
     </section>
-    </main>
+    </>
     );
 }
 

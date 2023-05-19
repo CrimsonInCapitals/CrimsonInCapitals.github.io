@@ -6,7 +6,7 @@ import '../../styling/casestudies.css'
 const TheDogRoom = ()=> {
 
     return (
-        <main className='home'>
+        <>
             <section id='cardDeck'>
                 <CaseText size='exwide' Header='The Dog Room'>The Dog Room is an independent dog grooming business that opened in May 2022.</CaseText>
                 <CaseCard size='medium' Image={require('../../sources/caseStudies/theDogRoom/default.jpg')} Header='Primary Brand Mark'/>
@@ -26,7 +26,7 @@ const TheDogRoom = ()=> {
                 <CaseCard size='small' Image={require('../../sources/caseStudies/theDogRoom/postexample2.jpg')} Header='Post to announce that the business was now open'/>
                 <CaseText size='small'>I also created a handful of social media templates to allow the business owner to share updates and information in a professional manner.</CaseText>
             </section>
-        </main>
+        </>
     );
 }
 

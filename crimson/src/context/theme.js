@@ -54,7 +54,7 @@ export const ThemeProvider = ({ children }) => {
         },
     }
     const [theme,disbatchTheme] = useReducer(getTheme,themeConstruct)
-    useEffect(()=>{disbatchTheme()},[theme.dark])
+    useEffect(()=>{disbatchTheme()},[theme.dark,window])
     return (
         <ThemeContext.Provider value={theme}>
             {children}

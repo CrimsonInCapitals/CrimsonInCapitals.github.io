@@ -4,7 +4,7 @@ import { CaseCard, CaseText } from '../../components/casecard';
 const BobbinEm = ()=> {
 
     return (
-        <main className='home'>
+        <>
             <section id='cardDeck'>
                 <CaseText size='exwide'Header='Bobbin & Em'>A small Sole proprietor, Emily, who was at university doing fashion, had started making and selling facemasks on social media and in small boutiques in her local area.</CaseText>
 
@@ -14,7 +14,7 @@ const BobbinEm = ()=> {
                 <CaseCard Header='Packaging' size='large' Image={require('../../sources/caseStudies/bobboin&Em/facemask.jpg')}/>
 
             </section>
-        </main>
+        </>
     );
 }
 

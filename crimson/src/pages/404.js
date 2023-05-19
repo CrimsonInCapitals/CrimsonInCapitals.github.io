@@ -17,14 +17,14 @@ export const FourZeroFour = ()=> {
 
     }
     return (
-        <main className='home'>
+        <>
 
             <section>
                 <H1>Error 404</H1>
                 <P>Page not found</P>
                 <HL to='/' name='Return Home'/>
             </section>
-    </main>
+    </>
     );
 }
 
