@@ -11,7 +11,7 @@ const CaseStudies = ()=> {
     return (
         <main className='home'>
             <section id='cardDeck'>
-                <CaseText size='exwide' Header='Case Studies'>Since 2019, I have had the great privilege of working with some fantastic people and businesses to create personal and meaningful content for a variety of mediums. I have collated several projects I have worked on for your exploration.</CaseText>
+                <CaseText size='exwide' back={false} Header='Case Studies'>Since 2019, I have had the great privilege of working with some fantastic people and businesses to create personal and meaningful content for a variety of mediums. I have collated several projects I have worked on for your exploration.</CaseText>
                 <CaseCard size='small' Header='Bobbin & Em (Freelance)'  To='/casestudies/bobbin&em' Image={require('../sources/caseStudies/bobboin&Em/default.jpg')}/>
                 <CaseCard size='medium' Header='The Dog Room (Freelance)' To='/casestudies/thedogroom' Image={require('../sources/caseStudies/theDogRoom/default.jpg')}/>
                 <CaseCard size='small' Header='Amazing Grace (Freelance)' To='/casestudies/amazinggrace' Image={require('../sources/caseStudies/amazingGrace/default.jpg')}/>

@@ -44,6 +44,14 @@ article{
     height: 100%;
     /* position: absolute; */
 }
+.card h1 a{
+    font-size: 3rem;
+}
+.card h1.heading{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 .cardheader{
     margin: 0;
     top: 1vw;

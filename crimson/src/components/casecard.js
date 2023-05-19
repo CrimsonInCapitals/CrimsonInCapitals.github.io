@@ -23,10 +23,16 @@ return(
     )
 }
 
-export const CaseText = ({Header,Image=require('../sources/default.png'),size='small',To,children})=> {
+export const CaseText = ({Header,Image=require('../sources/default.png'),size='small',To,children,back=true})=> {
+    const theme = useThemeContext()
 return(
     <div className={size+'Card card'}>
-        {Header && <H1>{Header}</H1>}
+        {Header &&
+        <H1 className='heading'>
+            {back&&<Link style={theme.TextStyle.Heading1} to='/casestudies'>←</Link>}
+            {Header}
+        </H1>
+        }
         {children &&  <P>{children}</P>}
     </div>
     )

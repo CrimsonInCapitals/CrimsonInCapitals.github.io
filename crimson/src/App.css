@@ -41,7 +41,7 @@ nav a .buttonline{
   margin-top: -2px;
 
 }
-header button img{
+#root>header button img{
   margin: 10px;
   height: 2rem;
   aspect-ratio: 1;
