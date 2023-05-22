@@ -70,7 +70,7 @@ article{
 div.card:hover{
     background-color: unset;
 }
-.card:hover img{
+.card:hover>img{
     opacity: 20%;
 }
 .smallCard{
@@ -115,7 +115,7 @@ div.card:hover{
     font-size: 1.5rem;
     margin: 5%;
 }
-.card h1{
+.card>h1{
     margin: 5%;
     margin-bottom: -3%;
 }

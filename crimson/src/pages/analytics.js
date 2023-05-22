@@ -10,9 +10,13 @@ import { Login } from '../components/analytics/Login';
 import { CookieBar } from '../components/cookierequest';
 import { CH1, H1 } from '../components/StyledComponents';
 import { useFacebookContext } from '../context/facebook';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+import { Posts } from '../components/analytics/Posts';
 //import { LoginSocialFacebook } from 'reactjs-social-login';
 //import facebook
 
+ChartJS.register(ArcElement);
 
 export const Analytics = ()=> {
     const facebook=useFacebookContext()
@@ -40,7 +44,24 @@ export const Analytics = ()=> {
 
     }
     const pageDate = true
-
+    const pieData={
+        labels: ['Red', 'Yello', 'Purple', 'Blue'],
+        datasets: [
+          {
+            label: '# of Votes',
+            data: [12, 19, 3, 5],
+            backgroundColor: [
+              '#EA4335',
+              '#FBBC04',
+              '#D00DAC',
+              '#1877F2',
+            ],
+           
+            borderWidth: 0,
+          },
+        ],
+      }
+      useEffect(()=>{console.log(facebook)},[facebook])
     return (
         <>
             <section>
@@ -49,8 +70,17 @@ export const Analytics = ()=> {
             </section>
             {facebook.status !== 'connected' && <Login/>}
 
-            {pageDate &&
-                <Card>
+            {facebook.pages &&
+            <>
+                {facebook.pages.map((page)=>(
+                    <Card key={page.id} heading={page.name}>
+                        <Posts page={page}/>
+                        <Section>
+                            hi
+                        </Section>
+                    </Card>
+                ))}
+                {/* <Card>
                     <Section>
                         <aside>
                             <CH1>Conversion Tunnel</CH1>
@@ -63,7 +93,8 @@ export const Analytics = ()=> {
                             }/>
                         </section>
                     </Section>
-                    {/* {pageDate.data.map((Point)=>(
+                    <Posts page={facebook.pages[0]}/>
+                    {pageDate.data.map((Point)=>(
                         <Section>
                             <h2>{Point.title}</h2>
                             <details>
@@ -71,8 +102,19 @@ export const Analytics = ()=> {
                                 <p>{Point.description}</p>
                             </details>
                         </Section>
-                    ))} */}
+                    ))}
+                </Card> */}
+                <Card>
+                    <Section>
+                    <aside>
+                        <CH1>Website visitors origin</CH1>
+                    </aside>
+                    <section>
+                        <Doughnut data={pieData}/>
+                  </section>
+                  </Section>
                 </Card>
+                </>
             }
               <CookieBar/>
         </>

@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }) => {
             TextStyle: {Heading1:{color:'#161616'},Heading2:{color:'#786d6d'},CardHeading:{color:'#161616'},Paragraph:{color:'#161616'},CardParagraph:{color:'#161616'},Aside:{color:'#161616'}},
             Field:'#c1b8b0',
             Shadow: '0 0 20px 4px rgba(0,0,0,0.25)',
-            Button: {primary: ''},
+            Button: {primary: {border: 'solid 1px #ffffff', backgroundColor: '#f0eeee', color:'#161616'},second:{border: 'solid 1px #efffff',color:'#161616'},third:{border: '0px',color:'#161616', TextDecoder:'underline'}},
             IconSource: 'dark/'
         },
         DarkMode:{

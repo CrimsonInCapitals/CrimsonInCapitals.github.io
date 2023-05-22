@@ -3,37 +3,57 @@ import { useThemeContext } from "../context/theme"
 import { useEffect, useState } from "react"
 import { crimson } from "../colors"
 
-export const P =({children,className='',Style=''})=>{
+export const P =({children,className='',Style=''})=>{ // paragraph
     const theme = useThemeContext()
     return(
         <p className={"default "+className} style={{...Style,...theme.TextStyle.Paragraph}}>{children}</p>
     )
 }
-export const CP =({children,className='',Style})=>{
+export const CP =({children,className='',Style})=>{ // Card paragraoh
     const theme = useThemeContext()
     return(
         <p className={"default "+className} style={{...Style,...theme.TextStyle.CardParagraph}}>{children}</p>
     )
 }
-export const H1 =({children,className='',Style})=>{
+export const H1 =({children,className='',Style})=>{ // heading 1
     const theme = useThemeContext()
     return(
         <h1 className={"default "+className} style={{...Style,...theme.TextStyle.Heading1}}>{children}</h1>
     )
 }
-export const H2 =({children,className='',Style})=>{
+export const H2 =({children,className='',Style})=>{// heading 2
     const theme = useThemeContext()
     return(
         <h2 className={"default "+className} style={{...Style,...theme.TextStyle.Heading2}}>{children}</h2>
     )
 }
-export const CH1 =({children,className,Style})=>{
+export const CH1 =({children,className,Style})=>{// card heading 1
     const theme = useThemeContext()
     return(
         <h1 className={"default "+className} style={{...Style,...theme.TextStyle.CardHeading}}>{children}</h1>
     )
 }
-export const Ap =({children,className='',Style})=>{
+export const CH2 =({children,className,Style})=>{// card heading 1
+    const theme = useThemeContext()
+    return(
+        <h1 className={"default "+className} style={{...Style,...theme.TextStyle.CardHeading}}>{children}</h1>
+    )
+}
+export const RH =({children,className,Style})=>{// card Ribbon heading 
+    const theme = useThemeContext()
+    return(
+        <h1 className={"default "+className} style={{...Style,...theme.TextStyle.CardHeading}}>{children}</h1>
+    )
+}
+export const CFB =({children,className,Style,onClick})=>{// card heading 1
+    const theme = useThemeContext()
+    return(
+        <button onClick={onClick} className={"default "+className} style={{...Style,...theme.TextStyle.CardHeading}}>{children}</button>
+    )
+}
+
+
+export const Ap =({children,className='',Style})=>{//aside
     const theme = useThemeContext()
     return(
         <p className={"default "+className} style={{...Style,...theme.TextStyle.Aside}}>{children}</p>
