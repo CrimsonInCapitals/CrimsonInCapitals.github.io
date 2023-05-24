@@ -29,7 +29,7 @@ button:hover img.two{
 button img.two{
     display: none;
 }
-button{
+button.defualt{
     font-family: 'Jost',sans-serif;
     font-weight: 400;
     display: flex;
@@ -38,4 +38,130 @@ button{
     align-items: center;
     font-size: 1.2rem;
     padding: 20%;
+}
+#root button{
+    transition: 1s;
+}
+/* ############################### Dark Mode ######################################## */
+/* -------------------------------Primary Button------------------------------------- */
+#root button.DarkMode_Primary{
+    background-color: #494646;
+    color: #F0EEEE;
+    border: solid 1px #585454;
+}
+#root button.DarkMode_Primary:hover{
+    background-color: #5A5A5A;
+    border: solid 1px #6C6C6C;
+}
+#root button.DarkMode_Primary:disabled{
+    background-color: #4F4F4F;
+    color: #817777;
+    border: none;
+}
+/* -------------------------------Secondary Button------------------------------------- */
+#root button.DarkMode_Secondary{
+    background-color: #3B3838;
+    color: #F0EEEE;
+    border-color: solid 1px #524E4E;
+}
+#root button.DarkMode_Secondary:hover{
+    background-color: #3B3838;
+    border: solid 1px #5A5A5A;
+}
+#root button.DarkMode_Secondary:disabled{
+    background-color: #3C3737;
+    color: #817777;
+    border: none;
+}
+/* -------------------------------Tertiary Button------------------------------------- */
+#root button.DarkMode_Tertiary{
+    background-color: #3B3838;
+    color: #F0EEEE;
+    border: solid 1px #524E4E;
+}
+#root button.DarkMode_Tertiary:hover{
+    background-color: #3B3838;
+    border: solid 1px #5A5A5A;
+}
+#root button.DarkMode_Tertiary:disabled{
+    background-color: #3C3737;
+    color: #817777;
+    border: none;
+}
+/* -------------------------------Colored Button------------------------------------- */
+#root button.DarkMode_Colored{
+    background-color: #C00A00;
+    color: #E4DFDD;
+    border: solid 1px #981912;
+}
+#root button.DarkMode_Colored:hover{
+    background-color: #E3281E;
+    border: olid 1px #B1231B;
+}
+#root button.DarkMode_Coloured:disabled{
+    background-color: #4F4F4F;
+    border: none;
+}
+/* ############################### Light Mode ######################################## */
+/* -------------------------------Primary Button------------------------------------- */
+#root button.LightMode_Primary{
+    background-color: #F0EFEF;
+    color: #817777;
+    border: solid 1px #585454;
+}
+#root button.LightMode_Primary:hover{
+    background-color: #F9F9F9;
+    border: solid 1px #6C6C6C;
+}
+#root button.LightMode_Primary:disabled{
+    background-color: #C0B8B5;
+    border: none;
+}
+/* -------------------------------Secondary Button------------------------------------- */
+#root button.LightMode_Secondary{
+    background-color: #3B3838;
+    color: #F0EEEE;
+    border: solid 1px #f0eeee;
+}
+#root button.LightMode_Secondary:hover{
+    background-color: #f0eeee;
+    color: #F0EEEE;
+    border: solid 1px #5A5A5A;
+}
+#root button.LightMode_Secondary:disabled{
+    background-color: #3C3737;
+    color: #817777;
+    border: none;
+}
+/* -------------------------------Tertiary Button------------------------------------- */
+#root button.LightMode_Tertiary{
+    background-color: #3B3838;
+    color: #F0EEEE;
+    border: solid 1px #524E4E;
+}
+#root button.LightMode_Tertiary:hover{
+    background-color: #3B3838;
+    color: #F0EEEE;
+    border: solid 1px #5A5A5A;
+}
+#root button.LightMode_Tertiary:disabled{
+    background-color: #3C3737;
+    color: #817777;
+    border: none;
+}
+/* -------------------------------Colored Button------------------------------------- */
+#root button.LightMode_Colored{
+    background-color: #C00A00;
+    color: #E4DFDD;
+    border: solid 1px #981912;
+}
+#root button.LightMode_Colored:hover{
+    background-color: #E3281E;
+    color: #E4DFDD;
+    border: solid 1px #B1231B;
+}
+#root button.LightMode_Coloured:disabled{
+    background-color: #4F4F4F;
+    color: #E4DFDD;
+    border: none;
 }

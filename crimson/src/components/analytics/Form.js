@@ -1,6 +1,8 @@
 import { useEffect, useReducer } from "react"
+import { useFacebookContext } from "../../context/facebook"
 
 export const RequestForm=({pages,submit})=>{
+    const facebook = useFacebookContext()
     class metric{
         constructor(selected=true,metric,text){
             this.selected=selected
@@ -9,7 +11,7 @@ export const RequestForm=({pages,submit})=>{
         }
     }
 const formdefault = {
-    page: pages[0],
+    page: pages[pages.summary[0]],
     pages: pages,
     period_days: 7,
     period_options:[{value:7,text: 'One week'},{value:31,text: 'One month'},{value:93, text:'Three monthd'}],
@@ -67,26 +69,26 @@ const formcontroller=(object,action)=>{
     }
     return {...object}
 }
-const [pageForm,disbatchPageForm]=useReducer(formcontroller,formdefault)
-useEffect(()=>{disbatchPageForm({actor:'metric',value:'first'})},[])
+const [pageForm,dispatchPageForm]=useReducer(formcontroller,formdefault)
+useEffect(()=>{dispatchPageForm({actor:'metric',value:'first'})},[])
 return(
     <form onSubmit={e=>{e.preventDefault();submit(pageForm)}}>
          <label>Select page:
-                <select value={pageForm.page.id} onChange={e=>{disbatchPageForm({actor:'page',value: e.target.value})}}>
+                <select value={pageForm.page.id} onChange={e=>{dispatchPageForm({actor:'page',value: e.target.value})}}>
                     <option value='default'>Select a page</option>
-                    {pageForm.pages.map((page,index)=><option key={page.id}value={page.id}>{page.name}</option>)}
+                    {pageForm.pages.summary.map((page,index)=><option key={page}value={page}>{facebook.pages[page].name}</option>)}
                 </select>
                 </label>
                 <details>
                     <summary>Other options</summary>
                 <label>Time range:
-                    <select value={pageForm.period_days} onChange={e=>disbatchPageForm({actor: 'period',value:e.target.value})}>
+                    <select value={pageForm.period_days} onChange={e=>dispatchPageForm({actor: 'period',value:e.target.value})}>
                         {pageForm.period_options.map((option)=>(<option key={option.value} value={option.value}>{option.text}</option>))}
                     </select>
                 </label>
                 <div>
                     <label>Data points:
-                        {pageForm.metrics.map((metric)=>(<label>{metric.text}<input key={metric.metric} type='checkbox' onChange={e=>{disbatchPageForm({actor: 'metric',value: metric.metric,state: e.target.checked});}} value={metric.metric} checked={metric.selected}/></label>))}
+                        {pageForm.metrics.map((metric)=>(<label>{metric.text}<input key={metric.metric} type='checkbox' onChange={e=>{dispatchPageForm({actor: 'metric',value: metric.metric,state: e.target.checked});}} value={metric.metric} checked={metric.selected}/></label>))}
                     </label>
                 </div>
                 </details>

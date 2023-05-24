@@ -10,8 +10,28 @@ export const ThemeProvider = ({ children }) => {
             TextStyle: {Heading1:{color:'#161616'},Heading2:{color:'#786d6d'},CardHeading:{color:'#161616'},Paragraph:{color:'#161616'},CardParagraph:{color:'#161616'},Aside:{color:'#161616'}},
             Field:'#c1b8b0',
             Shadow: '0 0 20px 4px rgba(0,0,0,0.25)',
-            Button: {primary: {border: 'solid 1px #ffffff', backgroundColor: '#f0eeee', color:'#161616'},second:{border: 'solid 1px #efffff',color:'#161616'},third:{border: '0px',color:'#161616', TextDecoder:'underline'}},
-            IconSource: 'dark/'
+            Button:{
+                primary: {
+                    default:{border: 'solid 1px #FEFEFE', backgroundColor: '#F0EFEF', color:'#817777'},
+                    hover:{border: 'solid 1px #FFFFFF', backgroundColor: '#F9F9F9', color:'#817777'},
+                    disabled:{backgroundColor: '#C0B8B5', color:'#817777'},
+                },
+                second:{
+                    default:{border: 'solid 1px #524E4E', backgroundColor: '#3B3838', color:'#F0EEEE'},
+                    hover:{border: 'solid 1px #5A5A5A', backgroundColor: '#f0eeee', color:'#F0EEEE'},
+                    disabled:{backgroundColor: '#3C3737', color:'#817777'},
+                },
+                third:{
+                    default:{border: 'solid 1px #ffffff', backgroundColor: '#f0eeee', color:'#161616'},
+                    hover:{border: 'solid 1px #ffffff', backgroundColor: '#494646', color:'#161616'},
+                    disabled:{backgroundColor: '#3C3737', color:'#161616'},
+                },
+                red:{
+                    default:{border: 'solid 1px #981912', backgroundColor: '#C00A00', color:'#E4DFDD'},
+                    hover:{border: 'solid 1px #B1231B', backgroundColor: '#E3281E', color:'#E4DFDD'},
+                    disabled:{backgroundColor: '#4F4F4F', color:'#E4DFDD'},
+                }
+            },            IconSource: 'dark/'
         },
         DarkMode:{
             Background:'#282222',
@@ -19,7 +39,28 @@ export const ThemeProvider = ({ children }) => {
             TextStyle:{Heading1:{color:'#D7CFC8'},Heading2:{color:'#D7CFC8'},CardHeading:{color:'#f0eeee'},Paragraph:{color:'#D7CFC8'},CardParagraph:{color:'#D7CFC8'},Aside:{color:'#d7cfc8'}},
             Field: '#161010',
             Shadow: '0 0 20px 4px rgba(00,00,00,0.25)',
-            Button:{primary:''},
+            Button:{
+                primary: {
+                    default:{border: 'solid 1px #585454', backgroundColor: '#494646', color:'#F0EEEE'},
+                    hover:{border: 'solid 1px #6C6C6C', backgroundColor: '#5A5A5A', color:'#F0EEEE'},
+                    disabled:{backgroundColor: '#4F4F4F', color:'#817777'},
+                },
+                second:{
+                    default:{border: 'solid 1px #524E4E', backgroundColor: '#3B3838', color:'#F0EEEE'},
+                    hover:{border: 'solid 1px #5A5A5A', backgroundColor: '#3B3838', color:'#F0EEEE'},
+                    disabled:{backgroundColor: '#3C3737', color:'#817777'},
+                },
+                third:{
+                    default:{border: 'solid 1px #ffffff', backgroundColor: '#f0eeee', color:'#161616'},
+                    hover:{border: 'solid 1px #ffffff', backgroundColor: '#494646', color:'#161616'},
+                    disabled:{backgroundColor: '#3C3737', color:'#161616'},
+                },
+                red:{
+                    default:{border: 'solid 1px #981912', backgroundColor: '#C00A00', color:'#E4DFDD'},
+                    hover:{border: 'solid 1px #B1231B', backgroundColor: '#E3281E', color:'#E4DFDD'},
+                    disabled:{backgroundColor: '#4F4F4F', color:'#E4DFDD'},
+                }
+            },
             IconSource: 'light/'
         }
 

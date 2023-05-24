@@ -72,12 +72,10 @@ export const Analytics = ()=> {
 
             {facebook.pages &&
             <>
-                {facebook.pages.map((page)=>(
-                    <Card key={page.id} heading={page.name}>
-                        <Posts page={page}/>
-                        <Section>
-                            hi
-                        </Section>
+                {facebook.pages.summary.map((page,index)=>(index===0&&
+                    <Card key={page} heading={facebook.pages[page].name}>
+                        <Posts page={facebook.pages[page]}/>
+                        {/* <InstagramPosts page={page}/> */}
                     </Card>
                 ))}
                 {/* <Card>

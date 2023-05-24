@@ -20,7 +20,7 @@ export const Login =()=>{
         <section>
             <h2>Connect Platforms:</h2>
             {Login.map((platform)=>(
-            <button key={platform.name} className={'login '+platform.name} onClick={platform.login}><img src={require('../../icons/'+theme.IconSource+platform.icon)}/><p>Login</p></button>
+            <button key={platform.name} className={theme.mode+'_Primary login '+platform.name } onClick={platform.login}><img src={require('../../icons/colour/'+platform.icon)}/><p>Login</p></button>
             ))}
             {Message && <span>{Message}</span>}
         </section>

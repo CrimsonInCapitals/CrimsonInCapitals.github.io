@@ -23,7 +23,7 @@ const Button = ({icon='default',url='/',use='link',children,target,className,onC
         <>
         {use === 'link'&&
         <Link to={url} style={styling}
-                className={className}
+            className={'default '+className}
             onClick={onClick}
             onMouseEnter={()=>setHover(true)}
             onMouseLeave={()=>setHover(false)}>
@@ -33,7 +33,7 @@ const Button = ({icon='default',url='/',use='link',children,target,className,onC
         }
         {use === 'a'&&
         <a target={target? target:'_blank'}
-        className={className}
+        className={'default '+className}
 
             href={url}
             style={styling}
@@ -46,7 +46,7 @@ const Button = ({icon='default',url='/',use='link',children,target,className,onC
         }
         {use === 'button' &&
         <button type='button' style={styling}
-        className={className}
+        className={'default '+className}
             onClick={onClick}
             onMouseEnter={()=>setHover(true)}
             onMouseLeave={()=>setHover(false)}>

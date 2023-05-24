@@ -8,53 +8,56 @@ export const CookiesProvider = ({ children }) => {
     const acceptcookies = (cookies,action={accept:false,request:false})=>{
         return{...cookies,permit: action.accept,request:action.request}
     }
-    const defaultstate = {
-        permit: false,
-        request: true,
-        set:function(action='get',[location='misc',path='/',data='']){
-            // location='crimsonincapitals'+location
-            if(!this.permit)return false
-            let cookie =  new Cookies()
-            switch(action){
-                case 'set':
-                    cookie.set(location,data,{path})
-                    return 'set'
-                case 'addition':
-                    data = {...cookie.get(location,{path}), ...data}
-                    cookie.set(location,data,{path})
-                    return 'added'
-                case 'remove':
-                    cookie.remove(location,{path})
-                    return 'removed'
-                default:
-                    return cookie.get(location,{path})
+    // ############################################################################################################################################################# cookies object
+    class CookieObject {
+        constructor(){
+            let cookie = new Cookies()
+            let pre = cookie.get('cookies',{path:'/'})?cookie.get('cookies',{path:'/'}):false
+            this.permit = pre
+            this.request = pre
+            this.set=(action='get',[location='misc',path='/',data=''])=>{ // location='crimsonincapitals'+location
+                if(!this.permit)return false
+                let cookie =  new Cookies()
+                switch(action){
+                    case 'set':
+                        cookie.set(location,data,{path})
+                        return 'set'
+                    case 'addition':
+                        data = {...cookie.get(location,{path}), ...data}
+                        cookie.set(location,data,{path})
+                        return 'added'
+                    case 'remove':
+                        cookie.remove(location,{path})
+                        return 'removed'
+                    default:
+                        return cookie.get(location,{path})
+                }
             }
-        },
-        get:function(location='misc',path='/'){
-            if(!this.permit)return false
-            let cookie = new Cookies()
-            return cookie.get(location,{path})
-        },
-        remove:function(location='misc',path='/'){
-            if(!this.permit)return false
-            let cookie = new Cookies()
-            return cookie.remove(location,{path})
-        },
-        check: function(){
-            let cookie = new Cookies()
-            return cookie.get('cookies',{path:'/'})
-        },
-        accept: function(accept,request=true){
-            disbatchCookies({accept,request})
+            this.get=(location='misc',path='/')=>{
+                if(!this.permit)return false
+                let cookie = new Cookies()
+                return cookie.get(location,{path})
+            }
+            this.remove=(location='misc',path='/')=>{
+                if(!this.permit)return false
+                let cookie = new Cookies()
+                return cookie.remove(location,{path})
+            }
+            this.check=()=>{
+                let cookie = new Cookies()
+                return cookie.get('cookies',{path:'/'})
+            }
+            this.accept=(accept,request=true)=>{
+                dispatchCookies({accept,request})
+            }
         }
-
-
     }
-    const [cookies,disbatchCookies]=useReducer(acceptcookies,defaultstate)
+    // ############################################################################################################################################################# defines cookies
+    const [cookies,dispatchCookies]=useReducer(acceptcookies,new CookieObject())
+        // ############################################################################################################################################################# 
     useEffect(()=>{
-        cookies.check() ? disbatchCookies({accept: true,request:true}):cookies.accept(false,false)
         cookies.set('set',['cookies','/',true])
-    },[cookies.permit])
+    },[cookies])
     return (
         <CookiesContext.Provider value={cookies}>
             {children}

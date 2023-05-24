@@ -5,7 +5,10 @@ main button.login{
     padding: 10px;
     font-size: 20px;
     border: none;
+    display: flex;
+    align-items: center;
     border-radius: 40px;
+    gap: 10px;
 }
 .login img{
     width: 40px;
@@ -104,6 +107,7 @@ article.card footer button{
     background-color: white;
     border-radius: 0.5vw;
     overflow: hidden;
+    padding: 0;
 }
 .post img{
     width: 100%;
@@ -124,9 +128,29 @@ article.card footer button{
     border-radius: 90px;
     width: 180px;
     height: 180px;
+    margin-bottom: 20px;
 }
 .post .img_cover_photo{
     height: 100px;
+}
+.post .img_profile_media img{
+    z-index: 1;
+}
+img.reac{
+    height: 1rem;
+}
+.post .cover_backdrop{
+        height: 100px;
+        overflow: hidden;
+        margin-bottom: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.post .cover_backdrop img{
+    width: 300%;
+    opacity: 50%;
+    filter: blur(5px);
 }
 .post .postHeading{
     font-size: 0.7rem;
@@ -184,6 +208,7 @@ div.reactions :first-child{
     justify-content: space-between;
     margin: 10px;
     gap: 10px;
+    align-items: center;
 }
 .post .left{
     justify-content: flex-start;
