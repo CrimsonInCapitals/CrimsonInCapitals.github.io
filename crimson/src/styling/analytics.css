@@ -41,7 +41,7 @@ div.Tunnel{
     border-radius: 5px;
     min-width: 80px;
 }
-main article.card{
+main article.dataCard{
     all: unset;
     background-color: white;
     margin: 0 20%;

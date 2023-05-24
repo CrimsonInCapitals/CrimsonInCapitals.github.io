@@ -12,7 +12,7 @@ export const Card = ({children,heading='Default'})=> {
     // console.log(children)
     const [view,setView]=useState(false)
 return(
-        <article style={cardStyle} className='card'>
+        <article style={cardStyle} className='dataCard'>
             <Ribbon><CH1 style={theme.TextStyle.CardHeading}>{heading}</CH1></Ribbon>
             {view? Children.map(children, child=>(child)): Children.map(children,(child,index)=>index === 0 && child)}
             {Children.count(children) > 1 && <Footer view={view} setView={setView}/>}
