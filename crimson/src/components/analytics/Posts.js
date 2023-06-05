@@ -6,33 +6,29 @@ import { useFacebookContext } from "../../context/facebook";
 import { InstagramPost } from "./InstagramPosts";
 import { PostInsights } from "./Post";
 export const Posts =({page})=>{ // scollable section of the ten most resent posts
-
-    const [summary,setSummary] = useState()
+    const{theme}= useThemeContext()
+    const [cardStyle,setCardStyle] =useState({backgroundColor: theme.card.ribbon,border: theme.card.accent+' 1px solid'})
+    useEffect(()=>{
+        setCardStyle({backgroundColor: theme.card.ribbon,border:theme.card.accent+' 1px solid'})
+    },[theme])
+    const [limit,setLimit]=useState(9)
     const facebook = useFacebookContext()
     useEffect(()=>{
         facebook.getFacebookPosts(page)
         facebook.getInstagramPosts(page)
-    },[page])
-    useEffect(()=>{
-        if(!page.posts)return
-        let sorted = page.posts.summary.sort((a,b)=>{
-            if(page.posts[a].created_time > page.posts[b].created_time)return -1
-            if(page.posts[a].created_time === page.posts[b].created_time)return 0
-            if(page.posts[a].created_time < page.posts[b].created_time)return  1
-        })
-        setSummary(sorted)
-    },[page.posts])
+    },[page,facebook.timeRange])
 
     return(
         <>
         <Section type='stack'>
-            <H1>Posts: {page.posts&& '('+page.posts.summary.length+')'}</H1>
-        {summary ?
+            <H1>Posts: {page.posts&& '('+page.posts.index.length+')'}</H1>
+        {page.posts ?
 
             <Slider>
-            {summary.map((id)=>(
+            {page.posts.index.map((id,index)=>(index<limit &&
                 <Post page={page} current={page.post && id === page.post.id && true} post={page.posts[id]}key={id}/>
             ))}
+            {limit<page.posts.index.length && <button onClick={()=>setLimit(limit+9)} className="post" style={cardStyle}><H2>Load {page.posts.index.length > limit+9? '9': page.posts.index.length - limit} More</H2></button>}
             </Slider>
             :
             <Ap>Loading...</Ap>
@@ -54,10 +50,10 @@ export const Slider =({children})=>{
 export const Post =({page,post,current})=>{
     const facebook = useFacebookContext()
 
-    const theme = useThemeContext()
-    const [cardStyle,setCardStyle] =useState({backgroundColor: theme.Card.Background,border: theme.Card.Accent+' 1px solid'})
+    const{theme}= useThemeContext()
+    const [cardStyle,setCardStyle] =useState({backgroundColor: theme.card.background,border: theme.card.accent+' 1px solid'})
     useEffect(()=>{
-        current? setCardStyle({backgroundColor: theme.Card.Ribbon,border:theme.Card.Accent+' 1px solid'}):setCardStyle({backgroundColor: theme.Card.Background,border:theme.Card.Accent+' 1px solid'})
+        current? setCardStyle({backgroundColor: theme.card.ribbon,border:theme.card.accent+' 1px solid'}):setCardStyle({backgroundColor: theme.card.background,border:theme.card.accent+' 1px solid'})
     },[theme,current])
     switch(post.type){
         case 'Facebook':
@@ -68,7 +64,7 @@ export const Post =({page,post,current})=>{
             }
             return(
                 <button onClick={()=>facebook.getFacebookPost(page,post.id)} className="post" style={cardStyle}>
-                    <TitleBar type={type} date={post.created_time}/>
+                    <TitleBar type={type} platform={post.type} date={post.created_time}/>
                     <Attachment attachments={post.attachments} page={page}/>
                     <ReactionBar reactions={reactions}/>
                     <PP>{post.message ? post.message: 'No Caption'}</PP>
@@ -77,7 +73,7 @@ export const Post =({page,post,current})=>{
         case 'Instagram':
             return(
                 <button onClick={()=>facebook.getInstagramPost(page,post.id)} className="post" style={cardStyle}>
-                    {/* <TitleBar type={type} date={post.created_time}/> */}
+                    <TitleBar platform={post.type} type={post.media_type} date={post.created_time}/>
                     <Media media_url={post.media_url} media_type={post.media_type}/>
                     <Interactions post={post}/>
                     <PP>{post.caption ? post.caption: 'No Caption'}</PP>
@@ -91,7 +87,7 @@ export const Post =({page,post,current})=>{
 }
 
 export const Media =({media_url,media_type})=>{
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     return(
        <>
        {media_type === "IMAGE" && <img src={media_url}/>}
@@ -101,13 +97,13 @@ export const Media =({media_url,media_type})=>{
 }
 export const Attachment =({attachments,page})=>{
     const type = attachments.data.length===0? 'none':attachments.data.length>1? 'album': attachments.data[0].type
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     return(
         <>
         {attachments &&
         <>
-        {type === 'profile_media'&& <div style={{border: theme.Card.Accent+''}} className="cover_backdrop"><img src={page.cover.source}/></div>}
-        <div className={"img_container img_"+type} style={{backgroundColor: theme.Card.Accent, border: theme.Card.Accent+' 1px solid'}}>
+        {type === 'profile_media'&& <div style={{border: theme.card.accent+''}} className="cover_backdrop"><img src={page.cover.source}/></div>}
+        <div className={"img_container img_"+type} style={{backgroundColor: theme.card.accent, border: theme.card.accent+' 1px solid'}}>
             <img src={attachments.data[0].media.image.src} />
             {attachments.data[0].subattachments &&
                 attachments.data[0].subattachments.data.map((sub,index)=>(index<2&&
@@ -158,7 +154,7 @@ export const ReactionBar =({reactions})=>{
         </div>
     )
 }
-export const TitleBar =({type,date})=>{
+export const TitleBar =({type,date,platform})=>{
     const now = new Date();
     const past = new Date(date);
     const diff = now.getTime() - past.getTime();
@@ -182,14 +178,18 @@ export const TitleBar =({type,date})=>{
             return('Posted an Album')
         case 'share':
             return('Shared a link')
+        case 'IMAGE':
+            return('Post')
+        case "CAROUSEL_ALBUM":
+            return('Carousel')
         default:
             return('Added a post')
     }}
     const title = getTitle(type)
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     return(
         <div className="bar">
-            {type === 'Instagram'? <img src={'../../icons/'+theme.IconSource+'instagram.svg'}/>:<img src={'../../icons/'+theme.IconSource+'facebook.svg'}/>}
+            {platform === 'Instagram'? <img src={require('../../icons/'+theme.IconSource+'instagram.svg')}/>:<img src={require('../../icons/'+theme.IconSource+'facebook.svg')}/>}
             <PH>{title}</PH>
             {<P className="ago">{ago}</P>}
 
@@ -199,14 +199,14 @@ export const TitleBar =({type,date})=>{
 }
 
 export const PH=({children})=>{
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     return(
-        <h3 className="postHeading" style={{...theme.TextStyle.CardHeading}}>{children}</h3>
+        <h3 className="postHeading" style={{...theme.textStyle.ch1}}>{children}</h3>
     )
 }
 export const PP=({children, className})=>{
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     return(
-        <p className={"message "+className} style={theme.TextStyle.CardParagraph}>{children}</p>
+        <p className={"message "+className} style={theme.textStyle.ch1}>{children}</p>
     )
 }

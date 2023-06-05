@@ -12,10 +12,9 @@ export const CookiesProvider = ({ children }) => {
     class CookieObject {
         constructor(){
             let cookie = new Cookies()
-            let pre = cookie.get('cookies',{path:'/'})?cookie.get('cookies',{path:'/'}):false
-            this.permit = pre
-            this.request = pre
-            this.set=(action='get',[location='misc',path='/',data=''])=>{ // location='crimsonincapitals'+location
+            this.permit = cookie.get('cookies',{path:'/'})?cookie.get('cookies',{path:'/'}):false
+            this.request = cookie.get('cookies',{path:'/'})?cookie.get('cookies',{path:'/'}):false
+            this.set= function(action='get',[location='misc',path='/',data='']){ // location='crimsonincapitals'+location
                 if(!this.permit)return false
                 let cookie =  new Cookies()
                 switch(action){
@@ -33,21 +32,21 @@ export const CookiesProvider = ({ children }) => {
                         return cookie.get(location,{path})
                 }
             }
-            this.get=(location='misc',path='/')=>{
+            this.get=function(location='misc',path='/'){
                 if(!this.permit)return false
                 let cookie = new Cookies()
                 return cookie.get(location,{path})
             }
-            this.remove=(location='misc',path='/')=>{
+            this.remove=function(location='misc',path='/'){
                 if(!this.permit)return false
                 let cookie = new Cookies()
                 return cookie.remove(location,{path})
             }
-            this.check=()=>{
+            this.check=function(){
                 let cookie = new Cookies()
                 return cookie.get('cookies',{path:'/'})
             }
-            this.accept=(accept,request=true)=>{
+            this.accept=function(accept,request=true){
                 dispatchCookies({accept,request})
             }
         }

@@ -5,45 +5,27 @@ import { useThemeContext } from '../context/theme';
 import { useCookiesContext } from '../context/cookies';
 import TunnelGraph from '../components/analytics/tunnel';
 import { Card,Section } from '../components/analytics/Card';
-import { RequestForm } from '../components/analytics/Form';
+import { PageForm, RequestForm } from '../components/analytics/Form';
 import { Login } from '../components/analytics/Login';
 import { CookieBar } from '../components/cookierequest';
-import { CH1, H1 } from '../components/StyledComponents';
+import { CH1, H1, P } from '../components/StyledComponents';
 import { useFacebookContext } from '../context/facebook';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { Posts } from '../components/analytics/Posts';
+import { PageSelector } from '../components/analytics/pageselector';
+import { DateRange } from '../components/analytics/DatePicker';
 //import { LoginSocialFacebook } from 'reactjs-social-login';
 //import facebook
 
 ChartJS.register(ArcElement);
 
 export const Analytics = ()=> {
-    const facebook=useFacebookContext()
-    const callInsights=(Data,f)=>{
-        if(!Data)return
-        let access_token = Data.page.access_token
-        let since = Data.since
-        let until = Data.until
-        let metric = Data.metric
-        let period = Data.period? Data.period:'day'
-        window.FB.api('/me/insights','GET',
-            {metric,since,until,period,access_token},
-            function(response) {
-                if(f){f(response)}
-            }
-        );
 
-    }
+    const facebook = useFacebookContext()
+    const [page,setPage]=useState()
 
-    const FacebookTunnelData=(Data)=>{
-        Data.since = new Date(Date.now()-31*86400000).toISOString()
-        Data.metric = 'page_impressions,page_engaged_users,page_views_total,page_website_clicks_logged_in_unique'
-        Data.period = 'month'
-        callInsights(Data,console.log())
 
-    }
-    const pageDate = true
     const pieData={
         labels: ['Red', 'Yello', 'Purple', 'Blue'],
         datasets: [
@@ -56,28 +38,36 @@ export const Analytics = ()=> {
               '#D00DAC',
               '#1877F2',
             ],
-           
             borderWidth: 0,
           },
         ],
       }
       useEffect(()=>{console.log(facebook)},[facebook])
+      const bool =true
+      const style=()=>{
+        return(
+            'yellow'
+        )
+      }
     return (
         <>
             <section>
-                <H1>Welcome {facebook.user && facebook.user.first_name}</H1>
-                {facebook.pages && <RequestForm pages={facebook.pages} submit={(formData)=>callInsights(formData,console.log)}/>}
+                <H1>{facebook.user ? 'Hi '+facebook.user.first_name: 'Welcome'}</H1>
+                <P>This is an experimental Analytics platform. It makes interactions with the Facebook Graph to display insights on page performance.</P>
+                {/* {facebook.pages && <RequestForm pages={facebook.pages} submit={(formData)=>callInsights(formData,console.log)}/>} */}
             </section>
+            <PageForm/>
+            {/* <DateRange/> */}
             {facebook.status !== 'connected' && <Login/>}
-
-            {facebook.pages &&
+            {facebook.status === 'connected' &&
+            <>{!facebook.pages? <Card><CH1>No pages, linked to this account</CH1></Card>
+            :  <>{facebook.pages.index.length>1 && <PageSelector pages={facebook.pages} setPage={(id)=>{setPage(id)}}/>}</>}</>}
+            {page &&
             <>
-                {facebook.pages.summary.map((page,index)=>(index===0&&
                     <Card key={page} heading={facebook.pages[page].name}>
                         <Posts page={facebook.pages[page]}/>
                         {/* <InstagramPosts page={page}/> */}
                     </Card>
-                ))}
                 {/* <Card>
                     <Section>
                         <aside>

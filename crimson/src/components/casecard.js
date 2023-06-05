@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { CH1, H1, H2, P } from './StyledComponents';
 import { useThemeContext } from '../context/theme';
 export const CaseCard = ({Header='Default',Image=require('../sources/default.png'),size='small',To})=> {
-    const theme = useThemeContext()
-    const [cardStyle,setCardStyle] =useState({backgroundColor: theme.Card.Background,border: theme.Card.Accent+' 2px solid'})
+    const{theme}= useThemeContext()
+    const [cardStyle,setCardStyle] =useState({backgroundColor: theme.card.background,border: theme.card.accent+' 2px solid'})
     useEffect(()=>{
-        setCardStyle({backgroundColor: theme.Card.Background,border:theme.Card.Accent+' 2px solid'})
+        setCardStyle({backgroundColor: theme.card.background,border:theme.card.accent+' 2px solid'})
     },[theme])
 return(
     To ?
@@ -24,12 +24,12 @@ return(
 }
 
 export const CaseText = ({Header,Image=require('../sources/default.png'),size='small',To,children,back=true})=> {
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
 return(
     <div className={size+'Card card'}>
         {Header &&
         <H1 className='heading'>
-            {back&&<Link style={theme.TextStyle.Heading1} to='/casestudies'>←</Link>}
+            {back&&<Link style={theme.textStyle.h1} to='/casestudies'>←</Link>}
             {Header}
         </H1>
         }
@@ -39,10 +39,10 @@ return(
 }
 
 export const CaseWithAside = ({Header='Default',Image=require('../sources/default.png'),size='small',To,children,Right=true})=> {
-    const theme = useThemeContext()
-    const [cardStyle,setCardStyle] =useState({backgroundColor: theme.Card.Background,border: theme.Card.Accent+' 2px solid'})
+    const{theme}= useThemeContext()
+    const [cardStyle,setCardStyle] =useState({backgroundColor: theme.card.background,border: theme.card.accent+' 2px solid'})
     useEffect(()=>{
-        setCardStyle({backgroundColor: theme.Card.Background,border:theme.Card.Accent+' 2px solid'})
+        setCardStyle({backgroundColor: theme.card.background,border:theme.card.accent+' 2px solid'})
     },[theme])
     return(
         <article className={size+'Card card cardwithaside'}>

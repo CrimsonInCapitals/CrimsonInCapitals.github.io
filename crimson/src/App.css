@@ -88,7 +88,7 @@ a img{
 }
 
 main.home > section{
-  padding: 3rem 20%;
+  margin: 3rem 20%;
 }
 button.menu{
   all: unset;
@@ -96,7 +96,7 @@ button.menu{
 }
 @media (max-width: 800px) {
   main.home > section{
-    padding: 3rem 2vw;
+    margin: 3rem 2vw;
   }
   header .pagename{
     display: block;
@@ -175,3 +175,5 @@ section.cookieRequest button{
   border-radius: 1vh;
   border-style: none;
 }
+
+span{display: flex;}

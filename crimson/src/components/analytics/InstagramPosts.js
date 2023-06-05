@@ -38,7 +38,7 @@ export const Slider =({children})=>{
 }
 export const InstagramPost =({page,post,current})=>{
     const facebook = useFacebookContext()
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     const [cardStyle,setCardStyle] =useState({backgroundColor: theme.Card.Background,border: theme.Card.Accent+' 1px solid'})
     useEffect(()=>{
         current? setCardStyle({backgroundColor: theme.Card.Ribbon,border:theme.Card.Accent+' 1px solid'}):setCardStyle({backgroundColor: theme.Card.Background,border:theme.Card.Accent+' 1px solid'})
@@ -54,7 +54,7 @@ export const InstagramPost =({page,post,current})=>{
 }
 
 export const Media =({media_url,media_type})=>{
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     return(
        <>
        {media_type === "IMAGE" && <img src={media_url}/>}
@@ -130,13 +130,13 @@ export const TitleBar =({type,date})=>{
 }
 
 export const PH=({children})=>{
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     return(
         <h3 className="postHeading" style={{...theme.TextStyle.CardHeading}}>{children}</h3>
     )
 }
 export const PP=({children, className})=>{
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     return(
         <p className={"message "+className} style={theme.TextStyle.CardParagraph}>{children}</p>
     )

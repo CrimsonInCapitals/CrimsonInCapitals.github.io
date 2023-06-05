@@ -1,21 +1,4 @@
-main.analytics button{
-    padding: 10px 40px;
-}
-main button.login{
-    padding: 10px;
-    font-size: 20px;
-    border: none;
-    display: flex;
-    align-items: center;
-    border-radius: 40px;
-    gap: 10px;
-}
-.login img{
-    width: 40px;
-}
-.login p{
-    padding-right: 10px;
-}
+
 div.TunnelParent{
     aspect-ratio: 1;
 }
@@ -55,29 +38,29 @@ main article.dataCard{
     overflow: hidden;
     margin-bottom: 20px;
 }
-main .card>.sub{
+main .dataCard>.sub{
     display: flex;
     gap: 1vw;
     justify-content: space-between;
     padding: 4vw;
 }
-main .card>.stack{
+main .dataCard>.stack{
     flex-direction: column;
 }
-main .card .sub section{
+main .dataCard .sub section{
     width: 40%;
 }
-article.card .Ribbon{
+article.dataCard .Ribbon{
     padding: 2rem 4vw;
     height: fit-content;
 }
-article.card .Ribbon h1{
+article.dataCard .Ribbon h1{
     margin: 0;
 }
-article.card footer{
+article.dataCard footer{
     padding: 2rem 4vw;
 }
-article.card footer button{
+article.dataCard footer button{
     background-color: unset;
     border: none;
     border-style: unset;
@@ -89,6 +72,8 @@ article.card footer button{
     height: fit-content;
     overflow-x: scroll;
     overflow-y: hidden;
+}
+.dataCard .sliderParent{
     margin-right: -4vw;
 }
 .sliderParent::-webkit-scrollbar {
@@ -210,14 +195,21 @@ div.reactions :first-child{
     gap: 10px;
     align-items: center;
 }
+.post .bar img{
+    height: 1rem;
+    width: auto;
+}
 .post .left{
     justify-content: flex-start;
 }
 
 @media (max-width: 800px) {
-    main article.card{
+    main article.dataCard{
         width: 98vw;
         margin: 0 1vw;
         margin-bottom: 20px;
     }
+}
+section.flex{
+    display: flex;
 }

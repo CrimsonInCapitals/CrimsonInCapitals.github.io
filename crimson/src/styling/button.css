@@ -42,126 +42,105 @@ button.defualt{
 #root button{
     transition: 1s;
 }
-/* ############################### Dark Mode ######################################## */
-/* -------------------------------Primary Button------------------------------------- */
-#root button.DarkMode_Primary{
-    background-color: #494646;
-    color: #F0EEEE;
-    border: solid 1px #585454;
+
+main.analytics button{
+    padding: 10px 40px;
 }
-#root button.DarkMode_Primary:hover{
-    background-color: #5A5A5A;
-    border: solid 1px #6C6C6C;
-}
-#root button.DarkMode_Primary:disabled{
-    background-color: #4F4F4F;
-    color: #817777;
+main button.login{
+    padding: 10px;
+    font-size: 20px;
     border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    gap: 10px;
+    box-sizing: border-box;
 }
-/* -------------------------------Secondary Button------------------------------------- */
-#root button.DarkMode_Secondary{
-    background-color: #3B3838;
-    color: #F0EEEE;
-    border-color: solid 1px #524E4E;
+.login img{
+    width: 40px;
+    border-radius: 20px;
 }
-#root button.DarkMode_Secondary:hover{
-    background-color: #3B3838;
-    border: solid 1px #5A5A5A;
+#root button.rounded{
+    padding-right: 30px;
 }
-#root button.DarkMode_Secondary:disabled{
-    background-color: #3C3737;
-    color: #817777;
+.login p{
+    padding-right: 10px;
+}
+label.pages{
+    padding: 10px;
+    font-size: 20px;
     border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    gap: 10px;
+    box-sizing: border-box;
+    padding-right: 30px;
 }
-/* -------------------------------Tertiary Button------------------------------------- */
-#root button.DarkMode_Tertiary{
-    background-color: #3B3838;
-    color: #F0EEEE;
-    border: solid 1px #524E4E;
+label.pages img{
+    border-radius: 50%;
 }
-#root button.DarkMode_Tertiary:hover{
-    background-color: #3B3838;
-    border: solid 1px #5A5A5A;
+
+
+
+
+
+
+#root form.DateRange button.until{
+    background-color: #1877F2;
+    border-radius: 5px;
+
 }
-#root button.DarkMode_Tertiary:disabled{
-    background-color: #3C3737;
-    color: #817777;
-    border: none;
+form.DateRange div.beforeUntil{
+    margin-right: calc(3rem/-2);
+    padding-right: calc(3rem/2);
+    background-color: rgb(16, 78, 159);
 }
-/* -------------------------------Colored Button------------------------------------- */
-#root button.DarkMode_Colored{
-    background-color: #C00A00;
-    color: #E4DFDD;
-    border: solid 1px #981912;
+form.DateRange div.afterSince{
+    margin-left: calc(3rem/-2);
+    padding-left: calc(3rem/2);
+    background-color: rgb(16, 78, 159);
 }
-#root button.DarkMode_Colored:hover{
-    background-color: #E3281E;
-    border: olid 1px #B1231B;
+#root form.DateRange button.since{
+    background-color: #003881;
+    border-radius: 5px;
+    z-index: 1;
 }
-#root button.DarkMode_Coloured:disabled{
-    background-color: #4F4F4F;
-    border: none;
+#root form.DateRange button.between{
+
+    background-color: rgb(16, 78, 159);
 }
-/* ############################### Light Mode ######################################## */
-/* -------------------------------Primary Button------------------------------------- */
-#root button.LightMode_Primary{
-    background-color: #F0EFEF;
-    color: #817777;
-    border: solid 1px #585454;
+
+
+
+
+
+.DateRange{
+    width: 100%;
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    height: fit-content;
 }
-#root button.LightMode_Primary:hover{
-    background-color: #F9F9F9;
-    border: solid 1px #6C6C6C;
+#root form.DateRange button{
+    flex: 1;
+    padding: 10px 0;
+    border-style: none;
+    transition: 0.1s;
+    background-color: unset;
+    justify-content: center;
 }
-#root button.LightMode_Primary:disabled{
-    background-color: #C0B8B5;
-    border: none;
+#root form.DateRange button.current{
+
+    background-color: rgba(255, 255, 255, 0.023);
+    border-radius: 5px;
 }
-/* -------------------------------Secondary Button------------------------------------- */
-#root button.LightMode_Secondary{
-    background-color: #3B3838;
-    color: #F0EEEE;
-    border: solid 1px #f0eeee;
+#root form.DateRange button p{
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
 }
-#root button.LightMode_Secondary:hover{
-    background-color: #f0eeee;
-    color: #F0EEEE;
-    border: solid 1px #5A5A5A;
-}
-#root button.LightMode_Secondary:disabled{
-    background-color: #3C3737;
-    color: #817777;
-    border: none;
-}
-/* -------------------------------Tertiary Button------------------------------------- */
-#root button.LightMode_Tertiary{
-    background-color: #3B3838;
-    color: #F0EEEE;
-    border: solid 1px #524E4E;
-}
-#root button.LightMode_Tertiary:hover{
-    background-color: #3B3838;
-    color: #F0EEEE;
-    border: solid 1px #5A5A5A;
-}
-#root button.LightMode_Tertiary:disabled{
-    background-color: #3C3737;
-    color: #817777;
-    border: none;
-}
-/* -------------------------------Colored Button------------------------------------- */
-#root button.LightMode_Colored{
-    background-color: #C00A00;
-    color: #E4DFDD;
-    border: solid 1px #981912;
-}
-#root button.LightMode_Colored:hover{
-    background-color: #E3281E;
-    color: #E4DFDD;
-    border: solid 1px #B1231B;
-}
-#root button.LightMode_Coloured:disabled{
-    background-color: #4F4F4F;
-    color: #E4DFDD;
-    border: none;
+
+#DarkMode form.input{
+    background-color: #201B1B;
 }

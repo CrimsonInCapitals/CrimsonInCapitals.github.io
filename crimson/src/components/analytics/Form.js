@@ -1,7 +1,126 @@
-import { useEffect, useReducer } from "react"
+import { useEffect, useReducer, useState } from "react"
 import { useFacebookContext } from "../../context/facebook"
+import { Button, MultiButton } from "../button"
 
-export const RequestForm=({pages,submit})=>{
+
+
+
+export const PageForm =({})=>{
+    class formObject{
+        constructor(){
+            this.row2 = 0
+            this.setRow2= function(to){
+                setForm({...this,row2: to})
+            }
+            this.page = 'Select Page'
+            this.timeMode = 'Months'
+            this.periods = [{text:'Day to Day'},{text:'Week to Week'},{text:'Month to Month'}]
+            this.period = 0
+        }
+    }
+    const [form,setForm]=useState(new formObject())
+    return(
+        <section>
+            <span>
+                <Button priority={form.row2===1&&'focus'}>{form.page}</Button>
+                <Button priority={form.row2===2&&'focus'}>{form.timeMode}: {form.time ? form.time.since.text+' - '+form.time.until.text:'Select Time Frame'}</Button>
+                <MultiButton list={form.periods} priority={form.row2===3&&'focus'}>{form.periods[form.period].text}</MultiButton>
+            </span>
+            {}
+        </section>
+
+
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const DemoRequestForm=({pages,submit})=>{
     const facebook = useFacebookContext()
     class metric{
         constructor(selected=true,metric,text){
@@ -11,7 +130,7 @@ export const RequestForm=({pages,submit})=>{
         }
     }
 const formdefault = {
-    page: pages[pages.summary[0]],
+    page: pages[pages.index[0]],
     pages: pages,
     period_days: 7,
     period_options:[{value:7,text: 'One week'},{value:31,text: 'One month'},{value:93, text:'Three monthd'}],
@@ -76,7 +195,7 @@ return(
          <label>Select page:
                 <select value={pageForm.page.id} onChange={e=>{dispatchPageForm({actor:'page',value: e.target.value})}}>
                     <option value='default'>Select a page</option>
-                    {pageForm.pages.summary.map((page,index)=><option key={page}value={page}>{facebook.pages[page].name}</option>)}
+                    {pageForm.pages.index.map((page,index)=><option key={page}value={page}>{facebook.pages[page].name}</option>)}
                 </select>
                 </label>
                 <details>
@@ -88,7 +207,7 @@ return(
                 </label>
                 <div>
                     <label>Data points:
-                        {pageForm.metrics.map((metric)=>(<label>{metric.text}<input key={metric.metric} type='checkbox' onChange={e=>{dispatchPageForm({actor: 'metric',value: metric.metric,state: e.target.checked});}} value={metric.metric} checked={metric.selected}/></label>))}
+                        {pageForm.metrics.map((metric)=>(<label key={metric.metric}>{metric.text}<input type='checkbox' onChange={e=>{dispatchPageForm({actor: 'metric',value: metric.metric,state: e.target.checked});}} value={metric.metric} checked={metric.selected}/></label>))}
                     </label>
                 </div>
                 </details>

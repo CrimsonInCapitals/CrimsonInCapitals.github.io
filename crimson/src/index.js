@@ -8,23 +8,28 @@ import { ThemeProvider } from './context/theme';
 import { InternalProvider, SocialProvider } from './context/links';
 import { CookiesProvider } from './context/cookies';
 import { FacebookProvider } from './context/facebook';
-
+import {
+  FluentProvider
+} from "@fluentui/react-components";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
+  // <FluentProvider>
     <CookiesProvider>
       <FacebookProvider>
-    <ThemeProvider>
-      <BrowserRouter>
-        <SocialProvider>
-          <InternalProvider>
-            <App/>
-          </InternalProvider>
-        </SocialProvider>
-      </BrowserRouter>
-    </ThemeProvider>
-    </FacebookProvider>
+        <ThemeProvider>
+          <BrowserRouter>
+            <SocialProvider>
+              <InternalProvider>
+                <App/>
+              </InternalProvider>
+            </SocialProvider>
+          </BrowserRouter>
+        </ThemeProvider>
+      </FacebookProvider>
     </CookiesProvider>
+  // </FluentProvider>
+
   // </React.StrictMode>
 );
 

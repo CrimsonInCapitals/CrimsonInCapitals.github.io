@@ -6,7 +6,7 @@ import { H1, H2, P } from '../components/StyledComponents';
 
 export const Home = ()=> {
     useEffect(()=>{document.title = 'Crimson in Capitals - Home'},[])
-    const theme = useThemeContext()
+    const{theme}= useThemeContext()
     const[shadow,setShadow] = useState()
     useEffect(()=>{
         setShadow({
