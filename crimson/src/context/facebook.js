@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { useCookiesContext } from "./cookies";
-import { MonthPoint } from "../components/analytics/DatePicker";
+import { MonthPoint } from "../functions/dateRange";
 
 const facebookContext = createContext(undefined)
 
@@ -9,20 +9,28 @@ export const FacebookProvider =({children})=>{
     const updateFacebook = (state,action)=>{
         if(action.function){
             state.dispatch = true
-            state[action.function](action)
+            var modify = state[action.function](action)
             delete state.dispatch
         }
+        if(modify)return{...state,...modify}
         return{...state}
     }
     class CallVariables{
-        constructor(purpose,origin,page,other){
+        constructor(purpose,origin,page,other,period){
             this.access_token=page.access_token
+            if(period)this.period = period
             if(origin.timeRange){this.since = origin.timeRange.since; this.until = origin.timeRange.until}
             else{
                 this.limit = other.limit? other.limit:9
                 this.pretty = other.pretty? other.pretty:0
             }
             switch(purpose){
+                case 'InstagramPostInsights':
+                    this.metrics=''
+                    break
+                case 'FacebookPostInsights':
+                    this.metrics='post_impressions_unique,post_impressions_fan_unique,post_engaged_users,post_clicks,post_clicks_by_type_unique,post_reactions_by_type_total'
+                    break
                 case 'InstagramPosts':
                     this.fields='caption,username,like_count,media_type,children,thumbnail_url,media_url,timestamp'
                     break;
@@ -194,6 +202,18 @@ export const FacebookProvider =({children})=>{
                 this.getUser()
                 }
             }//updates status
+            this.logout=function(){
+                if(this.dispatch){
+                    window.FB.Logout(function(){
+                        cookies.remove('Facebook')
+                        delete this.access_token
+                        delete this.pages
+                        delete this.user
+                        return (new FacebookObject())
+                    })
+                }
+                dispatchFacebook({function:'logout'})
+            }
             this.dispatchToken=function(action=false){
                 if(!action)dispatchFacebook({function: 'dispatchToken'})
                 else {console.log(cookies.get('Facebook'))
@@ -224,8 +244,8 @@ export const FacebookProvider =({children})=>{
                         this.status ='error'
                 }
             }//updates status and adds error
-            this.init=function(action=undefined){
-                if(action){
+            this.init=function(){
+                if(this.dispatch){
                     this.access_token = cookies.get('Facebook')?cookies.get('Facebook').access_token: undefined
                     if(this.access_token){
                         this.getUser()

@@ -67,8 +67,6 @@ export const ThemeProvider = ({ children }) => {
             else if(main[element])return
             style[prop]=/border/i.test(prop)?location[element].border:location[element][prop]
         })
-        console.log(style)
-        console.log(properties)
         return {...style}
     }
     return (

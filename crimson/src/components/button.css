@@ -6,7 +6,7 @@ button{
     border-radius: 5px;
     background-color: unset;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     box-sizing: border-box;
     padding: 10px 30px;
     margin: 10px;
@@ -32,6 +32,18 @@ button .options div{
     height: 3px;
     width: 3px;
     border-radius: 2px;
+}
+/* ------------------------------- Avitar Button  ------------------------------------- */
+button .avitar{
+    height: 18px;
+    width: 18px;
+    border-radius: 9px;
+    background-color: #0f6cbd;
+    overflow: hidden;
+}
+button .avitar img{
+    width: 100%;
+    height: 100%;
 }
 /* ------------------------------- Primary Button  ------------------------------------- */
 main#DarkMode button.primary,main#LightMode button.primary{

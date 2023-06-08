@@ -77,12 +77,13 @@ export const Button =({children,priority=undefined,onClick,parent='main',classNa
         </button>
     )
 }
-export const MultiButton =({list,F,className,priority,parent='main'})=>{
+export const MultiButton =({options,F,className,priority,parent='main'})=>{
     const {theme} = useThemeContext()
-    const [current,setcurrent]=useState({...list[0],location:0})
+    let start = options.default? {...options.default,location:options.index.length} : {...options[options.index[0]],location:0}
+    const [current,setcurrent]=useState(start)
     const action =()=>{
-        let next = list.length-1<=current.location? 0:current.location+1
-        let set = list[next]
+        let next = options.index.length-1<=current.location? 0:current.location+1
+        let set = options[options.index[next]]
         setcurrent({...set,location:next})
         F(set)
     }
@@ -90,21 +91,21 @@ export const MultiButton =({list,F,className,priority,parent='main'})=>{
     return(
         <Button parent={parent} className={className} onClick={action} priority={priority}>
             <div className="options">
-                {list.map((item)=>(
-                    <div key={item.name}style={current.value === item.value?dotStyle[0]:dotStyle[1]}/>
+                {options.index.map((key)=>(
+                    <div key={key}style={current.value === options[key].value?dotStyle[0]:dotStyle[1]}/>
                 ))}
             </div>
             <p>{current.text}</p>
         </Button>
     )
 }
-export const AvitarButton=({text,ImgSrc,priority})=>{
+export const AvitarButton=({text,ImgSrc,priority,onClick})=>{
     return(
-        <Button priority={priority}>
-            <div>
-                <img src={ImgSrc}/>
+        <Button priority={priority} onClick={onClick}>
+            <div className='avitar'>
+                {ImgSrc && <img src={ImgSrc}/>}
             </div>
-            <p>{}</p>
+            <p>{text}</p>
         </Button>
     )
 }

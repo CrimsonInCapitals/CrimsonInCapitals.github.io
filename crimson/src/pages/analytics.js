@@ -15,13 +15,14 @@ import { Doughnut } from "react-chartjs-2";
 import { Posts } from '../components/analytics/Posts';
 import { PageSelector } from '../components/analytics/pageselector';
 import { DateRange } from '../components/analytics/DatePicker';
+import { Facebook } from '../components/analytics/Facebook';
 //import { LoginSocialFacebook } from 'reactjs-social-login';
 //import facebook
 
 ChartJS.register(ArcElement);
 
 export const Analytics = ()=> {
-
+    const [analyticsFilter,setAnalyticsFilter]=useState()
     const facebook = useFacebookContext()
     const [page,setPage]=useState()
 
@@ -51,59 +52,22 @@ export const Analytics = ()=> {
       }
     return (
         <>
+
             <section>
                 <H1>{facebook.user ? 'Hi '+facebook.user.first_name: 'Welcome'}</H1>
                 <P>This is an experimental Analytics platform. It makes interactions with the Facebook Graph to display insights on page performance.</P>
-                {/* {facebook.pages && <RequestForm pages={facebook.pages} submit={(formData)=>callInsights(formData,console.log)}/>} */}
             </section>
-            <PageForm/>
-            {/* <DateRange/> */}
-            {facebook.status !== 'connected' && <Login/>}
-            {facebook.status === 'connected' &&
-            <>{!facebook.pages? <Card><CH1>No pages, linked to this account</CH1></Card>
-            :  <>{facebook.pages.index.length>1 && <PageSelector pages={facebook.pages} setPage={(id)=>{setPage(id)}}/>}</>}</>}
-            {page &&
-            <>
-                    <Card key={page} heading={facebook.pages[page].name}>
-                        <Posts page={facebook.pages[page]}/>
-                        {/* <InstagramPosts page={page}/> */}
-                    </Card>
-                {/* <Card>
-                    <Section>
-                        <aside>
-                            <CH1>Conversion Tunnel</CH1>
-                        </aside>
-                        <section>
-                            <TunnelGraph data={
-                                [{value:5,text:'impressions'},
-                                    [{value:4,text:'engagment'},
-                                        [{value:1,text:'clicks'}]]]
-                            }/>
-                        </section>
-                    </Section>
-                    <Posts page={facebook.pages[0]}/>
-                    {pageDate.data.map((Point)=>(
-                        <Section>
-                            <h2>{Point.title}</h2>
-                            <details>
-                                <summary>Description</summary>
-                                <p>{Point.description}</p>
-                            </details>
-                        </Section>
-                    ))}
-                </Card> */}
-                <Card>
-                    <Section>
-                    <aside>
-                        <CH1>Website visitors origin</CH1>
-                    </aside>
-                    <section>
-                        <Doughnut data={pieData}/>
-                  </section>
-                  </Section>
-                </Card>
-                </>
-            }
+            <Facebook/>
+            <Card>
+        <Section>
+        <aside>
+            <CH1>Website visitors origin</CH1>
+        </aside>
+        <section>
+            <Doughnut data={pieData}/>
+      </section>
+      </Section>
+    </Card>
               <CookieBar/>
         </>
     );

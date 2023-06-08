@@ -213,3 +213,7 @@ div.reactions :first-child{
 section.flex{
     display: flex;
 }
+
+span button{
+    flex: 1;
+}

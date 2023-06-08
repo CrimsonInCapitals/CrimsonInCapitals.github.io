@@ -1,32 +1,65 @@
 import { useEffect, useReducer, useState } from "react"
 import { useFacebookContext } from "../../context/facebook"
-import { Button, MultiButton } from "../button"
+import { AvitarButton, Button, MultiButton } from "../button"
+import { DateRange } from "./DatePicker"
+import { PageSelector } from "./pageselector"
+import { CookieBar } from "../cookierequest"
 
 
 
 
-export const PageForm =({})=>{
+export const PageForm =({F})=>{
+    const facebook = useFacebookContext()
     class formObject{
         constructor(){
             this.row2 = 0
             this.setRow2= function(to){
                 setForm({...this,row2: to})
             }
-            this.page = 'Select Page'
+            this.page = {name:'Select Page',id:0}
+            this.setPage = function(id){
+                setForm({...this,page:facebook.pages[id],row2:2})
+                console.log(this)
+                if(this.time && this.period)F(this)
+            }
+            this.setRange=function(range){
+                let object = this
+                if(object.time)delete object.time
+                if(!range.until){setForm({...object,timeMode:range.useType.text});return}
+                setForm({...this,time:range,timeMode:range.useType.text})
+                console.log(this)
+                if(this.page.id!== 0 && this.period)F(this)
+
+            }
             this.timeMode = 'Months'
-            this.periods = [{text:'Day to Day'},{text:'Week to Week'},{text:'Month to Month'}]
-            this.period = 0
+            this.periods = {default:{text:"Select Period",value:'default'},day:{text:'Day to Day',value:'day'},week:{text:'Week to Week',value:'week'},month:{text:'Month to Month',value:'month'},index:['day','week','month']}
+            this.setPeriod = function(period){
+                setForm({...this,period})
+                console.log(this)
+                if(this.page.id!== 0 && this.time)F(this)
+            }
         }
     }
     const [form,setForm]=useState(new formObject())
+
     return(
         <section>
-            <span>
-                <Button priority={form.row2===1&&'focus'}>{form.page}</Button>
-                <Button priority={form.row2===2&&'focus'}>{form.timeMode}: {form.time ? form.time.since.text+' - '+form.time.until.text:'Select Time Frame'}</Button>
-                <MultiButton list={form.periods} priority={form.row2===3&&'focus'}>{form.periods[form.period].text}</MultiButton>
-            </span>
-            {}
+                <span>
+                    {facebook.pages && <>
+                        <AvitarButton priority={form.row2===1&&'focus'} ImgSrc={form.page.picture && form.page.picture.data.url} text={form.page.name} onClick={()=>form.row2 === 1?form.setRow2(0):form.setRow2(1)}/>
+                        <Button priority={form.row2===2&&'focus'} onClick={()=>form.row2 === 2?form.setRow2(0):form.setRow2(2)}>
+                            {form.time ? form.timeMode+': '+form.time.since.text+' - '+form.time.until.text:'Select Time Frame'}
+                        </Button>
+                        <MultiButton options={form.periods} priority={form.row2===3&&'focus'} F={(key)=>form.setPeriod(key.value)}/>
+                    </>}
+                    <Button onClick={facebook.logout}>Log out</Button>
+                </span>
+                {
+                    form.row2 === 1?<PageSelector page={form.page} pages={facebook.pages} setPage={id=>form.setPage(id)}/>
+                    :form.row2 === 2?<DateRange F={range=>form.setRange(range)}/>
+                    :''
+                }
+
         </section>
 
 

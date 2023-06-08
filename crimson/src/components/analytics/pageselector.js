@@ -1,21 +1,16 @@
 import { useThemeContext } from "../../context/theme"
 import { H2 } from "../StyledComponents"
+import { AvitarButton } from "../button"
 import { Section } from "./Card"
 
 export const PageSelector =({pages,setPage,page})=>{
-    const theme=useThemeContext()
+    console.log(page)
     return(
         <section>
             <div className="sliderParent">
                 <div className="sliderChild">
                     {pages.index.map((pageId)=>(
-                        <>
-                        <label htmlFor={pageId} className={theme.mode+"_Tertiary rounded  pages"}>
-                        <img src={pages[pageId].picture.data.url}/>
-                        {pages[pageId].name}
-                        </label>
-                        <input id={pageId} name="page" selected type='radio' onClick={()=>setPage(pageId)}/>
-                        </>
+                        <AvitarButton ImgSrc={pages[pageId].picture.data.url} priority={pageId === page.id ?'focus':''} text={pages[pageId].name} onClick={()=>setPage(pageId)}/>
                     ))}
                 </div>
             </div>
