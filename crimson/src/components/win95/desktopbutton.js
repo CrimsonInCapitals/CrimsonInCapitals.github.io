@@ -12,7 +12,7 @@ const DesktopButton = ({appname})=>{
         });
     },[apps,appname])
     return(
-        <button className="desktopbutton"
+        <button className="MS_desktopbutton"
         onClick={()=>displatchApps({app: app.name,do: 'open'})}
         >
             <img  src={require('./context/icons/'+app.icon+'.svg')}alt={app.name}/>

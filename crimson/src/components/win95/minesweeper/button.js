@@ -32,7 +32,7 @@ const Button = ({x,y,dispatchGame,type,children})=>{
             {children === '#'? '' : <img src={require('./assets/cells/'+children+'.svg')} alt={children}/>}
         </button>
         :
-        <div type='button' className='cell'>
+        <div type='button' className='MS_cell'>
             {children ===0? '':   <img src={require('./assets/cells/'+children+'.svg')} alt={children}/>}
         </div>
     )

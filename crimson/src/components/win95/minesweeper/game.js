@@ -187,8 +187,8 @@ const Minesweeper = ({mode={width:16,hight:16,mines:40}})=> {
     // console.log(cookies.get('game',{path: './minesweeper'}))
     return (
        <>
-       <main className='game'>
-        <section className='controls'>
+       <main className='MS_game'>
+        <section className='MS_controls'>
         <Timer count={game.mines-game.flags}/>
         <Button key={game.state} dispatchGame={dispatchGame} type='action'>{game.state}</Button>
         <Timer count={game.timer}/>

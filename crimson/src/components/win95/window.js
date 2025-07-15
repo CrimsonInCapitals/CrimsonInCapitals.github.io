@@ -16,7 +16,7 @@ const Window = ({app,index})=> {
 
     return (
         <Draggable handle=".handle" id={'window'+index} defaultPosition={{x: openpositions[index].x, y: openpositions[index].y}}>
-            <article className='window' >
+            <article className='MS_window' >
                     <Header app={app}/>
                     <HeaderMenu app={app}/>
                         {app.component}

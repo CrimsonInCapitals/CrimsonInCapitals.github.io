@@ -1,0 +1,1 @@
+export const properties=[[2,2],'Amazing Grace',1,'Eye capturing visuals for a small botique']

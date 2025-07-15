@@ -30,14 +30,17 @@ export const ThemeProvider = ({ children }) => {
             this.DarkMode={}
             this.DarkMode.style={}
             this.DarkMode.style.main={
-                header:{backgroundColor:'#201B1B',border:'#000000 1px solid'},
+                header:{backgroundColor:'#201B1B',border:'2px solid'},
                 card:{backgroundColor:'#3B3838', shadow:'5px 5px 5px black'}
             }
             this.DarkMode.style.card={}
             this.DarkMode.style.ribbon={}
             this.LightMode={}
             this.LightMode.style={}
-            this.LightMode.style.main={}
+            this.LightMode.style.main={
+                  header:{backgroundColor:'#FFFFFF',border:'2px solid'},
+                card:{backgroundColor:'#FFFFFF', shadow:'5px 5px 5px black'}
+            }
             this.LightMode.style.card={}
             this.LightMode.style.ribbon={}
 

@@ -1,0 +1,1 @@
+export const properties=[[2,2],'Cudoni',1,'Creating efficient systems to maxamise photography efficency and capture goods in the best light']

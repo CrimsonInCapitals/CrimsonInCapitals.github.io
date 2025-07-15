@@ -10,7 +10,7 @@ import Button from './button';
 
 const Board = ({game,dispatchGame})=> {
     return (
-       <section className='board'>
+       <section className='MS_board'>
             {game.playerboard.map((row,rowindex)=>(
                 <div key={rowindex}>
                 {row.map((cell,colindex)=>(

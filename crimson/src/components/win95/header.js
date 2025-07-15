@@ -8,7 +8,7 @@ const Header = ({app})=> {
     // console.log(apps)
     return (
         <header>
-            <div className='handle'>
+            <div className='MS_handle'>
                 <img src={require('./context/icons/'+app.icon+'.svg')} alt={app.name+' icon'}/>
                 <h1>{app.name}</h1>
             </div>

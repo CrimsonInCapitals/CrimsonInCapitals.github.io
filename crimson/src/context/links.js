@@ -16,6 +16,8 @@ import Minesweeperpage from "../pages/caseStudies/Minesweeper";
 import { Analytics } from "../pages/analytics";
 import PrivacyPolicy from "../pages/privicypolicy";
 import { ThemeShow } from "../pages/theme";
+import { Articals } from "./Articals";
+import { Resume } from "../pages/Resume";
 
 const SocialContext = createContext(undefined);
 
@@ -57,9 +59,7 @@ export const InternalProvider = ({ children }) => {
       }
       const pages = [
         new Page('Home','/',<Home/>,1),
-        new Page('Contact','/contact',<Contact/>,1),
-        new Page('About','/about',<About/>,1),
-        new Page('Case Studies','/casestudies',<CaseStudies/>,1),
+        new Page('Resume','/resume',<Resume/>,1),
         new Page('Case Study: Amazing Grace','/casestudies/amazinggrace',<AmazingGrace/>,2),
         new Page('Case Study: Ask Italian','/casestudies/askitalian',<AskItalian/>,2),
         new Page('Case Study: Aspinal of London','/casestudies/aspinaloflondon',<AspinalofLondon/>,2),
@@ -73,9 +73,11 @@ export const InternalProvider = ({ children }) => {
         new Page('Analytics Preview','/analytics',<Analytics/>,2),
         new Page('Privacy Policy','/privacypolicy',<PrivacyPolicy/>,2),
         new Page('Theme','/theme',<ThemeShow/>,3)
-
-
     ]
+    Articals.map(({Title,Route,component})=>{
+
+        return(pages.push(new Page(Title,Route,component,2)))
+    })
     return (
         <InternalContext.Provider value={pages}>
             {children}

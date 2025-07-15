@@ -21,7 +21,7 @@ const Timer = ({count})=>{
     // useEffect(()=>{console.log(displaynum)},[displaynum])
 
     return (
-        <div className='counter'>
+        <div className='MS_counter'>
             {displaynum.map((digit,index)=>(
                     <img key={digit+','+index} src={require('./assets/digitalclock/'+digit+'.svg')} alt={'digital clock style number:'+digit}/>
             ))}

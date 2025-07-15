@@ -13,7 +13,7 @@
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
-    "react-draggable": "^4.4.5",
+    "react-draggable": "^4.5.0",
     "react-graphs-svg": "^0.1.0-alpha-6",
     "react-line-graph": "^1.0.6",
     "react-router-dom": "^6.8.2",

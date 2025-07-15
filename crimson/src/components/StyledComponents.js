@@ -12,7 +12,7 @@ export const P =({children,className='',Style=''})=>{ // paragraph
 export const CP =({children,className='',Style})=>{ // Card paragraoh
     const{theme}= useThemeContext()
     return(
-        <p className={"default "+className} style={{...Style,...theme.textStyle.cp}}>{children}</p>
+        <p className={"default cardParagraph"+className} style={{...Style,...theme.textStyle.cp}}>{children}</p>
     )
 }
 export const H1 =({children,className='',Style})=>{ // heading 1
@@ -25,6 +25,18 @@ export const H2 =({children,className='',Style})=>{// heading 2
     const{theme}= useThemeContext()
     return(
         <h2 className={"default "+className} style={{...Style,...theme.textStyle.h2}}>{children}</h2>
+    )
+}
+export const H3 =({children,className='',Style})=>{// heading 2
+    const{theme}= useThemeContext()
+    return(
+        <h3 className={"default "+className} style={{...Style,...theme.textStyle.h2}}>{children}</h3>
+    )
+}
+export const H4 =({children,className='',Style})=>{// heading 2
+    const{theme}= useThemeContext()
+    return(
+        <h4 className={"default "+className} style={{...Style,...theme.textStyle.h2}}>{children}</h4>
     )
 }
 export const CH1 =({children,className,Style})=>{// card heading 1

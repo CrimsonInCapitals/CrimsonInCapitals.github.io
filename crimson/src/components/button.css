@@ -1,7 +1,7 @@
-/* ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ Above Theme Mode ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+/* ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ Above Theme Mode ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 /* ############################### Above Parent Styling ######################################## */
 /* ------------------------------- All Buttons ------------------------------------- */
-button{
+/* button{
     border-style: none;
     border-radius: 5px;
     background-color: unset;
@@ -20,7 +20,7 @@ button p{
 }
 button:active{
     outline: solid 2px white;
-}
+} */
 /* ------------------------------- MultiButton  ------------------------------------- */
 button .options{
     display: flex;
