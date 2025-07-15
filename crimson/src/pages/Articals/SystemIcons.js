@@ -1,1 +1,0 @@
-export const properties=[[2,2],'System Icons',1,'Conceptial icon set. A study of visual comunication']

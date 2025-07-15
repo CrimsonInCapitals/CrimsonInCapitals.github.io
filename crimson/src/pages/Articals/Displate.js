@@ -1,1 +1,0 @@
-export const properties=[[4,2],'Displate',1,'I have designed a series of posters that I sell on Displate']

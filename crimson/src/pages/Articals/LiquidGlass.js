@@ -1,1 +1,0 @@
-export const properties=[[2,2],'Liquid Glass',2,'A new glass wall around the garden']
