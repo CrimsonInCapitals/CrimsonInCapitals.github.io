@@ -5,7 +5,7 @@ const AmazingGrace = ()=> {
 
     return (
         <>
-            <section id='cardDeck'>
+            <section id='con'>
                 <CaseText size='exwide'Header='Amazing Grace'>By researching the brand and analysing its aesthetic, I was able to design this set of icons for use on social media and on their website.</CaseText>
                 <CaseCard Image={require('../../sources/caseStudies/amazingGrace/pallet.jpg')}/>
                 <CaseCard Image={require('../../sources/caseStudies/amazingGrace/chart.jpg')}/>

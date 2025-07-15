@@ -13,10 +13,11 @@ export const Resume = ()=>{
             </span>
             <H2>Professional Background</H2>
             <div>
-                <H3>Jul 2023 – Present: David Phillips — Junior/Midweight Graphic Designer </H3>
+                <H3>Apr 2024 – Jul 2025: David Phillips — Junior/Midweight Graphic Designer </H3>
                 <P>David Phillips is a large-scale furnishing company servicing the operational real estate market. My role as a Graphic Designer is to collaborate with the Lead Graphic Designer to develop the brand by creating and overseeing the production of collateral. This includes designing brochures, social media graphics and promotional materials to ensure brand consistency and support marketing campaigns. My most significant impact was during the rollout of Figma, Monday.com, and a refreshed, interactive brand guidelines platform. I introduced Figma as a replacement for both PowerPoint and InDesign, which had been used for pitch creation previously. It enabled me to develop and manage pre-made templates and content, ensuring consistency across multiple teams. During its deployment, I managed the training of 14 people across 3 teams, all new to Figma. Using Monday.com, I implemented a collateral tagging system that assigns a six-digit code, alongside a comprehensive version control system integrated into the request/feedback/workload process. This process reduces amendment rounds by 75% by collating stakeholder feedback for cross-analysis. This system also ensures that outdated materials are retired once replacements are issued.</P>
                 <Link to={'../articals/davidphillips'}><P>Read CaseStudy</P></Link>
             </div>
+                   <H3>Jul 2023 – Apr 2024: David Phillips — Artworker & Presentation Designer</H3>
             <div>
                 <H3>Dec 2022 – Apr 2023: Cudoni (Insolvent Apr 2023) — Senior Product Photographer</H3>
                 <P>Cudoni was an online clothing resale marketplace, selling second-hand luxury clothing and accessories. As a Senior Product Photographer, my role included taking a high volume of item photographs, as well as advising others on ways to shoot challenging items that would require deviation from the standardised shot list. This role prioritised efficient working to maximise sellable units per day. I was responsible for making key changes to increase the speed and quality of output. I did this by creating more efficient workspaces, allowing the process to be performed quicker.</P> 

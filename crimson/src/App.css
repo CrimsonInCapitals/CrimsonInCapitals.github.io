@@ -163,6 +163,28 @@ span div{
 }
 .QuickBento.AspinalBento{
   background-image: url('../src/sources/articals/aspinaloflondon/bagcloseup.png');
+  background-position: right;
+  opacity: 50%;
+
+}
+.QuickBento.CudoniBento{
+  background-image: url('../src/sources/articals/cudoni/cc\ neckless.png');
+  background-position: right;
+  opacity: 50%;
+
+}
+.QuickBento.Amazinggracebento{
+  background-image: url('../src/sources/articals/amazinggrace/icons.png');
+  background-position: center;
+
+}
+.QuickBento.Dogroombento{
+  background-color: #F8C900;
+    background-image: url('../src/sources/articals/thedogroom/logo.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 80%;
 
 }
 .QuickBento.IconsBentoBackground{

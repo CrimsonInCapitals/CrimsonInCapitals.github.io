@@ -58,7 +58,7 @@ const BentoContent = ()=>{
             <div>
             <H3>Process</H3>
             <P>The first of the changes was the introduction of Monday.com for marketing. I oversaw the implementation of the tool. What Monday.com allowed us to do was track what collateral was in circulation, who needed new collateral through a request, and which teams needed to be involved in feedback. I created a system by which each piece of collateral was assigned an ID, called a BA number, standing for brand asset. This code can be found at the start of file names and within the folder structure of projects, as well as on the back cover of brochures. The code included a robust version system that made identifying the use of outdated collateral easier. This code could be looked up on Monday.com to give insights as to its development, who worked on it and what they did, as well as who requested and signed it off. It also integrates into the Project team's development tracker, allowing greater visibility over pitch deck creation.</P>
-            <img src={require('../../sources/articals/davidphillips/Mondayimage.png')}/>
+            <img src={require('../../sources/articals/davidphillips/Mondayimage.png')} alt=" a form with a resualt an its asociated tasks"/>
             </div>
 
             <div>
@@ -200,19 +200,19 @@ const Page4 = ()=>{return(
                 <H2>The Solution</H2>
                 <P>The solution came in the form of a tool we had already started using for social media content and designing the new brand guidelines, Figma. The Figma team had just announced the release of a new presentation tool called slides.  I pitched it to the forementioned teams, and they agreed to do a trial run. I began designing the template based on the InDesign one in use and in line with the brand framework library I had already created. We ran the test on a project for an Australian client, which required liaising with our sales partners out there. As such, a tool that allowed for multiple people to jump on at any time and work on different parts was essential. The outcome of the trial was the first tender ever finished early. Over the next couple of months, we made the switch for project pitches completely.</P>
             </div>
-            <img src={require('../../sources/articals/davidphillips/figmaimage.png')}/>
+            <img src={require('../../sources/articals/davidphillips/figmaimage.png')}alt="an image depicting a template in figma slides"/>
 
             <div>
                 <H3>Framework</H3>
                 <P>I built out a robust set of text styles, page layouts, and components rolled into a Figma library that could be accessed through the built-in search panel. This library included layout guides that employed the new card system, with pre-styled effects like drop shadow and glass that matched what was defined by the guidelines. It also included specific things, such as product cards for the product gallery page. </P>
             </div>
-            <img src={require('../../sources/articals/davidphillips/figmaframework.png')}/>
+            <img src={require('../../sources/articals/davidphillips/figmaframework.png')} alt="an image of the variables withing the David Phillips library"/>
 
             <div>
                 <H3>Templates</H3>
                 <P>I worked in collaboration with the projects and design teams to create templates that followed the narrative of their specific pitches. These included pitches for amenity spaces, show homes and large-scale furnishing projects. I also created variants for specific segments, such as the student segment with its yellow colour scheme. These templates allowed the interior design team to focus on interior design, for the project team to come in and enter prices and critical paths, and for the product team to enter product information.</P>
             </div>
-            <img src={require('../../sources/articals/davidphillips/figmatemplates.png')}/>
+            <img src={require('../../sources/articals/davidphillips/figmatemplates.png')} alt="a set of templates"/>
 
             <div>
                 <H3>Pre-made Content</H3>
@@ -263,23 +263,23 @@ const Page5 = ()=>{return(
                 <H2>Platfrom Launch Leaflet</H2>
                 <P>I worked with the Web Executive and the Marketing Manager to put together a leaflet highlighting the key features of our new platform to potential users, to be handed out to them by the sales team. This required displaying a lot of features and associated screenshots, meaning that careful consideration needed to be taken as to the layout. I ended up using an unconventional tri-fold design that allowed the user to open it in stages to gain more information.</P>
             </div>
-            <img src={require('../../sources/articals/davidphillips/linkleafletmockupset.png')}/>
+            <img src={require('../../sources/articals/davidphillips/linkleafletmockupset.png')} alt='a mochup of a leaflet unfolding'/>
 
                 <P>While the end result is something I am proud of, if I were to undertake this project on my own terms, I would focus on the benefits for the end user over features. In tandem to this, I would include photos of people using the tool, instead of exclusively screenshots of the interface.</P>
             <div>
                 <H2>Fitted Furniture Brochure</H2>
                 <P>The FF&E brochure features diagrams, maps, data and case studies and therefore, it is a good demonstration of a wide range of visualisation techniques.</P>
             </div>
-                <img src={require('../../sources/articals/davidphillips/ffecover.png')}/>
+                <img src={require('../../sources/articals/davidphillips/ffecover.png')} alt='the cover page of the ffe brochure'/>
 
                 <P>The first page to highlight is the lead times and RIBA integration spread of pages. It gives a generalised overview of how David Phillips can integrate into a pre-existing works plan and install fourteen weeks after contract award. This is a key USP for David Phillips as it requires leveraging unique partnerships with a number of manufacturers to which they occupy about 80% of the production calendar.</P>
-                <img src={require('../../sources/articals/davidphillips/riba.png')}/>
+                <img src={require('../../sources/articals/davidphillips/riba.png')} alt='an open spread in a brochure'/>
 
                 <P>Breaking down complex emissions calculations in a digestible way was essential for the carbon calculator spread. This section highlights another David Phillips USP — the ability to calculate the impact of specific product selection choices in terms of carbon impact. This page displays three variations on the same item of furniture and shows how changes in construction material and location affect impact.</P>
-                <img src={require('../../sources/articals/davidphillips/carbon calculator.png')}/>
+                <img src={require('../../sources/articals/davidphillips/carbon calculator.png')}alt='an open spread in a brochure'/>
 
                 <P>The wardrobes and extra services spread highlights features using icons. By using icons with limited text, I was able to make the focus of this spread the full-page image of the wardrobe, highlighting construction quality and framing the content.</P>
-                <img src={require('../../sources/articals/davidphillips/waredrobesspread.png')}/>
+                <img src={require('../../sources/articals/davidphillips/waredrobesspread.png')}alt='an open spread in a brochure'/>
 
                 <H1>Other Projects</H1>
         </section>

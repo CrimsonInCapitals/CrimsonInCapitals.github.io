@@ -60,19 +60,18 @@ export const InternalProvider = ({ children }) => {
       const pages = [
         new Page('Home','/',<Home/>,1),
         new Page('Resume','/resume',<Resume/>,1),
-        new Page('Case Study: Amazing Grace','/casestudies/amazinggrace',<AmazingGrace/>,2),
-        new Page('Case Study: Ask Italian','/casestudies/askitalian',<AskItalian/>,2),
-        new Page('Case Study: Aspinal of London','/casestudies/aspinaloflondon',<AspinalofLondon/>,2),
-        new Page('Case Study: Bobbin & Em','/casestudies/bobbin&em',<BobbinEm/>,2),
-        new Page('Case Study: Cudoni','/casestudies/cudoni',<Cudoni/>,2),
-        new Page('Minesweeper','/casestudies/minesweeper',<Minesweeperpage/>,2),
-        new Page('Case Study: Icon Design','/casestudies/icondesign',<Icons/>,2),
-        new Page('Case Study: Minecraft Displates','/casestudies/minecraaftdisplates',<MinecraftDisplate/>,2),
-        new Page('Case Study: The Dog Room','/casestudies/thedogroom',<TheDogRoom/>,2),
-        new Page('Case Study: Vector Illustration','/casestudies/vectorillustration',<VectorIllustration/>,2),
-        new Page('Analytics Preview','/analytics',<Analytics/>,2),
-        new Page('Privacy Policy','/privacypolicy',<PrivacyPolicy/>,2),
-        new Page('Theme','/theme',<ThemeShow/>,3)
+        // new Page('Case Study: Ask Italian','/casestudies/askitalian',<AskItalian/>,2),
+        // new Page('Case Study: Aspinal of London','/casestudies/aspinaloflondon',<AspinalofLondon/>,2),
+        // new Page('Case Study: Bobbin & Em','/casestudies/bobbin&em',<BobbinEm/>,2),
+        // new Page('Case Study: Cudoni','/casestudies/cudoni',<Cudoni/>,2),
+        // new Page('Minesweeper','/casestudies/minesweeper',<Minesweeperpage/>,2),
+        // new Page('Case Study: Icon Design','/casestudies/icondesign',<Icons/>,2),
+        // new Page('Case Study: Minecraft Displates','/casestudies/minecraaftdisplates',<MinecraftDisplate/>,2),
+        // new Page('Case Study: The Dog Room','/casestudies/thedogroom',<TheDogRoom/>,2),
+        // new Page('Case Study: Vector Illustration','/casestudies/vectorillustration',<VectorIllustration/>,2),
+        // new Page('Analytics Preview','/analytics',<Analytics/>,2),
+        // new Page('Privacy Policy','/privacypolicy',<PrivacyPolicy/>,2),
+        // new Page('Theme','/theme',<ThemeShow/>,3)
     ]
     Articals.map(({Title,Route,component})=>{
 
