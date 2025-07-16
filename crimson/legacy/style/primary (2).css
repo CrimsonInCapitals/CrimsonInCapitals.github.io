@@ -1,0 +1,341 @@
+body{
+    background-color: #0B0B0B;
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    color: #D7CFC8;
+}
+header{
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    background-color: rgba(11, 11, 11, 0.8);
+    backdrop-filter: saturate(200%) blur(40px);
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+img.logo{
+    width: 40px;
+    height: 40px;
+    position: sticky;
+    top: 15px;
+    margin-top: 20%;
+    margin-left: 10px;
+}
+
+header menu.widescreen{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-content: flex-end;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    margin-right: 10px;
+}
+header menu.widescreen a{
+    border: none;
+    background-color: transparent;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #D7CFC8;
+    text-decoration: none;
+}
+label .button{
+    display: flex;
+    flex-direction: column;
+    gap: 4.444px;
+    justify-content: center;
+}
+div.line{
+    width: 22.222px;
+    height: 4.444px;
+    background-color: #D7CFC8;
+}
+header label{
+    display: flex;
+}
+input.burger:checked + label menu{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    left: 0;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    font-size: 40px;
+    padding: 40px 0;
+    margin-top: 60px;
+    background-color: rgba(11, 11, 11, 0.8);
+    backdrop-filter: blur(40px);
+}
+input.burger + label menu{
+    display: none;
+}
+menu.burger a{
+    font-family: 'Jost', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #D7CFC8;
+    text-decoration: none;
+}
+menu.burger a.underlined{
+    text-decoration: underline;
+}
+menu.widescreen a.underlined{
+    text-decoration: underline;
+}
+input.burger:checked + label .line.top{
+    transform: rotateZ(-45deg);
+    margin-bottom: -4.444px;
+    animation-name: menutopline;
+    animation-duration: 1s;
+}
+input.burger:checked + label .line.bottom{
+    margin-top: -4.444px;
+    transform: rotateZ(45deg);
+    animation-name: menubottomline;
+    animation-duration: 1s;
+}
+input.burger:visited + label .line.top{
+    transform: rotateZ(-45deg);
+    margin-bottom: -4.444px;
+    animation-name: menutoplineundo;
+    animation-duration: 1s;
+}
+input.burger:visited + label .line.bottom{
+    margin-top: -4.444px;
+    transform: rotateZ(45deg);
+    animation-name: menubottomlineundo;
+    animation-duration: 1s;
+}
+@keyframes menubottomline {
+    from{
+        margin-top: 0;
+        transform: rotateZ(0deg);
+    }
+    to{
+        margin-top: -4.444px;
+        transform: rotateZ(45deg);
+    }
+}
+@keyframes menutopline {
+    from{
+        margin-top: 0;
+        transform: rotateZ(0deg);
+    }
+    to{
+        margin-bottom: -4.444px;
+        transform: rotateZ(-45deg);
+    }
+}
+@keyframes menubottomlineundo {
+    to{
+        margin-top: 0;
+        transform: rotateZ(0deg);
+    }
+    from{
+        margin-top: -4.444px;
+        transform: rotateZ(45deg);
+    }
+}
+@keyframes menutoplineundo {
+    to{
+        margin-top: 0;
+        transform: rotateZ(0deg);
+    }
+    from{
+        margin-bottom: -4.444px;
+        transform: rotateZ(-45deg);
+    }
+}
+input.burger:checked .button{
+    gap: 0;
+}
+input.burger:hover + label{
+    cursor: pointer;
+}
+input.burger{
+    display: none;
+}
+/* line.top{
+    transform: translateY(-10px) scaleX(.88235);
+}
+line.bottom{
+    transform: translateY(-10px) scaleX(.88235);
+} */
+
+a{
+    color: #D7CFC8;
+}
+header menu a:hover{
+    color: #C00800;
+}
+section{
+    min-width: 50%;
+    max-width: 90%;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Jost', sans-serif;
+    color: #D7CFC8;
+    margin-top: 100px;
+}
+body section:first-of-type{
+    margin-top: -70px
+}
+footer{
+    margin-top: 200px;
+}
+footer section:first-of-type{
+    margin-top: 20px;
+}
+h1{
+    font-size: 70px;
+    font-weight: 500;
+    margin: 0;
+}
+h2{
+    font-size: 55px;
+    font-weight: 500;
+    margin: 0;
+}
+h3{
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+}
+p{
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0;
+}
+.arrowdown{
+    margin-top: 20px;
+    margin-left: 45%;
+    width: 10%;
+}
+section.poster img{
+    width: 100%;
+}
+section.profile{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    gap: 40px;
+}
+
+section.profile img{
+    border-radius: 50%;
+    width: 30%;
+}
+section.profile div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+footer a{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+footer a img{
+    height: 20px;
+}
+footer h2{
+    margin-bottom: 20px;
+}
+a.underlined{
+    text-decoration: underline;
+}
+footer a img:last-of-type{
+    display: none;
+}
+footer a:hover img:last-of-type{
+    display: block;
+}
+footer a:hover img:first-of-type{
+    display: none;
+}
+section#casestudies{
+    display: flex;
+    flex-wrap: wrap;
+}
+.onebyone{
+    width: 50%;
+
+}
+.onebytwo{
+    width: 100%;
+
+}
+.twobytwo{
+    width: 100%;
+
+}
+.pointfive{
+    width: 25%;
+
+}
+section#casestudies a img{
+    width: 100%;
+}
+section#casestudies p{
+    text-decoration: none;
+    margin-bottom: -40px;
+    z-index: 2;
+    margin-left: 10px;
+    /* display: none;*/
+}
+section div.onebyone{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+section#casestudies div.onebyone p{
+    margin-left: 0;
+    font-size: 18px;
+}
+.alighnright{
+    align-items: flex-end;
+}
+section#casestudies div.alighnright p{
+    text-align: right;
+}
+
+/* section#casestudies a:hover p{
+    display: block;
+}
+section#casestudies a:hover img{
+    display: none;
+} */
+section#casestudies a p{
+    display: none;
+    position: absolute;
+    margin: 20px;
+}
+
+
+
+@media (max-width: 1000px) {
+    header menu.widescreen{
+        display: none;
+    }
+}
+@media (min-width: 1000px) {
+    header label {
+        display: none;
+    }
+}

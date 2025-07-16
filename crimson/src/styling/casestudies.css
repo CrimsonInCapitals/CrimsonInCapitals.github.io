@@ -1,0 +1,154 @@
+.progressBar{
+    height: 10px;
+    width: 50%;
+    border-radius: 0.5vw;
+    overflow: hidden;
+    background-color: gray;
+}
+.progress0{
+    background-color: blue;
+    height: 100%;
+    min-width: 10px;
+    border-top-right-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+}
+.progress100{
+    background-color: blue;
+    height: 100%;
+    max-width: 100%;
+    border-top-right-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+    transition: ease-in-out 5s;
+}
+article{
+    all: unset;
+}
+#cardDeck{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    height: fit-content;
+    gap: 1vw;
+}
+.card{
+    overflow: hidden;
+    border-radius: 0.5vw;
+    aspect-ratio: 1;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 5;
+
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+}
+.card h1 a{
+    font-size: 3rem;
+}
+.card h1.heading{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.cardheader{
+    margin: 0;
+    top: 1vw;
+    left: 1vw;
+    position: absolute;
+    color: #d7cfc800;
+    font-size: 1.1rem;
+    display: none;
+}
+.card:hover .cardheader{
+    display: block;
+}
+.card:hover{
+    background-color: black;
+}
+div.card:hover{
+    background-color: unset;
+}
+.card:hover>img{
+    opacity: 20%;
+}
+.smallCard{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.mediumCard{
+    grid-column: span 2;
+    grid-row: span 2;
+
+}
+.solomediumCard{
+    grid-column: span 2;
+}
+.largeCard{
+    grid-column: span 3;
+    grid-row: span 3;
+
+}
+.wideCard{
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: unset;
+}
+.exwideCard{
+    grid-column: span 3;
+    grid-row: span 1;
+    aspect-ratio: unset;
+    height: fit-content;
+    min-height: 1rem;
+}
+.tallmediumCard{
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: unset;
+    height: fit-content;
+}
+
+
+.card p{
+    position: absolute;
+    font-size: 1.5rem;
+    margin: 5%;
+}
+.card>h1{
+    margin: 5%;
+    margin-bottom: -3%;
+}
+.cardwithaside{
+    grid-column: span 3;
+    grid-row: span 1;
+    height: fit-content;
+    display: flex;
+    gap: 15px;
+    aspect-ratio: unset;
+}
+.cardwithaside:hover{
+    background-color: unset;
+}
+.cardwithaside:hover img{
+    opacity: 100;
+}
+article.cardwithaside p{
+    position: relative;
+    max-width: 30%;
+}
+img.withaside{
+    width: 60%;
+    border-radius: 0.5vw;
+    position: relative;
+}
+div.exwideCard p{
+    position: relative;
+}
+@media (max-width: 800px) {
+    .card p{
+
+        font-size: 0.6rem;
+
+    }
+}

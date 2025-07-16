@@ -1,0 +1,6 @@
+document.getElementById('data').innerHTML = document.getElementById('data').innerHTML + ', '+ response.data[page].name;//outputs each page name to the div
+            //console.log(response.data[page].name);//outputs each page name to the console
+            FB.api('/me/?access_token='+response.data[page].access_token, function(pageoutput){
+                console.log(pageoutput.name);
+
+            });//makes call to api

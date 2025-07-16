@@ -1,0 +1,22 @@
+[
+    {
+        "account-id": "00000000",
+        "account-name": "eden gardens",
+        "managers":
+            [
+                {
+                    "name":"Harrison",
+                    "linked-accounts": ["00000000","00000001"],
+                    "has-authority": true
+                },{
+                    "name":"Joseph",
+                    "linked-accounts": ["00000000","00000001"],
+                    "has-authority": false
+                }
+            ],
+        "sub-accounts":
+            [{
+                "account-id": "00000001"
+            }]
+    }
+]

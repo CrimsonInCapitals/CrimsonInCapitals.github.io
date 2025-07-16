@@ -1,0 +1,219 @@
+
+div.TunnelParent{
+    aspect-ratio: 1;
+}
+div.Tunnel{
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgba(24, 118, 242, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.Tunnel .tip{
+    position: absolute;
+    display: none;
+}
+.Tunnel:hover>.tip{
+    display: block;
+    background-color: white;
+    z-index: 10;
+    padding: 10px 20px;
+    color: #000;
+    border-radius: 5px;
+    min-width: 80px;
+}
+main article.dataCard{
+    all: unset;
+    background-color: white;
+    margin: 0 20%;
+    min-width: 60%;
+    max-width: 95%;
+    width: 60%;
+    display: block;
+    border-radius: 0.5vw;
+    /* border: solid 2px; */
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+main .dataCard>.sub{
+    display: flex;
+    gap: 1vw;
+    justify-content: space-between;
+    padding: 4vw;
+}
+main .dataCard>.stack{
+    flex-direction: column;
+}
+main .dataCard .sub section{
+    width: 40%;
+}
+article.dataCard .Ribbon{
+    padding: 2rem 4vw;
+    height: fit-content;
+}
+article.dataCard .Ribbon h1{
+    margin: 0;
+}
+article.dataCard footer{
+    padding: 2rem 4vw;
+}
+article.dataCard footer button{
+    background-color: unset;
+    border: none;
+    border-style: unset;
+    padding: 0;
+}
+
+.sliderParent{
+    /* width: 100%; */
+    height: fit-content;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.dataCard .sliderParent{
+    margin-right: -4vw;
+}
+.sliderParent::-webkit-scrollbar {
+    width: 10px;
+}
+.sliderChild{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 1vw;
+    margin-right: 4vw;
+}
+.post{
+    width: 200px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 0.5vw;
+    overflow: hidden;
+    padding: 0;
+}
+.post img{
+    width: 100%;
+    height: auto;
+}
+.post .img_container{
+    width: 200px;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    max-height: 200px;
+}
+.post .img_profile_media{
+    margin: 10px;
+    border-radius: 90px;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+}
+.post .img_cover_photo{
+    height: 100px;
+}
+.post .img_profile_media img{
+    z-index: 1;
+}
+img.reac{
+    height: 1rem;
+}
+.post .cover_backdrop{
+        height: 100px;
+        overflow: hidden;
+        margin-bottom: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.post .cover_backdrop img{
+    width: 300%;
+    opacity: 50%;
+    filter: blur(5px);
+}
+.post .postHeading{
+    font-size: 0.7rem;
+    margin: 0;
+}
+.post .img_album{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+}
+.post .img_album :first-child{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.post .img_album img{
+    box-sizing: border-box;
+}
+
+.post p.ago{
+    opacity: 80%;
+    margin: 0;
+}
+.post div.reactions{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+div.reactions p{
+    margin-left: -0.5rem;
+}
+div.reactions :first-child{
+    margin: 0;
+}
+
+.post p.reactions{
+    font-weight: 600;
+}
+.post p{
+    position: relative;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0;
+}
+.post p.message{
+    margin: 10px;
+    font-size: 0.7rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: content-box;
+}
+.post .bar{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    gap: 10px;
+    align-items: center;
+}
+.post .bar img{
+    height: 1rem;
+    width: auto;
+}
+.post .left{
+    justify-content: flex-start;
+}
+
+@media (max-width: 800px) {
+    main article.dataCard{
+        width: 98vw;
+        margin: 0 1vw;
+        margin-bottom: 20px;
+    }
+}
+section.flex{
+    display: flex;
+}
+
+span button{
+    flex: 1;
+}

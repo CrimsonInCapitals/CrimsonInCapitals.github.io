@@ -1,0 +1,205 @@
+a{
+    font-family: 'Jost';
+    font-weight: 400;
+    display: flex;
+    gap: 1rem;
+    text-decoration: none;
+    align-items: center;
+    font-size: 1.2rem;
+}
+a img{
+    width: 1.4rem;
+}
+
+a:hover img.one{
+    display: none;
+}
+a:hover img.two{
+    display: inline;
+}
+a img.two{
+    display: none;
+}
+button:hover img.one{
+    display: none;
+}
+button:hover img.two{
+    display: inline;
+}
+button img.two{
+    display: none;
+}
+button.defualt{
+    font-family: 'Jost',sans-serif;
+    font-weight: 400;
+    display: flex;
+    gap: 1rem;
+    text-decoration: none;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 20%;
+}
+#root button{
+    transition: 1s;
+}
+
+main.analytics button{
+    padding: 10px 40px;
+}
+main button.login{
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    gap: 10px;
+    box-sizing: border-box;
+}
+.login img{
+    width: 40px;
+    border-radius: 20px;
+}
+#root button.rounded{
+    padding-right: 30px;
+}
+.login p{
+    padding-right: 10px;
+}
+label.pages{
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    gap: 10px;
+    box-sizing: border-box;
+    padding-right: 30px;
+}
+label.pages img{
+    border-radius: 50%;
+}
+#root{
+    button{
+        border-radius: 5px;
+        .Primary{
+
+        }
+        .Secondary{
+
+        }
+        .Tertiary{
+
+        }
+    }
+    #DarkMode{
+        button{
+            .Primary{
+
+            }
+            .Secondary{
+
+            }
+            .Tertiary{
+
+            }
+        }
+    }
+    #LightMode{
+        button{
+            .Primary{
+
+            }
+            .Secondary{
+
+            }
+            .Tertiary{
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+#root form.DateRange button.until{
+    background-color: #1877F2;
+    border-radius: calc(1rem*3/2);
+
+}
+form.DateRange div.beforeUntil{
+    margin-right: calc(3rem/-2);
+    padding-right: calc(3rem/2);
+    background-color: rgb(16, 78, 159);
+}
+form.DateRange div.afterSince{
+    margin-left: calc(3rem/-2);
+    padding-left: calc(3rem/2);
+    background-color: rgb(16, 78, 159);
+}
+#root form.DateRange button.since{
+    background-color: #003881;
+    border-radius: calc(1rem*3/2);
+    z-index: 1;
+}
+#root form.DateRange button.between{
+
+    background-color: rgb(16, 78, 159);
+}
+
+
+
+
+button.multibutton .options{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+button.multibutton .option{
+    width: 0.2rem;
+    height: 0.2rem;
+    border-radius: 0.1rem;
+    background-color: red;
+}
+button.multibutton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+
+.DateRange{
+    width: 100%;
+    display: flex;
+    border-radius: calc(1rem*3/2);
+    overflow: hidden;
+}
+#root form.DateRange button{
+    flex: 1;
+    padding: 1rem 0;
+    font-size: 1rem;
+    border-style: none;
+    transition: 0.1s;
+    background-color: unset;
+}
+#root form.DateRange button.current{
+
+    background-color: rgba(255, 255, 255, 0.023);
+    border-radius: calc(1rem*3/2);
+}
+#root form.DateRange button p{
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
