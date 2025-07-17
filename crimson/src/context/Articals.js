@@ -37,7 +37,7 @@ export const Articals=[
         new Artical(...DavidPhillipsicons),
         new Artical(...DavidPhillipsfigma),
         new Artical(...DavidPhillipsother),
-        // new Artical(...Displate),
+        new Artical(...Displate),
         new Artical(...TheDogRoom),
         new Artical(...AspinalofLondon),
         new Artical(...Cudoni),

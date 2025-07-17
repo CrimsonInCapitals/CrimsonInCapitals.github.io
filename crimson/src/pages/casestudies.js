@@ -19,7 +19,6 @@ const CaseStudies = ()=> {
                 <CaseCard size='small' Header='Icons (Perosnal)' To='/casestudies/icondesign' Image={require('../sources/caseStudies/MicrosoftIcons/line icons.jpg')}/>
                 <CaseCard size='small' Header='Vecotor Illustration (Presonal)' To='/casestudies/vectorillustration' Image={require('../sources/caseStudies/Portaits/default.jpg')}/>
                 <CaseCard size='large' Header='Aspinal of London (Freelance)' To='/casestudies/aspinaloflondon' Image={require('../sources/caseStudies/AspinalOfLondon/default.jpg')}/>
-                <CaseCard size='medium' Header='Minecraft Posters (Presonal)' To='/casestudies/minecraaftdisplates' Image={require('../sources/caseStudies/Displate/default.jpg')}/>
                 <CaseCard size='small' Header='Cudoni (Employee)' To='/casestudies/cudoni' Image={require('../sources/caseStudies/Cudoni/default.jpg')}/>
                 <CaseCard size='small' Header='Minesweeper (What?)' To='/casestudies/minesweeper' Image={require('../sources/caseStudies/minesweeper/default.jpg')}/>
             </section>
