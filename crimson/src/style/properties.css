@@ -1,0 +1,58 @@
+:root{
+    --Dark01: #201b1b;
+    --Dark02: #282222;
+    --Dark03: #423939;
+    --Light01: #ffffff;
+    --Light02: #efe9e4;
+    --Light03: #dbd1c8;
+    --Dark0180: #201b1bcc;
+    --Dark0280: #282222cc;
+    --Dark0380: #423939cc;
+    --Light0180: #ffffffcc;
+    --Light0280: #efe9e4cc;
+    --Light0380: #dbd1c8cc;
+    --Crimson: #c00800;
+    --DarkAccent: #39110f;
+    --LightAccent: #e6bcb6;
+/* defualts */
+    --background01:var(--Dark01);
+    --background02:var(--Dark02);
+    --background03:var(--Dark03);
+    --background0180:var(--Dark0180);
+    --background0280:var(--Dark0280);
+    --background0380:var(--Dark0380);
+    --copy01:var(--Light03);
+    --copy02:var(--Light02);
+    --copy03:var(--Light01);
+    --Copy:var(--Light02);
+    --Accent:var(--DarkAccent);
+}
+
+#light {
+    --background01:var(--Light03);
+    --background02:var(--Light02);
+    --background03:var(--Light01);
+    --background0180:var(--Light0380);
+    --background0280:var(--Light0280);
+    --background0380:var(--Light0180);
+    --copy01:var(--Dark01);
+    --copy02:var(--Dark02);
+    --copy03:var(--Dark03);
+
+    --Copy:var(--Dark02);
+    --Accent:var(--LightAccent)
+}
+.layer_one{
+    --Background:var(--background01);
+    --Copy:var(--copy01);
+}
+.layer_two{
+    --Background:var(--background02);
+    --Copy:var(--copy02);
+
+}
+.layer_three{
+    --Background:var(--background03);
+    --Copy:var(--copy03);
+
+}

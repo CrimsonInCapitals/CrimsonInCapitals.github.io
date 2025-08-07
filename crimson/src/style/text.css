@@ -1,0 +1,101 @@
+@font-face {
+    font-family: Baskervville;
+    src: url(../fonts/Baskervville-VariableFont_wght.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: Baskervville;
+    src: url(../fonts/Baskervville-Italic-VariableFont_wght.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: Tenorite;
+    src: url(../fonts/Tenorite.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Tenorite;
+    src: url(../fonts/Tenorite\ Bold\ Italic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: Tenorite;
+    src: url(../fonts/Tenorite\ Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+h1,h2,h3,h4{
+    font-family: Baskervville;
+    color: var(--Copy);
+    margin: 0;
+}
+
+h1{
+    font-size: 4em;
+    font-weight: 400;
+}
+h2{
+    font-size: 2.4em;
+    font-weight: 600;
+}
+h3{
+    font-size: 2em;
+    font-weight: 800;
+}
+h5{
+        font-family: Tenorite;
+    font-weight: 700;
+    font-size: 1em;
+    color: var(--Copy);
+    margin: 0;
+}
+p{
+    font-family: Tenorite;
+    font-weight: 400;
+    font-size: 1em;
+    color: var(--Copy);
+}
+
+#NameHolder{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: sticky;
+    top: -18vw;
+    bottom: -11vw;
+}
+title#Name{
+    font-family: Baskervville;
+    color: var(--Crimson);
+    font-style: italic;
+    font-weight: 800;
+    display: block;
+    width: fit-content;
+    font-size: 22vw;
+    text-align: center;
+    margin-right: 5vw;
+}
+
+a{
+    text-decoration: none;
+    color: var(--Copy);
+    font-family: Baskervville;
+    font-weight: 600;
+}
+
+
+
+#VectorHolder{
+    width: 100%;
+    margin-top: -11vw;
+    margin-bottom: -8vw;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
