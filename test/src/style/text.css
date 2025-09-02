@@ -26,7 +26,7 @@
     font-weight: 400;
     font-style: italic;
 }
-h1,h2,h3,h4{
+h1,h2,h3,h4,summary{
     font-family: Baskervville;
     color: var(--Copy);
     margin: 0;
@@ -40,10 +40,14 @@ h2{
     font-size: 2.4em;
     font-weight: 600;
 }
-h3{
+h3,summary{
     font-size: 2em;
     font-weight: 800;
 }
+summary{
+    transition: all 0.2s ease;
+}
+
 h5{
         font-family: Tenorite;
     font-weight: 700;
@@ -51,11 +55,28 @@ h5{
     color: var(--Copy);
     margin: 0;
 }
-p{
+p,li,small{
     font-family: Tenorite;
     font-weight: 400;
     font-size: 1em;
     color: var(--Copy);
+}
+ul{
+    list-style: none;
+
+}
+ul li::before{
+    content: '—';
+
+}
+li{    
+    min-width: 12em;
+    width: 30%;}
+
+small{
+    font-size: 0.8em;
+    color: var(--Copy);
+    opacity: 0.6;
 }
 
 #NameHolder{
@@ -98,4 +119,19 @@ a{
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+}
+.aboutIntro{
+    font-weight: bold;
+    font-style: italic;
+    color: var(--Crimson);
+    font-size: clamp(10%,10vw,5em);
+}
+hr{
+    outline: none;
+    stroke: none;
+    height: 2px;
+    background-color: var(--background02);
+    border-style: none;
+    border-radius: 1px;
+    width: 100%;
 }
