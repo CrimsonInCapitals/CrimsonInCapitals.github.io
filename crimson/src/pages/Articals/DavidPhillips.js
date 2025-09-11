@@ -295,13 +295,13 @@ const IconsBentoBackground =()=>{
     return(<Link className='QuickBento IconsBentoBackground'to={'../articals/davidphillips/iconlibrary'}/>)
 }
 const FigmaBentoBackground =()=>{
-    return(<Link className='QuickBento FigmaBentoBackground'to={'../articals/davidphillips/iconlibrary'}/>)
+    return(<Link className='QuickBento FigmaBentoBackground'to={'../articals/davidphillips/figmapresentations'}/>)
 }
 const OtherBentoBackground =()=>{
-    return(<Link className='QuickBento OtherBentoBackground'to={'../articals/davidphillips/iconlibrary'}/>)
+    return(<Link className='QuickBento OtherBentoBackground'to={'../articals/davidphillips/smallerprojects'}/>)
 }
 const BrandBentoBackground =()=>{
-    return(<Link className='QuickBento BrandBentoBackground'to={'../articals/davidphillips/iconlibrary'}/>)
+    return(<Link className='QuickBento BrandBentoBackground'to={'../articals/davidphillips/brandrefresh'}/>)
 }
 
 

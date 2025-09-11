@@ -10,10 +10,12 @@ export const Resume = ()=>{
             <a href="mailto:harrison.cole@crimsonincapitals.com" useRef='noreffer'><P>harrison.cole@crimsonincapitals.com</P></a>    
             <a href="https://www.instagram.com/crimson.svg/" useRef='noreffer'><P>Instagram</P></a>    
             <a href="https://www.linkedin.com/in/harrison-cole-crimson-in-capitals/" useRef='noreffer'><P>LinkedIn</P></a>
+            <a href="https://www.behance.net/crimsonincapitals" useRef='noreffer'><P>Behance</P></a>
+
             </span>
             <H2>Professional Background</H2>
             <div>
-                <H3>Apr 2024 – Jul 2025: David Phillips — Junior/Midweight Graphic Designer </H3>
+                <H3>Apr 2024 – Jul 2025: David Phillips — Midweight Graphic Designer </H3>
                 <P>David Phillips is a large-scale furnishing company servicing the operational real estate market. My role as a Graphic Designer is to collaborate with the Lead Graphic Designer to develop the brand by creating and overseeing the production of collateral. This includes designing brochures, social media graphics and promotional materials to ensure brand consistency and support marketing campaigns. My most significant impact was during the rollout of Figma, Monday.com, and a refreshed, interactive brand guidelines platform. I introduced Figma as a replacement for both PowerPoint and InDesign, which had been used for pitch creation previously. It enabled me to develop and manage pre-made templates and content, ensuring consistency across multiple teams. During its deployment, I managed the training of 14 people across 3 teams, all new to Figma. Using Monday.com, I implemented a collateral tagging system that assigns a six-digit code, alongside a comprehensive version control system integrated into the request/feedback/workload process. This process reduces amendment rounds by 75% by collating stakeholder feedback for cross-analysis. This system also ensures that outdated materials are retired once replacements are issued.</P>
                 <Link to={'../articals/davidphillips'}><P>Read CaseStudy</P></Link>
             </div>

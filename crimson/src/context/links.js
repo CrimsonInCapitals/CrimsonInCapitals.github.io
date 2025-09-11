@@ -34,7 +34,9 @@ export const SocialProvider = ({ children }) => {
         new Social('Instagram','crimson.svg','https://www.instagram.com/crimson.svg/','instagram'),
         new Social('Facebook','Crimson in capitals art','https://www.facebook.com/Crimsonincapitals','facebook'),
         new Social('LinkedIn','Harrison (Adam) Cole','https://www.linkedin.com/in/harrison-cole-crimson-in-capitals/','linkedin'),
-        new Social('Displate','Displate','https://displate.com/crimsonincapitals1?art=5f0d09c08e6b6','displate')
+        new Social('Displate','Harrison Cole','https://displate.com/crimsonincapitals1?art=5f0d09c08e6b6','displate'),
+        new Social('Behance','Harrison Cole','https://www.behance.net/crimsonincapitals','behance')
+
     ]
     return (
         <SocialContext.Provider value={Socials}>
