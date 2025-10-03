@@ -29,14 +29,14 @@ export const Footer=()=>{
                 <section>
                     <div>
                         <h5>Links</h5>
-                        {Object.keys(Pages).map((r)=>Pages[r]('rank') == 1 &&<Link to={Pages[r]('route')} className={location.pathname == Pages[r]('route')?'activeLink':'inactiveLink'}>{Pages[r]('name')}</Link>
+                        {Object.keys(Pages).filter(r=>Pages[r]('rank') === 1).map((r)=><Link to={Pages[r]('route')} className={location.pathname == Pages[r]('route')?'activeLink':'inactiveLink'}>{Pages[r]('name')}</Link>
                         )}
 
                     </div>
                     <div>
                         <h5>New</h5>
-                        TextComponants
-                        text
+                        {Object.keys(Pages).filter(r=>Pages[r]('rank') > 1).sort((a,b)=> Pages[b]('date') - Pages[a]('date')).slice(0,3).map((r)=><Link to={Pages[r]('route')} className={location.pathname == Pages[r]('route')?'activeLink':'inactiveLink'}>{Pages[r]('name')}</Link>)}
+
                     </div>
                 </section>
                 <div className="socials">
@@ -51,7 +51,7 @@ export const Footer=()=>{
 
                 <p>Crimson in Capitals — Harrison Adam Cole</p>
             </nav>
-            <rect 
+            <div 
               style={{
                     width:'100%',
                     aspectRatio: '100/17',
@@ -64,7 +64,7 @@ export const Footer=()=>{
                     position:'absolute',
                     bottom:'-4vw'
                 }}
-            ></rect>         
+            ></div>         
         </footer>
         </div>
         </>

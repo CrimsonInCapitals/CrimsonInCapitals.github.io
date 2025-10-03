@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react"
 
 export const FocusedContentSection=({children,minHeight=0,style})=>{
 
-    const [scrollPosition, setScrollPosition] = useState(0);
     const [margin, setMargin] = useState([0,0,20]);
     const [radius, setRadius] = useState([0,0,20]);
     const [width, setWidth] = useState([window.innerWidth,window.innerWidth,window.innerWidth*0.9>1200?1200:window.innerWidth*0.9]);
@@ -43,10 +42,13 @@ export const FocusedContentSection=({children,minHeight=0,style})=>{
         window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-
+    useEffect(()=>{
+            setWidth([window.innerWidth,window.innerWidth,window.innerWidth*0.9>1200?1200:window.innerWidth*0.9])
+    },[])
 
     const SectionRef = useRef(null)
-    
+    window.addEventListener('resize', ()=>setWidth([window.innerWidth,window.innerWidth,window.innerWidth*0.9>1200?1200:window.innerWidth*0.9]));
+
     useEffect(()=>{
         if(SectionRef.current){
             const rect = SectionRef.current.getBoundingClientRect();

@@ -27,7 +27,7 @@ export const Instagram =({width='2em', className='vector_button'})=>{
     }
     return(
     
-        <svg width={width}  viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={()=>{window.open('https://www.instagram.com/crimson.svg/')}} className={className}>
+        <svg width={width}  viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={()=>{window.open('https://www.instagram.com/crimson.svg/')}} className={className} title='Instagram'>
             <rect mask="url(#instagram_icon)" x='0'y='0'width='20'height='20' fill="var(--Copy)"/>
             <mask id="instagram_draw" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
                 <mask id="instagram_icon" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
@@ -38,7 +38,7 @@ export const Instagram =({width='2em', className='vector_button'})=>{
                         ref={LineRef}
                         d="M10.5 6.00173C13 6.00173 14 7.50173 14 10.5017C14 12.5 12.5 14.5017 10 14.5017C7.5 14.5017 5.5 13.0017 5.5 10.5017C5.5 8.00173 7.5 6.00173 10 6.00173C12.5 6.00173 13.5 0.964152 9.5 0.964152C5.5 0.964152 2 0.501733 1.5 3.50173C1 6.50173 0.5 15.5019 2 17.5019C3.5 19.5019 14 19.0019 17 18.0019C20 17.0019 19.2893 6.08184 19 5.00189C18.598 3.50153 18 1.00021 14.5 1.00021C12.4604 1.00021 15.1667 4 16 6" 
                         stroke="white" 
-                        stroke-width="4.2"
+                        strokeWidth="4.2"
                         strokeDasharray='110'
                         strokeDashoffset='110'
                         fill="none"
@@ -50,11 +50,11 @@ export const Instagram =({width='2em', className='vector_button'})=>{
             </g>
             <defs>
                 <radialGradient id="instagram_gradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.05173 20.5161) rotate(-36.5111) scale(31.058 16.796)">
-                    <stop stop-color="#FFC600"/>
-                    <stop offset="0.19" stop-color="#FFA500"/>
-                    <stop offset="0.39" stop-color="#FF4501"/>
-                    <stop offset="0.8" stop-color="#FF00D1"/>
-                    <stop offset="1" stop-color="#8309FE"/>
+                    <stop stopColor="#FFC600"/>
+                    <stop offset="0.19" stopColor="#FFA500"/>
+                    <stop offset="0.39" stopColor="#FF4501"/>
+                    <stop offset="0.8" stopColor="#FF00D1"/>
+                    <stop offset="1" stopColor="#8309FE"/>
                 </radialGradient>
             </defs>
         </svg>

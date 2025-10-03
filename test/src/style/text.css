@@ -66,7 +66,7 @@ ul{
 
 }
 ul li::before{
-    content: '—';
+    content: '— ';
 
 }
 li{    
@@ -113,7 +113,7 @@ a{
 #VectorHolder{
     width: 100%;
     margin-top: -11vw;
-    margin-bottom: -8vw;
+    margin-bottom: -7vw;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -126,7 +126,7 @@ a{
     color: var(--Crimson);
     font-size: clamp(10%,10vw,5em);
 }
-hr{
+section hr{
     outline: none;
     stroke: none;
     height: 2px;

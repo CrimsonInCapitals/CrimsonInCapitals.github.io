@@ -10,9 +10,12 @@ import { useThemeContext } from '../context/theme';
 import { Figma } from '../components/Icons/Figma';
 import { Canva } from '../components/Icons/Canva';
 import { HorizontalAutoScroller } from '../components/InfinateScroller';
+import { ProjectCard, ProjectReel } from '../components/ProjectCard';
+import { getCaseStudies, getRecent } from './Articles';
+import * as Pages from '.'
 
 
-const About =()=>{
+const Page =()=>{
   const theme = useThemeContext()
     useEffect(()=>{
       document.title = 'CRIMSON: About'
@@ -55,44 +58,62 @@ const About =()=>{
             </section>
             <section style={{gap:'24px'}}>
               <h2>Expertise</h2>
+
+
+              <div>
+                  <h5>Case Studies</h5>
+                  <ProjectReel display={6}>
+
+                  {getCaseStudies().map((r,key)=><ProjectCard key={key} page={Pages[r]()}/>)}
+                  </ProjectReel>
+
+              </div>
               <div>
               <h3>Tools</h3>
                 <p>Tools are how we bring our ideas to life.  There is a near endless number of tools to choose from, all with different strengths and limitations. I select tools based on how appropriate they are to deliver the desired outcomes. For example, InDesign is excellent for creating print ready documents, Canva is perfect for giving differently skilled individuals access to creating brand content and Figma is great for giving hand-offs to developers. This is why it is important to consider who you are collaborating with.</p>
-                <ul style={{display:'flex',flexDirection:'row',flexWrap:'wrap', maxHeight:'10em',padding:'0'}}>
-                  <li>	Indesign</li>
-                  <li>	Photoshop</li>
-                  <li>	Figma</li>
-                  <li>	Vs code</li>
-                  <li>	Git hub</li>
-                  <li>	Affinity designer</li>
-                  <li>	Affinity photo</li>
-                  <li>	Affinity publisher</li>
-                  <li>	Adobe illustrator</li>
-                  <li>	Adobe after effects</li>
-                  <li>	Adobe premiere pro</li>
-                  <li>	Canva</li>
-                  <li>	Meta business suite</li>
-                  <li>	Google analytics</li>
-                  <li>	PowerPoint</li>
-                  <li>	Word</li>
-                  <li>	Capture one</li>
-                  <li>	Instagram business</li>
-                  <li>	Blender</li>
-                  <li>	Monday.com</li>
-                  <li>	Trello</li>
-                  <li>	Microsoft planner </li>
+                <ul style={{display:'flex',flexDirection:'row',flexWrap:'wrap',padding:'0'}}>
+                  <li>Indesign</li>
+                  <li>Photoshop</li>
+                  <li>Figma</li>
+                  <li>Vs code</li>
+                  <li>Git hub</li>
+                  <li>Affinity designer</li>
+                  <li>Affinity photo</li>
+                  <li>Affinity publisher</li>
+                  <li>Adobe illustrator</li>
+                  <li>Adobe after effects</li>
+                  <li>Adobe premiere pro</li>
+                  <li>Canva</li>
+                  <li>Meta business suite</li>
+                  <li>Google analytics</li>
+                  <li>PowerPoint</li>
+                  <li>Word</li>
+                  <li>Capture one</li>
+                  <li>Instagram business</li>
+                  <li>Blender</li>
+                  <li>Monday.com</li>
+                  <li>Trello</li>
+                  <li>Microsoft planner </li>
+                  <li>SketchUp</li>
+
                 </ul>
               </div>
+              <div>
+                <h5>New Articles</h5>
+                <ProjectReel>
+                {getRecent().map((r)=><ProjectCard page={Pages[r]()} type="recent"/>)}
+                </ProjectReel>
+              </div>
+              <a src='../Harrison_Adam_Cole_100925_Resume.pdf' download>Download Resume</a>
             </section>
-          <section>
-            <h2>The latst from TikTok</h2>
-          </section>
+
         </FocusedContentSection>
         <Footer/>
       </main>
     )
 }
-const properties = new PageClass('About','/about',<About/>,1)
+const properties = new PageClass('About','/about',1)
 
 
+properties.element = <Page/> 
 export default properties.get

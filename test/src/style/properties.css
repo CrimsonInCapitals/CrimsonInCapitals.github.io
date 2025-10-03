@@ -48,13 +48,15 @@
 }
 .layer_one{
     --Background:var(--background01);
+    --BackAccent:var(--background02);
     --Background80:var(--background0180);
 
     --Copy:var(--copy01);
 }
 .layer_two{
     --Background:var(--background02);
-        --Background80:var(--background0280);
+    --Background80:var(--background0280);
+    --BackAccent:var(--background03);
 
     --Copy:var(--copy02);
 
@@ -62,9 +64,23 @@
 .layer_three{
     --Background:var(--background03);
         --Background80:var(--background0380);
+    --BackAccent:var(--background02);
 
     --Copy:var(--copy03);
 
+}
+.layer_three.ProjectCard{
+    --background01:var(--Dark01);
+    --background02:var(--Dark02);
+    --background03:var(--Dark03);
+    --background0180:var(--Dark0180);
+    --background0280:var(--Dark0280);
+    --background0380:var(--Dark0380);
+    --copy01:var(--Light03);
+    --copy02:var(--Light02);
+    --copy03:var(--Light01);
+    --Copy:var(--Light02);
+    --Accent:var(--DarkAccent);
 }
 
 

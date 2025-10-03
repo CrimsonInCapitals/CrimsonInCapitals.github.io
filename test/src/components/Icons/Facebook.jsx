@@ -65,7 +65,7 @@ export const Facebook =({width='2em', className='vector_button'})=>{
                     ref={StemRef} 
                     d="M15 5.50037C13.5 5.16703 10 4.00014 10 7.00029C10 9.00029 10 16.3332 10 20.5M20 11.5H5.5" 
                     stroke="white" 
-                    stroke-width="4"
+                    strokeWidth="4"
                     strokeDasharray='20'
                     strokeDashoffset='20'
                     fill="none"
@@ -79,7 +79,7 @@ export const Facebook =({width='2em', className='vector_button'})=>{
                     ref={ArmRef} 
                     d="M15 5.50037C13.5 5.16703 10 4.00014 10 7.00029C10 9.00029 10 16.3332 10 20.5L11.5 26L19 11.5H16H5.5" 
                     stroke="white" 
-                    stroke-width="4"
+                    strokeWidth="4"
                     strokeDasharray='19'
                     strokeDashoffset='19'
                     fill="none"

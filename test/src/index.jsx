@@ -4,6 +4,8 @@ import './style/properties.css';
 import './style/text.css';
 import './style/basics.css';
 import './style/footer.css';
+import './style/coverstyles.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';

@@ -6,23 +6,23 @@ export const Canva =({width='2em', className='vector_button'})=>{
         <svg xmlns="http://www.w3.org/2000/svg" width={width}  viewBox="0 0 80 30">
             <defs>
                 <radialGradient id="canva_middlePurple" cx="0" cy="0" r="1" gradientTransform="matrix(.21 -.67353 .2545 .07935 .512 1.109)">
-                    <stop stop-color="#6420FF"/><stop offset="1" stop-color="#6420FF" stop-opacity="0"/>
+                    <stop stopColor="#6420FF"/><stop offset="1" stopColor="#6420FF" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="canva_topleftcyan" cx="0" cy="0" r="1" gradientTransform="matrix(.584 .16215 -.3771 1.3582 .024 .666)">
-                    <stop offset=".25" stop-color="#00C4CC"/>
-                    <stop offset="1" stop-color="#00C4CC" stop-opacity="0"/>
+                    <stop offset=".25" stopColor="#00C4CC"/>
+                    <stop offset="1" stopColor="#00C4CC" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="canva_middleViolet" cx="0" cy="0" r="1" gradientTransform="matrix(.29425 -.739 .3555 .14155 .427 1)">
-                    <stop stop-color="#6420FF"/>
-                    <stop offset="1" stop-color="#6420FF" stop-opacity="0"/>
+                    <stop stopColor="#6420FF"/>
+                    <stop offset="1" stopColor="#6420FF" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="canva_leftViolet" cx="0" cy="0" r="1" gradientTransform="matrix(.3915 -.59869 .4743 .31016 .028 1)">
-                    <stop stop-color="#6420FF"/>
-                    <stop offset="1" stop-color="#6420FF" stop-opacity="0"/>
+                    <stop stopColor="#6420FF"/>
+                    <stop offset="1" stopColor="#6420FF" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="canva_topCyan" cx="0" cy="0" r="1" gradientTransform="rotate(34.593 -.1 .2) scale(1.03255 2.80688)">
-                    <stop stop-color="#00C4CC"/>
-                    <stop offset="1" stop-color="#00C4CC" stop-opacity="0"/>
+                    <stop stopColor="#00C4CC"/>
+                    <stop offset="1" stopColor="#00C4CC" stop-opacity="0"/>
                 </radialGradient>
                 <pattern id="canva_fullgradient" width="1" height="1" patternContentUnits="objectBoundingBox">
                     <path fill="#7D2AE7" d="M0 0h1v1H0z">

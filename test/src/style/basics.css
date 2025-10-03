@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    background-color: var(--background02);
 }
 
 main{
@@ -29,7 +30,7 @@ section{
     padding: var(--gap_far);
     max-width: 1200px;
     box-sizing: border-box;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 section.focus_section{
@@ -52,13 +53,54 @@ section.focus_section{
 .focus_section section{
     width: 100%;
 }
+.focus_section div{
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.focus_section div.artical_chip_holder{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px;
+}
 @media (max-width: 600px) {
     section{
         max-width: 100vw;
     }
     .focus_section section{
         width: 90vw;
+        padding: 18px;
     }
+    .menu_holder .centerer{
+        bottom: 0.7em;
+        top: unset;
+        left: 0.7em;
+        right: 0.7em;
+        width: calc(100% - 1.4em);
+    }
+    .menu_holder .centerer nav#header,.layer_one>nav#header{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        gap: 0;
+    }
+    nav#header svg{
+        display: none;
+    }
+    .menu_holder menu#nav,.layer_one menu#nav{
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+    #root nav#header{
+        top:calc(100vh - ( 1.7em + 70px ));
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+        width: calc(100% - 1.4em);
+    }
+
 }
 menu#nav{
     position: fixed;
@@ -114,7 +156,7 @@ nav hr{
     opacity: 0;
     border-style: none;
     width: 100%;
-    stroke-width: 2px;
+    strokeWidth: 2px;
     border: 2px solid;
 
 }
@@ -148,4 +190,73 @@ a.activeLink{
     justify-content: center;
     top: 1em;
     z-index: 2;
+}
+img.inline, video.inline{
+    width: 100%;
+    border-radius: 4px;
+}
+
+.fullscreenholder{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    padding: auto;
+    display: flex;
+    background-color: var(--Background80);
+    backdrop-filter: blur(2px);
+    cursor:alias;
+
+}
+.fullscreenholder .react-transform-component{
+    max-height: calc(100% - 2em);
+    max-width: calc(100% - 2em);
+display: block;
+margin: auto;
+object-fit: contain;
+cursor: zoom-out;
+margin: 0;
+
+}
+.fullscreenholder .react-transform-wrapper{
+ width: 100%;
+ height: 100%;
+ display: flex;
+ /* justify-content: center;
+ align-items: center; */
+}
+.fullscreenholder .react-transform-wrapper img{
+    max-width: 100%;
+    max-height: 100%;
+    height: calc(100vh - 1.4em);
+    width: calc(100vw - 1.4em);
+    object-fit: contain;
+
+}
+.fullscreenholder .closebutton{
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    width: 70px;
+    height: 70px;
+    background-color: var(--Background80);
+    border-radius: 35px;
+    backdrop-filter: blur(20px);
+    z-index: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span.row3{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+span.row3 img{
+    max-width: 40%;
+    min-width: 25%;
 }

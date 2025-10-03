@@ -58,7 +58,7 @@ export const LinkedIn =({width='2em', className='vector_button'})=>{
             <circle ref={IdotRef} cx='4.58' cy='4.5' r='0' fill="#ffffff" />
             {/* <path d="M4.5002 6.25015C3.55941 6.22327 2.80029 5.44208 2.80029 4.5008C2.80029 3.54081 3.59037 2.75098 4.55036 2.75098C5.51011 2.75098 6.29994 3.54033 6.30018 4.50008C6.28387 5.47279 5.47315 6.26119 4.5002 6.25015Z" fill="white"/> */}
             <mask id="N_bridge_mask" maskUnits="userSpaceOnUse" x="9" y="7" width="9" height="10">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0005 17.0001H17.0004L16.9603 11.5601C16.9603 8.76 15.1503 7.90009 13.6004 7.90009C12.5192 7.86481 11.4946 8.39617 10.9004 9.3L9.50049 17.0001H11.0005V12.33C10.9954 12.2834 10.9954 12.2366 11.0005 12.1901C10.9974 12.1488 10.9959 12.1075 10.9959 12.0662C10.9959 11.1552 11.7113 10.3906 12.6205 10.3301C13.4005 10.3301 14.0005 10.8401 14.0005 12.2601V17.0001Z" fill="#ffffff"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M14.0005 17.0001H17.0004L16.9603 11.5601C16.9603 8.76 15.1503 7.90009 13.6004 7.90009C12.5192 7.86481 11.4946 8.39617 10.9004 9.3L9.50049 17.0001H11.0005V12.33C10.9954 12.2834 10.9954 12.2366 11.0005 12.1901C10.9974 12.1488 10.9959 12.1075 10.9959 12.0662C10.9959 11.1552 11.7113 10.3906 12.6205 10.3301C13.4005 10.3301 14.0005 10.8401 14.0005 12.2601V17.0001Z" fill="#ffffff"/>
             </mask>
             <g 
                 mask="url(#N_bridge_mask)"
@@ -67,7 +67,7 @@ export const LinkedIn =({width='2em', className='vector_button'})=>{
                     ref={NBridgeRef} 
                     d="M9.49988 17C9.49996 14.5 9.00007 9 13.5 9C15.5 9 15.4999 11 15.4999 17.5" 
                     stroke="white" 
-                    stroke-width="4"
+                    strokeWidth="4"
                     strokeDasharray='20'
                     strokeDashoffset='20'
                     fill="none"
@@ -83,7 +83,7 @@ export const LinkedIn =({width='2em', className='vector_button'})=>{
                     ref={NStemRef} 
                     d="M9.5 7.5V17.5" 
                     stroke="white" 
-                    stroke-width="4"
+                    strokeWidth="4"
                     strokeDasharray='10'
                     strokeDashoffset='10'
                     fill="none"
@@ -99,7 +99,7 @@ export const LinkedIn =({width='2em', className='vector_button'})=>{
                     ref={IStemRef} 
                     d="M4.5 7.5V17.5" 
                     stroke="white" 
-                    stroke-width="4"
+                    strokeWidth="4"
                     strokeDasharray='10'
                     strokeDashoffset='10'
                     fill="none"

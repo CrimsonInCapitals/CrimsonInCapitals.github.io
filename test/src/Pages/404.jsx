@@ -9,7 +9,7 @@ import { PageClass } from '../classes';
 import { useThemeContext } from '../context/theme';
 
 
-const FourZeroFour =()=>{
+const Page =()=>{
     const theme = useThemeContext()
   
     useEffect(()=>{
@@ -20,14 +20,16 @@ const FourZeroFour =()=>{
         <main id={theme} className='layer_one'>
                 <MenuFull/>
                 <section style={{height:'100vh',gap:'20px', justifyContent:'center'}}>
-                  <h1 style={{color:'var(--Crimson)'}}>404</h1>
+                  <h1 style={{color:'var(--Crimson)',fontSize:'70vw',position:'fixed',zIndex:'-1',opacity:'25%',width:'100vw',left:'-10vw',textAlign:'center',fontWeight:'700',fontStyle:'italic'}}>404</h1>
+                  <h2>404</h2>
                   <p>the entered url could not be resolved. if this feels like an error constact <a href='mailto: harrison.cole@crimsonincapitals.com' style={{color:'var(--Crimson)'}}>harrison.cole@crimsonincapitals.com</a></p>
                 </section>
               
             </main>
     )
 }
-const properties = new PageClass('404','*',<FourZeroFour/>,4)
+const properties = new PageClass('404','*',0)
 
 
+properties.element = <Page/> 
 export default properties.get

@@ -4,7 +4,7 @@ import { Logo, LogoInvisalbe, MaskedLogo } from "./logo"
 export const MenuPartA= ()=>{
     return(
         <menu id="nav">
-            <Logo/>
+            <Link to={'/'}><Logo/></Link>
         </menu>
     )
 }
@@ -37,7 +37,7 @@ export const MenuPartB=()=>{
             <NavLink to='/about' text="About"/>
             <LogoInvisalbe/>
             <NavLink to='/services' text="Services"/>
-            <NavLink to='/articals' text="Articals"/>
+            <NavLink to='/articles' text="Articles"/>
         </nav>
     )
 }
@@ -52,12 +52,12 @@ export const MenuFull=()=>{
                     <NavLink to='/about' text="About"/>
                     <LogoInvisalbe/>
                     <NavLink to='/services' text="Services"/>
-                    <NavLink to='/articals' text="Articals"/>
+                    <NavLink to='/articles' text="Articles"/>
                 </nav>
             </div>
 
             <menu id="nav">
-                <Logo/>
+                <Link to={'/'}><Logo/></Link>
             </menu>
 
         </div>

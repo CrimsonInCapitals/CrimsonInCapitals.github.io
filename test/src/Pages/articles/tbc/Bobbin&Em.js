@@ -1,0 +1,1 @@
+export const properties=[[2,2],'Bobbin & Em',1,'Creating a personal brand for a small business']
