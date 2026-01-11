@@ -1,0 +1,328 @@
+article.ProjectCard{
+    /* width: 300px; */
+    display: block;
+    /* max-width: 80vw; */
+    width: 35%;
+    min-width: 300px;
+    background-color: var(--background01);
+    /* border: solid var(--Copy); */
+    border-radius: 4px;
+    /* padding: 10px; */
+    height: 200px;
+    max-height: 50%;
+    flex-grow: 2;
+    position: relative;
+    box-sizing: border-box;
+        padding: 10px;
+    box-sizing: border-box;
+}
+article.BrandCard{
+    width: 300px;
+    display: block;
+    max-width: 80vw;
+    min-width: 30vw;
+    background-color: var(--background01);
+    /* border: solid var(--Copy); */
+    border-radius: 4px;
+    /* padding: 10px; */
+    height: 200px;
+    max-height: 50%;
+    flex-grow: 2;
+    position: relative;
+    box-sizing: border-box;
+        padding: 10px;
+    box-sizing: border-box;
+}
+.BrandCard .topLeft{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    gap: 6px;
+    display: flex;
+    /* max-width: 100%; */
+    right: 10px;
+    flex-direction: column;
+    transition:  ease 0.5s;
+} 
+/* .ProjectCard article{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+} */
+.ProjectCard .bottomLeft,.BrandCard .bottomLeft{
+    position: absolute;
+    left: 10px;
+    bottom: 0px;
+    display: flex;
+    /* max-width: 100%; */
+    right: 10px;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    transition:  ease 1s;
+}
+.BrandCard .bottomLeft p{
+    margin: 0;
+    color: var(--Copy);
+
+}
+.BrandCard .bottomLeft{
+    max-width: 50%;
+    max-height: calc(100% - ( 2.4em + 50px ));
+    overflow: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--Background) #ffffff00;
+}
+.ProjectCard .fill,.BrandCard .fill{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    transition:  ease 0.5s;
+
+
+}
+.ProjectCard .topLeft{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    gap: 6px;
+    display: flex;
+    /* max-width: 100%; */
+    right: 10px;
+    flex-direction: column;
+    opacity: 0;
+    transition:  ease 0.5s;
+} 
+.ProjectCard:hover .topLeft{
+    opacity: 100;
+    top: 10px;
+}
+ .ProjectCard:hover .bottomLeft,.BrandCard:hover .bottomLeft{
+    opacity: 100;
+    bottom: 10px;
+ }
+.ProjectCard:hover .fill,.BrandCard:hover .fill{
+    opacity: 40%;
+}
+.topLeft h4{
+    max-width: 50%;
+    color: var(--Light02);
+
+}
+.topLeft h2{
+    color: var(--Light02);
+}
+.ProjectCard p.date,.BrandCard p.date{
+    margin: 0;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+.ProjectCard .chipHolder{
+    display: flex;
+    gap: 3px;
+    max-width: calc(60%);
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* overflow: hidden; */
+}
+
+section.projectReel{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+}
+.projectReel .showmore{
+    width: 100%;
+    color: var(--Copy);
+    cursor: pointer;
+}
+
+div.parentHeroSection{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+a.chip, button.chip{
+    border-style: none;
+    position: relative;
+    padding: 7px 16px 4px ;
+    background-color: var(--BackAccent);
+    background-image: none;
+    font-family: 'Tenorite';
+    font-weight: 300;
+    line-height: 0.8em;
+    font-size: 0.8em;
+    cursor: pointer;
+    /* height: calc(11px + 0.8em); */
+    border-radius: calc(5.5px + .4em);
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    color: var(--Copy);
+    text-wrap: nowrap;
+    overflow: hidden;
+    min-height: calc(11px + 0.8em);
+    transition: color 1s ease,background-color 1s ease,background-image 1s ease;
+
+}
+button.chip.activeChip{
+    background-color: var(--Copy);
+    color: var(--BackAccent);
+}
+.chip > span{
+    z-index: 2;
+}
+div.plusHolder{
+    position: relative;
+    cursor: cell;
+}
+button.chip.plus{
+    padding: 7px 7px 4px;
+    width: calc(11px + 0.8em);
+    cursor: cell;
+
+}
+div.otherChips{
+    position: absolute;
+    border-radius: 8px;
+    background-color: var(--background0280);
+    max-height:calc( (11px + 0.8em)*4);
+    padding: 4px ;
+    left: auto;
+    right: auto;
+    top: 0;
+    z-index: 2;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    overflow: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--Background) #ffffff00;
+}
+.chip.AID_chip:hover{
+    background-color: #49021f;
+    color: #f93163;
+}
+.chip.APS_chip:hover{
+    background-color: #081d34;
+    color: #57a6f8;
+}
+.chip.AIL_chip:hover{
+    background-color: #2e0402;
+    color: #f19f38;
+}
+.chip.AAE_chip:hover{
+    background-color: #000057;
+    color: #9999f8;
+}
+.chip.APP_chip:hover{
+    background-color: #000057;
+    color: #9999f8;
+}
+
+.chip.AfD_chip:hover{
+    background-color: #a5d777;
+    color: #000000;
+}
+.chip.blender:hover{
+    background-color: #bf6d29;
+    color: #000;
+}
+
+.chip.Figma_chip:hover{
+    background-color: #4597f7;
+    color: #ffffff;
+}
+.chip.reactChip:hover{
+    background-color: #24272e;
+    color: #75c2d9;
+}
+
+.chip.vscode:hover{
+    background-color: #24adf3;
+    color: #ffffff;
+}
+.chip.office:hover{
+    background-color: #24272e;
+    color: #75c2d9;
+}
+.chip.monday:hover{
+    background-color: #6161f6;
+    color: #ffffff;
+}
+.chip.sketchup:hover{
+    background-color: #cc3733;
+    color: #ffffff;
+}
+.chip::before{
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 101%;
+    height: 120%;
+    /* background-color:var(--BackAccent); Adjust color and opacity */
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-position: center;
+    background-size: cover;
+}
+.chip:hover::before{
+    opacity: 1;
+}
+.chip.canva::before{
+    background-image: url(../images/articles/canva/canva\ gradient.png);
+}
+.chip.office::before{
+    background-image: url(../images/articles/canva/officegradient.png);
+}
+.chip.canva:hover,.chip.office:hover{
+    color: #fff;
+}
+.chip.ADOBE_chip::before{
+    background-image: url(../images/articles/canva/adobegradient.png);
+}
+.chip.instagram::before{
+    background-image: url(../images/articles/canva/instagramgradient.png);
+}
+.chip.instagram:hover{
+    color: #fff;
+}
+.chip.metabs::before{
+    background-image: url(../images/articles/canva/metagradient.png);
+}
+.chip.metabs:hover{
+    color: #ffffff;
+}
+.chip.ADOBE_chip:hover{
+    color: #ffffff;
+}
+.chip.powerpoint:hover{
+    background-color: #d27558;
+    color: #ffffff;
+}
+.chip.new{
+    background-color: var(--Copy);
+    color: var(--BackAccent);
+}

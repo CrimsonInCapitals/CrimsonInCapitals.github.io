@@ -1,0 +1,1 @@
+export const properties=[[4,2],'Ask Italian',1,'Combining an established brand with a local voice to comunicate updates and information to local comunities']

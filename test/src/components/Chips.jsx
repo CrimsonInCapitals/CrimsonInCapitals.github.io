@@ -1,0 +1,37 @@
+import { Children, useState } from "react"
+import { Link } from "react-router-dom"
+import { Chip as C } from "../classes"
+const A = '/articles/'
+
+export const InDesign = new C("ArticlesFilter", "indesign", "InDesign", "AID_chip", 'Software')
+export const PhotoShop = new C("ArticlesFilter", "photoShop", "PhotoShop", "APS_chip", 'Software')
+export const Illustrator = new C("ArticlesFilter", "illustrator", "Illustrator", "AIL_chip", 'Software')
+export const AfterEffects = new C("ArticlesFilter", "aftereffects", "AfterEffects", "AAE_chip", 'Software')
+export const PremierPro = new C("ArticlesFilter", "premierpro", "PremierPro", "APP_chip", 'Software')
+export const Adobe = new C("ArticlesFilter", "adobe", "Adobe CC", "ADOBE_chip", 'Software')
+export const Designer = new C("ArticlesFilter", "affinity", "Affinity", "AfD_chip", 'Software')
+export const Figma = new C("ArticlesFilter", "figma", "Figma", "Figma_chip", 'Software')
+export const Motion = new C("ArticlesFilter", "motion", "Motion Design", '', 'Service')
+export const Brand = new C("ArticlesFilter", "brand", "Brand Design", '', 'Service')
+export const Photography = new C("ArticlesFilter", "photography", "Photography", '', 'Service')
+export const DigitalMarketing = new C("ArticlesFilter", "digitalMarketing", "Digital Marketing", '', 'Service')
+export const ProcessOpt = new C("ArticlesFilter", "processoptomisation", "Process Optomisation", '', 'Service')
+export const Presentations = new C("ArticlesFilter", "presentations", "Bid Documents", '', 'Service')
+export const IconD = new C("ArticlesFilter", "icondesign", "Icon Design", '', 'Service')
+export const AnimationChip = new C("ArticlesFilter", "animation", "Animation", '', 'Service')
+export const DavidPhillips = new C(A + "davidphillips", "davidphillips", "David Phillips", '', 'Brand', 3)
+export const AskItalian = new C(A + "askitalian/", "askitalian", "Ask Italian", '', 'Brand', 3)
+export const PrintDesign = new C("ArticlesFilter", "printdesgin", "Print Design", '', 'Service')
+export const Reactchip = new C("ArticlesFilter", "react", "React JS", 'reactChip', 'Software')
+export const Developer = new C("ArticlesFilter", "development", "Software Development", '', 'Service')
+export const VSCode = new C("ArticlesFilter", "vscode", "VS Code", 'vscode', 'Software')
+export const MetaBS = new C("ArticlesFilter", "metabs", "Meta Business Suite", 'metabs', 'Software')
+export const MSOffice = new C("ArticlesFilter", "m365", "Office 365", 'office', 'Software')
+export const Monday = new C("ArticlesFilter", "monday", "Monday.com", 'monday', 'Software')
+export const SketchUp = new C("ArticlesFilter", "sketchup", "SketchUp", 'sketchup', 'Software')
+export const Canva = new C("ArticlesFilter", "canva", "Canva", 'canva', 'Software')
+export const PowerPoint = new C("ArticlesFilter", "powerpoint", "PowerPoint", 'powerpoint', 'Software')
+export const Instagram = new C("ArticlesFilter", "instagram", "Instagram", 'instagram', 'Software')
+export const Blender = new C("ArticlesFilter","blender","Blender","blender", 'Software')
+export const New = new C("/articles", "newart", "New", 'new', 'Automatic')
+
