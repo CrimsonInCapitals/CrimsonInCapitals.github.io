@@ -3,6 +3,7 @@ import * as Pages from './Pages/'
 import { FullScreenProvider } from "./components/fullscreenable"
 import { useEffect } from "react"
 import TagManager from "react-gtm-module"
+import { Test } from "./Pages/Test"
 
 class redirect{
     constructor(path,destination){
@@ -29,6 +30,7 @@ export const PageManager=()=>{
                     {Object.keys(Pages).map((r)=><Route path={Pages[r]('route')} element={Pages[r]('element')}/>)}
                     {redirectList.map(({path,destination})=><Route path={path} element={<Navigate to={destination} replace/>}/>)}
                     {/* <Route path={'/articles'} element={<Navigate to="/articles/all" replace/>}/> */}
+                    <Route path='/test/:id' element={<Test/>}/>
             </Routes>
         </FullScreenProvider>
 
