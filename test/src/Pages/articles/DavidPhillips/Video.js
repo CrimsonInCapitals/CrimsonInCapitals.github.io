@@ -11,7 +11,7 @@ import { ArticalContainer } from "../../../components/ArticalHolder"
 const properties = new PageClass('Website Launch Social Video','/articles/davidphillips/websitelaunch',4,'02/06/2025','article',{chips:[DavidPhillips,AfterEffects,Illustrator,Figma,AnimationChip,Adobe,Motion]})
 
 import backgroundImage from '../../../images/articles/davidphillips/Phonemockups.png'
-import { IMG } from "../../../components/fullscreenable"
+import { IMG, VIDEO } from "../../../components/fullscreenable"
 
 
 const Background =()=>{
@@ -36,10 +36,10 @@ const Page = ()=>{
 
                 <p>The video opens with the logo morphing into a search bar. This uses vector path keyframing in a similar fashion to letter morphing. Another notable feature is the masking used when the text disappears into the pill at the start and end. </p>
                 <div style={{display:'flex',alignItems:'center',borderRadius:'8px',overflow:'hidden'}} className="instagram holder">
- <article className='instagrampost'>
-                    <video style={{width:'51.43%',aspectRatio:'9/16'}} controls>
+ <article className='instagrampost' style={{display:'flex',backgroundColor:'white'}}>
+                    <VIDEO style={{width:'51.43%',aspectRatio:'9/16'}}>
                     <source src={require('../../../images/articles/davidphillips/BA-250110-01_06.mp4')}/>
-                    </video>
+                    </VIDEO>
                     <IMG style={{width:'48.57%',margin:'0'}}src={require('../../../images/articles/davidphillips/instagramrightside.png')}/>
 
                 </article>

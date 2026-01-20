@@ -38,7 +38,7 @@ export const ArticalContainer = ({ properties, children }) => {
     const PageswithHeat = Object.keys(Pages).filter(isArtical).map(r => {
         return { ...Pages[r](), heat: getHeat(r) }
     })
-
+    // console.log(properties.chips[0].Componant)
     return (
         <main id={theme} className='layer_one'>
             <MenuFull />
