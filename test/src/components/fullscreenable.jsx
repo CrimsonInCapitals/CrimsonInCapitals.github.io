@@ -1,4 +1,5 @@
 import { Children, cloneElement, createContext, useContext, useEffect, useReducer, useRef, useState } from "react"
+import { useLocation } from "react-router-dom";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 
@@ -38,6 +39,10 @@ export const FullScreenProvider = ({children})=>{
     }
     const [content, dispatchContent]=useReducer(reducer,{open:false})
     const close =()=>dispatchContent(['close'])
+    const location = useLocation()
+    useEffect(()=>{
+        close()
+    },[location])
     return(
         <FullScreenContext.Provider value={{dispatchContent,content,displayingRef,hideMenu,setHideMenu}}>
             <>{children}
