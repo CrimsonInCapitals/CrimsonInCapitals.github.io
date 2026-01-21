@@ -5,9 +5,11 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 const FullScreenContext = createContext()
 export const FullScreenProvider = ({children})=>{
     const displayingRef=useRef(null)
+    const [hideMenu,setHideMenu]=useState(false)
     const reducer=(state,[type,data])=>{
         switch (type) {
             case 'close':
+                setHideMenu(false)
                 return{open:false}
             case 'next':
                 let next = state.showing+2>state.list.length?0:state.showing+1
@@ -22,23 +24,25 @@ export const FullScreenProvider = ({children})=>{
                     open:true,
                     type:type,
                     ...data,
-                    Object:()=>data.list[data.showing]
+                    Object:()=>data.list[data.showing],
+                    objectRef:displayingRef
                 }
             default:
                 return{
                     open:true,
                     type:type,
                     ...data,
+                    objectRef:displayingRef
                 }  
         }
     }
     const [content, dispatchContent]=useReducer(reducer,{open:false})
     const close =()=>dispatchContent(['close'])
     return(
-        <FullScreenContext.Provider value={{dispatchContent,content}}>
+        <FullScreenContext.Provider value={{dispatchContent,content,displayingRef,hideMenu,setHideMenu}}>
             <>{children}
             {content.open && 
-            <div className="fullscreenholder layer_one" >
+            <div className="fullscreenholder layer_one" onClick={close}>
                 <TransformWrapper>
                     <TransformComponent center>
                         <content.Object ref={displayingRef}/>
@@ -56,9 +60,6 @@ export const FullScreenProvider = ({children})=>{
                     <button className="backbutton actionbutton layer_two" onClick={()=>dispatchContent(['next'])}><p>Next</p></button>
                 </span>
                 } 
-                {content.type=='video'&&
-                <span className="reelBar">CurrentTime:{showing}</span>
-                }   
 
             </div>
             }
@@ -71,8 +72,9 @@ export const useFullScreenContext = ()=>useContext(FullScreenContext)
 
 
 export const IMG=(atributes)=>{
-    const {dispatchContent,content}=useFullScreenContext()
+    const {dispatchContent,content,setHideMenu}=useFullScreenContext()
     const update =()=>{
+        setHideMenu(true)
         dispatchContent(['img',{
             Object:()=><img {...atributes}/>,
         }])
@@ -84,67 +86,98 @@ export const IMG=(atributes)=>{
 export const VIDEO=({children,...atributes})=>{
     const videoRef = useRef(null)
     const progressRef = useRef(null)
-    const {dispatchContent}=useFullScreenContext()
-    const [play,setPlay]=useState(false)
-    const [localCT,setLocalCT]=useState(0)
-    const [durPer,setDurPer]=useState(0)
-    const [durFull,setDurFull]=useState(undefined)
-    const update =()=>{
+    const {setHideMenu}=useFullScreenContext()
+    const controlReducer=(state,[type,data])=>{
+        if(!videoRef.current)return{play:false}
         let video = videoRef.current
-        dispatchContent(['video',{
-            Object:()=><video currentTime={video.currentTime} autoPlay>{children}</video>,
-            currentTime:localCT
-        }])
-        handlePlayPause(false)
-    }
-    const handleTimeUpdate=()=>{
-        if(!videoRef.current)return 
-        let current = videoRef.current
-        setLocalCT(current.currentTime)
-        setDurPer((100/current.duration) * current.currentTime)
-        setDurFull(current.duration)
-        if(current.currentTime == current.duration){
-            handlePlayPause(false)
-            setLocalCT(0)
-            setDurPer(0)
-            setCurrentTime(localCT)
+        switch (type) {
+            case 'start':
+                video.play().catch((err) => console.error("Error playing video:", err));
+                return{
+                    play:true,
+                    duration:video.duration,
+                    currentTime:0,
+                    currentTimePercent:0,
+                    durationStamp: Math.floor(video.duration/60).toString().padStart(2,'0')+':'+(video.duration%60).toFixed(0).padStart(2,'0')
+                }
+            case 'play':
+                video.play().catch((err) => console.error("Error playing video:", err));
+                return{
+                    play:false
+                }
+            case 'pause':
+                video.pause()
+                return {play:false}
+            case 'toggle':
+                if (state.play) videoRef.current.pause();
+                else videoRef.current.play().catch((err) => console.error("Error playing video:", err));
+                return{...state,play:!state.play};
+            case 'jump':
+                let bar = progressRef.current.getBoundingClientRect()
+                let percent = (100/bar.width) * (data.pageX - bar.x)
+                let newTime = (state.duration/100)*percent
+                video.currentTime=newTime
+                return{
+                    ...state,
+                    currentTime:newTime,
+                    currentTimePercent:percent
+                }
+            case 'openclose':
+                if(state.open==true){
+                    setHideMenu(false)
+                    return{
+                        ...state,
+                        open:false
+                    }
+                }
+                setHideMenu(true)
+                return{
+                    ...state,
+                    open:true
+                }
+            case 'playing':
+                if(video.currentTime !== video.duration && video.currentTime !==0){
+                    return{
+                        ...state,
+                        currentTime: video.currentTime,
+                        currentTimePercent: (100/video.duration) * video.currentTime,
+                        timeStamp: (Math.floor(video.currentTime/60).toString()).padStart(2,'0')+':'+(video.currentTime%60).toFixed(0).padStart(2,'0')
+                    }
+                }else{
+                    setHideMenu(false)
+                    video.pause()
+                    video.currentTime = 0
+                    return false
+                }
+            default: return state
         }
     }
-    const setTime=(e)=>{
-        let target = e.target.className == 'bar'?e.target.getBoundingClientRect():e.target.parentElement.getBoundingClientRect()
-        let percent = (100/target.width) * (e.pageX - target.x)
-        let newTime = (durFull/100)*percent
-        console.log(e.target.className)
-        setLocalCT(newTime)
-        setDurPer(percent)
-        videoRef.current.currentTime=newTime
-    }
-    const handlePlayPause =(e,force='toggle')=>{
-        if (!videoRef.current) return;
-        let newState = force == 'toggle'? !play:force
-        if (!newState) videoRef.current.pause();
-        else videoRef.current.play().catch((err) => console.error("Error playing video:", err));
-        setPlay(newState);
+    const [control,dispatchControl]=useReducer(controlReducer,false)  
+    const open=()=>{
+        if(!control)dispatchControl(['start'])
+        else dispatchControl(['openclose'])
     }
     return(
         <div {...atributes} className="videoHolder">
+        <div className="fsmessage"><p >Video playing in fullscreen mode</p></div>
         <video 
             ref={videoRef} 
-            onClick={update}
-            onTimeUpdate={handleTimeUpdate}
+            onClick={open}
+            onTimeUpdate={()=>dispatchControl(['playing'])}
+            className={control.open? 'fullscreen':'inline'}
         >
             {children}
         </video>
 
-        {durPer==0 ? <button className="PlayButton" onClick={handlePlayPause}>
+        {!control ? <button className="PlayButton" onClick={()=>dispatchControl(['start'])}>
             <p>Play</p>
         </button>:        
         <div className="duration">
-            <button onClick={handlePlayPause} className="Play"><p>{play? '| |' : '|>'}</p></button>
-            <div className="bar" ref={progressRef} onClick={setTime}>
-                <div style={{width:durPer+'%'}} className="progress"></div>
+            <button onClick={()=>dispatchControl(['toggle'])} className="Play"><p>{control.play? '| |' : '▶'}</p></button>
+            <div className="bar" ref={progressRef} onClick={(e)=>dispatchControl(['jump',e])}>
+                <div style={{width:control.currentTimePercent+'%'}} className="progress"></div>
             </div>
-                <small className="timeStamp">{(localCT/60)>=1&&(localCT/60).toFixed(0)+':'}{(localCT%60).toFixed(0).padStart(2,'0')}/{(durFull/60)>=1&&(durFull/60).toFixed(0)}:{(durFull%60).toFixed(0).padStart(2,'0')}</small>
+                <small className="timeStamp">{control.timeStamp} / {control.durationStamp}</small>
         </div>}
         </div>
     )
@@ -152,8 +185,9 @@ export const VIDEO=({children,...atributes})=>{
 
 
 export const Reel=({children,col=3,con=2})=>{
-    const {dispatchContent}=useFullScreenContext()
+    const {dispatchContent,setHideMenu}=useFullScreenContext()
     const update=(item)=>{
+        setHideMenu(true)
         dispatchContent(['reel',{
             list:children,
             showing:item

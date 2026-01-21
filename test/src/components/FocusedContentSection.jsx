@@ -7,7 +7,8 @@ export const FocusedContentSection=({children,minHeight=0,style})=>{
     const [width, setWidth] = useState([window.innerWidth,window.innerWidth,window.innerWidth*0.9>1200?1200:window.innerWidth*0.9]);
     const handleScroll = () => {
         if(SectionRef.current){
-            setWidth([window.innerWidth,window.innerWidth,window.innerWidth*0.9>1200?1200:window.innerWidth*0.9])
+            let newWidth = [window.innerWidth,window.innerWidth,window.innerWidth*0.9>1200?1200:window.innerWidth*0.9]
+            // setWidth(newWidth)
             const rect = SectionRef.current.getBoundingClientRect();
             const VHV = window.innerHeight/100
             const VH=(percent)=>(VHV*percent)
@@ -28,7 +29,7 @@ export const FocusedContentSection=({children,minHeight=0,style})=>{
                 persent =  (((rect.top-VH(10))/VH(30)))
             }
             // console.log('percent: '+persent)
-            setWidth([((width[2]-width[1])*persent)+width[1],width[1],width[2]])
+            setWidth([((newWidth[2]-newWidth[1])*persent)+newWidth[1],newWidth[1],newWidth[2]])
             setRadius([((radius[2]-radius[1])*persent)+radius[1],radius[1],radius[2]])
 
         }
@@ -42,9 +43,9 @@ export const FocusedContentSection=({children,minHeight=0,style})=>{
         window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-    // useEffect(()=>{
-    //         setWidth([window.innerWidth,window.innerWidth,window.innerWidth*0.9>1200?1200:window.innerWidth*0.9])
-    // },[])
+    useEffect(()=>{
+            handleScroll()
+    },[window])
 
     const SectionRef = useRef(null)
     window.addEventListener('resize', ()=>setWidth([window.innerWidth,window.innerWidth,window.innerWidth*0.9>1200?1200:window.innerWidth*0.9]));

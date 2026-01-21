@@ -1,9 +1,12 @@
 import { Link, useLocation } from "react-router-dom"
 import { Logo, LogoInvisalbe, MaskedLogo } from "./logo"
 import * as Pages from '../Pages/'
+import { useFullScreenContext } from "./fullscreenable"
 export const MenuPartA= ()=>{
+    const {hideMenu}=useFullScreenContext()
+
     return(
-        <menu id="nav">
+        <menu id="nav" className={hideMenu?"hidden":""}>
             <Link to={'/'}><Logo/></Link>
         </menu>
     )
@@ -18,10 +21,10 @@ export const MenuLogoMask=()=>{
 }
 const NavLink=({text='Home',to='/'})=>{
     const location = useLocation()
-
+    const {hideMenu}=useFullScreenContext()
     const active = location.pathname === to?true:false
     return(
-        <div className="NavLink">
+        <div className={hideMenu?"NavLink hidden":"NavLink"}>
             <hr/>
             <Link to={to} className={active?'activeLink':'inactiveLink'}>{text}</Link>
             <hr className={active?'activeLink':'inactiveLink'}/>
@@ -31,8 +34,10 @@ const NavLink=({text='Home',to='/'})=>{
 
 
 export const MenuPartB=()=>{
+    const {hideMenu}=useFullScreenContext()
+
     return(
-        <nav id="header" className="layer_one">
+        <nav id="header" className={hideMenu?"hidden layer_one":"layer_one"}>
                     <NavLink active={true} to={Pages.Home('route')} text="Home"/>
                     <NavLink to={Pages.About('route')} text="About"/>
                     <LogoInvisalbe/>
@@ -44,10 +49,11 @@ export const MenuPartB=()=>{
 
 
 export const MenuFull=()=>{
+    const {hideMenu}=useFullScreenContext()
     return(
         <div className="menu_holder layer_two">
-            <div className="centerer">
-                <nav id="header" className="layer_one">
+            <div className={hideMenu?"hidden centerer":"centerer"}>
+                <nav id="header" className={hideMenu?"hidden layer_one":"layer_one"}>
                     <NavLink active={true} to={Pages.Home('route')} text="Home"/>
                     <NavLink to={Pages.About('route')} text="About"/>
                     <LogoInvisalbe/>
@@ -56,7 +62,7 @@ export const MenuFull=()=>{
                 </nav>
             </div>
 
-            <menu id="nav">
+            <menu id="nav" className={hideMenu?"hidden":""}>
                 <Link to={'/'}><Logo/></Link>
             </menu>
 
