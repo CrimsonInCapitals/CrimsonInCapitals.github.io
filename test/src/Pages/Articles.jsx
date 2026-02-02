@@ -87,6 +87,19 @@ return(
                                     })}                    
                                 </div>
                             </div>
+                            <div>
+                                <h5>Brands</h5>
+                                <div className="artical_chip_holder">
+                                    {Object.keys(Chips).filter(r=>Chips[r].type=='Brand').map((i)=>{
+                                        let Comp = Chips[i].Componant
+                                        return(<Comp key={i}
+                                                    action='f' 
+                                                    active={ArticalFilter!==undefined && ArticalFilter.indexOf(Chips[i])>=0} 
+                                                    f={()=>UpdateFilter(Chips[i])}
+                                                />)
+                                    })}                    
+                                </div>
+                            </div>
                         </>}
                     {ArticalFilter == undefined ? <>
                         <div>

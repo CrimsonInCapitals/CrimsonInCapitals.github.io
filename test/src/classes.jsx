@@ -56,13 +56,14 @@ export const GenChip=({to="/",name="chip",display="chip",className="",action="li
     :<Link to={to} className={Class}><span>{display}</span></Link>
 }
 export class Chip{
-  constructor(to="/",name="chip",display="chip",className="",type='unknown',weight=1){
+  constructor(to="/",name="chip",displayText="chip",className="",type='unknown',weightInFitering=1,hiddenOnCard=false){
     this.to = to == 'ArticlesFilter'?'/articles/'+name:to
     this.name = name
-    this.display=display
+    this.display=displayText
     this.className=className
     this.type=type
-    this.weight=weight
+    this.weight=weightInFitering
+    this.hidden=hiddenOnCard
     this.Componant=(props)=>{
         return <GenChip {...props}{...this}/>
     }

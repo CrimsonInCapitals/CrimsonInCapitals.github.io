@@ -11,6 +11,7 @@ import { getCaseStudies, getProjects } from './Articles.jsx';
 import { ProjectCard, ProjectReel } from '../components/ProjectCard.jsx';
 import * as Pages from '.'
 import { PictureSpace } from '../components/picturespace.jsx';
+import { Review, ReviewReel } from '../components/review.js';
 
 
 const Page =()=>{
@@ -54,6 +55,22 @@ const Page =()=>{
                       <ProjectReel display={2}>
                       {getCaseStudies().map((r)=><ProjectCard page={Pages[r]()}/>)}
                       </ProjectReel>
+                    </div>
+                    <div>
+                      <h2>Reviews</h2>
+                      <ReviewReel/>
+                      {/* <Review
+                        title='Lorem ipsum dolor sit amet consectetur adipiscing elit.' 
+                        content='Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.'
+                      />
+                      <Review
+                        title='Lorem ipsum dolor sit amet consectetur adipiscing elit.' 
+                        content='Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.'
+                      />
+                      <Review
+                        title='Lorem ipsum dolor sit amet consectetur adipiscing elit.' 
+                        content='Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.'
+                      /> */}
                     </div>
                     <div>
                       <h2>Ethos</h2>

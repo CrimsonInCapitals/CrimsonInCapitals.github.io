@@ -5,13 +5,13 @@ import { Footer } from "../../components/Footer"
 import { PageClass, URL } from "../../classes"
 import { useThemeContext } from "../../context/theme"
 import { useEffect } from "react"
-import { Brand, Designer } from "../../components/Chips"
+import { Aspinal, Brand, Designer } from "../../components/Chips"
 import { ArticalContainer } from "../../components/ArticalHolder"
 import backgroundImage from '../../images/articles/aspinaloflondon/outcomesgrid.png'
 import { IMG } from "../../components/fullscreenable"
 
 
-const properties = new PageClass('Aspinal of London','/articles/aspinaloflondon',3,'12/30/2019','article',{chips:[Brand,Designer]})
+const properties = new PageClass('Aspinal of London','/articles/aspinaloflondon',3,'12/30/2019','article',{chips:[Brand,Designer,Aspinal]})
 
 const Background =()=>{
     const style={    

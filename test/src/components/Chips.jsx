@@ -34,4 +34,10 @@ export const PowerPoint = new C("ArticlesFilter", "powerpoint", "PowerPoint", 'p
 export const Instagram = new C("ArticlesFilter", "instagram", "Instagram", 'instagram', 'Software')
 export const Blender = new C("ArticlesFilter","blender","Blender","blender", 'Software')
 export const New = new C("/articles", "newart", "New", 'new', 'Automatic')
-
+export const TheDogRoom = new C(A+"thedogroom",'dogroom','The DOGroom','','Brand',1,true)
+export const Aspinal = new C(A+"aspinaloflondon",'aspinal','Aspinal of London','','Brand',1,true)
+export const GLC = new C(A+"globallivingco",'GLC','The Global Living Company','','Brand',1,true)
+export const Helen = new C(A+"afg",'AFG','Helen Fairclough Campaigns','','Brand',1,true)
+export const Crimson = new C("about",'Crimson','CRIMSON','crimson','Brand',1,true)
+export const Cudoni = new C(A+"cudoni",'cudoni','Cudoni','','Brand',1,true)
+// export const FastGenerations = new C(A+"fastgenerations",'fastgen','Fast Generations','','Brand',1,true)

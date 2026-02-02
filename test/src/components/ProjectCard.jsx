@@ -58,7 +58,7 @@ export const ProjectCard = ({ page, type = undefined }) => {
             <div className="bottomLeft">
                 {page.type == 'article' &&
                     <CardChipHolder>
-                        {chips.map(chip => <chip.Componant key={chip.name} />)}
+                        {chips.map(chip => !chip.hidden && <chip.Componant key={chip.name} />)}
                     </CardChipHolder>}
             </div>
 

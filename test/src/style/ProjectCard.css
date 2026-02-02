@@ -326,3 +326,8 @@ div.otherChips{
     background-color: var(--Copy);
     color: var(--BackAccent);
 }
+
+
+.review .chip{
+    width: fit-content;
+}

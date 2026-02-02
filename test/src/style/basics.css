@@ -488,3 +488,88 @@ button.basicbutton.primary, a.basicbutton.primary{
     background-color: var(--Crimson);
     color: var(--Light02);
 }
+
+
+
+section.ReviewReel{
+    width: 100%;
+    /* background-color: blue; */
+    padding: 0;
+    transition: 0.1s ease;
+    /* padding-top: 20px; */
+}
+section.ReviewReel:hover .holder{
+    animation-play-state: paused;
+}
+.ReviewReel .holder{
+    min-width: 100vw;
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    width: fit-content;
+    animation:  scroll-left 30s linear infinite;
+
+}
+@keyframes scroll-left{
+    0%{
+        transform: translateX(calc(calc(-100% /3)*1));
+    }
+    100%{
+        transform: translateX(calc(calc(-100% /3)*2));
+    }
+}
+
+.review{
+    /* background-color: red; */
+    max-width: 500px;
+    width: 100vw;
+    padding: 60px;
+    border-radius: 4px;
+    transition: background-color 1s ease;
+}
+.review:hover{
+    background-color: var(--background02);
+}
+.review p{
+    margin: 0;
+    text-align: right;
+    padding-right: 16px;
+}
+.review .ReviewerName{
+    font-size: 1.1em;
+    font-family: 'Baskervville';
+    font-weight: 800;
+    margin: 0;
+    text-align: right;
+    padding-bottom: 0.2em;
+}
+.review .ReviewContent{
+    text-align: left;
+    margin-bottom: 1em;
+}
+.review .ReviewerTitle{
+    font-size: .8em;
+    font-weight: 800;
+}
+.review .ReviewerCompany{
+    font-size: .8em;
+}
+.review h2{
+    font-style: italic;
+    margin-bottom: 1em;
+    transition: color 1s ease;
+
+}
+.review:hover h2{
+    color: var(--Crimson);
+}
+
+
+.review .credit{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: flex-end;
+    align-items: flex-end;
+}

@@ -5,10 +5,10 @@ import { Footer } from "../../components/Footer"
 import { PageClass, URL } from "../../classes"
 import { useThemeContext } from "../../context/theme"
 import { useEffect } from "react"
-import { Brand, Designer, DigitalMarketing, Instagram, MetaBS } from "../../components/Chips"
+import { Brand, Designer, DigitalMarketing, Instagram, MetaBS, TheDogRoom } from "../../components/Chips"
 import { ArticalContainer } from "../../components/ArticalHolder"
 
-const properties = new PageClass('The Dog Room','/articles/thedogroom',3,'05/01/2022','article',{chips:[Designer,Brand,Instagram,MetaBS,DigitalMarketing]})
+const properties = new PageClass('The Dog Room','/articles/thedogroom',3,'05/01/2022','article',{chips:[TheDogRoom,Designer,Brand,Instagram,MetaBS,DigitalMarketing]})
 
 import backgroundImage from '../../images/articles/thedogroom/logo.png'
 import { IMG } from "../../components/fullscreenable"

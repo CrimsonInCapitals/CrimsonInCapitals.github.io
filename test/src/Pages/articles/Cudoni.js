@@ -5,12 +5,12 @@ import { Footer } from "../../components/Footer"
 import { PageClass,URL } from "../../classes"
 import { useThemeContext } from "../../context/theme"
 import { useEffect } from "react"
-import { Photography, ProcessOpt } from "../../components/Chips"
+import { Cudoni, Photography, ProcessOpt } from "../../components/Chips"
 import { ArticalContainer } from "../../components/ArticalHolder"
 import backgroundImage from '../../images/articles/cudoni/cover.png'
 import { IMG } from "../../components/fullscreenable"
 
-const properties = new PageClass('Cudoni','/articles/cudoni',4,'03/30/2023','article',{chips:[Photography,ProcessOpt]})
+const properties = new PageClass('Cudoni','/articles/cudoni',4,'03/30/2023','article',{chips:[Photography,ProcessOpt,Cudoni]})
 
 const Background =()=>{
     const style={    
