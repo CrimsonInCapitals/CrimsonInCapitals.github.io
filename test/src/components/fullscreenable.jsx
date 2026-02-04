@@ -47,10 +47,10 @@ export const FullScreenProvider = ({children})=>{
         <FullScreenContext.Provider value={{dispatchContent,content,displayingRef,hideMenu,setHideMenu}}>
             <>{children}
             {content.open && 
-            <div className="fullscreenholder layer_one" onClick={close}>
-                <TransformWrapper>
+            <div className="fullscreenholder layer_one" >
+                <TransformWrapper >
                     <TransformComponent center>
-                        <content.Object ref={displayingRef}/>
+                        <content.Object ref={displayingRef} onClick={close}/>
                     </TransformComponent>
                 </TransformWrapper>
                 <button className="closebutton actionbutton  layer_two" onClick={close}><p>Close</p></button>
