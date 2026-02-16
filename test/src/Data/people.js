@@ -9,6 +9,16 @@ class Possition{
         this.description = description
     }
 }
+// class pronoun{
+//     constructor([]){
+        
+//     }
+// }
+// const pronouns={
+//     male:{
+
+//     }
+// }
 class History{
     constructor(possitions){
         // this.possitions=possitions
@@ -41,7 +51,7 @@ class History{
     }
 }
 class Person{
-    constructor(names,history){
+    constructor(names,history,pn){
         this.names = names
         this.getName=(lenth='FaL')=>{
             switch (lenth) {
@@ -70,19 +80,29 @@ export const People =[
             new Possition(new Date(2019,8),new Date(2019,11),'Graphic Designer',Aspinal,'Brand exploration and development to lift brand recognition and define a visual identity to scale as they grow. Focused on brand symbols and typography to enhance their heritage identity.'),
             new Possition(new Date(2022,7),new Date(2022,11),'Junior Product Photographer',Cudoni,''),
             new Possition(new Date(2022,3),new Date(2022,7),'Junior SEO Creative','Fast Generations',''),
-        ])
+        ]),['he','him','his']
     ),
     new Person(['Jo','Lee-Hill'],
         new History([
             new Possition(new Date(2022,2,15),undefined,'Business Owner',TheDogRoom,'Owner and operator of The Dog Room, a Haslemere based dog grooming business')
-        ])),
+        ]),['she','her','hers']),
     new Person(['Helen','Fairclough'],
         new History([
             new Possition(new Date(2017,0),undefined,'Fundraising Designer',Helen,'The organisation of charity fundrasing events')
-        ])),
+        ]),['she','her','hers']),
     new Person(['Eray','Karadeniz'],
         new History([
             new Possition(new Date(2025,8),undefined,'Marketing Manager',GLC,'As Marketing Manager, Group at The Global Living Company, I lead marketing strategy and execution across the UAE, UK and Australia driving growth, brand visibility and digital performance in the Build-to-Rent and residential furnishing sectors.'),
-        ]),
+        ]),['he','him','his']
+    ),
+    new Person(['Adriana','Pilat'],
+        new History([
+            new Possition(new Date(2023,12),new Date(2025,7),'Marketing Manager',DavidPhillips,'')
+        ])
+    ),
+        new Person(['Ben','Munn'],
+        new History([
+            new Possition(new Date(2024,6),new Date(2025,7),'Chief Executive Officer',DavidPhillips,'')
+        ]),'he','him','his'
     )
 ]

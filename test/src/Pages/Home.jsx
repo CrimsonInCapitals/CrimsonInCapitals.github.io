@@ -56,22 +56,7 @@ const Page =()=>{
                       {getCaseStudies().map((r)=><ProjectCard page={Pages[r]()}/>)}
                       </ProjectReel>
                     </div>
-                    <div>
-                      <h2>Reviews</h2>
-                      <ReviewReel/>
-                      {/* <Review
-                        title='Lorem ipsum dolor sit amet consectetur adipiscing elit.' 
-                        content='Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.'
-                      />
-                      <Review
-                        title='Lorem ipsum dolor sit amet consectetur adipiscing elit.' 
-                        content='Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.'
-                      />
-                      <Review
-                        title='Lorem ipsum dolor sit amet consectetur adipiscing elit.' 
-                        content='Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.'
-                      /> */}
-                    </div>
+                    <ReviewReel/>
                     <div>
                       <h2>Ethos</h2>
                       <p>Design represents the intersection of creativity and function. Graphic design, like all design, requires finding a balance between the two. As a designer you must strive for a solution that looks visually appealing and easily consumable. This means considering accessibility, learned patterns and expected outcomes, while also seeking to stand out and define a unique solution. Looking around, you can see a myriad of examples of how a product can consider both and still be itself. This is most clear in the systems of design we interact with every day. On a single device, we might see the likes of Google, Microsoft, Adobe, Amazon, and Meta. While we once saw design pioneered by Type Setters and Furniture Makers, we now see companies like Apple define visual eras, marking them not by decades but by software updates.</p>

@@ -12,6 +12,7 @@ const properties = new PageClass('The Dog Room','/articles/thedogroom',3,'05/01/
 
 import backgroundImage from '../../images/articles/thedogroom/logo.png'
 import { IMG } from "../../components/fullscreenable"
+import { Review, reviews } from "../../components/review"
 const Background =()=>{
     const style={    
         backgroundImage: URL(backgroundImage),
@@ -66,6 +67,8 @@ const Page = ()=>{
                 <h2>Conclusion</h2>
                 <p>The client was very happy with the results, painting the physical location in the selected brand colours, and really embracing the brand. On reflection, working with small businesses like this, it’s important to ensure they have the tools to utilise the brand. platforms like Canva are a great option for businesses like this to create announcement posts which can be easily shared. people will have preferences on platform, but a brand is only as strong as its touch points, so empowering people to create branded content is essential and definitely something I've taken away from working with The Dog Room.</p>
             </div>
+            <Review review={reviews[1]} focal/>
+
           </ArticalContainer>
     )
 }

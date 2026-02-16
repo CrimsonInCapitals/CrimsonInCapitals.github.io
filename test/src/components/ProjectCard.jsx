@@ -92,7 +92,7 @@ export const BrandCard = ({ page, type = undefined }) => {
 }
 
 
-export const ProjectReel = ({ children, display = 4, fixed = false ,cropped=true}) => {
+export const ProjectReel = ({ children, display = 4, fixed = false ,cropped=true,brands=false}) => {
     const [displaying, setDisplaying] = useState(display)
     const reveal = 6
     const [Reveal, setReveal] = useState(Children.count(children) - display > reveal ? reveal : Children.count(children) - display)
@@ -115,7 +115,7 @@ export const ProjectReel = ({ children, display = 4, fixed = false ,cropped=true
     }
     // display>Children.count(children) && display = Children.count(children)
     return (
-        <section className="projectReel">
+        <section className={brands?"brands projectReel":"projectReel"}>
             {cropped ? Children.toArray(children).slice(0, displaying): children}
             {/* {Children.toArray(children).slice(0, displaying)} */}
             {Remove > 0 && !fixed && <button className="showmore" onClick={getDec}>Show {Remove} Less</button>}

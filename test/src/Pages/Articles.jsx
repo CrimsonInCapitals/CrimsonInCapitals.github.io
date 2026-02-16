@@ -10,11 +10,10 @@ import { BrandCard, ProjectCard, ProjectReel } from "../components/ProjectCard"
 import * as Chips from "../components/Chips"
 
 export const getRecent =()=>Object.keys(Pages).filter(r=>Pages[r]('rank') > 2).sort((a,b)=> Pages[b]('date') - Pages[a]('date')).slice(0,2)
-export const  getCaseStudies=()=>Object.keys(Pages).filter(r=>Pages[r]('rank') == 3).sort((a,b)=> Pages[b]('date') - Pages[a]('date'))
+export const getCaseStudies=()=>Object.keys(Pages).filter(r=>Pages[r]('rank') == 3).sort((a,b)=> Pages[b]('date') - Pages[a]('date'))
 export const getProjects = ()=>Object.keys(Pages).filter(r=>Pages[r]('rank') == 4).sort((a,b)=> Pages[b]('date') - Pages[a]('date'))
 export const getBrand = ()=>Object.keys(Pages).filter(r=>Pages[r]('rank') == 2).sort((a,b)=> Pages[b]('date') - Pages[a]('date'))
 export const getPerspectives = ()=>Object.keys(Pages).filter(r=>Pages[r]('rank') == 5 || Pages[r]('rank') == 6).sort((a,b)=> Pages[b]('date') - Pages[a]('date'))
-
 
 
 const Page = ()=>{
@@ -23,7 +22,6 @@ const Page = ()=>{
         document.title = 'CRIMSON: Articles'
         window.scrollTo(0,0)
     },[])
-
     const [ArticalFilter,setArticalFilter]=useState(undefined)
     const [title,setTitle]=useState(false)
     const [maxHeat,setMaxHeat]=useState(0)
@@ -34,8 +32,15 @@ const Page = ()=>{
         let filteredlist = page.chips.filter(chip => list.some(Cchip => Cchip.name === chip.name))
         return {...page, heat: filteredlist.length == 0? false : filteredlist.reduce((overlap,chip)=> overlap + chip.weight,0)}
     }
+    const ArticalHasChip=(r,chip)=>{
+        let Page = Pages[r]()
+        if(Page.type !== 'article')return false
+        if(Page.name == properties.name)return false
+        return Page.chips.some(Pagechip=>Pagechip.name==chip.name)
+    }
+    const ArticalsWithChip=(chip)=>Object.keys(Pages).filter(i=>ArticalHasChip(i,chip))
+    
     const getPagesHeat=(chiplist=ArticalFilter)=>Object.keys(Pages).map(r => getPageHeat(r,chiplist))
-
     const [PagesWithHeat,setPagesWithHeat]=useState(getPagesHeat())
     const [showFilter,setShowFilter]=useState(false)
 
@@ -87,19 +92,6 @@ return(
                                     })}                    
                                 </div>
                             </div>
-                            <div>
-                                <h5>Brands</h5>
-                                <div className="artical_chip_holder">
-                                    {Object.keys(Chips).filter(r=>Chips[r].type=='Brand').map((i)=>{
-                                        let Comp = Chips[i].Componant
-                                        return(<Comp key={i}
-                                                    action='f' 
-                                                    active={ArticalFilter!==undefined && ArticalFilter.indexOf(Chips[i])>=0} 
-                                                    f={()=>UpdateFilter(Chips[i])}
-                                                />)
-                                    })}                    
-                                </div>
-                            </div>
                         </>}
                     {ArticalFilter == undefined ? <>
                         <div>
@@ -118,8 +110,8 @@ return(
                         {getBrand().length >0 &&
                         <div>
                             <h2>Multi Project Brands</h2>
-                            <ProjectReel>
-                                {getBrand().map((r)=><BrandCard key={Pages[r]('name')} page={Pages[r]()} />)}
+                            <ProjectReel brands>
+                                {getBrand().filter((brand)=>brand).map((r)=>ArticalsWithChip(Pages[r]('chip')).length >1 &&<BrandCard key={Pages[r]('name')} page={Pages[r]()} />)}
                             </ProjectReel>
                         </div>}
                         {getProjects().length > 0 &&

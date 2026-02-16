@@ -25,7 +25,7 @@ export const ParentContainer = ({properties,children})=>{
         if(Page.name == properties.name)return false
         return Page.chips.some(chip=>chip.name==properties.chip.name)
     }
-    const ReliventArticals= Object.keys(Pages).filter(isArtical).filter(getArticals).map(r=>{                let Page = Pages[r]()
+    const ReliventArticals= Object.keys(Pages).filter(isArtical).filter(getArticals).map(r=>{                
         return {...Pages[r]()}
     })
     console.log(ReliventArticals)
@@ -45,7 +45,7 @@ export const ParentContainer = ({properties,children})=>{
                 <section className='fill layer_three' style={{backgroundColor:'var(--Background)'}}>
                   <section style={{display:'flex',gap:'20px'}}>   
                         <h2>{properties.name} Projects</h2>
-                        <ProjectReel>
+                        <ProjectReel cropped={false} fixed>
                             {ReliventArticals.sort((a,b)=>b.date-a.date).map((page)=><ProjectCard page={page} type='recent'/>)}
                         </ProjectReel>
                 </section>

@@ -1,4 +1,4 @@
-import { Children, cloneElement, createContext, useContext, useEffect, useReducer, useRef, useState } from "react"
+import React, { Children, cloneElement, createContext, useContext, useEffect, useReducer, useRef, useState } from "react"
 import { useLocation } from "react-router-dom";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
@@ -194,10 +194,11 @@ export const Reel=({children,col=3,con=2})=>{
     const update=(item)=>{
         setHideMenu(true)
         dispatchContent(['reel',{
-            list:children,
+            list:children.filter((child)=>React.isValidElement(child) && child.type.name == 'IMG'),
             showing:item
         }])
     }
+    console.log(children[0].type.name)
     const childWidth = 'calc( '+(100/(col))+'% - 8px)'
     return(
         <section className="reel">

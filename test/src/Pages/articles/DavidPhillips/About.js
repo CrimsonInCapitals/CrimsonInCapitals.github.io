@@ -12,6 +12,7 @@ import { ParentContainer } from "../../../components/ParentPage"
 import { IMG } from "../../../components/fullscreenable"
 import backgroundImage from "../../../images/articles/davidphillips/brochurescoverstack.png"
 import screenimage from '../../../images/articles/davidphillips/New+Berkley+House+-+pantry+6+©+Amy+Hunter+Photography.webp'
+import { Review, reviews } from "../../../components/review"
 
 
 const properties = new PageClass('David Phillips','/articles/davidphillips',2,'07/15/2025','parent',{chip:DavidPhillips,image:screenimage,description:'A leader in the large-scale furnishing industry, servicing the residential real estate market. Offering a broad range of services from furniture rental to window dressings, David Phillips for over 26 years.'})
@@ -56,7 +57,7 @@ const Page = ()=>{
                     <p>All the Photography fetured on this page and within the other David Phillis projects is by Amy Hunter. website linked bellow:</p>
                     <a href="https://www.amyhunterphoto.com/" target="_blank" style={{textDecoration:'underline',color:'var(--Crimson)',fontStyle:'italic'}}>Amy Hunters Photography</a>
                 </div>
-               
+               <Review review={reviews[2]}focal/>
         </ParentContainer>
     )
 }

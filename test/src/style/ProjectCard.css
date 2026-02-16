@@ -144,6 +144,9 @@ section.projectReel{
     color: var(--Copy);
     cursor: pointer;
 }
+.projectReel .BrandCard:first-child{
+    min-width: 90%
+}
 
 div.parentHeroSection{
     height: 100vh;

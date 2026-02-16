@@ -502,13 +502,14 @@ section.ReviewReel:hover .holder{
     animation-play-state: paused;
 }
 .ReviewReel .holder{
-    min-width: 100vw;
+    min-width: 300vw;
     /* background-color: brown; */
     display: flex;
     flex-direction: row;
     gap: 0px;
     width: fit-content;
     animation:  scroll-left 30s linear infinite;
+    justify-content: space-around;
 
 }
 @keyframes scroll-left{
@@ -527,10 +528,18 @@ section.ReviewReel:hover .holder{
     padding: 60px;
     border-radius: 4px;
     transition: background-color 1s ease;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .review:hover{
     background-color: var(--background02);
 }
+.review.focal{
+    background-color: var(--background03);
+    margin: 0 auto;
+}
+
 .review p{
     margin: 0;
     text-align: right;

@@ -29,7 +29,8 @@ export { default as askchristmas} from './articles/AskItalian/christmas.jsx'
 export { default as menu} from './articles/AskItalian/menu.jsx'
 export { default as socialother} from './articles/AskItalian/socialassets.jsx'
 export {default as minedisp} from './articles/minecraftdisplate.js'
-export {default as dlfuae} from './articles/designledfurnishingintheuae.js'
+export {default as dlfuae} from './articles/GlobalLiving/designledfurnishingintheuae.js'
+export {default as TGLC} from './articles/GlobalLiving/about.js'
 
 
 
