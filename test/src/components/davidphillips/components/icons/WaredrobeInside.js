@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useLayerContext } from "../../context/brandLayers.js";
 
-const SvgWaredrobeInside = (props) =>{
+const SvgWardrobesInside = (props) =>{
 const {layerProps}=useLayerContext()
 ;return(
   <svg
@@ -18,4 +18,4 @@ const {layerProps}=useLayerContext()
       clipRule="evenodd"
     />
   </svg>)}
-export default SvgWaredrobeInside;
+export default SvgWardrobesInside;

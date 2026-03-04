@@ -4,7 +4,14 @@ body{
     overflow-x: hidden;
     background-color: var(--background02);
 }
-
+.hometext{
+    text-align:center;
+    position:absolute;
+    top:calc(45vh - 0.5em);
+    left:Calc(50vw - 6em);
+    width:12em;
+    text-shadow:0 0 20px var(--hometextshadow), 0 0 5px var(--hometextshadow)
+}
 main{
     background-color: var(--Background);
     margin: 0;
@@ -127,7 +134,18 @@ span.headerSpan{
     }
     #root .centerer.hidden{
     translate: 0 +70px;
+    
 }
+    article.review{
+        max-width: 80vw;
+        padding: 18px;
+    }
+    article.review.focal{
+        max-width: 100%;
+    }
+    article.review h2{
+        font-size: 1.4em;
+    }
 }
 menu#nav{
     position: fixed;
@@ -531,6 +549,7 @@ section.ReviewReel:hover .holder{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    box-sizing: border-box;
 }
 .review:hover{
     background-color: var(--background02);

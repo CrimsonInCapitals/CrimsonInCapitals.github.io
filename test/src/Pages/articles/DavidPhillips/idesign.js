@@ -5,12 +5,12 @@ import { Footer } from "../../../components/Footer"
 import { PageClass,URL } from "../../../classes"
 import { useThemeContext } from "../../../context/theme"
 import { useEffect } from "react"
-import { AfterEffects, AnimationChip, Brand, DavidPhillips, Designer, Developer, Figma, IconD, Illustrator, InDesign, Motion, PrintDesign, ProcessOpt, Reactchip } from "../../../components/Chips"
+import { AfterEffects, AnimationChip, Brand, DavidPhillips, Designer, Developer, Figma, IconD, Illustrator, InDesign, Motion, PrintDesign, ProcessOpt, Reactchip, WebDesign } from "../../../components/Chips"
 import { ArticalContainer } from "../../../components/ArticalHolder"
 import backgroundImage from '../../../images/articles/davidphillips/idesign/mockupofend.png'
 import { IMG, Reel } from "../../../components/fullscreenable"
 
-const properties = new PageClass('Bespoke Packages Platform','/articles/davidphillips/resolve',4,'05/13/2025','article',{chips:[DavidPhillips,Figma,Developer,ProcessOpt,IconD,Motion]})
+const properties = new PageClass('Bespoke Packages Platform','/articles/davidphillips/resolve',4,'05/13/2025','article',{chips:[DavidPhillips,Figma,Developer,WebDesign,ProcessOpt,IconD,Motion]})
 
 const Background =()=>{
     const style={    

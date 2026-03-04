@@ -194,11 +194,10 @@ export const Reel=({children,col=3,con=2})=>{
     const update=(item)=>{
         setHideMenu(true)
         dispatchContent(['reel',{
-            list:children.filter((child)=>React.isValidElement(child) && child.type.name == 'IMG'),
+            list:children,
             showing:item
         }])
     }
-    console.log(children[0].type.name)
     const childWidth = 'calc( '+(100/(col))+'% - 8px)'
     return(
         <section className="reel">

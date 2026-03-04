@@ -199,7 +199,7 @@ import SvgRefreshRestart from './RefreshRestart.js'
 import SvgSofaCushion from './RemovalbeCoushions.js'
 import SvgReview from './Review.js'
 import SvgRhino from './Rhino.js'
-import SvgRollerBLinds from './RollerBLinds.js'
+import SvgRollerBlinds from './RollerBlinds.js'
 import SvgRomanBlinds from './RomanBlinds.js'
 import SvgRuller from './Ruller.js'
 import SvgScales from './Scales.js'
@@ -238,7 +238,7 @@ import SvgVanLocation from './VanLocation.js'
 import SvgVenetionBlinds from './VenetionBlinds.js'
 import SvgVerticaBlinds from './VerticaBlinds.js'
 import SvgWallet from './Wallet.js'
-import SvgWaredrobeInside from './WaredrobeInside.js'
+import SvgWardrobesInside from './WaredrobeInside.js'
 import SvgWarranty from './Warranty.js'
 import SvgWashAtOrBelow31 from './WashAtOrBelow31.js'
 import SvgWashingMachine from './WashingMachine.js'
@@ -322,7 +322,7 @@ const Minis=new Group('Mini','Mini Icons')
 const WinDress=new Group('WinDress','Window Dressings')
 const CareInstructions = new Group('CareIn','Care Instructions')
 const WinDressFeat = new Group('WinDreFea','Window dressings features')
-const Waredrobe = new Group('Waredrobes','Fitted Waredrobes')
+const Wardrobes = new Group('Wardrobes','Fitted Wardrobes')
 const Technology=new Group('Tech','Technology')
 const Rooms = new Group('Rooms','Room types') 
 const handles = new Group('handles','Door handles')
@@ -330,7 +330,7 @@ const esg = new Group('ESG','Environment')
 const design = new Group('Design', 'Product & design')
 const furniture = new Group('Furniture', 'Types of furniture')
 const tools=new Group('Tools','Tools')
-const installation = new Group('installation','installation')
+const installation = new Group('Installation','Installation')
 const Transport = new Group('Transport','Transport')
 // const newicon = new Group('newicon','newicon')
 const Values = new Group('Values','Values')
@@ -410,8 +410,8 @@ export const Icons={obj:{},groupList:[],array:[
     new Icon('Do Not Bleach','DoNotBleach',<SvgDoNotBleach/>,CareInstructions),
     new Icon('Do Not TumbleDry','DoNotTumbleDry',<SvgDoNotTumbleDry/>,CareInstructions),
     new Icon('Down Arrow','DownArrow',<SvgDownArrow/>),
-    new Icon('Draw','Draw',<SvgDraw/>,Waredrobe),
-    new Icon('Draw & Shelves','DrawAndShelves',<SvgDrawAndShelves/>,Waredrobe),
+    new Icon('Draw','Draw',<SvgDraw/>,Wardrobes),
+    new Icon('Draw & Shelves','DrawAndShelves',<SvgDrawAndShelves/>,Wardrobes),
     new Icon('Dry Clean A','DryCleanA',<SvgDryCleanA/>,CareInstructions),
     new Icon('Dry Clean B','DryCleanB',<SvgDryCleanB/>,CareInstructions),
     new Icon('Dry Clean C','DryCleanC',<SvgDryCleanC/>,CareInstructions),
@@ -459,7 +459,7 @@ export const Icons={obj:{},groupList:[],array:[
     new Icon('Library','Library',<SvgLibrary/>,Rooms),
     new Icon('LightBulb','LightBulb',<SvgLightBulb/>,Technology),
     new Icon('Location','Location',<SvgLocation/>),
-    new Icon('Lower Rail','LowerRail',<SvgLowerRail/>,Waredrobe),
+    new Icon('Lower Rail','LowerRail',<SvgLowerRail/>,Wardrobes),
     new Icon('Manual','Manual',<SvgManual/>,design),
     new Icon('Martindale Rub Count','Martindale',<SvgMartindale/>,design),
     new Icon('Material Change','MaterialChange',<SvgMaterialChange/>,design),
@@ -514,7 +514,7 @@ export const Icons={obj:{},groupList:[],array:[
     new Icon('Printer','Printer',<SvgPrinter/>,Technology),
     new Icon('Processing Unit','ProcessingUnit',<SvgProcessingUnit/>,Technology),
     new Icon('Quotation','Quotation',<SvgQuotation/>),
-    new Icon('Rail','Rail',<SvgRail/>,Waredrobe),
+    new Icon('Rail','Rail',<SvgRail/>,Wardrobes),
     new Icon('Reading','Reading',<SvgReading/>,Rooms),
     new Icon('Recycle','Recycle',<SvgRecycle/>,esg),
     new Icon('Reduce Carbon','ReduceCarbon',<SvgReduceCarbon/>,esg),
@@ -522,15 +522,15 @@ export const Icons={obj:{},groupList:[],array:[
     new Icon('Reduce Resources','ReduceResources',<SvgReduceResources/>,esg),
     new Icon('Refresh','RefreshRestart',<SvgRefreshRestart/>,Minis),
     new Icon('Review','Review',<SvgReview/>),
-    new Icon('Roller BLinds','RollerBLinds',<SvgRollerBLinds/>,WinDress),
+    new Icon('Roller Blinds','RollerBlinds',<SvgRollerBlinds/>,WinDress),
     new Icon('Roman Blinds','RomanBlinds',<SvgRomanBlinds/>,WinDress),
     new Icon('Ruller','Ruller',<SvgRuller/>,tools),
     new Icon('Scales','Scales',<SvgScales/>),
     new Icon('Sell','Sell',<SvgSell/>),
     new Icon('Sell Fast','SellFast',<SvgSellFast/>),
     new Icon('Settings','Settings',<SvgSettings/>,Minis),
-    new Icon('Shelves','Shelves',<SvgShelves/>,Waredrobe),
-    new Icon('Shoe Rack','ShoeRack',<SvgShoeRack/>,Waredrobe),
+    new Icon('Shelves','Shelves',<SvgShelves/>,Wardrobes),
+    new Icon('Shoe Rack','ShoeRack',<SvgShoeRack/>,Wardrobes),
     new Icon('Sitting','Sitting',<SvgSitting/>),
     new Icon('Smart Sheets','SmartSheets',<SvgSmartSheets/>,Technology),
     new Icon('Sofa','Sofa',<SvgSofa/>,furniture),
@@ -554,7 +554,7 @@ export const Icons={obj:{},groupList:[],array:[
     new Icon('Van Location','VanLocation',<SvgVanLocation/>,Transport),
     new Icon('Venetion Blinds','VenetionBlinds',<SvgVenetionBlinds/>,WinDress),
     new Icon('Vertica Blinds','VerticaBlinds',<SvgVerticaBlinds/>,WinDress),
-    new Icon('Waredrobe Inside','WaredrobeInside',<SvgWaredrobeInside/>,Waredrobe),
+    new Icon('Wardrobes Inside','WardrobesInside',<SvgWardrobesInside/>,Wardrobes),
     new Icon('Warranty','Warranty',<SvgWarranty/>,design),
     new Icon('Wash At Or Below 31','WashAtOrBelow31',<SvgWashAtOrBelow31/>,CareInstructions),
     new Icon('Washing Machine','WashingMachine',<SvgWashingMachine/>,furniture),

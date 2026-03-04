@@ -36,6 +36,15 @@ h1{
     font-size: 4em;
     font-weight: 400;
 }
+@media (max-width: 600px) {
+    #root h1{
+        font-size: 2.4em;
+    }
+    #root h2{
+        font-size: 2em;
+    }
+}
+
 h2{
     font-size: 2.4em;
     font-weight: 600;

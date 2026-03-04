@@ -10,7 +10,7 @@ import { useEffect } from "react"
 import { Adobe, AfterEffects, AnimationChip, Brand, Illustrator, Motion } from "../../components/Chips"
 import { ArticalContainer } from "../../components/ArticalHolder"
 import backgroundImage from '../../images/articles/scottishwidows/swframes.png'
-import { IMG } from "../../components/fullscreenable"
+import { IMG, VIDEO } from "../../components/fullscreenable"
 
 const properties = new PageClass('Scottish Widows: Brand Mark Animation','/articles/scottishwidows',6,'09/03/2025','article',{chips:[Brand,Motion,AfterEffects,AnimationChip,Adobe,Illustrator]})
 
@@ -30,9 +30,9 @@ properties.fill = <Background/>
 const Page = ()=>{
     return(
         <ArticalContainer properties={properties}>
-                <video className="inline" controls>
+                <VIDEO style={{aspectRatio:'16/9'}}>
                     <source src={require('../../images/articles/scottishwidows/TrueSizeback.mp4')} type="video/mp4" />
-                </video>
+                </VIDEO>
                 <div>
                 <h2>Scottish Widows Logo Animation Study</h2>
                 <p>In this study I chose to reflect the brands message of 'looking to the future'. The character takes a step forward (Right) and opens up in the face of the wind, being emboldened.</p></div>
@@ -43,9 +43,10 @@ const Page = ()=>{
                 <p>Dividing the logo into its animatable parts</p>
                 </div>
                 <div>
-                <video className="inline" controls>
+                <VIDEO controls style={{aspectRatio:'16/9'}}>
                     <source src={require('../../images/articles/scottishwidows/IconTrueSizeback.mp4')} type="video/mp4" />
-                </video>                <p>Brand mark animation in isolation</p></div>
+                </VIDEO>                
+                <p>Brand mark animation in isolation</p></div>
                 <div>
                 <IMG className="inline" src={require('../../images/articles/scottishwidows/swframes.png')} alt='incons depicting how to take messurments for bra sizing'/>
                 <p>Brand mark animation frames</p>   

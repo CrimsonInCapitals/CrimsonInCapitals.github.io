@@ -31,6 +31,7 @@ export { default as socialother} from './articles/AskItalian/socialassets.jsx'
 export {default as minedisp} from './articles/minecraftdisplate.js'
 export {default as dlfuae} from './articles/GlobalLiving/designledfurnishingintheuae.js'
 export {default as TGLC} from './articles/GlobalLiving/about.js'
+export {default as arffornature} from './articles/ArtForNature.js'
 
 
 

@@ -30,7 +30,7 @@ const Page =()=>{
               <FocusedContentSection  className='HomeHeroFocus' style={{justifyContent:'center',padding:'0'}}>
                 <section className='HomeHeroSection' >
                   <PictureSpace/>
-                  <p style={{textAlign:'center',position:'absolute',top:'calc(45vh - 0.5em)',left:'Calc(50vw - 6em)',width:'12em',textShadow:'0 0 20px black, 0 0 5px black'}}>By Harrison Adam Cole</p>
+                  <p class='hometext' >By Harrison Adam Cole</p>
                 </section>
                 
               </FocusedContentSection>

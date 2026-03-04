@@ -26,7 +26,7 @@
     --copy03:var(--Light01);
     --Copy:var(--Light02);
     --Accent:var(--DarkAccent);
-
+    --hometextshadow:black;
 
 
     --gap_far: 124px;
@@ -42,6 +42,7 @@
     --copy01:var(--Dark01);
     --copy02:var(--Dark02);
     --copy03:var(--Dark03);
+    --hometextshadow:white;
 
     --Copy:var(--Dark02);
     --Accent:var(--LightAccent)

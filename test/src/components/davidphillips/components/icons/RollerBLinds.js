@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useLayerContext } from "../../context/brandLayers.js";
 
-const SvgRollerBLinds = (props) =>{
+const SvgRollerBlinds = (props) =>{
 const {layerProps}=useLayerContext()
 ;return(
   <svg
@@ -18,4 +18,4 @@ const {layerProps}=useLayerContext()
       clipRule="evenodd"
     />
   </svg>)}
-export default SvgRollerBLinds;
+export default SvgRollerBlinds;

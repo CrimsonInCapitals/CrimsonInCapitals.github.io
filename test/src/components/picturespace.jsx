@@ -4,21 +4,24 @@ import { URL } from "../classes"
 import { IMG } from "./fullscreenable"
 
 
-import TrippyTrials from '../images/articles/Displate/TrippyTrialscomp.webp'
-import relstrong from '../images/articles/Displate/relstrong.webp'
-import askcover from '../images/articles/askitalian/APEROL TIME.jpg'
-import ProductPage from '../images/articles/davidphillips/Templateslides/7.png'
-import askkids from '../images/articles/askitalian/M2.jpg'
-import BandEsticker from '../images/articles/bobbinandem/sticker.png'
-import DPProductPage from '../images/articles/davidphillips/idesign/Desktop-Mockup-Product-Light.png'
-import DPareas from '../images/articles/davidphillips/newpremades/11.png'
-import dogroom from '../images/articles/thedogroom/logo.png'
-import aspinal from '../images/articles/aspinaloflondon/outcomesgrid.png'
-import DPhsdef from '../images/articles/davidphillips/homestaginglookbook/def.png'
-import pitstop from '../images/articles/imedia/pinnedposts.png'
-import overbury from '../images/articles/overbury/13.png'
-import amazinggrace from '../images/articles/amazinggrace/sizing icons.png'
-import scotwid from '../images/articles/scottishwidows/swframes.png'
+import TrippyTrials from '../images/herosection/chaimber.webp'//#
+import relstrong from '../images/herosection/relativ.webp'//#
+import askcover from '../images/herosection/aperol.webp'//#
+import ProductPage from '../images/herosection/prodcat.webp'//#
+import askkids from '../images/herosection/pizza.webp'//#
+import BandEsticker from '../images/herosection/bobbin.webp'//#
+import DPProductPage from '../images/herosection/product.webp'//#
+import DPareas from '../images/herosection/data.webp'//#
+import dogroom from '../images/herosection/dogroom.webp'//#
+import aspinal from '../images/herosection/aspinal.webp'//#
+import DPhsdef from '../images/herosection/homedef.webp'//#
+import pitstop from '../images/herosection/pitstop.webp'//#
+import overbury from '../images/herosection/casestudy.webp'//#
+import amazinggrace from '../images/herosection/amazing.webp'
+import scotwid from '../images/herosection/scotwid.webp'
+import afnform from '../images/herosection/afnform.webp'
+import glcpartners from '../images/herosection/partners.webp'
+
 import { Link } from "react-router-dom"
 
 
@@ -47,6 +50,8 @@ const PictureList=[
     new Option(overbury,'Overbury Presenation','/articles/overbury'),
     new Option(amazinggrace,'Sizing Icons','/articles/amazinggrace'),
     new Option(scotwid,'Animation Frames','/articles/scottishwidows'),
+    new Option(afnform,'Art for Nature','/articles/artfornature'),
+    new Option(glcpartners,'The Gloabl Living Company','/articles/thegloballivingcompany/dlfuae'),
 ]
 
 
@@ -61,8 +66,9 @@ class Picture{
         })
         let next = null
         let found = false
+        // next = 15
         while (found == false) {
-            next = Math.floor(Math.random()*(PictureList.length-1))
+            next = Math.floor(Math.random()*(PictureList.length))
             if(!usedoptions.includes(PictureList[next].title))found = true
         }
         this.image = PictureList[next]
