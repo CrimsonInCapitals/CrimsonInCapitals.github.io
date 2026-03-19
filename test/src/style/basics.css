@@ -601,3 +601,18 @@ section.ReviewReel:hover .holder{
     justify-content: flex-end;
     align-items: flex-end;
 }
+
+.iframe{
+    border: none; 
+    max-width:100%; 
+    max-height:100vh;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.poweredby{
+    text-align: center;
+}
+.poweredby a{
+    text-decoration: underline;
+}

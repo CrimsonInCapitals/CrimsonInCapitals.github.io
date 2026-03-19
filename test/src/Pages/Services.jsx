@@ -13,6 +13,7 @@ import { HorizontalAutoScroller } from '../components/InfinateScroller';
 import { ProjectCard, ProjectReel } from '../components/ProjectCard';
 import { getCaseStudies, getRecent } from './Articles';
 import * as Pages from '.'
+import { FormSection } from '../components/form';
 const properties = new PageClass('Services','/services',1)
 
 const Page =()=>{
@@ -42,6 +43,8 @@ const Page =()=>{
               </ProjectReel>
             </div>
           </section>
+          <FormSection/>
+          
         </FocusedContentSection>
         <Footer/>
       </main>

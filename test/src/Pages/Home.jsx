@@ -1,4 +1,4 @@
-import {Routes,Route, useLocation} from 'react-router-dom'
+import {Routes,Route, useLocation, Form} from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react';
 import { NameText, VectorText } from '../components/TextComponants';
 import { FocusedContentSection } from '../components/FocusedContentSection';
@@ -12,6 +12,7 @@ import { ProjectCard, ProjectReel } from '../components/ProjectCard.jsx';
 import * as Pages from '.'
 import { PictureSpace } from '../components/picturespace.jsx';
 import { Review, ReviewReel } from '../components/review.js';
+import { FormSection } from '../components/form.jsx';
 
 
 const Page =()=>{
@@ -57,11 +58,14 @@ const Page =()=>{
                       </ProjectReel>
                     </div>
                     <ReviewReel/>
-                    <div>
+                           <div>
                       <h2>Ethos</h2>
                       <p>Design represents the intersection of creativity and function. Graphic design, like all design, requires finding a balance between the two. As a designer you must strive for a solution that looks visually appealing and easily consumable. This means considering accessibility, learned patterns and expected outcomes, while also seeking to stand out and define a unique solution. Looking around, you can see a myriad of examples of how a product can consider both and still be itself. This is most clear in the systems of design we interact with every day. On a single device, we might see the likes of Google, Microsoft, Adobe, Amazon, and Meta. While we once saw design pioneered by Type Setters and Furniture Makers, we now see companies like Apple define visual eras, marking them not by decades but by software updates.</p>
                       <p>Designers create systems by which they build consistent experiences but in order to create these experiences, one must understand the limitations of their mediums. As someone designing a chair must consider the limitations of the timber and an architect must consider the limitations of steel, so must a graphic designer understand the limitations of their technology.</p>
                     </div>
+                      <FormSection/>
+
+             
                     <div>
                       <h3>Recent Projects</h3>
                       <ProjectReel fixed>
@@ -71,10 +75,6 @@ const Page =()=>{
        
                   </section>
                 </section>
-                {/* <section>
-                <h2>The latst from TikTok</h2>
-        
-                </section> */}
               </FocusedContentSection>
               <Footer/>
              

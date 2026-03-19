@@ -32,7 +32,7 @@ export {default as minedisp} from './articles/minecraftdisplate.js'
 export {default as dlfuae} from './articles/GlobalLiving/designledfurnishingintheuae.js'
 export {default as TGLC} from './articles/GlobalLiving/about.js'
 export {default as arffornature} from './articles/ArtForNature.js'
-
+export {default as TGLCLinks} from './LinkPages/TheGlobalLivingCompany.jsx'
 
 
 

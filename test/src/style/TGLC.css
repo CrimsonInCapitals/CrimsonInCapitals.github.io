@@ -1,0 +1,61 @@
+@font-face {
+    font-family: Avenir;
+    src: url(../fonts/AvenirLTStd-Roman.otf);
+    font-style: normal;
+    font-weight: 400;
+}
+body#TGLC #root{
+    padding: 60px 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    flex-direction: column;
+    min-height: 100vh; 
+    box-sizing: border-box;
+    background-color: #ffffff;
+    background-image: url(../images/linkpages/TGLC/bespoke.webp);
+    background-size: cover;
+    align-items: center;
+}
+
+
+#TGLC h1{
+    color: #331D1B;
+}
+#TGLC .links{
+    gap: 18px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 900px;
+    align-items: center;
+    justify-content: center;
+}
+
+#TGLC a.link{
+    box-sizing: border-box;
+    display: flex;
+    padding: 20px 8px;
+    background-color: #331D1B;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    min-width: 200px;
+    flex-grow: 2;
+    flex-shrink: 1;
+    font-family: Avenir;
+
+}
+#TGLC a.link:hover{
+    background-color: #ffffff;
+    color: #331D1B;
+}
+
+#TGLC .poweredby, #TGLC .poweredby a{
+    color: #331D1B;
+}
+#TGLC #Logo{
+width: 50%;
+max-width: 200px;
+}
