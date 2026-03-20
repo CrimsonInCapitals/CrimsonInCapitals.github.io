@@ -72,6 +72,7 @@ class Picture{
             if(!usedoptions.includes(PictureList[next].title))found = true
         }
         this.image = PictureList[next]
+        this.rotation = (Math.floor(Math.random()*61)-30)+'deg'
     }
 }
 
@@ -80,7 +81,7 @@ export const PictureSpace=({props})=>{
         const addNew =(X,Y,distance)=>{
                 let next = new Picture(X,Y,X+Y,Pictures)
                 let newPictures = Pictures
-                if(newPictures.length>8)newPictures.shift()
+                if(newPictures.length>14)newPictures.shift()
                 newPictures.push(next)
                 setPictures(newPictures)
         }
@@ -111,22 +112,25 @@ export const PictureSpace=({props})=>{
     //   clearInterval(intervalId);
     };
   }, []);
-    // useEffect(()=>        console.log(Pictures)
-    // ,[Pictures])
+  console.log(Pictures)
     return(
-        <div style={{width:'100%',height:'100%',position:'relative'}}>
+        <div className="pictureSpace" style={{width:'100vw',height:'100vh',position:'fixed',left:0,top:0}}>
+            
             {Pictures.map((item,index)=>{
                 return(
-                    <Link className="topLeft layer_one" to={item.image.link}>
+                    <Link className="Floatholder" to={item.image.link} style={{left:item.x-200,top:item.y-200,rotate:item.rotation,filter:"blur("+Number((Pictures.length-(index+1)))+"px)"}}>
+                    <div className="mask" style={{maskImage:"url('"+item.image.source+"')"}}/>
                     <img 
                         className="FloatPic" 
                         key={item.x+item.y} 
-                        style={{left:item.x,top:item.y}} 
+                        style={{opacity:Number(index/(Pictures.length+1).toFixed(1))}} 
                         src={item.image.source}
                     />
                     </Link>
                 )
             })}
+                          <p class='hometext' >By Harrison Adam Cole</p>
+            
         </div>
     )
 }

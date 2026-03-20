@@ -4,7 +4,7 @@ article.ProjectCard{
     /* max-width: 80vw; */
     width: 35%;
     min-width: 300px;
-    background-color: var(--background01);
+    /* background-color: var(--background01); */
     /* border: solid var(--Copy); */
     border-radius: 4px;
     /* padding: 10px; */
@@ -21,7 +21,7 @@ article.BrandCard{
     display: block;
     max-width: 80vw;
     min-width: 30vw;
-    background-color: var(--background01);
+    /* background-color: var(--background01); */
     /* border: solid var(--Copy); */
     border-radius: 4px;
     /* padding: 10px; */
@@ -108,6 +108,9 @@ article.BrandCard{
  }
 .ProjectCard:hover .fill,.BrandCard:hover .fill{
     opacity: 40%;
+}
+.ProjectCard:hover,.BrandCard:over{
+    background-color: var(--background01);
 }
 .topLeft h4{
     max-width: 50%;

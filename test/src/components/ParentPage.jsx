@@ -35,7 +35,7 @@ export const ParentContainer = ({properties,children})=>{
             <div style={{height:'50vh',overflow:'hidden',position:'relative'}}>
                 <div className="parentHeroSection" style={{backgroundImage:URL(properties.image)}}/>
             </div>
-            <FocusedContentSection style={{gap:'0'}}>
+            <FocusedContentSection style={{gap:'0'}} blur>
                 {properties.fill && properties.fill}
 
                 <section style={{gap:'40px'}}>

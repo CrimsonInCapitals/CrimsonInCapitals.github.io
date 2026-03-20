@@ -19,7 +19,6 @@ const Page =()=>{
     return(
         <body id="TGLC">
             <title>The Globl Living Comapny</title>
-
             {/* <h1>The Globl Living Comapny</h1> */}
             <TGLC/>        
     <div className="links">
@@ -27,7 +26,7 @@ const Page =()=>{
             <a className='link' href={link.src} target="_blank">{link.Display}</a>
         )}
         </div>
-        <p  className="poweredby">Powered by <a href='./'>CRIMSON</a></p>
+        <p  className="poweredby">Powered by <a href='./'>CRIMSON in capitals</a></p>
         </body>
     )
 }

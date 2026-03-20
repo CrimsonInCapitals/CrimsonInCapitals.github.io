@@ -53,8 +53,17 @@ export const ArticalContainer = ({ properties, children }) => {
                     </div>
                     {children}
                 </section>
-                <section className='fill layer_three' style={{ backgroundColor: 'var(--Background)' }}>
-                    <section style={{ display: 'flex', gap: '20px' }}>
+                <section className='fill layer_three' style={{ backgroundColor: 'var(--Background)',gap:0 }}>
+
+                    <section style={{ display: 'flex', gap: '20px'}}>
+                    <div style={{gap:'0px'}}>
+                    <div className="artical_chip_holder">
+                    <h5>Explore Tags: </h5>
+                    {properties.chips.map((chip, index) => <chip.Componant key={index} />)}
+                    </div>
+                        <p className="date">{DisplayDate(properties.date, )}</p>
+                    </div>
+
                         <h2>Similar Projects</h2>
                         <ProjectReel>
                             {PageswithHeat.filter((page) => page.heat !== false).sort((a, b) => b.heat - a.heat).map((page, index) => <ProjectCard page={page} key={index} type='recent' />)}

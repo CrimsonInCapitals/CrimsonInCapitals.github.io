@@ -32,6 +32,7 @@ properties.fill = <Background/>
 const Page = ()=>{
     return(
         <ParentContainer properties={properties}>
+            <p>Underpinning everything PRIMO, Ask Italians design language, is a simple illustrative style. Ever peace of marketing material here features illustrations I created. These illustrations were designed to be consistent with others produced for Ask Italian nationwide.</p>
             <h2>FaceBook Banners</h2>
                 <Reel >
                     <IMG className='inline' src={require('../../../images/articles/askitalian/APEROL TIME.jpg')} alt='the cover page of the ffe brochure'/>
@@ -41,7 +42,7 @@ const Page = ()=>{
                     <IMG className='inline' src={require('../../../images/articles/askitalian/peroni.jpg')} alt='the cover page of the ffe brochure'/>
                     <IMG className='inline' src={require('../../../images/articles/askitalian/WINE AND DINE.jpg')} alt='the cover page of the ffe brochure'/>
                 </Reel>
-                <h2>Covid-19 Measures Awareness</h2>
+                <p>Ask Italian has traditionally handled communications centrally. This campaign and the purpose of these assets was to raise awareness locally to the Haslemere branch, promote local events, and generate community engagement following the Covid Pandemic. The bellow are printed signs used to promote safe protasis in place at the time.</p>
                 <Reel>
                     <IMG className='inline' src={require('../../../images/articles/askitalian/CLEANING.png')} alt='the cover page of the ffe brochure'/>
                     <IMG className='inline' src={require('../../../images/articles/askitalian/MASKS MAYBE.png')} alt='the cover page of the ffe brochure'/>
@@ -59,7 +60,7 @@ const Page = ()=>{
                 </Reel>
                 <div>
                              <h2>Dinner and a Show</h2>
-                             <p>Promotion in partnership with Haslemere Hall</p>
+                             <p>We partnered with local businesses including the local theatre to promote bookings around theatre events. This effort boosted bookings around such events by ~60% over a four-month period.</p>
                 </div>
                 <Reel >
                     <IMG className='inline' src={require('../../../images/articles/askitalian/d&smap.jpg')} alt='the cover page of the ffe brochure'/>

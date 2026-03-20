@@ -40,18 +40,19 @@ d="M-99.8756 8.75696L-101.328 13.1804C-101.581 13.9253 -101.659 14.4207 -101.56 
                 }}
             >
                 
-                
+                <p class='hometext2' >By Harrison Adam Cole</p>
+
                 <div style={{position:'fixed',top:'1em',width:'100%',display:'flex',alignItems:'center',justifyContent:'center',height:'70px'}}>
                     <Link to={'/'}><svg height='50px' viewBox="0 0 70 100" >
-                            <path fillRule="evenodd" clipRule="evenodd" d="M70 50H0V40H10V0H60V40H70V50ZM20 10V40H50V10H20Z" style={{fill:'var(--Copy)'}}/>
-                            <rect x="10" y="60" width="10" height="30" fill="var(--Copy)">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M70 50H0V40H10V0H60V40H70V50ZM20 10V40H50V10H20Z" style={{fill:'var(--Light02)'}}/>
+                            <rect x="10" y="60" width="10" height="30" fill="var(--Light02)">
                                 <animate attributeName="height" begin='0s' dur='1s' from='0' to='30'repeatCount='1'/>
                             </rect>
-                            <rect x="30" y="60" width="10" height="40" fill="var(--Copy)">
+                            <rect x="30" y="60" width="10" height="40" fill="var(--Light02)">
                                 <animate attributeName="height" begin='0s' dur='1s' from='0' to='40'repeatCount='1'/>
 
                             </rect>
-                            <rect x="50" y="60" width="10" height="30" fill="var(--Copy)">
+                            <rect x="50" y="60" width="10" height="30" fill="var(--Light02)">
                                 <animate attributeName="height" begin='0s' dur='1s' from='0' to='30'repeatCount='1'/>
                             </rect>                      
                     </svg></Link>
