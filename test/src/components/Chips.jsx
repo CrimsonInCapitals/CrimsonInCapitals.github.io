@@ -41,4 +41,5 @@ export const Helen = new C("ArticlesFilter",'AFG','Helen Fairclough Campaigns','
 export const Crimson = new C("about",'Crimson','CRIMSON','crimson','Brand',1,true)
 export const Cudoni = new C(A+"cudoni",'cudoni','Cudoni','','Brand',1,true)
 export const WebDesign = new C("ArticlesFilter",'webdesign','Web Design','','Service')
+export const PersonalProject = new C("ArticlesFilter",'personalproject','Personal Projects','','other')
 // export const FastGenerations = new C(A+"fastgenerations",'fastgen','Fast Generations','','Brand',1,true)

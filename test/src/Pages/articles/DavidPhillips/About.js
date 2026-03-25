@@ -9,7 +9,7 @@ import { useThemeContext } from "../../../context/theme"
 import { useEffect } from "react"
 import { DavidPhillips } from "../../../components/Chips"
 import { ParentContainer } from "../../../components/ParentPage"
-import { IMG } from "../../../components/fullscreenable"
+import { IMG, VIDEO } from "../../../components/fullscreenable"
 import backgroundImage from "../../../images/articles/davidphillips/brochurescoverstack.png"
 import screenimage from '../../../images/articles/davidphillips/New+Berkley+House+-+pantry+6+©+Amy+Hunter+Photography.webp'
 import { Review, reviews } from "../../../components/review"
@@ -39,6 +39,9 @@ const Page = ()=>{
                     <h2>Incentives</h2>
                     <p>Incentives primarily serve the development sector. By forming partnerships with developers, they offer furniture as incentives to potential buyers in the form of either a prepaid gift card or a preselected package designed to fit within the development. This model has also been used in the operational real estate market, in build to rent units, where occupation is slow.</p>
                 </div>
+                                <VIDEO controls style={{aspectRatio:'16/9'}}>
+                                    <source src={require('../../../images/articles/scottishwidows/IconTrueSizeback.mp4')} type="video/mp4" />
+                                </VIDEO> 
                 <div>
                     <h2>Rental</h2>
                     <p>Rental as a model is used across all sectors, with the primary service of home staging being used to boost interest in properties. For rental properties and those seeking to relocate, they also offer rental for use services for those who need a property furnished on a temporary basis. </p>

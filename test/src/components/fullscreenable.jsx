@@ -163,7 +163,7 @@ export const VIDEO=({children,...atributes})=>{
         else dispatchControl(['openclose'])
     }
     return(
-        <div {...atributes} className="videoHolder">
+        <div {...atributes} className={control.open? 'videoHolder':'videoHolder notfull'}>
         <div className="fsmessage"><p >Video playing in fullscreen mode</p></div>
         <video 
             ref={videoRef} 

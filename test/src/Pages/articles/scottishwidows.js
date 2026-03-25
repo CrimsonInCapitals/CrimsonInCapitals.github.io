@@ -7,12 +7,12 @@ import { Footer } from "../../components/Footer"
 import { PageClass, URL } from "../../classes"
 import { useThemeContext } from "../../context/theme"
 import { useEffect } from "react"
-import { Adobe, AfterEffects, AnimationChip, Brand, Illustrator, Motion } from "../../components/Chips"
+import { Adobe, AfterEffects, AnimationChip, Brand, Illustrator, Motion, PersonalProject } from "../../components/Chips"
 import { ArticalContainer } from "../../components/ArticalHolder"
 import backgroundImage from '../../images/articles/scottishwidows/swframes.png'
 import { IMG, VIDEO } from "../../components/fullscreenable"
 
-const properties = new PageClass('Scottish Widows: Brand Mark Animation','/articles/scottishwidows',6,'09/03/2025','article',{chips:[Brand,Motion,AfterEffects,AnimationChip,Adobe,Illustrator]})
+const properties = new PageClass('Scottish Widows: Brand Mark Animation','/articles/scottishwidows',6,'09/03/2025','article',{chips:[PersonalProject,Brand,Motion,AfterEffects,AnimationChip,Adobe,Illustrator]})
 
 const Background =()=>{
     const style={    
@@ -30,6 +30,7 @@ properties.fill = <Background/>
 const Page = ()=>{
     return(
         <ArticalContainer properties={properties}>
+                <p>This is a personal exploration project seeking to create an animation for the Scottish Widows brand mark in-line with the parent company (Lloyds Banking Group) brand refresh that features their iconic house rising up on its hind legs as it kicks in a show of confidence for the institution. </p>
                 <VIDEO style={{aspectRatio:'16/9'}}>
                     <source src={require('../../images/articles/scottishwidows/TrueSizeback.mp4')} type="video/mp4" />
                 </VIDEO>
@@ -40,7 +41,7 @@ const Page = ()=>{
                 <div>
                 <IMG className="inline" src={require('../../images/articles/scottishwidows/devide.png')} alt='a set of 8 icons of different styles of underware'/>
 
-                <p>Dividing the logo into its animatable parts</p>
+                <p>After sketching out the key positions in the animation, the initial hooded figure, stepping forward, and the final gust of wind, I divided the mark into its individual parts to be keyframed.</p>
                 </div>
                 <div>
                 <VIDEO controls style={{aspectRatio:'16/9'}}>
