@@ -2,15 +2,15 @@ import { PageClass } from "../../classes";
 import { TGLC } from "../../components/logos/TGLC";
 import '../../style/TGLC.css';
 
-const properties = new PageClass('The Global Living Comapny','/TGLC',0,'04/19/2026','linkpage',{})
+const properties = new PageClass('The Global Living Company','/TGLC',0,'04/19/2026','linkpage',{})
 
 const links =[
-    {Display:'Shop',src:'https://thegloballivingcompany.com/'},
-    {Display:'Linked In',src:'https://www.linkedin.com/company/the-global-living-company/posts/'},
-    {Display:'Email Us',src:'mailto:info@thegloballivingcompany.com'},
-    {Display:'Shop',src:'https://thegloballivingcompany.com/'},
-    {Display:'Linked In',src:'https://www.linkedin.com/company/the-global-living-company/posts/'},
-    {Display:'Email Us',src:'mailto:info@thegloballivingcompany.com'},
+    {Display:'LinkedIn',src:'https://www.linkedin.com/company/the-global-living-company/posts/',target:'_blank'},
+    {Display:'Instagram',src:'https://www.instagram.com/thegloballivingcompany/',target:'_blank'},
+    {Display:'Our Website',src:'https://thegloballivingcompany.com/',target:'_blank'},
+    // {Display:'WhatsApp',src:'https://thegloballivingcompany.com/',target:'_blank'},
+    {Display:'Email Us',src:'mailto:info@thegloballivingcompany.com',target:'_blank'},
+
 ]
 
 
@@ -23,7 +23,7 @@ const Page =()=>{
             <TGLC/>        
     <div className="links">
         {links.map(link=>
-            <a className='link' href={link.src} target="_blank">{link.Display}</a>
+            <a className='link' href={link.src} target={link.target}>{link.Display}</a>
         )}
         </div>
         <p  className="poweredby">Powered by <a href='./'>CRIMSON in capitals</a></p>

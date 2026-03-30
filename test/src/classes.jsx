@@ -32,6 +32,16 @@ export class PageClass{
     this.get=(r=undefined)=>r==undefined?this:this[r]?this[r]:false
   }
 }
+export class RedirectClass{
+  constructor(name='',route='',redirect='',external=false){
+    this.route = route
+    this.name = name
+    this.redirect = redirect
+    this.external = external
+    this.get=(r=undefined)=>r==undefined?this:this[r]?this[r]:false
+
+  }
+}
 export class action{
         constructor(s,e,v,r,t=100){
             this.r=r;
