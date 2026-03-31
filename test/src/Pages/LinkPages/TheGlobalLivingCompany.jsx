@@ -8,7 +8,7 @@ const links =[
     {Display:'LinkedIn',src:'https://www.linkedin.com/company/the-global-living-company/posts/',target:'_blank'},
     {Display:'Instagram',src:'https://www.instagram.com/thegloballivingcompany/',target:'_blank'},
     {Display:'Our Website',src:'https://thegloballivingcompany.com/',target:'_blank'},
-    // {Display:'WhatsApp',src:'https://thegloballivingcompany.com/',target:'_blank'},
+    {Display:'WhatsApp',src:'https://wa.me/971504381788',target:'_blank'},
     {Display:'Email Us',src:'mailto:info@thegloballivingcompany.com',target:'_blank'},
 
 ]
