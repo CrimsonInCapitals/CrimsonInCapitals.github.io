@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export const Instagram =({width='2em', className='vector_button'},onClick)=>{
+export const Instagram =({width='2em', className='vector_button',onClick})=>{
     const IconRef = useRef(null)
     const LineRef = useRef(null)
     var Animation = null

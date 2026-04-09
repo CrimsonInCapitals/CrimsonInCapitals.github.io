@@ -42,11 +42,11 @@ export const Footer=()=>{
                 </section>
                 <div className="socials">
                     <Instagram width="1.2em" onClick={()=>{
-                        ReactGA.event('Social',{event_catagory:'Engagment',label:'instagram'})
+                        ReactGA.event('Social',{event_catagory:'Engagment',label:'Instagram'})
                         window.open('https://www.instagram.com/crimson.svg/')
                     }}/>
                     <Facebook width="1.2em" onClick={()=>{
-                        ReactGA.event('Social',{event_catagory:'Engagment',label:'Instagram'})
+                        ReactGA.event('Social',{event_catagory:'Engagment',label:'Facebook'})
                         window.open('https://www.facebook.com/Crimsonincapitals')
                     }}/>
                     <Displate width="1.2em" onClick={()=>{
