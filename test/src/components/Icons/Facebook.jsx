@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export const Facebook =({width='2em', className='vector_button'})=>{
+export const Facebook =({width='2em', className='vector_button',onClick})=>{
     const IconRef = useRef(null)
     const CircleRef = useRef(null)
     const StemRef = useRef(null)
@@ -54,7 +54,7 @@ export const Facebook =({width='2em', className='vector_button'})=>{
     }
     return(
     
-        <svg width={width}   viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={()=>{window.open('https://www.facebook.com/Crimsonincapitals')}} className={className}>
+        <svg width={width}   viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={onClick} className={className}>
             <path d="M20 10C20 4.47715 15.5229 0 10 0C4.47715 0 0 4.47715 0 10C0 14.9913 3.65686 19.1283 8.4375 19.8785V12.8906H5.89844V10H8.4375V7.79687C8.4375 5.29062 9.93043 3.90625 12.2146 3.90625C13.3087 3.90625 14.4531 4.10156 14.4531 4.10156V6.5625H13.1921C11.9499 6.5625 11.5625 7.33334 11.5625 8.12416V10H14.3359L13.8926 12.8906H11.5625V19.8785C16.3431 19.1283 20 14.9913 20 10Z" fill="var(--Copy)"/>
             <circle ref={CircleRef} cx="10" cy="10" r="0" fill="#1384E9"/>
             <mask id="Facebook_stem" maskUnits="userSpaceOnUse" x="8" y="3" width="7" height="17">

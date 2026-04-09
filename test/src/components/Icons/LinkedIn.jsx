@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export const LinkedIn =({width='2em', className='vector_button'})=>{
+export const LinkedIn =({width='2em', className='vector_button',onClick})=>{
     const IconRef = useRef(null)
     const RectRef = useRef(null)
     const IStemRef = useRef(null)
@@ -49,7 +49,7 @@ export const LinkedIn =({width='2em', className='vector_button'})=>{
     }
     return(
     
-        <svg width={width}   viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={()=>{window.open('https://www.linkedin.com/in/harrison-cole-crimson-in-capitals/')}} className={className}>
+        <svg width={width}   viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={onClick} className={className}>
             <path d="M18.5 0H1.49999C0.677275 0 0 0.677275 0 1.49999V18.5C0 19.3227 0.677275 20 1.49999 20H18.5C19.3227 20 20 19.3227 20 18.5V1.49999C20 0.677275 19.3227 0 18.5 0ZM5.99995 17H2.99998V8.0001H5.99995V17ZM4.49996 6.25003C3.55917 6.22315 2.80006 5.44196 2.80006 4.50068C2.80006 3.54069 3.59013 2.75086 4.55012 2.75086C5.50988 2.75086 6.29971 3.54021 6.29995 4.49996C6.28363 5.47268 5.47292 6.26107 4.49996 6.25003ZM17 17H14V12.2601C14 10.84 13.4001 10.33 12.6201 10.33C11.7109 10.3905 10.9955 11.1551 10.9955 12.0661C10.9955 12.1074 10.997 12.1487 11.0001 12.19C10.995 12.2365 10.995 12.2833 11.0001 12.3299V17H8.0001V8.0001H10.9V9.29993C11.4942 8.39609 12.5188 7.86474 13.6 7.90002C15.1499 7.90002 16.9599 8.75993 16.9599 11.56L17 17Z" fill="var(--Copy)"/>
             <mask id="rect_mask">
                 <rect width="20" height="20" rx="1.5" fill="#ffffff"/>

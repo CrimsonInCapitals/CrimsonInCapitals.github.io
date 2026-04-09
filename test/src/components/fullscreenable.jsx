@@ -1,6 +1,7 @@
 import React, { Children, cloneElement, createContext, useContext, useEffect, useReducer, useRef, useState } from "react"
 import { useLocation } from "react-router-dom";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import ReactGA from "react-ga4";
 
 
 const FullScreenContext = createContext()
@@ -83,9 +84,10 @@ export const IMG=(atributes)=>{
         dispatchContent(['img',{
             Object:()=><img {...atributes}/>,
         }])
+        ReactGA.event('fullscreened',{event_catagory:'Engagment',label:'maxamised image'})
     }
     return(
-        <img style={{cursor:'zoom-in'}} onClick={update}{...atributes}/>
+        <img style={{cursor:'zoom-in'}} onClick={update} {...atributes}/>
     )
 }
 export const VIDEO=({children,...atributes})=>{

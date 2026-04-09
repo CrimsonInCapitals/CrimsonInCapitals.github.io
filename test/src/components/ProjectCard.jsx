@@ -2,6 +2,15 @@ import { Link } from "react-router-dom"
 import '../style/ProjectCard.css'
 import { Brand, Figma, GenChip, InDesign, New, PhotoShop } from "./Chips"
 import { Children, useState } from "react"
+import ReactGA from "react-ga4";
+
+ReactGA.initialize([
+    {
+        trackingId:'G-GR0Z4YY3B1',
+        gaOptions:{send_page_view:false}
+    }
+])
+
 const DateOrdinal = (n) => {
     const s = ["th", "st", "nd", "rd"];
     const v = n % 100;
@@ -46,10 +55,16 @@ export const DisplayDate = (date, type = undefined) => {
 }//takes a date and returns a string
 
 export const ProjectCard = ({ page, type = undefined }) => {
+    const [hovered,setHovered]=useState(false)
+    const HoverTrack=()=>{
+        if(hovered)return
+        setHovered(true)
+        ReactGA.event('project_hover',{event_catagory:'Engagment',event_lable:page.name})
+    }
     const chips = getAgo(page.date) < 30 && type !== 'recent' ? [New, ...page.chips] : page.chips
     return (
         // <Link to={page.route} className="ProjectCard layer_three">
-        <article className="ProjectCard layer_three">
+        <article className="ProjectCard layer_three" onMouseEnter={HoverTrack}>
             {page.fill && page.fill}
             <Link className="topLeft layer_one" to={page.route}>
                 <h4>{page.name}</h4>
@@ -71,9 +86,15 @@ export const ProjectCard = ({ page, type = undefined }) => {
 
 
 export const BrandCard = ({ page, type = undefined }) => {
+    const [hovered,setHovered]=useState(false)
+    const HoverTrack=()=>{
+        if(hovered)return
+        setHovered(true)
+        ReactGA.event('brand_hover',{event_catagory:'Engagment',event_lable:page.name})
+    }
     return (
         // <Link to={page.route} className="ProjectCard layer_three">
-        <article className="BrandCard layer_three">
+        <article className="BrandCard layer_three" onMouseEnter={HoverTrack}>
             {page.fill && page.fill}
             <Link className="topLeft layer_one" to={page.route}>
                 <h2>{page.name}</h2>

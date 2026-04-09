@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export const Instagram =({width='2em', className='vector_button'})=>{
+export const Instagram =({width='2em', className='vector_button'},onClick)=>{
     const IconRef = useRef(null)
     const LineRef = useRef(null)
     var Animation = null
@@ -27,7 +27,7 @@ export const Instagram =({width='2em', className='vector_button'})=>{
     }
     return(
     
-        <svg width={width}  viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={()=>{window.open('https://www.instagram.com/crimson.svg/')}} className={className} title='Instagram'>
+        <svg width={width}  viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={onClick} className={className} title='Instagram'>
             <rect mask="url(#instagram_icon)" x='0'y='0'width='20'height='20' fill="var(--Copy)"/>
             <mask id="instagram_draw" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
                 <mask id="instagram_icon" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">

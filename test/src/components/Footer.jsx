@@ -6,6 +6,7 @@ import { TikTok } from "./Icons/TikTok"
 import { LinkedIn } from "./Icons/LinkedIn"
 import * as Pages from '../Pages/'
 import { CrimsonMask } from "./CRIMSONmask"
+import ReactGA from "react-ga4";
 
 
 export const Footer=()=>{
@@ -40,11 +41,26 @@ export const Footer=()=>{
                     </div>
                 </section>
                 <div className="socials">
-                    <Instagram width="1.2em"/>
-                    <Facebook width="1.2em"/>
-                    <Displate width="1.2em"/>
-                    <TikTok width="1.2em"/>
-                    <LinkedIn width="1.2em"/>
+                    <Instagram width="1.2em" onClick={()=>{
+                        ReactGA.event('Social',{event_catagory:'Engagment',label:'instagram'})
+                        window.open('https://www.instagram.com/crimson.svg/')
+                    }}/>
+                    <Facebook width="1.2em" onClick={()=>{
+                        ReactGA.event('Social',{event_catagory:'Engagment',label:'Instagram'})
+                        window.open('https://www.facebook.com/Crimsonincapitals')
+                    }}/>
+                    <Displate width="1.2em" onClick={()=>{
+                        ReactGA.event('Social',{event_catagory:'Engagment',label:'Displate'})
+                        window.open('https://displate.com/crimsonincapitals1?art=5f0d09c08e6b6')
+                    }}/>
+                    <TikTok width="1.2em" onClick={()=>{
+                        ReactGA.event('Social',{event_catagory:'Engagment',label:'TikTok'})
+                        window.open('https://www.tiktok.com/@harrisoncole23')
+                    }}/>
+                    <LinkedIn width="1.2em" onClick={()=>{
+                        ReactGA.event('Social',{event_catagory:'Engagment',label:'LinkedIn'})
+                        window.open('https://www.linkedin.com/in/harrison-cole-crimson-in-capitals/')
+                    }}/>
 
                 </div>
                 </div>

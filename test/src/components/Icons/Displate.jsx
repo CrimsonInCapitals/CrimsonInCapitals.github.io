@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export const Displate =({width='2em', className='vector_button'})=>{
+export const Displate =({width='2em', className='vector_button',onClick})=>{
     const IconRef = useRef(null)
     const BowlRef = useRef(null)
     const StemRef = useRef(null)
@@ -46,7 +46,7 @@ export const Displate =({width='2em', className='vector_button'})=>{
     }
     return(
     
-        <svg width={width}   viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={()=>{window.open('https://displate.com/crimsonincapitals1?art=5f0d09c08e6b6')}} className={className}>
+        <svg width={width}   viewBox="0 0 20 20" ref={IconRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={onClick} className={className}>
             <path fillRule="evenodd" clipRule="evenodd" d="M4.18927 14.4774C4.70435 13.6341 4.92297 12.8447 5.7539 9.25644C6.61883 5.52336 5.42345 4.65332 6.45117 4.65332C7.35255 4.65332 7.91381 5.04618 8.19564 5.3443C8.4799 5.64241 8.53093 7.11134 8.00127 10.3617C7.46919 13.6122 6.75003 15.4956 6.45848 15.5318C6.16693 15.5683 5.49148 15.3574 5.0906 15.1465C4.69214 14.9356 4.09695 14.629 4.18927 14.4774Z" fill="var(--Copy)"/>
             <path fillRule="evenodd" clipRule="evenodd" d="M10.3919 9.16088C10.3919 9.16088 7.14361 10.5219 5.2461 10.3084C3.34858 10.0948 2.06332 9.75176 2.06332 8.0474C2.06332 6.34303 3.71051 2.19594 10.0275 2.19594C16.3469 2.19594 17.2993 7.28596 17.2993 8.76316C17.2993 10.2404 16.9907 14.1505 10.9823 16.2847C3.9049 18.7993 2.74839 16.0655 2.49572 15.1826C2.49572 15.1826 1.63082 15.3972 1.75716 16.2847C1.91508 17.3982 2.33538 19.9434 6.79126 19.9434C11.2447 19.9434 20.0229 15.9671 20.0229 9.2549C20.0229 2.54265 14.0558 0.065918 10.2607 0.065918C6.46572 0.065918 0.0224609 2.56549 0.0224609 7.62148C0.0224609 10.4279 2.14828 11.1893 4.33006 11.1893C6.50941 11.1893 11.0431 9.57585 11.0431 9.57585L10.3919 9.16088Z" fill="var(--Copy)"/>
 
