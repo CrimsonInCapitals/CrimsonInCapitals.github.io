@@ -19,10 +19,6 @@ const Page =()=>{
   const theme = useThemeContext()
   const main = useRef(null)
   console.log( new Date())
-  useEffect(()=>{
-    document.title = 'CRIMSON: Home'
-    window.scrollTo(0,0)
-  },[])
     return(
         <main className='layer_one' ref={main} id={theme}>
               <MenuPartA/>

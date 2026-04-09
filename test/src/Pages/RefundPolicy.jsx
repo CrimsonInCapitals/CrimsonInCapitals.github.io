@@ -18,10 +18,6 @@ const properties = new PageClass('Refund Policy','/refundpolicy',1)
 
 const Page =()=>{
   const theme = useThemeContext()
-    useEffect(()=>{
-      document.title = 'CRIMSON: Refund Policy'
-      window.scrollTo(0,0)
-    },[])
     return(
       <main id={theme} className='layer_one'>
         <MenuFull/>

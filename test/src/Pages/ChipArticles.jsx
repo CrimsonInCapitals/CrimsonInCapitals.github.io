@@ -41,10 +41,6 @@ const Page = ()=>{
   
     const [PagesWithHeat,setPagesWithHeat]=useState(getPagesHeat())
 
-    useEffect(()=>{
-        document.title = 'CRIMSON: Articles'
-        window.scrollTo(0,0)
-    },[])
 
     const UpdateFilter=(chip)=>{
         let newList = [chip]

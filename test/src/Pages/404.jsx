@@ -11,11 +11,6 @@ import { useThemeContext } from '../context/theme';
 
 const Page =()=>{
     const theme = useThemeContext()
-  
-    useEffect(()=>{
-      document.title = 'CRIMSON: 404 Page not found'
-      window.scrollTo(0,0)
-    },[])
     return(
         <main id={theme} className='layer_one'>
                 <MenuFull/>
@@ -28,7 +23,7 @@ const Page =()=>{
             </main>
     )
 }
-const properties = new PageClass('404','*',0)
+const properties = new PageClass('404','*',0,'na','page',{title:'404: page not found'})
 
 
 properties.element = <Page/> 

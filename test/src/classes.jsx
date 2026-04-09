@@ -10,6 +10,7 @@ export class PageClass{
     this.rank=rank
     this.date = new Date(date)
     this.type=type
+    this.title = other.title?other.title:'CRIMSON: '+name
     switch (type) {
       case 'article':
         try{

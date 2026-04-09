@@ -13,10 +13,6 @@ import { DisplayDate, getAgo, ProjectCard, ProjectReel } from "./ProjectCard"
 
 export const ArticalContainer = ({ properties, children }) => {
     const theme = useThemeContext()
-    useEffect(() => {
-        document.title = properties.name
-        window.scrollTo(0, 0)
-    }, [])
     const isArtical = (r) => {
         let Page = Pages[r]()
         return (Page.type == 'article')

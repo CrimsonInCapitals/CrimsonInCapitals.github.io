@@ -6,6 +6,8 @@ export { default as ChipArticles} from './ChipArticles.jsx';
 
 export { default as refund} from './RefundPolicy.jsx';
 export { default as FourZeroFour} from './404';
+export {default as SiteMap} from './sitemap.jsx'
+
 export { default as TheDogRoom} from './articles/TheDogRoom.js'
 export { default as AspinalofLondon} from './articles/AspinalofLondon.js'
 export { default as Cudoni} from './articles/Cudoni.js'

@@ -18,10 +18,6 @@ export const getPerspectives = ()=>Object.keys(Pages).filter(r=>Pages[r]('rank')
 
 const Page = ()=>{
     const theme = useThemeContext()
-    useEffect(()=>{
-        document.title = 'CRIMSON: Articles'
-        window.scrollTo(0,0)
-    },[])
     const [ArticalFilter,setArticalFilter]=useState(undefined)
     const [title,setTitle]=useState(false)
     const [maxHeat,setMaxHeat]=useState(0)

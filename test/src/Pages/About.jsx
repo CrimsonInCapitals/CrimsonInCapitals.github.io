@@ -18,10 +18,6 @@ import { FormSection } from '../components/form';
 
 const Page =()=>{
   const theme = useThemeContext()
-    useEffect(()=>{
-      document.title = 'CRIMSON: About'
-      window.scrollTo(0,0)
-    },[])
     return(
       <main id={theme} className='layer_one'>
         <MenuFull/>
