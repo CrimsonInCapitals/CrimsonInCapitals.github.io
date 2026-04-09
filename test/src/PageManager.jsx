@@ -4,17 +4,20 @@ import * as Redirects from './Pages/redirects'
 import { FullScreenProvider } from "./components/fullscreenable"
 import { useEffect } from "react"
 import ReactGA from "react-ga4";
-import TagManager from "react-gtm-module"
 
-
+ReactGA.initialize([
+    // {
+    //     trackingId:"GTM-MWWKRFMQ",
+    //     gaOptions:{send_page_view:false}
+    // },
+    {
+        trackingId:'G-GR0Z4YY3B1',
+        gaOptions:{send_page_view:false}
+    }
+])
 
 export const PageManager=()=>{
-    ReactGA.initialize([
-        {
-            trackingId:"GTM-MWWKRFMQ",
-            gaOptions:{send_page_view:false}
-        }
-    ])
+
     const getPage=(url)=>{ 
         let page = Pages.FourZeroFour()
         let shouldBreak = false
@@ -45,7 +48,7 @@ export const PageManager=()=>{
         let page =getPage(location.pathname)
         if(page)document.title = page.title
         if(page.source == 'page')ReactGA.send({hitType:'pageview',page:page.route,title:page.title})
-        if(page.source == 'redirect')ReactGA.send({hitType:'source_redirect',page:page.route,title:page.redirect})
+        if(page.source == 'redirect')ReactGA.event('source_redirect',{event_catagory:'Engagment',event_lable:page.name})
 
     },[location])
 

@@ -6,16 +6,10 @@ import './style/basics.css';
 import './style/footer.css';
 import './style/coverstyles.css';
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { PageManager } from './PageManager';
 import { ThemeProvider } from './context/theme';
-import TagManager from 'react-gtm-module';
-// import { ThemeProvider } from './context/theme';
-// import { InternalProvider, SocialProvider } from './context/links';
-// import { CookiesProvider } from './context/cookies';
-// import { FacebookProvider } from './context/facebook';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,6 +19,4 @@ root.render(
       <PageManager/>
     </ThemeProvider>
   </BrowserRouter>
-
-
 );
