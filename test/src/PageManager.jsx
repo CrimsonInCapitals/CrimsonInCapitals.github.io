@@ -4,6 +4,7 @@ import * as Redirects from './Pages/redirects'
 import { FullScreenProvider } from "./components/fullscreenable"
 import { useEffect } from "react"
 import ReactGA from "react-ga4";
+import Clarity from '@microsoft/clarity';
 
 ReactGA.initialize([
     // {
@@ -15,6 +16,8 @@ ReactGA.initialize([
         gaOptions:{send_page_view:false}
     }
 ])
+const projectId = "wf737z71se"
+Clarity.init(projectId);
 
 export const PageManager=()=>{
 
