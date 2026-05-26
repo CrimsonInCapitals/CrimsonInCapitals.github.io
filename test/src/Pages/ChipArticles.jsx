@@ -28,19 +28,19 @@ const Page = ()=>{
 
     const [ArticalFilter,setArticalFilter]=useState(initaliseFilter(search()))
     const [title,setTitle]=useState(search().display + ' Projects')
-
-    const [maxHeat,setMaxHeat]=useState(1)
+    console.log(ArticalFilter)
+    const [maxHeat,setMaxHeat]=useState(initaliseFilter(search())[0].weight)
 
     const getPageHeat = (r,list=ArticalFilter) => {
         let page = Pages[r]()
         if(list == undefined || list == false || page.chips == undefined)return {...page, heat:false}
         let filteredlist = page.chips.filter(chip => list.some(Cchip => Cchip.name === chip.name))
+        console.log({...page,heat: filteredlist.length})
         return {...page, heat: filteredlist.length == 0? false : filteredlist.reduce((overlap,chip)=> overlap + chip.weight,0)}
     }
     const getPagesHeat=(chiplist=ArticalFilter)=>Object.keys(Pages).map(r => getPageHeat(r,chiplist)).filter((page) => page.heat == maxHeat && page.heat !== false).sort((a,b)=> b.date - a.date)
   
     const [PagesWithHeat,setPagesWithHeat]=useState(getPagesHeat())
-
 
     const UpdateFilter=(chip)=>{
         let newList = [chip]

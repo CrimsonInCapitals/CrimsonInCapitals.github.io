@@ -6,6 +6,7 @@ import { Footer } from "./Footer"
 import * as Pages from '../Pages'
 import * as Chips from "./Chips"
 import { DisplayDate, getAgo, ProjectCard, ProjectReel } from "./ProjectCard"
+import { Helmet } from "react-helmet"
 
 
 
@@ -34,8 +35,16 @@ export const ArticalContainer = ({ properties, children }) => {
     const PageswithHeat = Object.keys(Pages).filter(isArtical).map(r => {
         return { ...Pages[r](), heat: getHeat(r) }
     })
-    // console.log(properties.chips[0].Componant)
+    console.log(properties)
     return (
+        <>
+        <Helmet>
+            <meta property="og:title" content={properties.title} />
+            <meta property="og:description" content="CRIMSON Article" />
+            <meta property="og:type" content="article" />
+            <meta property="og:url" content={"https://crimsonincapitals.github.io"+properties.route} />
+            <meta property="og:image" content={properties.image} />
+        </Helmet>
         <main id={theme} className='layer_one'>
             <MenuFull />
             <FocusedContentSection style={{ gap: '0' }}>
@@ -69,5 +78,6 @@ export const ArticalContainer = ({ properties, children }) => {
             </FocusedContentSection>
             <Footer />
         </main>
+                </>
     )
 }

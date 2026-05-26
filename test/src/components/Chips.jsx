@@ -42,4 +42,8 @@ export const Crimson = new C("about",'Crimson','CRIMSON','crimson','Brand',1,tru
 export const Cudoni = new C(A+"cudoni",'cudoni','Cudoni','','Brand',1,true)
 export const WebDesign = new C("ArticlesFilter",'webdesign','Web Design','','Service')
 export const PersonalProject = new C("ArticlesFilter",'personalproject','Personal Projects','','other')
+export const Mockups = new C("ArticlesFilter",'mockups','Mock-Ups','','other')
+export const Tutorials = new C("ArticlesFilter",'tutorials','Tutorials','','tutorial',3)
+export const AFHowTo = new C("ArticlesFilter",'afhowto','How to .af','AfD_chip','tutorial',3)
+
 // export const FastGenerations = new C(A+"fastgenerations",'fastgen','Fast Generations','','Brand',1,true)

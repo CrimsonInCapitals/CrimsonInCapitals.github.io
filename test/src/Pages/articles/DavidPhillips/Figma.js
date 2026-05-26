@@ -28,6 +28,18 @@ const Page = ()=>{
     return(
         <ArticalContainer properties={properties}>
             <div>
+                <h2>Overview</h2>
+                <div style={{display:'flex',flexDirection:'row', gap:'16px',flexWrap:'wrap'}}>
+                    <div className='OverviewCard layer_three'>
+                    <h5>Removing friction in the business tender process at David Phillips by switching to Figma from PowerPoint and InDesign for better collaboration, brand consistency, and access to reusable content.</h5>
+                    <p>Allowing Sales, Business, and Design teams to work together to quickly and accurately produce business tenders. These documents were responsible to securing 30% of total business revenue.</p>
+                    </div>
+                    <div className='OverviewCard layer_one'>
+                        <h3 className='HeadlineNumber'>30%</h3><h3>reduction in tender development time.</h3>
+                    </div>
+                </div>
+            </div>
+            <div>
                 <h2>The Problem</h2>
                 <p>Large-scale projects are worked on by several teams, which include project product co-ordinators, project managers, interior designers, salespeople, and departmental heads. All these people have various levels of experience with presentation creation tools. The interior designers used Adobe InDesign to have access to the design features they needed, as such presentations had to be made using it. The drawback with this was that all content had to be added by an interior designer or the graphic design team, which presented a significant bottleneck. It also meant that content for slides about the business were being written up in PowerPoint or Word by a relevant expert and then added later by a designer. The third issue was that when prices were confirmed, it would require a project manager to email a designer and a designer to open, add to and export the presentation, before sending it back to be shared with the client, which added significant bloat to project development. It became clear that it was an issue in August 2024, when we hired two additional interior designers who would be handing projects back and forth with each other and me, causing overwriting issues of the files saved on SharePoint.</p>
                 <p>Below we have examples from three different presentations. You can see wildly different applications of Typography, colour, and formatting.</p>

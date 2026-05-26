@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 import { GenChip } from "./components/Chips"
+import image from './images/logo construction 2022.jpg'
+
 
 export class PageClass{
   constructor(name='Home',route='/', rank=2,date='07/08/2025',type='page',other={}){
@@ -8,6 +10,7 @@ export class PageClass{
     this.route = route
     // this.element=element
     this.rank=rank
+    this.image= URL(image)
     this.date = new Date(date)
     this.type=type
     this.title = other.title?other.title:'CRIMSON: '+name
