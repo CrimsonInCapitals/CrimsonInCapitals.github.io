@@ -44,6 +44,7 @@ export const ArticalContainer = ({ properties, children }) => {
             <meta property="og:type" content="article" />
             <meta property="og:url" content={"https://crimsonincapitals.github.io"+properties.route} />
             <meta property="og:image" content={properties.image} />
+            {console.log(properties.image)}
         </Helmet>
         <main id={theme} className='layer_one'>
             <MenuFull />

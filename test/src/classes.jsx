@@ -10,7 +10,7 @@ export class PageClass{
     this.route = route
     // this.element=element
     this.rank=rank
-    this.image= URL(image)
+    this.image= require('./images/logo construction 2022.jpg')
     this.date = new Date(date)
     this.type=type
     this.title = other.title?other.title:'CRIMSON: '+name
