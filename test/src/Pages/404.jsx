@@ -17,7 +17,7 @@ const Page =()=>{
                 <section style={{height:'100vh',gap:'20px', justifyContent:'center'}}>
                   <h1 style={{color:'var(--Crimson)',fontSize:'70vw',position:'fixed',zIndex:'-1',opacity:'25%',width:'100vw',left:'-10vw',textAlign:'center',fontWeight:'700',fontStyle:'italic'}}>404</h1>
                   <h2>404</h2>
-                  <p>the entered url could not be resolved. if this feels like an error constact <a href='mailto: harrison.cole@crimsonincapitals.com' style={{color:'var(--Crimson)'}}>harrison.cole@crimsonincapitals.com</a></p>
+                  <p>The entered url could not be resolved. if this feels like an error constact <a href='mailto: harrison.cole@crimsonincapitals.com' style={{color:'var(--Crimson)'}}>harrison.cole@crimsonincapitals.com</a></p>
                 </section>
               
             </main>
