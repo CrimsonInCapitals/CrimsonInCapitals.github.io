@@ -30,8 +30,11 @@ h1,h2,h3,h4,summary{
     font-family: Baskervville;
     color: var(--Copy);
     margin: 0;
+    max-width: 700px;
 }
-
+p{max-width: 700px;}
+small{max-width: 700px;}
+ul{max-width: 700px;}
 h1{
     font-size: 4em;
     font-weight: 400;
@@ -69,6 +72,9 @@ p,li,small{
     font-weight: 400;
     font-size: 1em;
     color: var(--Copy);
+}
+p{
+    margin-top: 8px;
 }
 ul{
     list-style: none;

@@ -1,1 +1,0 @@
-export const properties=[[2,2],'MineSweeper',3,'procederal generation and interaction modification with React']

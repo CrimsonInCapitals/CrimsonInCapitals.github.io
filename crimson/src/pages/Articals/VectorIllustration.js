@@ -1,1 +1,0 @@
-export const properties=[[4,4],'Vector Illustration Library',1,'Personal artwork projects using vector illustration techneques']

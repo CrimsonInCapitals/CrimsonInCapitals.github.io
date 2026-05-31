@@ -51,7 +51,7 @@ export const ArticalContainer = ({ properties, children }) => {
             <FocusedContentSection style={{ gap: '0' }}>
 
                 <section style={{ gap: '40px', paddingTop: 'calc(70px + 3em)' }}>
-                    <div>
+                    <div style={{maxWidth:'700px'}}>
                         <h1>{properties.name}</h1>
                         <p className="date">{DisplayDate(properties.date, 'recent')} —  {properties.subtype}</p>
                         <div className='artical_chip_holder'>     {getAgo(properties.date) < 30 && <Chips.New.Componant />}

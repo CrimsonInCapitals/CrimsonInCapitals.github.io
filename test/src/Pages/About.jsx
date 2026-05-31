@@ -37,23 +37,23 @@ const Page =()=>{
           </section>
           <section className='fill' style={{backgroundColor:'var(--background03)'}}>
           <section style={{gap:'24px'}}>
-              <details>
+              <details style={{width:'100%',maxWidth:'700px'}}>
                 <summary>Problem solving</summary>
                 <p>Design is an act of problem solving, but it is often also an act of problem identification. I solve business problems with design solutions. By listening and understanding, I design and deliver measurable improvements. Design is not just about what the customer sees, it is also about the journey a business goes on the reach that outcome.</p>
               </details>
               <hr/>
-              <details>
+              <details style={{width:'100%',maxWidth:'700px'}}>
                 <summary>Buy-in</summary>
                 <p>When creating and driving change, you need to understand both the impact of change and the underlying reasons certain practices were used in the first place. Getting buy-in is essential to create solutions that work. Once a negative feeling is linked to something, it is very hard to change its perception without rewriting the solution. I have worked with groups across different businesses to develop and design real solutions based on tangible input and feedback.</p>
               </details>
               <hr/>
-              <details>
+              <details style={{width:'100%',maxWidth:'700px'}}>
                 <summary>Efficiency</summary>
                 <p>What you deliver, as well as how productive you can be, depends on process. In situations where clear expectations do not exist, it is hard to measure success. I collaborate to create standardised systems to speed up delivery and ensure alignment throughout any project cycle. Work management systems and clear documentation help people stay informed and actively participate in delivering value.</p>
               </details>
             </section>
             </section>
-            <section style={{gap:'24px'}}>
+            <section style={{gap:'24px',alignItems:'center'}}>
               <h2>Expertise</h2>
 
 
@@ -65,7 +65,7 @@ const Page =()=>{
                   </ProjectReel>
 
               </div>
-              <div>
+              <div className='bff'>
               <h3>Tools</h3>
                 <p>Tools are how we bring our ideas to life.  There is a near endless number of tools to choose from, all with different strengths and limitations. I select tools based on how appropriate they are to deliver the desired outcomes. For example, InDesign is excellent for creating print ready documents, Canva is perfect for giving differently skilled individuals access to creating brand content and Figma is great for giving hand-offs to developers. This is why it is important to consider who you are collaborating with.</p>
                 <ul style={{display:'flex',flexDirection:'row',flexWrap:'wrap',padding:'0'}}>

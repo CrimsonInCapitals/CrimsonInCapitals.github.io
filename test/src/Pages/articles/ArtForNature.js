@@ -30,7 +30,6 @@ properties.fill = <Background/>
 const Page = ()=>{
     return(
         <ArticalContainer properties={properties}>
-            <div>
                 <p>I worked with Helen Faircloughs team do deliver the print and digital collateral for the auction and wider exhibition for Art for Nature. The exhibition was hosted in collaboration with Yaba Chic Reserve, a Costa Rican wildlife charity to raise money for wildlife preservation in the region through the actioning of sculptures by Zac Goldsmith.</p>
                 <p>Assessing the requirements for success we determined what collateral would be required and then worked within a 5-week timeline for development and delivery.</p>
                 <IMG className="inline" src={require('../../images/articles/ArtForNature/donationform.webp')} alt="Art for nature Donation form"/>
@@ -42,7 +41,6 @@ const Page = ()=>{
                 <IMG className="inline" src={require('../../images/articles/ArtForNature/plack.webp')} alt='display item with label'/>      
                 <p>The successful execution of the exhibition met both the requirements of the client and resulted in the raising of ~£300k for Costa Rican wildlife charities.</p>  
                 <a target="_blank" href="https://zacgoldsmithart4nature.com/" style={{textDecoration:'underline',color:'var(--Crimson)',fontStyle:'italic'}}>Learn more about Art For Nature here</a> 
-            </div>
          </ArticalContainer>
     );
 }

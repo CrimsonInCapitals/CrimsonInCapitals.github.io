@@ -30,15 +30,15 @@ const Page = ()=>{
     return(
         <ArticalContainer properties={properties}>
             <IMG className='inline'src={require('../../../images/articles/davidphillips/windowdressings/windmock.png')} alt='a mochup of the front of the brochure'/>
-            <div>
+            <div className="bff">
                 <h4>Intro Spread</h4>
                 <IMG className='inline'src={require('../../../images/articles/davidphillips/windowdressings/windresintro.png')} alt='a mochup of an inner spread showing a definition of the term home staging'/>
             </div>
-            <div>
+            <div className="bff">
                 <h4>Product Spec Sample</h4>
                 <IMG className='inline'src={require('../../../images/articles/davidphillips/windowdressings/windresspreadex.png')} alt='a mochup of an inner spread explaining the David Phillips home staging process'/>
             </div> 
-            <div>
+            <div className="bff">
                 <h4>Process Breakdown Spread</h4>
                 <IMG className='inline'src={require('../../../images/articles/davidphillips/windowdressings/windreshowitworks.png')} alt="a mochup of the last spread of the brochure showing a don't forget section"/>
             </div>

@@ -1,1 +1,0 @@
-export const properties=[[4,2],'The Future of Digital Brochures',2,'Is emailing a PDF still an exceptible form of information delivery']

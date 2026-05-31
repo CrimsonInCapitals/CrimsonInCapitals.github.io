@@ -58,7 +58,7 @@ const Page = ()=>{
                     <IMG className='inline' src={require('../../../images/articles/askitalian/limoncello.jpg')} alt='the cover page of the ffe brochure'/>
 
                 </Reel>
-                <div>
+                <div className="bff">
                              <h2>Dinner and a Show</h2>
                              <p>We partnered with local businesses including the local theatre to promote bookings around theatre events. This effort boosted bookings around such events by ~60% over a four-month period.</p>
                 </div>

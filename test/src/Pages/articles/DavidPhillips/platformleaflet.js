@@ -30,7 +30,7 @@ properties.fill = <Background/>
 const Page = ()=>{
     return(
        <ArticalContainer properties={properties}>
-            <div>
+            <div className="bff">
                 <p>I worked with the Web Executive and the Marketing Manager to put together a leaflet highlighting the key features of our new platform to potential users, to be handed out to them by the sales team. This required displaying a lot of features and associated screenshots, meaning that careful consideration needed to be taken as to the layout. I ended up using an unconventional tri-fold design that allowed the user to open it in stages to gain more information.</p>
             </div>
             <IMG src={require('../../../images/articles/davidphillips/linkleafletmockupset.png')} alt='a mochup of a leaflet unfolding'/>

@@ -32,10 +32,10 @@ const Page = ()=>{
             <IMG className='inline'src={require('../../../images/articles/davidphillips/sportsRelocation/sportrelomockup.png')} alt='a mochup of the front of the brochure'/>
 
                 <IMG className='inline'src={require('../../../images/articles/davidphillips/sportsRelocation/chair page.png')} alt='a mochup of an inner spread showing a definition of the term home staging'/>
-            <div>
+            <div className="bff">
                 <h4>Premium Sub-Brand Spread</h4>
-                <IMG className='inline'src={require('../../../images/articles/davidphillips/sportsRelocation/milcspreadmuckup.png')} alt='a mochup of an inner spread explaining the David Phillips home staging process'/>
-            </div> 
+                        </div> 
+    <IMG className='inline'src={require('../../../images/articles/davidphillips/sportsRelocation/milcspreadmuckup.png')} alt='a mochup of an inner spread explaining the David Phillips home staging process'/>
         </ArticalContainer>
     )
 }

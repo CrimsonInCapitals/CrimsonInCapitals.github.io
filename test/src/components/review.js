@@ -56,7 +56,7 @@ export const Review=({review,focal=false,concat=false})=>{
 
 export const ReviewReel=()=>{
     if(reviews.length>0)return(
-        <div>
+        <div style={{alignItems:'center'}}>
             <h2>Reviews</h2>
             <section className="ReviewReel">
                 <div className="holder" style={{animationDuration:reviews.length*10+'s'}}>

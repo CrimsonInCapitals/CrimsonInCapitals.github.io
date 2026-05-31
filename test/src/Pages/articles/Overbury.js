@@ -31,7 +31,7 @@ const Page = ()=>{
     return(
         <ArticalContainer properties={properties}>
                 <IMG className="inline" src={require('../../images/articles/overbury/cover.png')}/>
-                <div>
+                <div className="bff">
                     <h2>Co-branded Pitch Decks</h2>
                     <p>Pitch example: Charlotte Tilbury from Overbury</p>
                 </div>

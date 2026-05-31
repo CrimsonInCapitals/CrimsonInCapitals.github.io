@@ -38,7 +38,7 @@ const Page = ()=>{
         <ArticalContainer properties={properties}>
             <IMG src={require('../../../images/articles/davidphillips/ffecovernew.png')} alt='the cover page of the ffe brochure'/>
 
-            <div>
+            <div className="bff">
                 <p>The FF&E brochure features diagrams, maps, data and case studies and therefore, it is a good demonstration of a wide range of visualisation techniques.</p>
             </div>
                 <IMG src={require('../../../images/articles/davidphillips/ffecover.png')} alt='the cover page of the ffe brochure'/>

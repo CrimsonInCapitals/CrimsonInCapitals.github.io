@@ -35,7 +35,8 @@ export {default as dlfuae} from './articles/GlobalLiving/designledfurnishinginth
 export {default as TGLC} from './articles/GlobalLiving/about.js'
 export {default as arffornature} from './articles/ArtForNature.js'
 export {default as TGLCLinks} from './LinkPages/TheGlobalLivingCompany.jsx'
-export {default as usemockupsaf} from './articles/affinintymochups.js'
+export {default as usemockupsaf} from './articles/tutorial/affinintymochups.js'
+export {default as createmockupsaf} from './articles/tutorial/affinintycreatemochups.js'
 
 
 

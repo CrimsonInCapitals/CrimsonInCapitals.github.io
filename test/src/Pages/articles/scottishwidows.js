@@ -34,15 +34,14 @@ const Page = ()=>{
                 <VIDEO style={{aspectRatio:'16/9'}}>
                     <source src={require('../../images/articles/scottishwidows/TrueSizeback.mp4')} type="video/mp4" />
                 </VIDEO>
-                <div>
+                <div className="bff">
                 <h2>Scottish Widows Logo Animation Study</h2>
-                <p>In this study I chose to reflect the brands message of 'looking to the future'. The character takes a step forward (Right) and opens up in the face of the wind, being emboldened.</p></div>
+                <p>In this study I chose to reflect the brands message of 'looking to the future'. The character takes a step forward (Right) and opens up in the face of the wind, being emboldened.</p>
+                </div>
                 <IMG className="inline" style={{background:'white'}} src={require('../../images/articles/scottishwidows/TrueSize0000212.png')}/>
-                <div>
                 <IMG className="inline" src={require('../../images/articles/scottishwidows/devide.png')} alt='a set of 8 icons of different styles of underware'/>
 
                 <p>After sketching out the key positions in the animation, the initial hooded figure, stepping forward, and the final gust of wind, I divided the mark into its individual parts to be keyframed.</p>
-                </div>
                 <div>
                 <VIDEO controls style={{aspectRatio:'16/9'}}>
                     <source src={require('../../images/articles/scottishwidows/IconTrueSizeback.mp4')} type="video/mp4" />

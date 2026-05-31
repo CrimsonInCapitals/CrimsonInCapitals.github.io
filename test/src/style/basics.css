@@ -45,6 +45,7 @@ section{
     padding: var(--gap_far);
     max-width: 1200px;
     box-sizing: border-box;
+    align-items: center;
     /* z-index: 1; */
 }
 
@@ -75,16 +76,22 @@ section.focus_section{
     gap: 8px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+.focus_section div.bff{
+    width: fit-content;
 }
 .focus_section div.artical_chip_holder{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3px;
 }
+
 span.headerSpan{
     display: flex ;
     align-items: center ;
-    justify-content: space-between 
+    justify-content: space-between ;
+    width: 100%;
 }
 @media (max-width: 600px) {
     section{
@@ -278,8 +285,13 @@ a.activeLink{
     translate: 0 0;
 }
 img.inline, video.inline{
-    width: 100%;
+    /* width: 100%; */
     border-radius: 4px;
+    max-height: 80vh;
+    aspect-ratio: unset;
+    object-fit: contain;
+    width: fit-content;
+    max-width: 100%;
 }
 video.fullscreen{
     position: fixed;
@@ -548,6 +560,7 @@ button.basicbutton.primary, a.basicbutton.primary{
 
 section.ReviewReel{
     width: 100%;
+    align-items: normal;
     /* background-color: blue; */
     padding: 0;
     transition: 0.1s ease;
@@ -672,4 +685,8 @@ section.ReviewReel:hover .holder{
     height: 100px;
     line-height: 40px;
     color: var(--Crimson);
+}
+
+div.bff{
+    gap: 0;
 }

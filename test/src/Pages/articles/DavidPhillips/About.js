@@ -35,25 +35,25 @@ const Page = ()=>{
         <ParentContainer properties={properties}>
                 <p>A leading player in the BTR furnishing industry, David Phillips was a large-scale furnishing business with offices and logistics centres based in London and Manchester. Founded in 1998, the company first entered the BTR space with the redevelopment of the Olympic Park in 2013 into residential accommodation. David Phillips specialises in three main sectors: property development, operational real estate, and real estate. To serve these sectors, they have the following services: incentives, rental, projects, and packages.</p>
                 <IMG className={'inline'} title='Image by Amy Hunter' src={require('../../../images/articles/davidphillips/The+Haydon+1+©+Amy+Hunter+Photography.webp')}alt='an open spread in a brochure demonstraiting the use of the new icons'/>
-                <div>
+                <div className="bff">
                     <h2>Incentives</h2>
                     <p>Incentives primarily serve the development sector. By forming partnerships with developers, they offer furniture as incentives to potential buyers in the form of either a prepaid gift card or a preselected package designed to fit within the development. This model has also been used in the operational real estate market, in build to rent units, where occupation is slow.</p>
                 </div>
-                <div>
+                <div className="bff">
                     <h2>Rental</h2>
                     <p>Rental as a model is used across all sectors, with the primary service of home staging being used to boost interest in properties. For rental properties and those seeking to relocate, they also offer rental for use services for those who need a property furnished on a temporary basis. </p>
                 </div>
           
-                      <div>
+                      <div className="bff">
                     <h2>Packages</h2>
                     <p>Packages are any small-scale furnishing, usually without the involvement of an interior designer. They can consist of single items for the purpose of replenishment and can be carried out either by contacting a salesperson and having a quote created or through the online store.</p>
                 </div>
-                  <div>
+                  <div className="bff">
                     <h2>Large-Scale Projects</h2>
                     <p>Comprising 80% of the business's activity, projects are large-scale by nature. With two groups managing projects, the furniture group and the fitted group, they work in isolation or together to turn a hollow building into a living space. The furniture group is comprised of interior designers, product experts, and project managers. Units are first space-planned with schemes that are created to suit potential residents. Then the product is selected and a schedule is created. From there, orders are placed, and installation is managed. The fitted team works similarly, but instead of furniture, they are dealing with kitchens and wardrobes.</p>
                 </div>
                 <IMG className={'inline'} title='Image by Amy Hunter' src={require('../../../images/articles/davidphillips/New+Berkley+House+-+pantry+1+©+Amy+Hunter+Photography.webp')}alt='an open spread in a brochure demonstraiting the use of the new icons'/>
-                <div>
+                <div className="bff">
                     <p>All the Photography fetured on this page and within the other David Phillis projects is by Amy Hunter. website linked bellow:</p>
                     <a href="https://www.amyhunterphoto.com/" target="_blank" style={{textDecoration:'underline',color:'var(--Crimson)',fontStyle:'italic'}}>Amy Hunters Photography</a>
                 </div>

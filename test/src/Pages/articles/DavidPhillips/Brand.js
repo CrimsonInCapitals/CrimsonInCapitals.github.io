@@ -28,23 +28,23 @@ properties.fill = <Background/>
 const Page = ()=>{
     return(
         <ArticalContainer properties={properties}>
-            <div>
+            <div className="bff">
             <h2>The Problem</h2>
                 <p>When I joined the company the main problem they faced was one of consistency. A combination of a rebrand 8 months prior that had not been properly launched, a number of teams creating customer-facing content without communication, and a slow-to-respond marketing department meant touch points were inconsistent and lacked planning as to how they would work together.</p>
             </div>
-            <div>
+            <div className="bff">
                 <h2>The Solution</h2>
                 <p>The solution came in the form of process and documentation changes that allowed more teams to feel involved in the development and evolution of the brand.</p>
             </div>
             <IMG className={'inline'}src={require('../../../images/articles/davidphillips/creascent gardens 2.png')} alt=" a form with a resualt an its asociated tasks"/>
 
-            <div>
+            <div className="bff">
             <h3>Process</h3>
             <p>The first of the changes was the introduction of Monday.com for marketing. I oversaw the implementation of the tool. What Monday.com allowed us to do was track what collateral was in circulation, who needed new collateral through a request, and which teams needed to be involved in feedback. I created a system by which each piece of collateral was assigned an ID, called a BA number, standing for brand asset. This code can be found at the start of file names and within the folder structure of projects, as well as on the back cover of brochures. The code included a robust version system that made identifying the use of outdated collateral easier. This code could be looked up on Monday.com to give insights as to its development, who worked on it and what they did, as well as who requested and signed it off. It also integrates into the Project team's development tracker, allowing greater visibility over pitch deck creation.</p>
             <IMG className={'inline'}src={require('../../../images/articles/davidphillips/Mondayimage.png')} alt=" a form with a resualt an its asociated tasks"/>
             </div>
 
-            <div>
+            <div className="bff">
                 <h3>New Brand Guildines</h3>
                 <p>The first step in the update was employing a copywriting agency to review and update the brand’s voice. They introduced a new slogan, messaging and tone of voice based on interviews with key employees. This became the foundation on which decisions about visuals were made. I started off by looking at colours, expanding on the four core colours we preserved from the original rebrand: White, Greige, Aubergine, and Dark. I added four new colours to complete a gradient from White to Dark. This gradient functions as the base for the tokenised colour system.</p>
             </div>
@@ -82,7 +82,7 @@ const Page = ()=>{
                           
                 <p>All of this was combined into a new brand system, which I named ‘Materiality’, that was designed to put the focus on the product and highlight the tactility of the design process with cards, and layers of frosted glass. These layers have depth with subtle borders, shadows, and rounded edges to reinforce this sense of physicality to largely digital applications.</p> 
                 <IMG className={'inline'}src={require('../../../images/articles/davidphillips/coversystem.png')} alt=" a form with a resualt an its asociated tasks"/>
-            <div>
+            <div className="bff">
                 <h2>Conclusion</h2>
                 <p>The introduction of both process and documentation allowed for accelerated development of assets with reduced feedback cycles. The increased consistency did have drawbacks as some individuals within the marketing department often wanted to change things because they felt they had become stale, despite positive internal and external feedback to the new consistency. When undergoing the same process in the future, I would explain the importance and process behind the result to make sure people understand the reasons behind decisions and feel included in the decision process. This ensures that active championing is promoted over passive acceptance of ideas.</p>
             </div>   
