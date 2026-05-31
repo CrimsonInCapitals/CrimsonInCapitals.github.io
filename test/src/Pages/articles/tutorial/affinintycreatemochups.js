@@ -35,7 +35,7 @@ const Page = ()=>{
             <div className="bff">
                 <p>Creating a symbol-based mock-up template follows a very similar workflow to creating a normal mock-up template. For that reason, I am going to run through the process twice. I’ll go through converting a normal embedded mock-up; this can be a PSD or an .af file. Then I will go through the full process from importing your photo to saving your template.</p>
                 <p>If you haven’t read my other guide on using symbol-based templates, you might be wondering why you should care. The are 2 main benefits - the first is live preview, meaning the content and mock-up are side by side. The second is reduced file sizes - 60% smaller on average. </p>
-                <p>For this process, I will be using a custom studio, which you can download <DownloadButton >Here</DownloadButton>. Otherwise, most tools can be found in the pixel studio but you will need to switch to the vector studio to add artboards.</p>
+                <p>For this process, I will be using a custom studio, which you can download <DownloadButton fileUrl="https://crimsonincapitals.github.io/Mockup.afstudio" fileName="Mockup.afstudio">Here</DownloadButton>. Otherwise, most tools can be found in the pixel studio but you will need to switch to the vector studio to add artboards.</p>
             </div>
             <div className="bff">
                 <h2>Converting from embedded</h2>
