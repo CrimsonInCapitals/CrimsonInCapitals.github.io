@@ -35,8 +35,8 @@ const DownloadButton = ({ fileUrl, fileName }) => {
   };
 
   return (
-    <button onClick={handleDownload} style={{cursor:'pointer'}}>
-      <bold>Download</bold>
+    <button onClick={handleDownload} style={{cursor:'pointer',textDecoration:'underline',color:'var(--Crimson)',fontStyle:'italic',fontFamily:'Baskervville',fontWeight:'600'}}>
+      Download
       
     </button>
   );

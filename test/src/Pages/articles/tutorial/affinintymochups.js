@@ -26,7 +26,7 @@ const Background =()=>{
     )
 }
 properties.fill = <Background/>
-// properties.image = backgroundImage
+properties.image = 'https://crimsonincapitals.github.io/test/src/images/articles/afhowto/mockupshowtocover.webp'
 
 const Page = ()=>{
     return(
