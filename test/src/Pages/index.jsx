@@ -1,13 +1,13 @@
+// List of published pages
+
 export { default as Home} from './Home.jsx';
 export { default as About} from './About.jsx';
 export { default as Services } from './Services.jsx';
 export { default as Articles} from './Articles.jsx';
 export { default as ChipArticles} from './ChipArticles.jsx';
-
 export { default as refund} from './RefundPolicy.jsx';
 export { default as FourZeroFour} from './404';
 export {default as SiteMap} from './sitemap.jsx'
-
 export { default as TheDogRoom} from './articles/TheDogRoom.js'
 export { default as AspinalofLondon} from './articles/AspinalofLondon.js'
 export { default as Cudoni} from './articles/Cudoni.js'
@@ -36,7 +36,7 @@ export {default as TGLC} from './articles/GlobalLiving/about.js'
 export {default as arffornature} from './articles/ArtForNature.js'
 export {default as TGLCLinks} from './LinkPages/TheGlobalLivingCompany.jsx'
 export {default as usemockupsaf} from './articles/tutorial/affinintymochups.js'
-// export {default as createmockupsaf} from './articles/tutorial/affinintycreatemochups.js'
+export {default as createmockupsaf} from './articles/tutorial/affinintycreatemochups.js'
 
 
 

@@ -556,7 +556,14 @@ button.basicbutton.primary, a.basicbutton.primary{
     color: var(--Light02);
 }
 
-
+.inlinelink{
+    text-decoration:underline;
+    color:var(--Crimson);
+    fontStyle:italic;
+    font-family: 'Baskervville';
+    font-weight: 600;
+    font-size: 1em;
+}
 
 section.ReviewReel{
     width: 100%;

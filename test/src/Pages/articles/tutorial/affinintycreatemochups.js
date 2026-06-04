@@ -35,11 +35,11 @@ const Page = ()=>{
             <div className="bff">
                 <p>Creating a symbol-based mock-up template follows a very similar workflow to creating a normal mock-up template. For that reason, I am going to run through the process twice. I’ll go through converting a normal embedded mock-up; this can be a PSD or an .af file. Then I will go through the full process from importing your photo to saving your template.</p>
                 <p>If you haven’t read my other guide on using symbol-based templates, you might be wondering why you should care. The are 2 main benefits - the first is live preview, meaning the content and mock-up are side by side. The second is reduced file sizes - 60% smaller on average. </p>
-                <p>For this process, I will be using a custom studio, which you can download <DownloadButton fileUrl="https://crimsonincapitals.github.io/Mockup.afstudio" fileName="Mockup.afstudio">Here</DownloadButton>. Otherwise, most tools can be found in the pixel studio but you will need to switch to the vector studio to add artboards.</p>
+                <p>For this process, I will be using a custom studio, which you can <DownloadButton fileUrl="https://crimsonincapitals.github.io/Mockup.afstudio" fileName="Mockup.afstudio">Here</DownloadButton>. Otherwise, most tools can be found in the pixel studio but you will need to switch to the vector studio to add artboards.</p>
             </div>
             <div className="bff">
                 <h2>Converting from embedded</h2>
-                <p>Open your file of choice. I will be using a great template from Akoyo. Not every effect will convert when you open a PSD. For example, gradients work differently and so you will receive a message letting you know this. If you’re using an .af file, you won’t have that issue.</p>
+                <p>Open your file of choice. I will be using a great template from <a className="inlinelink" href="https://akoyamockups.com/" target="_blank">Akoyo</a>. Not every effect will convert when you open a PSD. For example, gradients work differently and so you will receive a message letting you know this. If you’re using an .af file, you won’t have that issue.</p>
             </div>
             <IMG className="inline" src={require('../../../images/articles/afhowto/createmockups/image1.png')} alt='opening psd error message'/>
             <p>Click the ‘Artboard Tool’ and click ‘Insert Artboard’. This will convert the image region to an artboard. I ‘m going to rename it ‘Mock-up’ but this isn’t necessary.</p>

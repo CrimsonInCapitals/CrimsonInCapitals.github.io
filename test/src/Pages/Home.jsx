@@ -13,6 +13,7 @@ import * as Pages from '.'
 import { PictureSpace } from '../components/picturespace.jsx';
 import { Review, ReviewReel } from '../components/review.js';
 import { FormSection } from '../components/form.jsx';
+import { Helmet } from 'react-helmet';
 
 
 const Page =()=>{
@@ -20,6 +21,15 @@ const Page =()=>{
   const main = useRef(null)
   console.log( new Date())
     return(
+      <>
+          <Helmet>
+            <meta property="og:title" content={properties.title} />
+            <meta property="og:description" content="CRIMSON Article" />
+            <meta property="og:type" content="article" />
+            <meta property="og:url" content={"https://crimsonincapitals.github.io"} />
+            <meta property="og:image" content={"https://crimsonincapitals.github.io/test/src/images/articles/afhowto/mockupshowtocover.webp"} />
+        </Helmet>
+
         <main className='layer_one' ref={main} id={theme}>
               <MenuPartA/>
               {/* <MenuLogoMask/> */}
@@ -93,6 +103,7 @@ const Page =()=>{
              
         
             </main>
+                    </>
     )
 }
 const properties = new PageClass('Home','/',1,'07/08/2025')

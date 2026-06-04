@@ -40,7 +40,7 @@ const Page = ()=>{
                 <p>We also had several on location assets, including wall prints, exhibition catalogue, display plaques and a double-sided item list. All were professionally printed and delivered to the venue in time for setup.</p>
                 <IMG className="inline" src={require('../../images/articles/ArtForNature/plack.webp')} alt='display item with label'/>      
                 <p>The successful execution of the exhibition met both the requirements of the client and resulted in the raising of ~£300k for Costa Rican wildlife charities.</p>  
-                <a target="_blank" href="https://zacgoldsmithart4nature.com/" style={{textDecoration:'underline',color:'var(--Crimson)',fontStyle:'italic'}}>Learn more about Art For Nature here</a> 
+                <a target="_blank" href="https://zacgoldsmithart4nature.com/" className="inlinelink">Learn more about Art For Nature here</a> 
          </ArticalContainer>
     );
 }

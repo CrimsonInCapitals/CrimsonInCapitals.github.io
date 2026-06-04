@@ -55,7 +55,7 @@ const Page = ()=>{
                 <IMG className={'inline'} title='Image by Amy Hunter' src={require('../../../images/articles/davidphillips/New+Berkley+House+-+pantry+1+©+Amy+Hunter+Photography.webp')}alt='an open spread in a brochure demonstraiting the use of the new icons'/>
                 <div className="bff">
                     <p>All the Photography fetured on this page and within the other David Phillis projects is by Amy Hunter. website linked bellow:</p>
-                    <a href="https://www.amyhunterphoto.com/" target="_blank" style={{textDecoration:'underline',color:'var(--Crimson)',fontStyle:'italic'}}>Amy Hunters Photography</a>
+                    <a href="https://www.amyhunterphoto.com/" target="_blank" className="inlinelink">Amy Hunters Photography</a>
                 </div>
                <Review review={reviews[2]}focal/>
         </ParentContainer>

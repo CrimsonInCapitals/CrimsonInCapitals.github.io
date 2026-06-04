@@ -64,7 +64,7 @@ const Page = ()=>{
 
                     <h3>Displate</h3>
                     <p>This series is my most successful on Displate, a platform that sells metal posters. You can view my Displate account in the link below.</p>
-                    <a href="https://displate.com/artist/crimsonincapitals1?art=5f0d09c08e6b" target="_blank" style={{textDecoration:'underline',color:'var(--Crimson)',fontStyle:'italic'}}>Displate Account</a>
+                    <a href="https://displate.com/artist/crimsonincapitals1?art=5f0d09c08e6b" target="_blank" className="inlinelink">Displate Account</a>
                 </div>
       </ArticalContainer>
     )
